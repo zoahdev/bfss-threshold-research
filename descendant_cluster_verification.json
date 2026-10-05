@@ -1,0 +1,12 @@
+{
+  "reflection_hessian_identity_symbolic_3d_slice": true,
+  "reflection_orthogonal": true,
+  "S8": "32*pi**4/105",
+  "K_9d_shell": "sqrt(2)/(210*pi**5)",
+  "Fv_leading": "sqrt(2)*D**(7/2)*abs_A_squared*mu**(9/2)/(735*pi**5)",
+  "W_leading": "sqrt(2)*D**(11/2)*abs_A_squared*mu**(9/2)/(4620*pi**5)",
+  "W_over_Fv_leading": "7*D**2/44",
+  "physical_bound_if_G_le_C_t_minus_half": "4*E*C*sqrt(delta)*ell**3*p**(3/2)",
+  "physical_W_bound_if_G_le_C_t_minus_half": "E*C*delta**(5/2)*ell**3*p**(3/2)",
+  "status": "Conditional identities and free leading channel only; no exact BFSS rank-uniform spectral estimate proved."
+}

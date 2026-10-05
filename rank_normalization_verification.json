@@ -1,0 +1,8 @@
+{
+  "finite_N_Schur_minimum": "passed",
+  "spin2_covariance_dimension": "44",
+  "SO9_radial_upper_constant": "2/99",
+  "physical_decompactification_prefactor": "ell^4 (p+)^2 N^(4/3)",
+  "dimensionless_first_moment": "2 <tr Z_1^2>/N^2",
+  "scope": "algebra only, not a BFSS bound-state or uniformity proof"
+}

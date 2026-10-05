@@ -1,0 +1,7 @@
+{
+  "harmonic_9d_tail": "passed",
+  "double_laplacian_identity": "passed",
+  "unit_polarization_angular_average": "2/99",
+  "quadrupole_tail_coefficient": "2/(495 L^5), times mu^2 |C|^2",
+  "probability_tail_coefficient": "1/(9 L^9), times |C|^2"
+}
