@@ -1,0 +1,706 @@
+\clearpage
+\section{Actual adapted source
+inventory}\label{d-actual-adapted-source-inventory}
+
+Technical derivation for review. Equation and subsection numbers in this
+appendix are local to the source derivation. Historical local labels are
+retained, including numbering gaps or nonsequential labels. The
+accompanying source notes retain the original expressions for
+comparison.
+
+\subsection{1. Notation and exact
+origin}\label{d-notation-and-exact-origin}
+
+Use the kinetic-one normalization and the intrinsic slice in Appendix A.
+The only internal thinness hypothesis is
+
+% DISPLAY d.1
+% SOURCE alpha_a+alpha_b <= kappa r_ab,
+\begin{gather*}
+\begin{aligned}
+& \alpha _{a}+\alpha _{b} \le  \kappa  r_{ab},
+\end{aligned}\notag
+\end{gather*}
+
+with fixed sufficiently small \(\kappa\). Set \(r_{*}=\min  r_{ab}\).
+All finite constants below depend on \(N\) but not on a ratio of
+unrelated gaps.
+
+To avoid overloading center \(C\), use these coefficient maps:
+
+% DISPLAY d.2
+% SOURCE F = E*B_(Z+A),             C = P_N B_A,
+% SOURCE L = E*B_Y,                 N_Y = P_N B_Y,
+% SOURCE I_Y = P_I B_Y,             C_Y = P_C B_Y,
+% SOURCE K = R^-1 C_Y*,             J_2 = K C_Y.
+\begin{gather*}
+\begin{aligned}
+& F = E^{*}B_{Z+A}, \quad  C = P_{N} B_{A}, \\
+& L = E^{*}B_{Y}, \quad  N_{Y} = P_{N} B_{Y}, \\
+& I_{Y} = P_{I} B_{Y}, \quad  C_{Y} = P_{C} B_{Y}, \\
+& K = R^{-1} C_{Y}^{*}, \quad  J_{2} = K C_{Y}.
+\end{aligned}\notag
+\end{gather*}
+
+Thus \(F\) is pair-block diagonal, \(C\) is pair-block diagonal as a map
+from gauge parameters into normal fast coordinates, and
+
+% DISPLAY d.3
+% SOURCE M=F+L-J_2,   W=I+KK*.
+\begin{gather*}
+\begin{aligned}
+& M=F+L-J_{2}, \quad  W=I+KK^{*}.
+\end{aligned}\notag
+\end{gather*}
+
+The maps \(L\) and \(N_{Y}\) between distinct fast root pairs have
+triangle support. They have no same-pair block. The maps \(I_{Y}\) and
+\(C_{Y}\) use one root and its endpoints. The center metric is
+\(g_{C}=I+K^{*}K\); the internal and fast tangent metrics are exactly
+identity.
+
+The definitive flattened kinetic form is
+
+% DISPLAY d.4
+% SOURCE ||(p_H+i rho)u||_(g_S^-1)^2 + ||D u||²,
+% SOURCE D=W^(1/2)M^-*[S_f-O*Sg_S^-1(p_H+i rho)],
+% SOURCE rho=d_H log d,       d=sqrt(det M).                     (1.1)
+\begin{gather*}
+\begin{aligned}
+& \Vert (p_{H}+i \rho )u\Vert _{g_{S}^{-1}}^{2} + \Vert D u\Vert ^{2}, \\
+& D=W^{1/2}M^{-*}[S_{f}-O^{*}Sg_{S}^{-1}(p_{H}+i \rho )], \\
+& \rho =d_{H} \log  d, \quad  d=\sqrt{\det  M}.
+\end{aligned}\tag{1.1}
+\end{gather*}
+
+All products below inherit this ordering. Fast adjoints are taken in the
+flat fiber measure. The normal connection is retained in center
+derivatives. Nothing is obtained by substituting a momentum constraint
+into a squared operator.
+
+\subsection{2. Exact coefficients needed through
+H2}\label{d-exact-coefficients-needed-through-h2}
+
+Use homogeneous weights
+
+% DISPLAY d.5
+% SOURCE (Z,A) -> L_scale (Z,A),  Y -> L_scale^-1/2 Y,
+% SOURCE p_s -> L_scale^-1 p_s,  p_F -> L_scale^1/2 p_F.
+\begin{gather*}
+\begin{aligned}
+& (Z,A) \to  L_{\mathrm{scale}} (Z,A), \quad  Y \to  L_{\mathrm{scale}}^{-1/2} Y, \\
+& p_{s} \to  L_{\mathrm{scale}}^{-1} p_{s}, \quad  p_{F} \to  L_{\mathrm{scale}}^{1/2} p_{F}.
+\end{aligned}\notag
+\end{gather*}
+
+Here \(s\) comprises centers and all internal coordinates. Keep the
+internal potential and internal Yukawa terms in their complete internal
+Hamiltonians throughout.
+
+Write
+
+% DISPLAY d.6
+% SOURCE log d = log d_0 + phi_2 + terms of Y-degree >=3,
+% SOURCE d_0=sqrt(det F),
+% SOURCE phi_2=-(1/2)tr(F^-1 J_2)
+% SOURCE         -(1/4)tr(F^-1 L F^-1 L),                       (2.1)
+% SOURCE rho_0=d_s log d_0,    rho_F2=d_F phi_2,
+% SOURCE u_s=p_s+i rho_0.
+\begin{gather*}
+\begin{aligned}
+& \log  d = \log  d_{0} + \phi _{2} + \text{ terms of Y-degree } \ge 3, \\
+& d_{0}=\sqrt{\det  F}, \\
+& \phi _{2}=-(1/2)\operatorname{tr} (F^{-1} J_{2}) \\
+& -(1/4)\operatorname{tr} (F^{-1} L F^{-1} L),
+\end{aligned}\tag{2.1} \\
+\begin{aligned}
+& \rho _{0}=d_{s} \log  d_{0}, \quad  \rho _{F2}=d_{F} \phi _{2}, \\
+& u_{s}=p_{s}+i \rho _{0}.
+\end{aligned}\notag
+\end{gather*}
+
+There is no degree-one term because \(\operatorname{tr} (F^{-1} L)=0\)
+for every A, not only at \(A=0\). The triangle term in (2.1) must be
+retained.
+
+The Gauss derivative stack has coefficients
+
+% DISPLAY d.7
+% SOURCE D = D_0 + D_1 + D_2 + higher homogeneous orders,
+\begin{gather*}
+\begin{aligned}
+& D = D_{0} + D_{1} + D_{2} + \text{ higher homogeneous orders },
+\end{aligned}\notag
+\end{gather*}
+
+of scaling degrees \(1/2\), \(-1\), and \(-5/2\), respectively. They are
+
+% DISPLAY d.8
+% SOURCE D_0 = -F^-1 C* p_F,                                     (2.2)
+% SOURCE 
+% SOURCE D_1 = F^-1(S_f-N_Y* p_F)
+% SOURCE          +F^-1 L* F^-1 C* p_F,                         (2.3)
+\begin{gather*}
+\begin{aligned}
+& D_{0} = -F^{-1} C^{*} p_{F},
+\end{aligned}\tag{2.2} \\
+\begin{aligned}
+& D_{1} = F^{-1}(S_{f}-N_{Y}^{*} p_{F}) \\
+& +F^{-1} L^{*} F^{-1} C^{*} p_{F},
+\end{aligned}\tag{2.3}
+\end{gather*}
+
+and
+
+% DISPLAY d.9
+% SOURCE D_2 = -F^-1[I_Y* u_I+(C_Y*+F K)u_C+i C* rho_F2]
+% SOURCE       -F^-1 L* F^-1(S_f-N_Y* p_F)
+% SOURCE       -F^-1 L* F^-1 L* F^-1 C* p_F
+% SOURCE       -F^-1 J_2* F^-1 C* p_F
+% SOURCE       -(1/2)KK* F^-1 C* p_F.                           (2.4)
+\begin{gather*}
+\begin{aligned}
+& D_{2} = -F^{-1}[I_{Y}^{*} u_{I}+(C_{Y}^{*}+F K)u_{C}+i C^{*} \rho _{F2}] \\
+& -F^{-1} L^{*} F^{-1}(S_{f}-N_{Y}^{*} p_{F}) \\
+& -F^{-1} L^{*} F^{-1} L^{*} F^{-1} C^{*} p_{F} \\
+& -F^{-1} J_{2}^{*} F^{-1} C^{*} p_{F} \\
+& -(1/2)KK^{*} F^{-1} C^{*} p_{F}.
+\end{aligned}\tag{2.4}
+\end{gather*}
+
+These follow by expanding
+
+% DISPLAY d.10
+% SOURCE M^-*=F^-1-F^-1L*F^-1
+% SOURCE          +F^-1L*F^-1L*F^-1+F^-1J_2*F^-1+...,
+% SOURCE W^(1/2)=I+(1/2)KK*+...,
+% SOURCE O*Sg_S^-1p_H
+% SOURCE    =C*p_F+N_Y*p_F+I_Y*p_I+(C_Y*+F K)p_C+... .          (2.5)
+\begin{gather*}
+\begin{aligned}
+& M^{-*}=F^{-1}-F^{-1}L^{*}F^{-1} \\
+& +F^{-1}L^{*}F^{-1}L^{*}F^{-1}+F^{-1}J_{2}^{*}F^{-1}+\ldots , \\
+& W^{1/2}=I+(1/2)KK^{*}+\ldots , \\
+& O^{*}Sg_{S}^{-1}p_{H} \\
+& =C^{*}p_{F}+N_{Y}^{*}p_{F}+I_{Y}^{*}p_{I}+(C_{Y}^{*}+F K)p_{C}+\ldots  .
+\end{aligned}\tag{2.5}
+\end{gather*}
+
+For example \(L^{*}K p_{C}\) first enters the next Gauss order, and
+\(g_{C}^{-1}-I\) first contributes to direct center kinetic energy at
+scaling degree -5; neither belongs to H2. The \(F K\) in (2.4) is
+essential and becomes \(C_{Y}^{*}\) at \(A=0\), so the centered
+center-orbital coefficient is twice \(C_{Y}^{*}\).
+
+The exact leading fast Hamiltonian comprises the direct \(p_{F}^{2}\),
+\(D_{0}^{*}D_{0}\), the full adapted quadratic potential, and the fast
+fermion mass. Its product vacuum is \(U(A)\), with energy
+\(E_{0,\mathrm{total}}\). Define
+
+% DISPLAY d.11
+% SOURCE H_exc = H_fast-E_0,total.
+\begin{gather*}
+\begin{aligned}
+& H_{\mathrm{exc}} = H_{\mathrm{fast}}-E_{0,\mathrm{total}}.
+\end{aligned}\notag
+\end{gather*}
+
+The vacuum-energy multiplier is handled by Appendix \(B\). It is not
+inserted into a virtual excitation denominator.
+
+The next two homogeneous form coefficients are exactly
+
+% DISPLAY d.12
+% SOURCE H_1 = V_3+Y_Y +D_0*D_1+D_1*D_0,                       (2.6)
+% SOURCE 
+% SOURCE H_2 = ||u_s (.)||² +V_4
+% SOURCE         +2 Re <p_F(.),i rho_F2(.)>
+% SOURCE         +||D_1(.)||²+2 Re <D_0(.),D_2(.)>.             (2.7)
+\begin{gather*}
+\begin{aligned}
+& H_{1} = V_{3}+Y_{Y} +D_{0}^{*}D_{1}+D_{1}^{*}D_{0},
+\end{aligned}\tag{2.6} \\
+\begin{aligned}
+& H_{2} = \Vert u_{s} (.)\Vert ^{2} +V_{4} \\
+& +2 \operatorname{Re}  \langle p_{F}(.),i \rho _{F2}(.)\rangle \\
+& +\Vert D_{1}(.)\Vert ^{2}+2 \operatorname{Re}  \langle D_{0}(.),D_{2}(.)\rangle .
+\end{aligned}\tag{2.7}
+\end{gather*}
+
+Here \(Y_{Y}\) is the Yukawa term linear in \(Y\), including both
+slow-fast and fast-fast fermion terms. \(V_{3}\) is the cross term
+between \([Z+A,Y]\) and \([Y,Y]\); \(V_{4}\) is the pure quartic fast
+potential. The internal potential term paired with \([Y,Y]\) is already
+in the adapted quadratic potential. Equations (2.6)-(2.7) therefore
+include the terms which appear as anticommutators of the internal
+potential charge with higher inverse-Gauss charge coefficients; there is
+no permission to omit them in a charge derivation. This Hamiltonian
+derivation fixes them directly from the original scalar potential and
+the exact kinetic form.
+
+\subsection{3. Actual H1 source and its graph
+weights}\label{d-actual-h1-source-and-its-graph-weights}
+
+Define the actual leading source
+
+% DISPLAY d.13
+% SOURCE S(A) = H_1 U(A).                                        (3.1)
+\begin{gather*}
+\begin{aligned}
+& S(A) = H_{1} U(A).
+\end{aligned}\tag{3.1}
+\end{gather*}
+
+It is complementary by boson parity. Each summand is a finite
+Gaussian-polynomial/Fock map on the full slow Clifford module. It has
+the graph decomposition
+
+% DISPLAY d.14
+% SOURCE S=sum_e S_e+sum_t S_t,
+\begin{gather*}
+\begin{aligned}
+& S=\sum _{e} S_{e}+\sum _{t} S_{t},
+\end{aligned}\notag
+\end{gather*}
+
+where an edge source has exactly two excitations on that edge
+(\(N_{e}=2\)) and a triangle source has exactly one excitation on every
+triangle edge (\(N_{e}=N_{f}=N_{g}=1\)). In the pair case these are one
+bosonic and one fast-fermionic excitation. Graph subspaces remain
+orthogonal and invariant under the adapted quadratic oscillator. Parity
+alone would not be the complete finite-sector statement.
+
+The inventory is explicit:
+
+\begin{itemize}
+\tightlist
+\item
+  \(Y_{Y} U\): a pair has \(Y_{e} \theta _{e} \theta _{s}\); a triangle
+  has \(Y_{e} \theta _{f} \theta _{g}\).
+\item
+  \(V_{3} U\): only three distinct triangle edges, one \(Y\) on each.
+\item
+  \(D_{0}^{*}F^{-1} S_{f} U\) and its adjoint: pair terms have one
+  \(p_{e}\) and one fast fermion; triangle terms have
+  \(p_{e} \theta _{f} \theta _{g}\).
+\item
+  \(D_{0}^{*}F^{-1} N_{Y}^{*}p_{F} U\) and its adjoint: a triangle has
+  \(p_{e} Y_{f} p_{g}\).
+\item
+  The last term of \(D_{1}\) yields the same triangle support with one
+  additional factor \(F_{f}^{-1} C_{f}^{*}\).
+\end{itemize}
+
+A slow internal derivative does not occur in H1. Only the pair source
+contains internal/center Clifford generators; the triangle source acts
+trivially on the internal Clifford factors.
+
+For a triangle let \(s_{t}=\sum _{e \in  t}r_{e}\),
+\(w_{t}=\sum _{e \in  t}r_{e}^{-2}\). Pairwise thinness gives
+
+% DISPLAY d.15
+% SOURCE ||F_e^-1|| <= C/r_e,    ||F_e^-1 C_e*|| <= C kappa.
+\begin{gather*}
+\begin{aligned}
+& \Vert F_{e}^{-1}\Vert  \le  C/r_{e}, \quad  \Vert F_{e}^{-1} C_{e}^{*}\Vert  \le  C \kappa .
+\end{aligned}\notag
+\end{gather*}
+
+On a fixed finite Gaussian degree, \(Y_{e}\) costs \(C r_{e}^{-1/2}\),
+and \(p_{e}\) costs \(C r_{e}^{1/2}\). Thus
+
+% DISPLAY d.16
+% SOURCE ||S_e||² <= C_N/r_e,
+% SOURCE ||S_t||² <= C_N s_t w_t.                               (3.2)
+\begin{gather*}
+\begin{aligned}
+& \Vert S_{e}\Vert ^{2} \le  C_{N}/r_{e}, \\
+& \Vert S_{t}\Vert ^{2} \le  C_{N} s_{t} w_{t}.
+\end{aligned}\tag{3.2}
+\end{gather*}
+
+For the cubic potential, use
+
+% DISPLAY d.17
+% SOURCE s_t/(r_e r_f r_g)
+% SOURCE    =1/(r_e r_f)+1/(r_f r_g)+1/(r_g r_e) <= w_t.
+\begin{gather*}
+\begin{aligned}
+& s_{t}/(r_{e} r_{f} r_{g}) \\
+& =1/(r_{e} r_{f})+1/(r_{f} r_{g})+1/(r_{g} r_{e}) \le  w_{t}.
+\end{aligned}\notag
+\end{gather*}
+
+For the Gauss triangle \(p_{e} Y_{f} p_{g}/r_{e}\), its norm is bounded
+by
+
+% DISPLAY d.18
+% SOURCE C kappa sqrt(r_g/(r_e r_f))
+% SOURCE    <= C kappa sqrt(s_t) (r_e r_f)^-1/2.
+\begin{gather*}
+\begin{aligned}
+& C \kappa  \sqrt{r_{g}/(r_{e} r_{f})} \\
+& \le  C \kappa  \sqrt{s_{t}} (r_{e} r_{f})^{-1/2}.
+\end{aligned}\notag
+\end{gather*}
+
+The inverse-L correction has one additional bounded factor \(\kappa\).
+These are shape-independent estimates, including when one edge is much
+shorter than the other two.
+
+Transporting only the finite oscillator coefficient spaces to their
+centered spaces by the actual pair functional calculus gives the
+coefficientwise perturbation estimates
+
+% DISPLAY d.19
+% SOURCE ||S_e(A)-S_e(0)|| <= C_N kappa r_e^-1/2,
+% SOURCE ||S_t(A)-S_t(0)|| <= C_N kappa sqrt(s_t w_t).             (3.3)
+\begin{gather*}
+\begin{aligned}
+& \Vert S_{e}(A)-S_{e}(0)\Vert  \le  C_{N} \kappa  r_{e}^{-1/2}, \\
+& \Vert S_{t}(A)-S_{t}(0)\Vert  \le  C_{N} \kappa  \sqrt{s_{t} w_{t}}.
+\end{aligned}\tag{3.3}
+\end{gather*}
+
+This is an estimate for the actual source (3.1), not a definition by
+transport. Every new Gauss H1 term has an explicit factor
+\(F^{-1} C^{*}\), and the remaining actual coefficients have relative
+\(O(\kappa )\) variation in the pair matrices and vacuum factors.
+
+\subsection{4. Compressed H2 and its actual scalar/Clifford
+multiplier}\label{d-compressed-h2-and-its-actual-scalarclifford-multiplier}
+
+Separate the complete slow Berry-covariant form
+
+% DISPLAY d.20
+% SOURCE H_s^B=T_cent^B+sum_a(T_a^B+V_a+Y_a)
+\begin{gather*}
+\begin{aligned}
+& H_{s}^{B}=T_{\mathrm{cent}}^{B}+\sum _{a}(T_{a}^{B}+V_{a}+Y_{a})
+\end{aligned}\notag
+\end{gather*}
+
+from the vacuum compression of (2.7). The remainder is a multiplication
+operator \(W(A)\) on the entire slow Clifford fiber. The following
+procedure is an exact specification of \(W\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  In \(\Vert u_{s}(Uf)\Vert ^{2}\), retain
+  \(\Vert \nabla _{s}^{B} f\Vert ^{2}\); put the Born-Huang multiplier
+  and \(\vert \rho _{0}\vert ^{2}+\operatorname{div}  \rho _{0}\) into
+  \(W\).
+\item
+  Put the vacuum expectations of \(V_{4}\), the displayed fast-density
+  cross term, and \(D_{1}^{*}D_{1}\) into \(W\).
+\item
+  In \(2 \operatorname{Re} \langle D_{0}(Uf),D_{2}(Uf)\rangle\), keep
+  the written ordering. For the slow-orbital part put
+
+  % DISPLAY d.21
+  % SOURCE L_mu = component_mu{F^-1[I_Y*,C_Y*+F K]},
+  % SOURCE <D_0 U,-L_mu U> = i j_mu,       j_mu real.            (4.1)
+  \begin{gather*}
+  \begin{aligned}
+  & L_{\mu} = \operatorname{component} _{\mu}\{F^{-1}[I_{Y}^{*},C_{Y}^{*}+F K]\}, \\
+  & \langle D_{0} U,-L_{\mu} U\rangle  = i j_{\mu}, \quad  j_{\mu} \text{ real }.
+  \end{aligned}\tag{4.1}
+  \end{gather*}
+
+  This coefficient is purely imaginary: the bosonic Gaussian and the
+  orbital coefficient maps are real, while \(D_{0}\) contains one fast
+  momentum. The fermionic factor is its norm. Its first-order
+  coefficient on \(f\) therefore integrates to the scalar multiplier
+  \(-\operatorname{div}  j\). All remaining terms, including derivatives
+  on \(U\) and \(i \rho _{0}\), are placed in \(W\). A scalar Berry term
+  in \(p_{\mu} U\) has zero real pairing with \(i j_{\mu}\), so this
+  step is gauge covariant.
+\end{enumerate}
+
+An equivalent exact scalar formula removes even the implicit derivative
+bookkeeping. Write \(U=g(Y;s)v(s)\), with \(g\) real, put
+
+% DISPLAY d.22
+% SOURCE A_op=F^-1 C*,    a=A_op d_F log g,
+% SOURCE B_mu=component_mu{F^-1[I_Y*,C_Y*+F K]}.
+\begin{gather*}
+\begin{aligned}
+& A_{\mathrm{op}}=F^{-1} C^{*}, \quad  a=A_{\mathrm{op}} d_{F} \log  g, \\
+& B_{\mu}=\operatorname{component} _{\mu}\{F^{-1}[I_{Y}^{*},C_{Y}^{*}+F K]\}.
+\end{aligned}\notag
+\end{gather*}
+
+Then \(D_{0} U=i a U\), and the entire slow-orbital compression is
+
+% DISPLAY d.23
+% SOURCE V_orb=-sum_mu <partial_mu(a dot B_mu)>_U
+% SOURCE          -2 sum_mu rho_(0,mu)<a dot B_mu>_U.            (4.3)
+\begin{gather*}
+\begin{aligned}
+& V_{\mathrm{orb}}=-\sum _{\mu} \langle \partial _{\mu}(a \cdot  B_{\mu})\rangle _{U} \\
+& -2 \sum _{\mu} \rho _{0,\mu}\langle a \cdot  B_{\mu}\rangle _{U}.
+\end{aligned}\tag{4.3}
+\end{gather*}
+
+The derivative acts on the displayed fast coefficient; Gaussian-density
+differentiation has already canceled the derivative of the fiber
+expectation. Fock/Berry derivative terms have zero real part. The direct
+fast-density term and the \(\rho _{F2}\) term in \(D_{2}\) combine
+exactly to
+
+% DISPLAY d.24
+% SOURCE V_fast-density=tr_F[(I+C F^-2 C*) Hess_Y phi_2].          (4.4)
+\begin{gather*}
+\begin{aligned}
+& V_{\mathrm{fast\text{-}density}}=\operatorname{tr} _{F}[(I+C F^{-2} C^{*}) \operatorname{Hess} _{Y} \phi _{2}].
+\end{aligned}\tag{4.4}
+\end{gather*}
+
+Since \(\phi _{2}\) is quadratic in \(Y\), its Hessian is a coefficient
+matrix independent of \(Y\). These formulas follow by one integration by
+parts and retain all ordering terms.
+
+No slow derivative has been discarded or bounded by a momentum cutoff.
+In particular differentiating \(j\), or the coefficient in (4.3),
+includes internal derivatives at \(A=0\). Those terms participate in the
+centered cancellation.
+
+\subsubsection{4.1 Complete root support and coefficient
+bounds}\label{d-complete-root-support-and-coefficient-bounds}
+
+Every surviving vacuum contraction in \(W\) is supported on one edge or
+the edges of a triangle. The following list accounts for all terms in
+(2.7):
+
+\begin{itemize}
+\tightlist
+\item
+  Born-Huang derivatives on two different pair vacua are orthogonal
+  after removing the scalar Berry connection. Each remaining term is
+  bounded by \(C_{N}/r_{e}^{2}\).
+\item
+  \(\rho _{0}\) is a sum of pair gradients. Their inner product vanishes
+  for disjoint endpoint sets. A cross product on two incident edges has
+  weight \(1/(r_{e} r_{f})\) and belongs to their triangle. The
+  divergence is pairwise.
+\item
+  Wick contractions in \(V_{4}\) involve either one repeated root or two
+  roots sharing an endpoint. Their weights are \(r_{e}^{-2}\) or
+  \((r_{e} r_{f})^{-1}\).
+\item
+  The first term of \(\phi _{2}\) is a sum of \(Y_{e}^{2}/r_{e}^{2}\)
+  contractions. Its second term follows a root-space path
+  \(e \to  f \to  e\) and has \(Y_{g}^{2}/(r_{e} r_{f})\), where e,f,g
+  form a triangle. A fast derivative and the momentum pairing remove the
+  \(Y_{g}\) scale; the resulting weights are again \(r_{e}^{-2}\) or
+  \((r_{e} r_{f})^{-1}\).
+\item
+  \(D_{1}\) contains a pair spin term with weight \(r_{e}^{-1}\), and
+  triangle terms with weights \(r_{e}^{-1}\) or
+  \(r_{e}^{-1} \sqrt{r_{g}/r_{f}}\). Squaring on the vacuum preserves
+  graph orthogonality. The triangle inequality reduces the latter square
+  to \(C w_{t}\).
+\item
+  The slow-orbital part of \(D_{2}\) paired with \(D_{0}\) gives
+  \(j_{e}=O(\kappa /r_{e})\) on endpoint coordinates. Its derivative is
+  \(O(r_{e}^{-2})\) and varies from its centered value by
+  \(O(\kappa /r_{e}^{2})\). Derivatives of spectator vacua are
+  orthogonal in this compression; the products with \(\rho _{0}\) have
+  pair/triangle support.
+\item
+  In \(D_{0}^{*}F^{-1}L^{*}F^{-1} S_{f}\), the two bosonic factors lie
+  on distinct roots, so its vacuum compression is zero.
+\item
+  In \(D_{0}^{*}F^{-1}L^{*}F^{-1} N_{Y}^{*}p_{F}\), nonzero Wick
+  contractions force the second root path to close the same triangle.
+  The two possible pairings have weights \(\kappa /(r_{f} r_{g})\) and
+  \(\kappa /(r_{e} r_{f})\).
+\item
+  In the two-L term of \(D_{2}\) the same closure gives the preceding
+  weights with \(\kappa\) squared.
+\item
+  In the \(J_{2}\) and \(KK^{*}\) terms, the two orbital center maps
+  vanish against each other for disjoint endpoint sets. Surviving
+  weights are \(\kappa ^{2}/(r_{e} r_{f})\), with the repeated-edge case
+  included.
+\item
+  The \(\rho _{F2}\) part of \(D_{2}\) has the density supports already
+  listed and a prefactor bounded by \(\kappa\) squared after pairing
+  with \(D_{0}\).
+\end{itemize}
+
+For estimates on finite excited states, a root path need not close under
+Wick contraction. It still has a uniform inverse-square coefficient
+bound. For example a two-L path has normalized weight
+
+% DISPLAY d.25
+% SOURCE sqrt(r_h)/(sqrt(r_e) r_f sqrt(r_g r_j)).
+\begin{gather*}
+\begin{aligned}
+& \sqrt{r_{h}}/(\sqrt{r_{e}} r_{f} \sqrt{r_{g} r_{j}}).
+\end{aligned}\notag
+\end{gather*}
+
+The triangle relation \(r_{h}\le r_{f}+r_{j}\) bounds this by a sum of
+
+% DISPLAY d.26
+% SOURCE 1/sqrt(r_e r_f r_g r_j),
+% SOURCE 1/(sqrt(r_e) r_f sqrt(r_g)),
+\begin{gather*}
+\begin{aligned}
+& 1/\sqrt{r_{e} r_{f} r_{g} r_{j}}, \\
+& 1/(\sqrt{r_{e}} r_{f} \sqrt{r_{g}}),
+\end{aligned}\notag
+\end{gather*}
+
+both bounded by a numerical multiple of the sum of inverse-square edge
+weights by weighted arithmetic-geometric mean. This observation is
+useful for mixed source terms and prevents an illicit global-frequency
+comparison.
+
+All of these are finite coefficient expressions in pair matrices with
+external gaps comparable to their own \(r_{e}\). Normalize each
+occurrence of an internal matrix by the incident \(r_{e}\) in that
+factor. Its norm is \(O(\kappa )\). Functional calculus and its required
+derivatives have uniform convergent resolvent bounds on that fixed pair
+ball. Termwise product estimates in the above inventory therefore prove
+
+% DISPLAY d.27
+% SOURCE ||W(A)|| <= C_N W_2,
+% SOURCE ||W(A)-W(0)|| <= C_N kappa W_2,
+% SOURCE W_2=sum_e r_e^-2.                                      (4.2)
+\begin{gather*}
+\begin{aligned}
+& \Vert W(A)\Vert  \le  C_{N} W_{2}, \\
+& \Vert W(A)-W(0)\Vert  \le  C_{N} \kappa  W_{2}, \\
+& W_{2}=\sum _{e} r_{e}^{-2}.
+\end{aligned}\tag{4.2}
+\end{gather*}
+
+The derivative of \(j\) is included in the second estimate. It is not
+estimated merely by the small value of \(j\), which would miss a nonzero
+centered internal derivative.
+
+\subsection{5. Actual shifted-fast correction and leading operator
+defect}\label{d-actual-shifted-fast-correction-and-leading-operator-defect}
+
+On the pair source space the adapted excitation energy is at least
+\(c r_{e}\); on the triangle source space it is at least \(c s_{t}\).
+The finite matrix resolvent identity, applied to the actual sources
+(3.1), gives
+
+% DISPLAY d.28
+% SOURCE ||S_e*H_exc^-1 S_e-S_e(0)*H_f(0)^-1 S_e(0)||
+% SOURCE       <= C_N kappa r_e^-2,
+% SOURCE 
+% SOURCE ||S_t*H_exc^-1 S_t-S_t(0)*H_f(0)^-1 S_t(0)||
+% SOURCE       <= C_N kappa w_t.                                (5.1)
+\begin{gather*}
+\begin{aligned}
+& \Vert S_{e}^{*}H_{\mathrm{exc}}^{-1} S_{e}-S_{e}(0)^{*}H_{f}(0)^{-1} S_{e}(0)\Vert \\
+& \le  C_{N} \kappa  r_{e}^{-2},
+\end{aligned}\notag \\
+\begin{aligned}
+& \Vert S_{t}^{*}H_{\mathrm{exc}}^{-1} S_{t}-S_{t}(0)^{*}H_{f}(0)^{-1} S_{t}(0)\Vert \\
+& \le  C_{N} \kappa  w_{t}.
+\end{aligned}\tag{5.1}
+\end{gather*}
+
+Cross terms between distinct graph spaces vanish. The centered source
+lemma, including all internal vacuum derivatives and compression jets,
+gives
+
+% DISPLAY d.29
+% SOURCE W(0)=S(0)*H_f(0)^-1 S(0).
+\begin{gather*}
+\begin{aligned}
+& W(0)=S(0)^{*}H_{f}(0)^{-1} S(0).
+\end{aligned}\notag
+\end{gather*}
+
+Consequently the actual leading operator defect satisfies
+
+% DISPLAY d.30
+% SOURCE ||W(A)-S(A)*H_exc(A)^-1 S(A)||
+% SOURCE       <= C_N kappa W_2.                                (5.2)
+\begin{gather*}
+\begin{aligned}
+& \Vert W(A)-S(A)^{*}H_{\mathrm{exc}}(A)^{-1} S(A)\Vert \\
+& \le  C_{N} \kappa  W_{2}.
+\end{aligned}\tag{5.2}
+\end{gather*}
+
+This is an operator-norm estimate on the complete internal Clifford
+module. Its actual fast dressing is
+
+% DISPLAY d.31
+% SOURCE Z(A)=-H_exc(A)^-1 S(A),                                 (5.3)
+\begin{gather*}
+\begin{aligned}
+& Z(A)=-H_{\mathrm{exc}}(A)^{-1} S(A),
+\end{aligned}\tag{5.3}
+\end{gather*}
+
+and obeys the root-graph bounds and spectator-derivative correction from
+Appendix \(C\). No interacting internal Hamiltonian occurs in (5.3). The
+fast energy E0 remains a separate multiplier with its proved
+commutator-square payment.
+
+\subsection{6. All-vector use and the remaining reserve
+requirement}\label{d-all-vector-use-and-the-remaining-reserve-requirement}
+
+The graph-local lemma now applies to the actual dressing (5.3): its
+coefficients are the explicit graph-local functions above. Smooth pair
+functional calculus gives active derivative weights \(C r_{e}^{-5}\) or
+\(C(\sum _{t} r_{e}^{-1})^{2}w_{t}/s_{t}\); spectator derivatives add
+\(C m_{g} W_{2}\). Therefore
+
+% DISPLAY d.32
+% SOURCE H_s[Zf] <= C_N r_*^-3 H_s[f]
+% SOURCE              +C_N kappa W_2[f]+C_N W_5[f].              (6.1)
+\begin{gather*}
+\begin{aligned}
+& H_{s}[Zf] \le  C_{N} r_{*}^{-3} H_{s}[f] \\
+& +C_{N} \kappa  W_{2}[f]+C_{N} W_{5}[f].
+\end{aligned}\tag{6.1}
+\end{gather*}
+
+In fact triangle sources have no internal Clifford generator, so outside
+derivative commutators are the only issue for their internal potential
+charges. The more general graph bound is valid without using this
+improvement. All internal momenta in (6.1) are unrestricted.
+
+The identity \(H_{\mathrm{exc}} Z+S=0\) cancels the actual leading
+complementary source exactly. The complete internal/center form pairs
+involving \(Z\) can be controlled by Cauchy-Schwarz in \(H_{s}\), using
+(6.1). The remaining derivative source from \(U\) is incident-edge
+weighted and has the same payment as Section \(6\) of the geometric
+lemma. These steps are valid form estimates on arbitrary complementary
+vectors in the corresponding control norm; they are not a finite
+oscillator truncation of those vectors.
+
+What is not supplied here is an inequality extracting that control norm
+from the original complementary form while retaining the same Gauss
+square. In particular, the expression
+
+% DISPLAY d.33
+% SOURCE H_s[v]+H_exc[v]+||D_full v||²
+\begin{gather*}
+\begin{aligned}
+& H_{s}[v]+H_{\mathrm{exc}}[v]+\Vert D_{\mathrm{full}} v\Vert ^{2}
+\end{aligned}\notag
+\end{gather*}
+
+cannot be added to the right side of the original Hamiltonian merely
+because its three terms are nonnegative. \(H_{\mathrm{exc}}\) already
+uses the frozen piece of \(D_{\mathrm{full}}\). The desired actual
+all-vector comparison still needs a non-double-counted reserve,
+compatible with unrestricted slow momenta, and a complete
+mixed/remainder estimate in that reserve. Finite coefficient
+cancellation (5.2) cannot prove this coercivity.
+
+Thus Sections 2--5 identify and estimate the actual leading H1/H2 source
+coefficients. Section \(6\) supplies their internal-momentum payment and
+states the precise remaining all-vector obstruction rather than silently
+assuming it away.

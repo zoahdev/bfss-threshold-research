@@ -1,0 +1,1 @@
+PASS: Pauli slice, mass curvature, Dirichlet massive midpoint covariance

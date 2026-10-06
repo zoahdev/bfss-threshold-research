@@ -1,0 +1,18 @@
+{
+  "version": "v2.1, 2026-10-06",
+  "pdf_pages": 116,
+  "pdf_sha256": "daef0d76c50de0a1366c58edcac0eb86e10f628ef3122827b581cf25b007bb8c",
+  "display_blocks_transcribed": 366,
+  "original_display_rows": 715,
+  "preserved_local_equation_tags": 212,
+  "inline_expressions_transcribed": 1430,
+  "visual_qa": "All 116 pages individually reviewed; final changed pages reinspected.",
+  "typesetting_warnings": 0,
+  "all_fonts_embedded": true,
+  "finite_regression_programs": 11,
+  "all_finite_programs_zero_exit": true,
+  "byte_reproducible_in_tested_toolchain": true,
+  "proof_status": "Unreviewed candidate analytical proof, not independently certified.",
+  "remaining_operator_audit": "Appendix D §§4.1–5, full W(A) contractions and gap-ratio-uniform perturbation bound.",
+  "historical_sources_preserved_separately": true
+}

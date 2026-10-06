@@ -1,0 +1,76 @@
+{
+  "scope": "Centered r=1 untraced slow quadratic Clifford coefficients; finite floating tests",
+  "excluded": [
+    "nonzero internal coordinates",
+    "slow derivatives",
+    "full W reconstruction",
+    "arbitrary block proof by computation",
+    "all-vector/global Hardy theorem"
+  ],
+  "results": [
+    {
+      "block_sizes": [
+        1,
+        1
+      ],
+      "gap": 1.0,
+      "slow_majoranas": 16,
+      "source_coefficient_max_error": 1.4210854715202004e-14,
+      "gauss_coefficient_max_error": 4.440892098500626e-16,
+      "source_antisymmetric_max": 0.0,
+      "gauss_antisymmetric_max": 0.0,
+      "source_scalar": 255.99999999999983,
+      "source_scalar_expected": 256,
+      "gauss_scalar": 15.999999999999993,
+      "gauss_scalar_expected": 16
+    },
+    {
+      "block_sizes": [
+        2,
+        1
+      ],
+      "gap": 1.0,
+      "slow_majoranas": 64,
+      "source_coefficient_max_error": 1.4210854715202004e-14,
+      "gauss_coefficient_max_error": 8.881784197001252e-16,
+      "source_antisymmetric_max": 3.778528037616712e-16,
+      "gauss_antisymmetric_max": 2.3615800235104444e-17,
+      "source_scalar": 767.9999999999999,
+      "source_scalar_expected": 768,
+      "gauss_scalar": 47.99999999999999,
+      "gauss_scalar_expected": 48
+    },
+    {
+      "block_sizes": [
+        2,
+        2
+      ],
+      "gap": 1.0,
+      "slow_majoranas": 112,
+      "source_coefficient_max_error": 2.1316282072803006e-14,
+      "gauss_coefficient_max_error": 8.881784197001252e-16,
+      "source_antisymmetric_max": 8.881784197001252e-16,
+      "gauss_antisymmetric_max": 2.4566040516013576e-16,
+      "source_scalar": 2047.9999999999998,
+      "source_scalar_expected": 2048,
+      "gauss_scalar": 127.99999999999997,
+      "gauss_scalar_expected": 128
+    },
+    {
+      "block_sizes": [
+        3,
+        1
+      ],
+      "gap": 1.0,
+      "slow_majoranas": 144,
+      "source_coefficient_max_error": 2.1316282072803006e-14,
+      "gauss_coefficient_max_error": 1.3322676295501878e-15,
+      "source_antisymmetric_max": 3.3306690738754696e-16,
+      "gauss_antisymmetric_max": 5.551115123125783e-17,
+      "source_scalar": 1536.0,
+      "source_scalar_expected": 1536,
+      "gauss_scalar": 95.99999999999999,
+      "gauss_scalar_expected": 96
+    }
+  ]
+}

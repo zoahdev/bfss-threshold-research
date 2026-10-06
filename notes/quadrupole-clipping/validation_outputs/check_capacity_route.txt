@@ -1,0 +1,12 @@
+{
+  "symbolic_square_completion": true,
+  "symbolic_radial_coefficient": "1/22",
+  "symbolic_harmonic_mean": "c*n**2*r**2*s/(2*(11*c*n**2*s + 2*r**2))",
+  "profile_comparison_constant": "1/26",
+  "spin2_polarizations": 44,
+  "random_configurations": 500,
+  "max_projection_absolute_error": 1.5916157281026244e-12,
+  "max_residual_absolute_error": 5.684341886080802e-14,
+  "finite_matrix_variational_identity_error": 2.7755575615628914e-17,
+  "scope": "Algebra only; no BFSS ground-state or uniform-in-rank bound claimed."
+}

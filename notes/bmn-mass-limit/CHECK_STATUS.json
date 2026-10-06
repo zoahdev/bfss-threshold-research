@@ -1,0 +1,12 @@
+{
+  "publication_status": "conditional/provisional research archive",
+  "human_expert_review": "not supplied",
+  "author": "Yicheng Pan",
+  "branch_summary": "Conditional finite-mass SO(6) bounds and fixed-rank limit analysis; BFSS rank-uniform bound unproved.",
+  "dependencies": [
+    "Rotation-singlet BMN zero mode and multiplier domains",
+    "BFSS kernel assumptions for loss-of-compactness deductions",
+    "Unproved selected-state uniform moments and weighted comparison"
+  ],
+  "verification_scope": "Finite algebra and consistency checks only; not certification of infinite-dimensional hypotheses or a rank-uniform theorem."
+}

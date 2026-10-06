@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-06",
+  "status": "conditional certificate obstruction, not large-N solution",
+  "established_under_stated_zero_mode_assumptions": [
+    "positive radial certificate cannot have target rank order",
+    "exact-q inverse-form certificate and required connected-moment scale",
+    "fermion norm bound and shear spectral upper moment inequality",
+    "inverse radial moment recurrence through rank-dependent k",
+    "mixed moment <rho^2 q^2> >= 2^(-7/12)/(216 N^2)",
+    "certificate RHS for A chi >= 2^(-5/4)/243",
+    "two-block sharpness of the N factor in centered W0 bound",
+    "planar mixed-moment upper bound would close existing clipping gate"
+  ],
+  "not_established": [
+    "zero-mode existence",
+    "unconditional fourth moment",
+    "candidate global exterior coercivity",
+    "large-N susceptibility upper target",
+    "planar mixed-moment upper bound",
+    "large-N soft-factorization theorem"
+  ],
+  "numerical_checks": "Algebra only, not BFSS simulation",
+  "publication_status": "conditional/provisional research archive",
+  "human_expert_review": "not supplied",
+  "author": "Yicheng Pan",
+  "branch_summary": "Conditional obstruction to a particular upper certificate; actual susceptibility target remains open.",
+  "dependencies": [
+    "Normalized physical Spin(9)-singlet BFSS zero mode",
+    "Fourth radial moment and compatible form realization",
+    "Exterior theorem only for interpreting the susceptibility upper certificate"
+  ],
+  "verification_scope": "Finite algebra and consistency checks only; not certification of infinite-dimensional hypotheses or a rank-uniform theorem."
+}

@@ -1,0 +1,32 @@
+{
+  "status": "Complete mathematical manuscript and computational review packet recovered",
+  "pdf_bytes": 422362,
+  "pdf_sha256": "f3d49ba633799b8211a6b5d0ce5847f053ed5207979462157698f6b84196dcb6",
+  "historical_pdf_sha256": "f3d49ba633799b8211a6b5d0ce5847f053ed5207979462157698f6b84196dcb6",
+  "pdf_exact_historical_byte_match": true,
+  "manuscript_tex_sha256": "2864fed6917163c0308e2c69508c37ec7c3c820aae34ab1842c76b98716978c0",
+  "manuscript_tex_exact_historical_byte_match": true,
+  "baseline_source_files_historical_hash_matches": 10,
+  "baseline_clean_notes_historical_hash_matches": 10,
+  "baseline_check_scripts_historical_hash_matches": 9,
+  "appendices_K_L_historical_hash_matches": true,
+  "fresh_regression_programs": 11,
+  "all_exit_codes_zero": true,
+  "archive_status": "Newly packaged complete source archive; not the historical ZIP byte stream",
+  "scope": "Recovery verifies identity and finite checks. The candidate analytic proof still needs specialist review.",
+  "packaging_log_path_normalization": {
+    "scope": "Two output-path strings in run logs replaced by package-relative labels. PDF, mathematical sources, code, numerical values and check JSON outputs are unchanged.",
+    "edits": [
+      {
+        "file": "results/check_global_budget.log",
+        "field": "output",
+        "portable_value": "checks/bfss_global_induction_20261005/global_budget_checks.json"
+      },
+      {
+        "file": "results/check_local_schur.log",
+        "field": "written",
+        "portable_value": "checks/bfss_complementary_reserve_20261005/local_schur_checks.json"
+      }
+    ]
+  }
+}

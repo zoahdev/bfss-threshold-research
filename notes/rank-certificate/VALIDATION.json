@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-06",
+  "python_version": "3.12.14",
+  "status": "passed",
+  "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+  "checks": [
+    {
+      "script": "check_rank_certificate.py",
+      "status": "passed",
+      "exit_code": 0,
+      "sha256": "9e434d4e34d30b841768d95b19a53f9f338e35acb3f089092c2d98280abb46e3",
+      "duration_seconds": 0.273,
+      "output_file": "validation_outputs/check_rank_certificate.txt"
+    }
+  ],
+  "numpy_version": "2.3.5",
+  "sympy_version": "1.14.0"
+}

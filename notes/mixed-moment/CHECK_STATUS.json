@@ -1,0 +1,11 @@
+{
+  "publication_status": "conditional/provisional research archive",
+  "human_expert_review": "not supplied",
+  "author": "Yicheng Pan",
+  "branch_summary": "Conditional comparison and restricted Ward obstruction; mixed-moment upper bound unresolved.",
+  "dependencies": [
+    "Rank-certificate zero-mode, realization and moment assumptions",
+    "Quadrupole-clipping/direct primitive domains"
+  ],
+  "verification_scope": "Finite algebra and consistency checks only; not certification of infinite-dimensional hypotheses or a rank-uniform theorem."
+}

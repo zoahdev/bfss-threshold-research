@@ -1,0 +1,197 @@
+{
+  "exact_fast_spin_error_identity": {
+    "samples": 150,
+    "max_relative_error": 6.2428756143798175e-15
+  },
+  "linear_charge_symmetrization": {
+    "raw_minus_sym": 0.08499999999999996,
+    "half_internal_divergence_derivative": 0.085,
+    "absolute_error": 4.163336342344337e-17
+  },
+  "incident_gaussian_divergence": [
+    {
+      "r": 1.0,
+      "dual_squared": 8.45e-05,
+      "field_gaussian_norm_squared": 8.45e-05,
+      "ratio": 1.0
+    },
+    {
+      "r": 1000.0,
+      "dual_squared": 8.449999999999999e-14,
+      "field_gaussian_norm_squared": 8.449999999999999e-14,
+      "ratio": 1.0
+    },
+    {
+      "r": 1000000000000.0,
+      "dual_squared": 8.449999999999999e-41,
+      "field_gaussian_norm_squared": 8.449999999999999e-41,
+      "ratio": 1.0
+    }
+  ],
+  "mixed_root_divergence": [
+    {
+      "triangle": [
+        2.0,
+        1.0,
+        1.0
+      ],
+      "dual_over_field": 0.6666666666666666
+    },
+    {
+      "triangle": [
+        1001.0,
+        1000.0,
+        1.0
+      ],
+      "dual_over_field": 0.5002498750624687
+    },
+    {
+      "triangle": [
+        1000000001.0,
+        1000000000.0,
+        1.0
+      ],
+      "dual_over_field": 0.50000000025
+    },
+    {
+      "triangle": [
+        1000000000001.0,
+        1000000000000.0,
+        1.0
+      ],
+      "dual_over_field": 0.50000000000025
+    }
+  ],
+  "unrestricted_slow_momentum_block_minimization": [
+    {
+      "r": 1.0,
+      "p2_over_r": 0.0,
+      "defect": 0.0,
+      "relative_form_upper": 0.0,
+      "bound_holds": true
+    },
+    {
+      "r": 1.0,
+      "p2_over_r": 1e-09,
+      "defect": 9.99999999e-10,
+      "relative_form_upper": 1e-09,
+      "bound_holds": true
+    },
+    {
+      "r": 1.0,
+      "p2_over_r": 1.0,
+      "defect": 0.5,
+      "relative_form_upper": 1.0,
+      "bound_holds": true
+    },
+    {
+      "r": 1.0,
+      "p2_over_r": 1000.0,
+      "defect": 0.999000999000999,
+      "relative_form_upper": 1000.0,
+      "bound_holds": true
+    },
+    {
+      "r": 1.0,
+      "p2_over_r": 1000000000000.0,
+      "defect": 0.999999999999,
+      "relative_form_upper": 1000000000000.0,
+      "bound_holds": true
+    },
+    {
+      "r": 1000.0,
+      "p2_over_r": 0.0,
+      "defect": 0.0,
+      "relative_form_upper": 0.0,
+      "bound_holds": true
+    },
+    {
+      "r": 1000.0,
+      "p2_over_r": 1e-09,
+      "defect": 9.999999990000002e-16,
+      "relative_form_upper": 1.0000000000000003e-15,
+      "bound_holds": true
+    },
+    {
+      "r": 1000.0,
+      "p2_over_r": 1.0,
+      "defect": 5e-07,
+      "relative_form_upper": 1.0000000000000002e-06,
+      "bound_holds": true
+    },
+    {
+      "r": 1000.0,
+      "p2_over_r": 1000.0,
+      "defect": 9.99000999000999e-07,
+      "relative_form_upper": 0.001,
+      "bound_holds": true
+    },
+    {
+      "r": 1000.0,
+      "p2_over_r": 1000000000000.0,
+      "defect": 9.99999999999e-07,
+      "relative_form_upper": 1000000.0000000001,
+      "bound_holds": true
+    },
+    {
+      "r": 1000000000000.0,
+      "p2_over_r": 0.0,
+      "defect": 0.0,
+      "relative_form_upper": 0.0,
+      "bound_holds": true
+    },
+    {
+      "r": 1000000000000.0,
+      "p2_over_r": 1e-09,
+      "defect": 9.999999990000001e-34,
+      "relative_form_upper": 1e-33,
+      "bound_holds": true
+    },
+    {
+      "r": 1000000000000.0,
+      "p2_over_r": 1.0,
+      "defect": 5e-25,
+      "relative_form_upper": 1e-24,
+      "bound_holds": true
+    },
+    {
+      "r": 1000000000000.0,
+      "p2_over_r": 1000.0,
+      "defect": 9.99000999000999e-25,
+      "relative_form_upper": 1e-21,
+      "bound_holds": true
+    },
+    {
+      "r": 1000000000000.0,
+      "p2_over_r": 1000000000000.0,
+      "defect": 9.999999999989998e-25,
+      "relative_form_upper": 1e-12,
+      "bound_holds": true
+    }
+  ],
+  "negative_controls": {
+    "gauss_square_double_count": {
+      "slow_covector": 0,
+      "retained_J": 0,
+      "frozen_fast_gauss_square": 7,
+      "a_second_full_gauss_square_is_not_reserved": true
+    },
+    "remote_vacuum_loss": [
+      {
+        "remote_frequency": 1.0,
+        "nearest_gap": 1.0,
+        "fixed_fraction_vacuum_loss": 0.01
+      },
+      {
+        "remote_frequency": 1000000.0,
+        "nearest_gap": 1.0,
+        "fixed_fraction_vacuum_loss": 10000.0
+      },
+      {
+        "remote_frequency": 1000000000000.0,
+        "nearest_gap": 1.0,
+        "fixed_fraction_vacuum_loss": 10000000000.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{'tail_potential': '-11/(r**2*log(r))', 'casimir_44': 18, 'support_coefficient': '7/4', 'singlet_hardy': '121/4', 'origin_potential_coefficient': '26*a'}

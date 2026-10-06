@@ -1,0 +1,19 @@
+{
+  "pdf": "manuscript.pdf",
+  "sha256": "daef0d76c50de0a1366c58edcac0eb86e10f628ef3122827b581cf25b007bb8c",
+  "pages": 116,
+  "latex_overfull_boxes": 0,
+  "latex_missing_characters": 0,
+  "unresolved_references": false,
+  "out_of_safe_area_text_spans": [],
+  "replacement_glyphs": 0,
+  "fonts_all_embedded": true,
+  "renderers": [
+    "MuPDF: all pages rendered at 110 dpi",
+    "PDFium: all final pages rendered; earlier full-resolution sample checked",
+    "Poppler: representative page rendered and checked"
+  ],
+  "scope": "Production and transcription checks, not mathematical proof verification. Android device/viewer itself was not directly tested.",
+  "visual_review": "All 116 pages individually inspected at readable size; all 26 changed page images reinspected after final corrections; unchanged page images verified byte-identical.",
+  "byte_reproducibility": "Second complete three-pass XeLaTeX rebuild produced identical PDF SHA-256."
+}

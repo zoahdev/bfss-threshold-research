@@ -1,0 +1,601 @@
+\clearpage
+\section{Differential connections and colored
+forms}\label{g-differential-connections-and-colored-forms}
+
+Technical derivation for review. Equation and subsection numbers in this
+appendix are local to the source derivation. Historical local labels are
+retained, including numbering gaps or nonsequential labels. The
+accompanying source notes retain the original expressions for
+comparison.
+
+\subsection{1. Setting and result}\label{g-setting-and-result}
+
+Fix the rank and block partition. Assume only
+
+% DISPLAY g.1
+% SOURCE alpha_a+alpha_b <= kappa r_ab,     |Y| <= sigma r_*,
+% SOURCE r_* = min_e r_e >= 1,             W_2 = sum_e r_e^-2.
+\begin{gather*}
+\begin{aligned}
+& \alpha _{a}+\alpha _{b} \le  \kappa  r_{ab}, \quad  \vert Y\vert  \le  \sigma  r_{*}, \\
+& r_{*} = \min _{e} r_{e} \ge  1, \quad  W_{2} = \sum _{e} r_{e}^{-2}.
+\end{aligned}\notag
+\end{gather*}
+
+Constants depend on fixed rank and fixed sufficiently small upper bounds
+for \(\kappa\) and \(\sigma\), never on \(r_{\max}/r_{*}\). Work first
+on the compactly supported smooth residual-equivariant core in a
+normal-frame chart. No individual block-singlet assumption is imposed.
+Let
+
+% DISPLAY g.2
+% SOURCE H_exc = sum_e (H_fast,e-E_0,e) >= 0,
+% SOURCE lambda(Z) = sigma^2+r_*^-3,
+% SOURCE E[v] = (lambda H_exc)[v]+W_2[v].                       (1.1)
+\begin{gather*}
+\begin{aligned}
+& H_{\mathrm{exc}} = \sum _{e} (H_{\mathrm{fast},e}-E_{0,e}) \ge  0, \\
+& \lambda (Z) = \sigma ^{2}+r_{*}^{-3}, \\
+& E[v] = (\lambda  H_{\mathrm{exc}})[v]+W_{2}[v].
+\end{aligned}\tag{1.1}
+\end{gather*}
+
+The weights are center-only and the excitation form acts in fast fibers.
+For the INTERNAL part of the completion connection write
+
+% DISPLAY g.3
+% SOURCE beta_j = b_j(Y,A,Z) dot p_F,
+% SOURCE beta = A_s^* B_F p_F,     A_s = B_s G_s^-1/2.
+\begin{gather*}
+\begin{aligned}
+& \beta _{j} = b_{j}(Y,A,Z) \cdot  p_{F}, \\
+& \beta  = A_{s}^{*} B_{F} p_{F}, \quad  A_{s} = B_{s} G_{s}^{-1/2}.
+\end{aligned}\notag
+\end{gather*}
+
+Here \(A_{s}\) is the normalized Gauss slow coefficient, not the
+internal matrix tuple. The internal block of \(G_{s}\) is exactly
+identity. Define the ordered shifted form inherited from the exact
+kinetic identity:
+
+% DISPLAY g.4
+% SOURCE H_I^raw(beta)[v]
+% SOURCE   = sum_j ||(p_j+beta_j)v||^2+(V_I+Y_I)[v].             (1.2)
+\begin{gather*}
+\begin{aligned}
+& H_{I}^{\mathrm{raw}}(\beta )[v] \\
+& = \sum _{j} \Vert (p_{j}+\beta _{j})v\Vert ^{2}+(V_{I}+Y_{I})[v].
+\end{aligned}\tag{1.2}
+\end{gather*}
+
+For every \(\epsilon\) in (0,1),
+
+% DISPLAY g.5
+% SOURCE H_I^raw(beta)[v]
+% SOURCE   >= (1-epsilon)H_I[v]
+% SOURCE        -C_(N,epsilon)(lambda H_exc)[v]
+% SOURCE        -C_(N,epsilon)W_2[v].                         (1.3)
+\begin{gather*}
+\begin{aligned}
+& H_{I}^{\mathrm{raw}}(\beta )[v] \\
+& \ge  (1-\epsilon )H_{I}[v] \\
+& -C_{N,\epsilon}(\lambda  H_{\mathrm{exc}})[v] \\
+& -C_{N,\epsilon}W_{2}[v].
+\end{aligned}\tag{1.3}
+\end{gather*}
+
+This retains the ENTIRE interacting internal form, including its
+original potential and Yukawa terms. There is no \(\epsilon\) times bare
+internal kinetic loss and no \(\epsilon  \alpha _{a}\) mass remainder.
+No internal gap or physical-sector lower-rank Hardy estimate is used.
+
+The proof gives the actual curvature expectation bound
+
+% DISPLAY g.6
+% SOURCE |R_beta[v]| <= C_N(lambda H_exc)[v]+C_N W_2[v].       (1.4)
+\begin{gather*}
+\begin{aligned}
+& \vert R_{\beta}[v]\vert  \le  C_{N}(\lambda  H_{\mathrm{exc}})[v]+C_{N} W_{2}[v].
+\end{aligned}\tag{1.4}
+\end{gather*}
+
+The stronger possible coefficient \(C_{N} r_{*}^{-3}\) with
+\(\sigma ^{2}\) absent is not needed and is not claimed. Fixing
+\(\sigma\) sufficiently small and then taking the exterior radius large
+makes the excitation coefficient as small as desired. On fast-complement
+inputs \(W_{2}\) is also paid by the gap.
+
+\subsection{2. Exact completion}\label{g-exact-completion}
+
+Remove the finite fermionic Gauss source by the separate estimate chosen
+for that source. Its estimate is not part of this algebra. Let
+
+% DISPLAY g.7
+% SOURCE w=G_s^1/2 p_s v,   a=B_F p_F v,   A_s=B_s G_s^-1/2.
+\begin{gather*}
+\begin{aligned}
+& w=G_{s}^{1/2} p_{s} v, \quad  a=B_{F} p_{F} v, \quad  A_{s}=B_{s} G_{s}^{-1/2}.
+\end{aligned}\notag
+\end{gather*}
+
+Exactly, as a first-order form identity,
+
+% DISPLAY g.8
+% SOURCE ||w||^2+||a+A_s w||^2
+% SOURCE   =||w+A_s^*a||^2+||a||^2+||A_s w||^2-||A_s^*a||^2. (2.1)
+\begin{gather*}
+\begin{aligned}
+& \Vert w\Vert ^{2}+\Vert a+A_{s} w\Vert ^{2} \\
+& =\Vert w+A_{s}^{*}a\Vert ^{2}+\Vert a\Vert ^{2}+\Vert A_{s} w\Vert ^{2}-\Vert A_{s}^{*}a\Vert ^{2}.
+\end{aligned}\tag{2.1}
+\end{gather*}
+
+Coefficients multiply the differentiated section in their original
+order. No integration by parts and no coefficient derivative occurs in
+this completion.
+
+The internal components of \(w+A_{s}^{*}a\) are \(p_{j}+\beta _{j}\).
+Its center components use the exact center metric and NORMAL-BUNDLE
+covariant momentum. The center square and \(\Vert A_{s} w\Vert ^{2}\)
+may be retained or discarded as positive forms. They are not additional
+copies of the fast Gauss energy. The negative term is the connection
+norm already bounded in the rootwise lemma.
+
+If the half-density was separated as in the intrinsic geometry note, its
+scalar \(V_{d}\) must still be included separately. The symmetrization
+below neither replaces nor duplicates that calculation.
+
+\subsection{3. Coefficients and differentiated rootwise
+bounds}\label{g-coefficients-and-differentiated-rootwise-bounds}
+
+Use intrinsic notation
+
+% DISPLAY g.9
+% SOURCE F=E^*B_(Z+A),   C=P_N B_A,   N_Y=P_N B_Y,
+% SOURCE I_Y=P_I B_Y,    M=F+L-J_2,   W=I+KK^*.
+\begin{gather*}
+\begin{aligned}
+& F=E^{*}B_{Z+A}, \quad  C=P_{N} B_{A}, \quad  N_{Y}=P_{N} B_{Y}, \\
+& I_{Y}=P_{I} B_{Y}, \quad  M=F+L-J_{2}, \quad  W=I+KK^{*}.
+\end{aligned}\notag
+\end{gather*}
+
+The internal coefficient is, with the common Gauss sign convention,
+
+% DISPLAY g.10
+% SOURCE beta_I=I_Y M^-1 W M^-* (C+N_Y)^*p_F.                   (3.1)
+\begin{gather*}
+\begin{aligned}
+& \beta _{I}=I_{Y} M^{-1} W M^{-*} (C+N_{Y})^{*}p_{F}.
+\end{aligned}\tag{3.1}
+\end{gather*}
+
+All coefficients are real in real trace-orthonormal frames. Normal
+frames depend on centers only; an internal derivative differentiates
+neither \(p_{F}\) nor the frame. The connection commutes with internal
+Clifford matrices and every internal potential-supercharge
+multiplication coefficient.
+
+For a unit internal direction \(h\),
+
+% DISPLAY g.11
+% SOURCE partial_h M=partial_h F,
+% SOURCE partial_h F and partial_h C are pair-block diagonal,
+% SOURCE ||partial_h F_e||+||partial_h C_e|| <= C_N,
+% SOURCE partial_h W=partial_h I_Y=partial_h N_Y=0.             (3.2)
+\begin{gather*}
+\begin{aligned}
+& \partial _{h} M=\partial _{h} F, \\
+& \partial _{h} F \text{ and } \partial _{h} C \text{ are pair-block diagonal }, \\
+& \Vert \partial _{h} F_{e}\Vert +\Vert \partial _{h} C_{e}\Vert  \le  C_{N}, \\
+& \partial _{h} W=\partial _{h} I_{Y}=\partial _{h} N_{Y}=0.
+\end{aligned}\tag{3.2}
+\end{gather*}
+
+Only pairs incident to the differentiated block contribute. The coarse
+\(r_{*}\) estimate below does not convert any kinetic or Yukawa term, so
+it creates no unrelated \(\alpha _{a}/r_{*}\) error.
+
+The cited rootwise connection proof gives
+
+% DISPLAY g.12
+% SOURCE sum_j ||beta_jv||^2 <= C_N E[v].                     (3.3)
+\begin{gather*}
+\begin{aligned}
+& \sum _{j} \Vert \beta _{j} v\Vert ^{2} \le  C_{N} E[v].
+\end{aligned}\tag{3.3}
+\end{gather*}
+
+Its explicit first-order decomposition also gives
+
+% DISPLAY g.13
+% SOURCE sum_(j,k)|| (partial_j beta_k)v ||^2
+% SOURCE    <= C_N [ (r_*^-2 lambda H_exc)[v]
+% SOURCE                  +(r_*^-2 W_2)[v] ].                 (3.4)
+\begin{gather*}
+\begin{aligned}
+& \sum _{j,k}\Vert  (\partial _{j} \beta _{k})v \Vert ^{2} \\
+& \le  C_{N} [ (r_{*}^{-2} \lambda  H_{\mathrm{exc}})[v] \\
+& +(r_{*}^{-2} W_{2})[v] ].
+\end{aligned}\tag{3.4}
+\end{gather*}
+
+Here \(\partial _{j} \beta _{k}\) differentiates its coefficients only.
+The following proves (3.4); it is not inferred from the abstract bound
+(3.3).
+
+\subsubsection{3.1 Proof of the differentiated
+estimate}\label{g-proof-of-the-differentiated-estimate}
+
+In the rootwise lemma put
+
+% DISPLAY g.14
+% SOURCE d_0=F^-1 C^*p_F,    T=(I+F^-1 P^*)^-1,    P=L-J_2.
+\begin{gather*}
+\begin{aligned}
+& d_{0}=F^{-1} C^{*}p_{F}, \quad  T=(I+F^{-1} P^{*})^{-1}, \quad  P=L-J_{2}.
+\end{aligned}\notag
+\end{gather*}
+
+The exact decompositions (5)-(7) and (12)-(15) in that lemma express
+\(\beta\) as finite sums of bounded multiplication matrices times the
+source classes
+
+% DISPLAY g.15
+% SOURCE Y_e p_e/r_e,
+% SOURCE Y_f p_e/r_g,       when (e,f,g) is a triangle,
+% SOURCE Y_f p_e/r_e,       with the input-root denominator,
+\begin{gather*}
+\begin{aligned}
+& Y_{e} p_{e}/r_{e}, \\
+& Y_{f} p_{e}/r_{g}, \quad  \text{ when } (e,f,g) \text{ is a triangle }, \\
+& Y_{f} p_{e}/r_{e}, \quad  \text{ with the input-root denominator },
+\end{aligned}\notag
+\end{gather*}
+
+with bounded root-preserving factors between the displayed operators.
+Non-root-preserving inverse matrices remain bounded LEFT factors. Thus
+no unweighted spectator momentum is hidden.
+
+Differentiate those exact decompositions.
+\(Y, r_{e}, W, K, I_{Y}, C_{Y}, L, J_{2}\) and \(g_{C}\) have zero
+internal derivatives. The differentiated factors satisfy
+
+% DISPLAY g.16
+% SOURCE ||partial_j F_e^-1|| <= C_N/r_e^2,
+% SOURCE ||partial_j(F_e^-1 C_e^*)|| <= C_N/r_e,
+% SOURCE ||partial_j T||+||partial_j T^*|| <= C_N/r_*.
+\begin{gather*}
+\begin{aligned}
+& \Vert \partial _{j} F_{e}^{-1}\Vert  \le  C_{N}/r_{e}^{2}, \\
+& \Vert \partial _{j}(F_{e}^{-1} C_{e}^{*})\Vert  \le  C_{N}/r_{e}, \\
+& \Vert \partial _{j} T\Vert +\Vert \partial _{j} T^{*}\Vert  \le  C_{N}/r_{*}.
+\end{aligned}\notag
+\end{gather*}
+
+The inverse derivative formula and (3.2) prove these inequalities. All
+other bounded left factors in the displayed decompositions consequently
+have derivative at most \(C_{N}/r_{*}\). Differentiating
+\(F_{e}^{-1} C_{e}^{*}\) replaces its \(O(\kappa )\) factor by
+\(O(1/r_{e})\); use the source bound with its optional \(\kappa\) gain
+omitted.
+
+Every resulting term is therefore the SAME source class with one extra
+factor at most \(C_{N}/r_{*}\). Applying the proved same-root and
+mixed-root inequalities (2)-(4) of the cited lemma, and finite-sum
+Cauchy, proves (3.4). The argument is all-vector, does not bound
+internal momenta, and does not require a fast projection to preserve
+tube support.
+
+\subsubsection{3.2 Coarse pointwise derivatives for
+divergence}\label{g-coarse-pointwise-derivatives-for-divergence}
+
+Only for the scalar divergence correction we need
+
+% DISPLAY g.17
+% SOURCE |b| <= C_N sigma(kappa+sigma),
+% SOURCE |partial_Y b| <= C_N/r_*,
+% SOURCE |partial_A partial_Y b|+|partial_Y^2 b| <= C_N/r_*^2. (3.5)
+\begin{gather*}
+\begin{aligned}
+& \vert b\vert  \le  C_{N} \sigma (\kappa +\sigma ), \\
+& \vert \partial _{Y} b\vert  \le  C_{N}/r_{*}, \\
+& \vert \partial _{A} \partial _{Y} b\vert +\vert \partial _{Y}^{2} b\vert  \le  C_{N}/r_{*}^{2}.
+\end{aligned}\tag{3.5}
+\end{gather*}
+
+Indeed the internal normalized slow column is \(O(\sigma )\), the full
+fast Gauss column is \(O(\kappa +\sigma )\), and
+\(\Vert M^{-1}\Vert \le C_{N}/r_{*}\). First derivatives of \(M, I_{Y}\)
+and \(C+N_{Y}\) are \(O(1)\); second derivatives of \(M\) are
+\(O(1/r_{*})\), coming from \(J_{2}\). First and second derivatives of
+\(W\) and its positive square root are \(O(1/r_{*})\) and
+\(O(1/r_{*}^{2})\). Differentiate the product \(B_{I}^{*}B_{F}\) using
+the inverse derivative formula. The potentially large \(C\) is always
+kept inside \(F^{-1} C^{*}\) or the bounded full fast column, rather
+than estimated by \(\kappa  r_{\max}\). This proves (3.5); fixed
+coordinate dimensions absorb component sums.
+
+\subsection{4. Exact self-adjoint
+symmetrization}\label{g-exact-self-adjoint-symmetrization}
+
+In flat fast-fiber measure, with \(p_{F}=-i \partial _{Y}\), put
+
+% DISPLAY g.18
+% SOURCE d_j=div_F b_j,
+% SOURCE beta_hat_j=(beta_j+beta_j^*)/2
+% SOURCE           =b_j dot p_F-(i/2)d_j,
+% SOURCE P_j=p_j+beta_hat_j,
+% SOURCE X_j=partial_j+b_j dot partial_Y.
+\begin{gather*}
+\begin{aligned}
+& d_{j}=\operatorname{div} _{F} b_{j}, \\
+& \widehat{\beta}_{j}=(\beta _{j}+\beta _{j}^{*})/2 \\
+& =b_{j} \cdot  p_{F}-(i/2)d_{j}, \\
+& P_{j}=p_{j}+\widehat{\beta}_{j}, \\
+& X_{j}=\partial _{j}+b_{j} \cdot  \partial _{Y}.
+\end{aligned}\notag
+\end{gather*}
+
+Then \(\beta _{j}=\widehat{\beta}_{j}+(i/2)d_{j}\) and
+\(P_{j}=-i(X_{j}+d_{j}/2)\) is symmetric on the core. Direct integration
+by parts gives the EXACT identity
+
+% DISPLAY g.19
+% SOURCE ||(p_j+beta_j)v||^2
+% SOURCE   =||P_jv||^2
+% SOURCE       + integral [(1/2)X_j d_j+(1/4)d_j^2]|v|^2.     (4.1)
+\begin{gather*}
+\begin{aligned}
+& \Vert (p_{j}+\beta _{j})v\Vert ^{2} \\
+& =\Vert P_{j} v\Vert ^{2} \\
+& + \int  [(1/2)X_{j} d_{j}+(1/4)d_{j}^{2}]\vert v\vert ^{2}.
+\end{aligned}\tag{4.1}
+\end{gather*}
+
+The cross term is \((1/2) \int  X_{j}(d_{j})\vert v\vert ^{2}\); div
+\(X_{j}=d_{j}\). Thus simply treating \(b \cdot  p_{F}\) as symmetric
+would miss a scalar correction.
+
+By (3.5),
+
+% DISPLAY g.20
+% SOURCE |d_j| <= C_N/r_*,
+% SOURCE |partial_A d_j|+|partial_Y d_j| <= C_N/r_*^2,
+% SOURCE sum_j |(1/2)X_j d_j+(1/4)d_j^2| <= C_N W_2.           (4.2)
+\begin{gather*}
+\begin{aligned}
+& \vert d_{j}\vert  \le  C_{N}/r_{*}, \\
+& \vert \partial _{A} d_{j}\vert +\vert \partial _{Y} d_{j}\vert  \le  C_{N}/r_{*}^{2}, \\
+& \sum _{j} \vert (1/2)X_{j} d_{j}+(1/4)d_{j}^{2}\vert  \le  C_{N} W_{2}.
+\end{aligned}\tag{4.2}
+\end{gather*}
+
+Hence the full correction is inverse-square multiplication. Also
+
+% DISPLAY g.21
+% SOURCE sum_j ||beta_hat_jv||^2 <= C_N E[v],                  (4.3)
+\begin{gather*}
+\begin{aligned}
+& \sum _{j} \Vert \widehat{\beta}_{j} v\Vert ^{2} \le  C_{N} E[v],
+\end{aligned}\tag{4.3}
+\end{gather*}
+
+and (3.4) holds with \(\widehat{\beta}\) replacing \(\beta\): its extra
+multiplication derivative is \(O(r_{*}^{-2})\), whose squared norm is
+bounded by \(r_{*}^{-2} W_{2}\).
+
+\subsection{5. Actual curvature
+expectation}\label{g-actual-curvature-expectation}
+
+Define the symmetric curvature operator
+
+% DISPLAY g.22
+% SOURCE F_jk=i[P_j,P_k]
+% SOURCE     =partial_j beta_hat_k-partial_k beta_hat_j
+% SOURCE                      +i[beta_hat_j,beta_hat_k].       (5.1)
+\begin{gather*}
+\begin{aligned}
+& F_{jk}=i[P_{j},P_{k}] \\
+& =\partial _{j} \widehat{\beta}_{k}-\partial _{k} \widehat{\beta}_{j} \\
+& +i[\widehat{\beta}_{j},\widehat{\beta}_{k}].
+\end{aligned}\tag{5.1}
+\end{gather*}
+
+Equivalently \(F_{jk}\) is the symmetrized momentum of the fast vector
+field
+
+% DISPLAY g.23
+% SOURCE partial_j b_k-partial_k b_j
+% SOURCE   +(b_j dot partial_Y)b_k-(b_k dot partial_Y)b_j.
+\begin{gather*}
+\begin{aligned}
+& \partial _{j} b_{k}-\partial _{k} b_{j} \\
+& +(b_{j} \cdot  \partial _{Y})b_{k}-(b_{k} \cdot  \partial _{Y})b_{j}.
+\end{aligned}\notag
+\end{gather*}
+
+It is first order, not bounded multiplication.
+
+The charge identity contracts (5.1) with fixed bounded internal-Clifford
+matrices. If \(L\) is any such matrix, it commutes with
+\(\widehat{\beta}\) and its coefficient derivatives. Symmetry gives
+exactly
+
+% DISPLAY g.24
+% SOURCE |<v,L i[beta_hat_j,beta_hat_k]v>|
+% SOURCE    <=2||L|| ||beta_hat_jv|| ||beta_hat_kv||.           (5.2)
+\begin{gather*}
+\begin{aligned}
+& \vert \langle v,L i[\widehat{\beta}_{j},\widehat{\beta}_{k}]v\rangle \vert \\
+& \le 2\Vert L\Vert  \Vert \widehat{\beta}_{j} v\Vert  \Vert \widehat{\beta}_{k} v\Vert .
+\end{aligned}\tag{5.2}
+\end{gather*}
+
+Thus (4.3) pays all beta-beta curvature terms. There is no need to bound
+the norm of a fast-differentiated curvature symbol.
+
+For the derivative part, (3.4) and Cauchy give
+
+% DISPLAY g.25
+% SOURCE |<v,L(partial_j beta_hat_k)v>|
+% SOURCE    <= C_N ||r_*^-1 v|| E[v]^1/2
+% SOURCE    <= C_N E[v],                                     (5.3)
+\begin{gather*}
+\begin{aligned}
+& \vert \langle v,L(\partial _{j} \widehat{\beta}_{k})v\rangle \vert \\
+& \le  C_{N} \Vert r_{*}^{-1} v\Vert  E[v]^{1/2} \\
+& \le  C_{N} E[v],
+\end{aligned}\tag{5.3}
+\end{gather*}
+
+since \(\Vert r_{*}^{-1}v\Vert ^{2}\le W_{2}[v]\le E[v]\). To justify
+the first inequality with varying centers, apply the coefficient
+derivative bound at each center and then apply weighted Cauchy over
+centers. Summing the finitely many Clifford components proves (1.4).
+
+This is an all-vector curvature EXPECTATION estimate. It derives the
+extra coefficient derivative from the actual rootwise expansion, not
+from a generic relative-norm assertion. It makes no oscillator-degree
+cutoff and loses no internal kinetic energy.
+
+\subsection{6. Averaged sixteen-supercharge
+comparison}\label{g-averaged-sixteen-supercharge-comparison}
+
+Normalize the internal charges by
+
+% DISPLAY g.26
+% SOURCE H_I[v]=(1/16)sum_alpha ||Q_alpha v||^2,
+% SOURCE Q_alpha=sum_j c_(alpha,j)p_j+V_alpha(A).
+\begin{gather*}
+\begin{aligned}
+& H_{I}[v]=(1/16)\sum _{\alpha} \Vert Q_{\alpha} v\Vert ^{2}, \\
+& Q_{\alpha}=\sum _{j} c_{\alpha ,j}p_{j}+V_{\alpha}(A).
+\end{aligned}\notag
+\end{gather*}
+
+The \(c_{\alpha ,j}\) are fixed internal Clifford matrices. The ordinary
+colored Gauss terms cancel in the spinor average. An individual
+\(Q_{\alpha}^{2}\) must not be identified with \(H_{I}\) on the colored
+core.
+
+Replace \(p_{j}\) by \(P_{j}\):
+
+% DISPLAY g.27
+% SOURCE Q_alpha^beta=Q_alpha+C_alpha(beta_hat),
+% SOURCE C_alpha(beta_hat)=sum_j c_(alpha,j) beta_hat_j.
+\begin{gather*}
+\begin{aligned}
+& Q_{\alpha}^{\beta}=Q_{\alpha}+C_{\alpha}(\widehat{\beta}), \\
+& C_{\alpha}(\widehat{\beta})=\sum _{j} c_{\alpha ,j} \widehat{\beta}_{j}.
+\end{aligned}\notag
+\end{gather*}
+
+The exact averaged expansion is
+
+% DISPLAY g.28
+% SOURCE (1/16)sum_alpha ||Q_alpha^beta v||^2
+% SOURCE    =sum_j||P_jv||^2+(V_I+Y_I)[v]+R_beta[v].           (6.1)
+\begin{gather*}
+\begin{aligned}
+& (1/16)\sum _{\alpha} \Vert Q_{\alpha}^{\beta} v\Vert ^{2} \\
+& =\sum _{j}\Vert P_{j} v\Vert ^{2}+(V_{I}+Y_{I})[v]+R_{\beta}[v].
+\end{aligned}\tag{6.1}
+\end{gather*}
+
+Here \(R_{\beta}\) is a finite-Clifford linear contraction of
+\(F_{jk}\). The symmetric momentum products give the kinetic form,
+antisymmetric momentum products give curvature, and
+
+% DISPLAY g.29
+% SOURCE [P_j,V_alpha]=[p_j,V_alpha]
+\begin{gather*}
+\begin{aligned}
+& [P_{j},V_{\alpha}]=[p_{j},V_{\alpha}]
+\end{aligned}\notag
+\end{gather*}
+
+because \(\widehat{\beta}\) is fast-bosonic with scalar bosonic
+coefficients. The original potential and Yukawa terms are consequently
+unchanged. Spinor-averaged cancellation of the original Gauss term is
+unchanged too.
+
+Finite-dimensional Clifford bounds and (4.3) imply
+
+% DISPLAY g.30
+% SOURCE (1/16)sum_alpha ||C_alpha(beta_hat)v||^2 <= C_N E[v].  (6.2)
+\begin{gather*}
+\begin{aligned}
+& (1/16)\sum _{\alpha} \Vert C_{\alpha}(\widehat{\beta})v\Vert ^{2} \le  C_{N} E[v].
+\end{aligned}\tag{6.2}
+\end{gather*}
+
+Young\textquotesingle s inequality on the COMPLETE charge stack now
+gives
+
+% DISPLAY g.31
+% SOURCE (1/16)sum_alpha ||Q_alpha^beta v||^2
+% SOURCE    >=(1-epsilon)H_I[v]-C_N epsilon^-1 E[v].           (6.3)
+\begin{gather*}
+\begin{aligned}
+& (1/16)\sum _{\alpha} \Vert Q_{\alpha}^{\beta} v\Vert ^{2} \\
+& \ge (1-\epsilon )H_{I}[v]-C_{N} \epsilon ^{-1} E[v].
+\end{aligned}\tag{6.3}
+\end{gather*}
+
+Subtract curvature using (1.4), then apply (4.1)-(4.2). This proves
+(1.3). The loss is \(\epsilon  H_{I}\), not \(\epsilon  t_{I}\); that is
+why no large unrelated internal Yukawa mass is introduced.
+
+\subsection{7. Normal-bundle center connection and chart
+changes}\label{g-normal-bundle-center-connection-and-chart-changes}
+
+The normal fast bundle \(N_{Z}\) depends on centers alone. Its
+orthogonal connection is already in \(p_{C}\) in the exact intrinsic
+formula. In a local frame its center generator may contain unbounded
+\(Y \partial _{Y}\) operators. This argument never estimates those by
+\(H_{\mathrm{exc}}\).
+
+Internal derivatives act in a center-dependent but A-independent frame,
+so (3.2) has no frame derivative. The internal supercharges contain no
+center momentum. Neither center normal-bundle curvature nor mixed
+center/internal curvature occurs in the INTERNAL square (6.1).
+
+The completed center square remains a genuine positive covariant
+derivative form. Any subsequent center Hardy argument must use that
+actual connection with its domain justified. It may not replace its
+unbounded normal-frame generator by a bounded vacuum Berry coefficient.
+That separate comparison is not claimed here.
+
+All identities intertwine under center-dependent orthogonal changes of
+fast normal frame and residual gauge changes. \(\beta\) is an actual
+vector field on the fast fiber, \(\widehat{\beta}\) is its half-density
+action, and curvature is its commutator. The internal comparison is
+therefore intrinsic on a fixed projector branch.
+
+\subsection{8. Parameter order and exact
+scope}\label{g-parameter-order-and-exact-scope}
+
+Choose the requested internal loss \(\epsilon\) first, then \(\sigma\)
+so \(C_{N,\epsilon}\sigma ^{2}\) fits the available fast reserve, then
+\(r_{*}\) large enough for \(C_{N,\epsilon}r_{*}^{-3}\) and the
+inverse-square multiplier.
+
+On the global fast complement \(H_{\mathrm{exc}}\ge c_{N} r_{*}\) and
+\(W_{2}\le m_{N} r_{*}^{-2}\), so
+
+% DISPLAY g.32
+% SOURCE W_2[v] <= C_N (r_*^-3 H_exc)[v].
+\begin{gather*}
+\begin{aligned}
+& W_{2}[v] \le  C_{N} (r_{*}^{-3} H_{\mathrm{exc}})[v].
+\end{aligned}\notag
+\end{gather*}
+
+This final payment is restricted to complementary inputs; (1.3) itself
+holds on arbitrary colored inputs. No internal Hamiltonian is inverted.
+
+Still separate are the finite spin source, density multiplier, signed
+fast kinetic remainder, potential/Yukawa remainders, and branch/cutoff
+compatibility. The present lemma closes the complete internal-form and
+curvature step only.

@@ -1,0 +1,2 @@
+grade 2, dimension 36: Frobenius and Bianchi verified exactly
+grade 3, dimension 84: Frobenius and Bianchi verified exactly

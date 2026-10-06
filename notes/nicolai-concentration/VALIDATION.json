@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-06",
+  "python_version": "3.12.14",
+  "status": "passed",
+  "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+  "checks": [
+    {
+      "script": "check_normalizations.py",
+      "status": "passed",
+      "exit_code": 0,
+      "sha256": "548868c37a5af9a28f592626ca6075059a769a25207165bc1e5fe648c1eaaab7",
+      "duration_seconds": 0.525,
+      "output_file": "validation_outputs/check_normalizations.txt"
+    }
+  ],
+  "numpy_version": "2.3.5",
+  "sympy_version": "1.14.0"
+}

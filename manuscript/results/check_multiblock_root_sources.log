@@ -1,0 +1,154 @@
+{
+  "vacuum_jets": [
+    {
+      "n": 2,
+      "m": 1,
+      "bosonic_first_jet_error": 1.0243437934106e-09,
+      "fermionic_projector_first_jet_error": 1.7845494588643297e-09,
+      "vacuum_metric_relative_error": 9.090197997810362e-10,
+      "spin_compression_first_jet_norm": 4.478515905612138e-11
+    },
+    {
+      "n": 2,
+      "m": 2,
+      "bosonic_first_jet_error": 3.254134274733545e-09,
+      "fermionic_projector_first_jet_error": 6.505767634905494e-09,
+      "vacuum_metric_relative_error": 1.622367320027196e-09,
+      "spin_compression_first_jet_norm": 8.051397098197734e-10
+    },
+    {
+      "n": 3,
+      "m": 1,
+      "bosonic_first_jet_error": 9.290145479557972e-10,
+      "fermionic_projector_first_jet_error": 1.3572283136888417e-09,
+      "vacuum_metric_relative_error": 6.742971682251032e-10,
+      "spin_compression_first_jet_norm": 2.75907009821274e-10
+    },
+    {
+      "n": 3,
+      "m": 2,
+      "bosonic_first_jet_error": 3.3801675628663725e-09,
+      "fermionic_projector_first_jet_error": 5.316989930827667e-09,
+      "vacuum_metric_relative_error": 1.1585138508162086e-09,
+      "spin_compression_first_jet_norm": 7.222088597629156e-10
+    }
+  ],
+  "sparse_fock_checks": [
+    {
+      "r": [
+        1.0,
+        1.3,
+        1.7
+      ],
+      "graph_energy_error": 0.0,
+      "homological_inverse_error": 1.9263050578627748e-16,
+      "dressing_norm_identity_error": 3.3306690738754696e-16,
+      "gram_cancellation_error": 1.8109035972105892e-16
+    },
+    {
+      "r": [
+        1.0,
+        1000.0,
+        1000.2
+      ],
+      "graph_energy_error": 0.0,
+      "homological_inverse_error": 2.293688114992578e-16,
+      "dressing_norm_identity_error": 5.551115123125783e-17,
+      "gram_cancellation_error": 1.8089173517314158e-16
+    },
+    {
+      "r": [
+        1.0,
+        1000000000.0,
+        1000000000.2
+      ],
+      "graph_energy_error": 0.0,
+      "homological_inverse_error": 1.9201865509571152e-16,
+      "dressing_norm_identity_error": 1.1102230246251565e-16,
+      "gram_cancellation_error": 1.8099141952800684e-16
+    }
+  ],
+  "hierarchical_weights": [
+    {
+      "ratio": 1,
+      "r": [
+        1.0,
+        0.7,
+        1.2206555615733703
+      ],
+      "orbital_weight_ratio": 0.5972069300781297,
+      "far_vertex_yukawa_ratio": 0.2396722192133149,
+      "active_derivative_to_W5_ratio": 1.8317059341145765,
+      "coarse_wrong_far_alpha_rmin_minus3": 0.004081632653061226
+    },
+    {
+      "ratio": 3,
+      "r": [
+        1.0,
+        2.118962010041709,
+        3.0805843601498726
+      ],
+      "orbital_weight_ratio": 0.6945669366792738,
+      "far_vertex_yukawa_ratio": 0.3417930738013381,
+      "active_derivative_to_W5_ratio": 0.6732355524423035,
+      "coarse_wrong_far_alpha_rmin_minus3": 0.004237924020083418
+    },
+    {
+      "ratio": 1000.0,
+      "r": [
+        1.0,
+        999.0002452452152,
+        1000.0002449999699
+      ],
+      "orbital_weight_ratio": 0.6667777683616141,
+      "far_vertex_yukawa_ratio": 0.49950000018387264,
+      "active_derivative_to_W5_ratio": 0.0005020038844703171,
+      "coarse_wrong_far_alpha_rmin_minus3": 1.9980004904904305
+    },
+    {
+      "ratio": 1000000.0,
+      "r": [
+        1.0,
+        999999.0000002449,
+        1000000.0000002449
+      ],
+      "orbital_weight_ratio": 0.6666667777777686,
+      "far_vertex_yukawa_ratio": 0.49999949999999993,
+      "active_derivative_to_W5_ratio": 5.000020000038775e-07,
+      "coarse_wrong_far_alpha_rmin_minus3": 1999.9980000004898
+    },
+    {
+      "ratio": 1000000000.0,
+      "r": [
+        1.0,
+        999999999.0,
+        1000000000.0
+      ],
+      "orbital_weight_ratio": 0.6666666667777777,
+      "far_vertex_yukawa_ratio": 0.4999999995,
+      "active_derivative_to_W5_ratio": 5.000000020000001e-10,
+      "coarse_wrong_far_alpha_rmin_minus3": 1999999.9980000001
+    },
+    {
+      "ratio": 1000000000000.0,
+      "r": [
+        1.0,
+        999999999999.0,
+        1000000000000.0
+      ],
+      "orbital_weight_ratio": 0.6666666666667778,
+      "far_vertex_yukawa_ratio": 0.49999999999949996,
+      "active_derivative_to_W5_ratio": 5.000000000020002e-13,
+      "coarse_wrong_far_alpha_rmin_minus3": 1999999999.9980001
+    }
+  ],
+  "spectator_negative_control": {
+    "active_r": 1000000.0,
+    "spectator_r": 1.0,
+    "m_g": 1e-18,
+    "active_d_g": 1e-30,
+    "spectator_derivative_weight": 1e-18,
+    "omitted_term_to_active_derivative": 1000000000000.0
+  },
+  "scope": "Finite regressions of vacuum jets, oscillator denominators and graph weights; not the missing full BFSS nonzero-internal H1/H2 inventory."
+}

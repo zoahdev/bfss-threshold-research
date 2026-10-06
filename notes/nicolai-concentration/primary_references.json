@@ -1,0 +1,42 @@
+{
+  "checked_as_of": "2026-10-06",
+  "scope": "Targeted primary-source applicability search; not an exhaustive theorem-absence or novelty claim. Bibliographic references and links are preserved; third-party paper files are not reproduced.",
+  "references": [
+    {
+      "authors": "Olaf Lechtenfeld; Hermann Nicolai",
+      "title": "A perturbative expansion scheme for supermembrane and matrix theory",
+      "arxiv": "2109.00346v3",
+      "url": "https://arxiv.org/html/2109.00346v3",
+      "sections": "2.3; 3.2–3.3; 4",
+      "relevance": "BFSS Nicolai coupling-flow map; path-dependent Jacobian convergence condition; no established positive ground-state transport or inverse-derivative control"
+    },
+    {
+      "authors": "Alice Guionnet; Edouard Maurel-Segala",
+      "title": "Second order asymptotics for matrix models",
+      "arxiv": "math/0601040",
+      "url": "https://arxiv.org/abs/math/0601040",
+      "relevance": "Convex, weakly perturbed Gaussian matrix-integral trace fluctuations; hypotheses not furnished by BFSS"
+    },
+    {
+      "authors": "Alice Guionnet; Dimitri Shlyakhtenko",
+      "title": "Free diffusions and Matrix models with strictly convex interaction",
+      "arxiv": "math/0701787",
+      "url": "https://arxiv.org/abs/math/0701787",
+      "relevance": "Convexity-dependent free diffusion and matrix model results"
+    },
+    {
+      "authors": "Shota Komatsu; Adrien Martina; Joao Penedones; Noe Suchel; Antoine Vuignier; Xiang Zhao",
+      "title": "Gravity from quantum mechanics of finite matrices",
+      "arxiv": "2401.16471",
+      "url": "https://arxiv.org/html/2401.16471",
+      "relevance": "Strong-coupling BMN expansion at fixed N; no joint large-rank and zero-mass quadrupole variance theorem supplied"
+    },
+    {
+      "title": "High-Precision Bootstrap of Multimatrix Quantum Mechanics",
+      "publication": "Physical Review Letters 136, 181603 (2026)",
+      "doi": "10.1103/cyq8-4sd7",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/cyq8-4sd7",
+      "relevance": "Bosonic infinite-N calculation using large-N factorization, not a proof of the finite-N connected fluctuation rate"
+    }
+  ]
+}

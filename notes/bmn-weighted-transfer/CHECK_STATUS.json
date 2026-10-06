@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-06",
+  "scope": "Separate BMN to BFSS branch-selection and weighted-transfer research supplement",
+  "finite_checks": "7 groups passed",
+  "established_conditionally_on_standard_realizations": [
+    "Global BMN complement gap at least m/12",
+    "SO(3) x SO(6) singlet complement gap at least m/3",
+    "Quadratic deformed energy form and projected BFSS state error",
+    "Qualitative fixed-rank convergence of projected BFSS zero modes without radial moments",
+    "Intrinsic compact-localization selector under a one-dimensional BFSS kernel",
+    "Weighted comparison inequality when both required moments are supplied",
+    "Failure of the O(1)-only comparison and finite-mass certificates to share a sufficient mass window"
+  ],
+  "not_established": [
+    "Existence or uniqueness of a physical BFSS zero mode",
+    "Validity of the preceding candidate exterior BFSS moment theorem",
+    "Uniform-in-rank or uniform-small-mass BMN radial moments",
+    "Actual weighted convergence of the projected BMN branch",
+    "The requested large-rank BFSS quadrupole upper bound"
+  ],
+  "abstract_counterexample_scope": "Tests spectral-overlap inference only; it is not the BMN Hamiltonian",
+  "publication_status": "conditional/provisional research archive",
+  "human_expert_review": "not supplied",
+  "author": "Yicheng Pan",
+  "branch_summary": "Latest conditional fixed-rank branch-selection result; weighted convergence and large-rank upper bound remain open.",
+  "dependencies": [
+    "Physical BFSS zero mode and standard supersymmetric realizations",
+    "Uniqueness only for intrinsic localized selector",
+    "Uniform p-th moments or tail control for weighted comparison"
+  ],
+  "verification_scope": "Finite algebra and consistency checks only; not certification of infinite-dimensional hypotheses or a rank-uniform theorem."
+}

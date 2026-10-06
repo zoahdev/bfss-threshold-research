@@ -1,0 +1,49 @@
+{
+  "cases": 60,
+  "parameters": {
+    "kappa": 0.05,
+    "L": 3.0
+  },
+  "max_partition_error": 1.1102230246251565e-16,
+  "max_relative_IMS_error": 4.0013826657132124e-16,
+  "max_tree_weight_error": 0.0,
+  "max_tree_gradient_error": 7.105861038469996e-15,
+  "structured_cases": [
+    {
+      "N": 4,
+      "nonzero_leaves": 4,
+      "partition_error": 0.0,
+      "IMS_error": 1.4210854715202004e-14,
+      "IMS_relative_error": 1.5063299832561174e-16,
+      "tree_weight_error": 0.0,
+      "tree_gradient_error": 3.469446951953614e-18
+    },
+    {
+      "N": 4,
+      "nonzero_leaves": 3,
+      "partition_error": 0.0,
+      "IMS_error": 9.094947017729282e-13,
+      "IMS_relative_error": 2.321432809528532e-16,
+      "tree_weight_error": 0.0,
+      "tree_gradient_error": 7.105861038469996e-15
+    },
+    {
+      "N": 4,
+      "nonzero_leaves": 2,
+      "partition_error": 0.0,
+      "IMS_error": 0.0,
+      "IMS_relative_error": 0.0,
+      "tree_weight_error": 0.0,
+      "tree_gradient_error": 0.0
+    },
+    {
+      "N": 5,
+      "nonzero_leaves": 4,
+      "partition_error": 0.0,
+      "IMS_error": 1.4210854715202004e-14,
+      "IMS_relative_error": 1.519886920212619e-16,
+      "tree_weight_error": 0.0,
+      "tree_gradient_error": 6.28041774997159e-16
+    }
+  ]
+}

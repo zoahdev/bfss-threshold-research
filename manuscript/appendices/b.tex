@@ -1,0 +1,628 @@
+\clearpage
+\section{Frozen fast energy defect}\label{b-frozen-fast-energy-defect}
+
+Technical derivation for review. Equation and subsection numbers in this
+appendix are local to the source derivation. Historical local labels are
+retained, including numbering gaps or nonsequential labels. The
+accompanying source notes retain the original expressions for
+comparison.
+
+This appendix writes the frozen energy in physical units. Multiply
+\(E_{0}\) by \(2/R_{\mathrm{BFSS}}\) to use the kinetic-one form of the
+main text; set \(\ell =1\) after the stated fixed dilation.
+
+\subsection{1. Statement and
+normalization}\label{b-statement-and-normalization}
+
+Let n,m be positive integers, \(d=nm\), and let \(A_{i}\) and
+\(B_{i}, i=1,\ldots ,9\), be Hermitian internal matrices of the two
+blocks. Rotate the spatial coordinates so that their center difference
+is \(b=r e_{9}, r>0\). On \(\operatorname{Hom} (C^{m},C^{n})\), with its
+Hilbert--Schmidt metric, put
+
+% DISPLAY b.1
+% SOURCE T_i Z=A_i Z−Z B_i,
+% SOURCE Q_i=r δ_i9 I_d+T_i,
+% SOURCE H=sum_i Q_i²,     C_ij=[Q_i,Q_j]=[T_i,T_j].
+\begin{gather*}
+\begin{aligned}
+& T_{i} Z=A_{i} Z-Z B_{i}, \\
+& Q_{i}=r \delta _{i9} I_{d}+T_{i}, \\
+& H=\sum _{i} Q_{i}^{2}, \quad  C_{ij}=[Q_{i},Q_{j}]=[T_{i},T_{j}].
+\end{aligned}\notag
+\end{gather*}
+
+Assume each \(\Vert T_{i}\Vert _{\mathrm{op}}\le r/100\). A
+coordinate-invariant sufficient condition is
+
+% DISPLAY b.2
+% SOURCE (sum_i ||A_i||F²)^(1/2)+(sum_i ||B_i||F²)^(1/2)≤r/100.
+\begin{gather*}
+\begin{aligned}
+& (\sum _{i} \Vert A_{i}\Vert _{F}^{2})^{1/2}+(\sum _{i} \Vert B_{i}\Vert _{F}^{2})^{1/2}\le r/100.
+\end{aligned}\notag
+\end{gather*}
+
+Thus it suffices that each endpoint radius is at most r/200. No relation
+to any unrelated pair\textquotesingle s separation is imposed. Each pair
+may use its own orthonormal spatial frame; a common global axial
+direction for all pairs is unnecessary. All traces below are finite
+ordinary, unnormalized traces.
+
+On the slice \(Z_{9}=0\) define 8-by-8 matrices with d-by-d blocks:
+
+% DISPLAY b.3
+% SOURCE G_ij=δ_ij I_d+Q_i Q_9^(-2) Q_j,
+% SOURCE K_ij=δ_ij H−Q_i Q_j+2 C_ij,       i,j≤8.
+\begin{gather*}
+\begin{aligned}
+& G_{ij}= \delta _{ij} I_{d}+Q_{i} Q_{9}^{-2} Q_{j}, \\
+& K_{ij}= \delta _{ij} H-Q_{i} Q_{j}+2 C_{ij}, \quad  i,j\le 8.
+\end{aligned}\notag
+\end{gather*}
+
+The kinetic-aware bosonic frequency matrix is \(B=G^{1/2} K G^{1/2}\).
+For Hermitian Spin(9) matrices satisfying
+\(\{ \Gamma _{i}, \Gamma _{j}\}=2 \delta _{ij} I_{16}\) put
+
+% DISPLAY b.4
+% SOURCE D=sum_i Γ_i⊗Q_i.
+\begin{gather*}
+\begin{aligned}
+& D=\sum _{i} \Gamma _{i} \otimes  Q_{i}.
+\end{aligned}\notag
+\end{gather*}
+
+Both \(K\) and \(B\) are positive, and \(D\) has precisely 8d negative
+and 8d positive eigenvalues. The frozen ground energy, in physical
+units, is
+
+% DISPLAY b.5
+% SOURCE E_0=(R/ell³)[Tr_(8d) sqrt(B)−(1/2)Tr_(16d)|D|].
+\begin{gather*}
+\begin{aligned}
+& E_{0}=(R/\ell ^{3})[\operatorname{Tr} _{8d} \sqrt{B}-(1/2)\operatorname{Tr} _{16d}\vert D\vert ].
+\end{aligned}\notag
+\end{gather*}
+
+The following explicit, deliberately non-sharp constant is valid for
+every n,m:
+
+% DISPLAY b.6
+% SOURCE |E_0| ≤ 150002 (R/ell³) r^(-3)
+% SOURCE               sum_(i<j)||[T_i,T_j]||F².                    (1)
+\begin{gather*}
+\begin{aligned}
+& \vert E_{0}\vert  \le  150002 (R/\ell ^{3}) r^{-3} \\
+& \sum _{i<j}\Vert [T_{i},T_{j}]\Vert _{F}^{2}.
+\end{aligned}\tag{1}
+\end{gather*}
+
+The constant in (1) is independent of \(d\); endpoint weights below
+carry the finite-rank dependence. The proof neither diagonalizes
+internal matrices nor invokes an internal Hamiltonian gap, internal
+eigenvalue gap, regularity of the commuting variety, or a
+nearest-commuting-tuple estimate.
+
+\subsection{2. Why these are the correct frozen
+matrices}\label{b-why-these-are-the-correct-frozen-matrices}
+
+The eliminated off-block Gauss principal equation is
+
+% DISPLAY b.7
+% SOURCE Q_9 p_9+sum_(i≤8)Q_i p_i=0.
+\begin{gather*}
+\begin{aligned}
+& Q_{9} p_{9}+\sum _{i\le 8}Q_{i} p_{i}=0.
+\end{aligned}\notag
+\end{gather*}
+
+Its positive kinetic square gives \(G\) exactly. It must not be dropped
+or treated as a separate small bounded perturbation.
+
+For
+\(V(X)=(R/(2\ell ^{6}))\sum _{i<j}\Vert [X_{i},X_{j}]\Vert _{F}^{2}\),
+the quadratic part in one off-block pair is \((R/\ell ^{6}) Z^{*} K Z\).
+The square of the linear off-block commutator gives
+\(\delta _{ij} H-Q_{j} Q_{i}\). The internal-background commutator
+paired with \([Y_{i},Y_{j}]\) contributes \(C_{ij}\). Their sum is
+
+% DISPLAY b.8
+% SOURCE δ_ij H−Q_j Q_i+C_ij=δ_ij H−Q_i Q_j+2C_ij.
+\begin{gather*}
+\begin{aligned}
+& \delta _{ij} H-Q_{j} Q_{i}+C_{ij}= \delta _{ij} H-Q_{i} Q_{j}+2C_{ij}.
+\end{aligned}\notag
+\end{gather*}
+
+This works for two arbitrary internal blocks. The second block
+contributes with the minus sign in \(T_{i}\), including in its induced
+commutator. At quadratic order other block pairs do not couple into this
+pair\textquotesingle s Hessian. Interactions involving three distinct
+blocks begin in the higher-degree cross terms and are not estimated
+here.
+
+The 8d complex bosonic coordinates are 16d real oscillators. Their
+ground energy is \((R/\ell ^{3})\operatorname{Tr}  \sqrt{B}\). The fast
+fermionic sector has 16d complex annihilators; filling the 8d negative
+eigenmodes gives \(-(R/(2\ell ^{3}))\operatorname{Tr}  \vert D\vert\).
+The reverse block is the adjoint, not an independent second copy.
+
+\subsection{3. Uniform cross gaps}\label{b-uniform-cross-gaps}
+
+Scale \(r\) to one and write \(\kappa  =1/100\). Then
+\(Q_{9}=I+T_{9}, Q_{i}=T_{i}\) for \(i\le 8\). Block norm row sums give
+
+% DISPLAY b.9
+% SOURCE ||K−I|| ≤ p(κ),        p(t)=2t+29t²,
+% SOURCE 0≤G−I,   ||G−I||≤g(κ), g(t)=8t²/(1−t)².
+\begin{gather*}
+\begin{aligned}
+& \Vert K-I\Vert  \le  p( \kappa  ), \quad  p(t)=2t+29t^{2}, \\
+& 0\le G-I, \quad  \Vert G-I\Vert \le g( \kappa  ), g(t)=8t^{2}/(1-t)^{2}.
+\end{aligned}\notag
+\end{gather*}
+
+For \(K\), a diagonal block has \(2T_{9}\) plus eight squares, and each
+of its seven off-diagonal blocks is \(T_{i} T_{j}-2T_{j} T_{i}\). This
+explains the coefficient \(29\). Consequently
+
+% DISPLAY b.10
+% SOURCE K≥0.9771 I,     G≥I,     B≥0.9771 I.
+\begin{gather*}
+\begin{aligned}
+& K\ge 0.9771 I, \quad  G\ge I, \quad  B\ge 0.9771 I.
+\end{aligned}\notag
+\end{gather*}
+
+Also
+\(\Vert D- \Gamma _{9} \otimes  I\Vert \le \sum _{i}\Vert T_{i}\Vert \le 9 \kappa\),
+so \(\min \vert D\vert \ge 0.91\). Continuous scaling of \(T\) to zero
+preserves its signature. \(H\ge Q_{9}^{2}\ge 0.9801\) I. Restoring \(r\)
+multiplies \(K,B,H,D^{2}\) by \(r^{2}\) and \(D\) by \(r\).
+
+\subsection{4. The real-trace two-commutator
+lemma}\label{b-the-real-trace-two-commutator-lemma}
+
+Let \(X_{1},\ldots ,X_{s}\) be Hermitian matrices with
+\(\Vert X_{i}\Vert \le  \kappa\). Set
+\(F^{2}=\sum _{i<j}\Vert [X_{i},X_{j}]\Vert _{F}^{2}\). For any words
+\(w\) and w\textquotesingle{} of length \(q\) having the same multiset
+of letters,
+
+% DISPLAY b.11
+% SOURCE |Re Tr w−Re Tr w'|
+% SOURCE    ≤ ((q)_4/8) κ^(q−4) F²,                  q≥4,          (2)
+\begin{gather*}
+\begin{aligned}
+& \vert \operatorname{Re}  \operatorname{Tr}  w-\operatorname{Re}  \operatorname{Tr}  w'\vert \\
+& \le  ((q)_{4}/8) \kappa ^{q-4} F^{2}, \quad  q\ge 4,
+\end{aligned}\tag{2}
+\end{gather*}
+
+where \((q)_{4}=q(q-1)(q-2)(q-3)\). The left side is zero for
+\(q\le 3\).
+
+Proof. At most \(q(q-1)/2\) adjacent swaps transform one ordering into
+another. The trace difference from one swap is
+\(\operatorname{Tr}  U[X_{i},X_{j}]V\). By cyclicity this is Tr \(C W\),
+with \(C=[X_{i},X_{j}]\) anti-Hermitian and \(W=VU\) a word of length
+\(q-2\). Exactly,
+
+% DISPLAY b.12
+% SOURCE Re Tr(CW)=(1/2)Tr(C(W−W*)).                              (3)
+\begin{gather*}
+\begin{aligned}
+& \operatorname{Re}  \operatorname{Tr} (CW)=(1/2)\operatorname{Tr} (C(W-W^{*})).
+\end{aligned}\tag{3}
+\end{gather*}
+
+Reversing \(W\) takes at most \((q-2)(q-3)/2\) adjacent swaps. Each
+resulting term contains a second commutator and \(q-4\) other letters.
+Hilbert--Schmidt Cauchy--Schwarz bounds its trace by
+\(\kappa ^{q-4}F^{2}\). Equation (3), followed by the first sequence of
+swaps, proves (2). If \(q\le 3, W\) is constant or Hermitian and (3) is
+zero.
+
+In particular, take a real-coefficient homogeneous noncommutative trace
+polynomial whose commutative polynomial is zero. Sort every word to the
+same canonical word for its multiset. The sorted contributions cancel
+coefficient by coefficient; (2) bounds the original real trace by the
+sum of absolute coefficients times \((q)_{4} \kappa ^{q-4}F^{2}/8\).
+This is an explicit algebraic estimate; it does not divide by an ideal
+on a singular algebraic variety.
+
+\subsection{5. Bosonic functional calculus and an explicit coefficient
+majorant}\label{b-bosonic-functional-calculus-and-an-explicit-coefficient-majorant}
+
+Continue at \(r=1\). Put \(L=GK-I\). Since GK is similar to \(B\),
+
+% DISPLAY b.13
+% SOURCE Tr sqrt(B)=Tr sqrt(I+L)
+% SOURCE           =8d+sum_(j≥1) binom(1/2,j) Tr L^j.            (4)
+\begin{gather*}
+\begin{aligned}
+& \operatorname{Tr}  \sqrt{B}=\operatorname{Tr}  \sqrt{I+L} \\
+& =8d+\sum _{j\ge 1} \binom{1/2}{j} \operatorname{Tr}  L^{j}.
+\end{aligned}\tag{4}
+\end{gather*}
+
+The binomial series converges in operator norm:
+\(\Vert L\Vert \le l( \kappa  )<1\), where
+
+% DISPLAY b.14
+% SOURCE l(t)=p(t)+g(t)(1+p(t)).
+\begin{gather*}
+\begin{aligned}
+& l(t)=p(t)+g(t)(1+p(t)).
+\end{aligned}\notag
+\end{gather*}
+
+The expansion \(Q_{9}^{-2}=\sum _{j\ge 0}(-1)^{j}(j+1)T_{9}^{j}\)
+converges as well. Thus (4), and the corresponding expansion of 8Tr
+\(\sqrt{H}\), define absolutely convergent noncommutative power series
+with real coefficients.
+
+Here is a coefficientwise majorant, not just a bound on evaluations.
+Replace every letter \(T_{i}\) by a common nonnegative variable \(t\),
+every scalar coefficient by its absolute value, and take maximum block
+row sums before taking the eight spatial diagonal traces. The series for
+\(K-I\) is majorized by p(t), for \(G-I\) by g(t), for \(L\) by l(t),
+and for \(H-I\) by
+
+% DISPLAY b.15
+% SOURCE h(t)=2t+9t².
+\begin{gather*}
+\begin{aligned}
+& h(t)=2t+9t^{2}.
+\end{aligned}\notag
+\end{gather*}
+
+Since \(\sum _{j\ge 1}\vert \binom{1/2}{j}\vert z^{j}=1-\sqrt{1-z}\),
+the sum of absolute trace-word coefficients of
+
+% DISPLAY b.16
+% SOURCE F_B(T)=Tr sqrt(B)−8Tr sqrt(H)
+\begin{gather*}
+\begin{aligned}
+& F_{B}(T)=\operatorname{Tr}  \sqrt{B}-8\operatorname{Tr}  \sqrt{H}
+\end{aligned}\notag
+\end{gather*}
+
+is majorized degree by degree by
+
+% DISPLAY b.17
+% SOURCE A(t)=8[2−sqrt(1−l(t))−sqrt(1−h(t))].                     (5)
+\begin{gather*}
+\begin{aligned}
+& A(t)=8[2-\sqrt{1-l(t)}-\sqrt{1-h(t)}].
+\end{aligned}\tag{5}
+\end{gather*}
+
+The eight is the spatial trace multiplicity; there is no hidden factor
+\(d\), because the color trace is retained inside each word and
+estimated by (2).
+
+For scalar commuting variables, \(G K=H I_{8}\) exactly, by the rank-one
+identity
+
+% DISPLAY b.18
+% SOURCE (I+vv*/q_9²)(H I−vv*)=H I,      H=q_9²+v*v.
+\begin{gather*}
+\begin{aligned}
+& (I+vv^{*}/q_{9}^{2})(H I-vv^{*})=H I, \quad  H=q_{9}^{2}+v^{*}v.
+\end{aligned}\notag
+\end{gather*}
+
+It follows that the commutative specialization of \(F_{B}\) vanishes
+identically as a convergent power series. Each homogeneous polynomial
+therefore has zero commutative polynomial. Apply (2) termwise, which is
+allowed by the absolute majorant.
+
+For a wholly explicit bound use \(t_{0}=1/10\). Direct arithmetic gives
+
+% DISPLAY b.19
+% SOURCE p(t_0)=49/100,
+% SOURCE g(t_0)=8/81,
+% SOURCE l(t_0)=5161/8100<1,
+% SOURCE h(t_0)=29/100,
+% SOURCE A(t_0)<5.
+\begin{gather*}
+\begin{aligned}
+& p(t_{0})=49/100, \\
+& g(t_{0})=8/81, \\
+& l(t_{0})=5161/8100<1, \\
+& h(t_{0})=29/100, \\
+& A(t_{0})<5.
+\end{aligned}\notag
+\end{gather*}
+
+If \(A(t)=\sum  a_{q} t^{q}\), all \(a_{q}\) are nonnegative and
+
+% DISPLAY b.20
+% SOURCE sum_(q≥4) a_q (q)_4 κ^(q−4)
+% SOURCE    ≤24 t_0^(-4) A(t_0),             κ≤1/100.
+\begin{gather*}
+\begin{aligned}
+& \sum _{q\ge 4} a_{q} (q)_{4} \kappa ^{q-4} \\
+& \le 24 t_{0}^{-4} A(t_{0}), \quad  \kappa  \le 1/100.
+\end{aligned}\notag
+\end{gather*}
+
+Indeed \((q)_{4}( \kappa  /t_{0})^{q-4}\) is maximized at \(q=4\): the
+consecutive-term ratio is at most \(1/2\). Combining with (2) gives
+
+% DISPLAY b.21
+% SOURCE |Tr sqrt(B)−8Tr sqrt(H)|
+% SOURCE     ≤150000 sum_(i<j)||C_ij||F².                        (6)
+\begin{gather*}
+\begin{aligned}
+& \vert \operatorname{Tr}  \sqrt{B}-8\operatorname{Tr}  \sqrt{H}\vert \\
+& \le 150000 \sum _{i<j}\Vert C_{ij}\Vert _{F}^{2}.
+\end{aligned}\tag{6}
+\end{gather*}
+
+Restoring \(r\) adds \(r^{-3}\). This establishes the needed bosonic
+quadratic-commutator estimate without a claim that vanishing on
+commuting matrices alone implies it.
+
+\subsection{6. Fermionic resolvent
+cancellation}\label{b-fermionic-resolvent-cancellation}
+
+Exactly,
+
+% DISPLAY b.22
+% SOURCE D²=I_16⊗H+S,
+% SOURCE S=sum_(i<j)Γ_iΓ_j⊗C_ij.
+\begin{gather*}
+\begin{aligned}
+& D^{2}=I_{16} \otimes  H+S, \\
+& S=\sum _{i<j} \Gamma _{i} \Gamma _{j} \otimes  C_{ij}.
+\end{aligned}\notag
+\end{gather*}
+
+The Clifford trace gives
+
+% DISPLAY b.23
+% SOURCE Tr[(I⊗H)^(-1/2)S]=0,
+% SOURCE ||S||F²=16 sum_(i<j)||C_ij||F².                          (7)
+\begin{gather*}
+\begin{aligned}
+& \operatorname{Tr} [(I \otimes  H)^{-1/2}S]=0, \\
+& \Vert S\Vert _{F}^{2}=16 \sum _{i<j}\Vert C_{ij}\Vert _{F}^{2}.
+\end{aligned}\tag{7}
+\end{gather*}
+
+For positive matrices \(A,A+S\ge  \lambda  I\), the square-root
+resolvent identity gives
+
+% DISPLAY b.24
+% SOURCE Tr sqrt(A+S)−Tr sqrt(A)−(1/2)Tr(A^(-1/2)S)
+% SOURCE   =−(1/π)integral_0^infinity t^(1/2)
+% SOURCE      Tr[(A+t)^(-1)S(A+t)^(-1)S(A+S+t)^(-1)] dt.
+\begin{gather*}
+\begin{aligned}
+& \operatorname{Tr}  \sqrt{A+S}-\operatorname{Tr}  \sqrt{A}-(1/2)\operatorname{Tr} (A^{-1/2}S) \\
+& =-(1/ \pi  )\int _{0}^{\infty} t^{1/2} \\
+& \operatorname{Tr} [(A+t)^{-1}S(A+t)^{-1}S(A+S+t)^{-1}] dt.
+\end{aligned}\notag
+\end{gather*}
+
+The absolute value is bounded by
+
+% DISPLAY b.25
+% SOURCE ||S||F²/(8λ^(3/2)),
+\begin{gather*}
+\begin{aligned}
+& \Vert S\Vert _{F}^{2}/(8 \lambda ^{3/2}),
+\end{aligned}\notag
+\end{gather*}
+
+using
+\(\int _{0}^{\infty} t^{1/2}( \lambda  +t)^{-3}dt= \pi  /(8 \lambda ^{3/2})\).
+Take \(A=I \otimes  H\) and \(\lambda  =(0.91r)^{2}\). Equations (7)
+prove
+
+% DISPLAY b.26
+% SOURCE |(1/2)Tr |D|−8Tr sqrt(H)|
+% SOURCE    ≤(0.91)^(-3) r^(-3)sum_(i<j)||C_ij||F²
+% SOURCE    <2 r^(-3)sum_(i<j)||C_ij||F².                        (8)
+\begin{gather*}
+\begin{aligned}
+& \vert (1/2)\operatorname{Tr}  \vert D\vert -8\operatorname{Tr}  \sqrt{H}\vert \\
+& \le (0.91)^{-3} r^{-3}\sum _{i<j}\Vert C_{ij}\Vert _{F}^{2} \\
+& <2 r^{-3}\sum _{i<j}\Vert C_{ij}\Vert _{F}^{2}.
+\end{aligned}\tag{8}
+\end{gather*}
+
+Combining (6) and (8) proves (1). The first-order fermionic term cancels
+exactly under the Clifford trace; the bosonic first-order-in-commutators
+term cancels by (3) and commutative specialization.
+
+\subsection{7. Endpoint commutators, pair weights, and
+absorption}\label{b-endpoint-commutators-pair-weights-and-absorption}
+
+In a matrix representation of \(\operatorname{Hom} (C^{m},C^{n})\),
+
+% DISPLAY b.27
+% SOURCE T_i=A_i⊗I_m−I_n⊗B_i^T,
+% SOURCE [T_i,T_j]=[A_i,A_j]⊗I_m−I_n⊗[B_i,B_j]^T.
+\begin{gather*}
+\begin{aligned}
+& T_{i}=A_{i} \otimes  I_{m}-I_{n} \otimes  B_{i}^{T}, \\
+& [T_{i},T_{j}]=[A_{i},A_{j}] \otimes  I_{m}-I_{n} \otimes  [B_{i},B_{j}]^{T}.
+\end{aligned}\notag
+\end{gather*}
+
+There is no mixed term \([A_{i},B_{j}]\): the two endpoint actions
+commute. Since traces of commutators vanish, exactly
+
+% DISPLAY b.28
+% SOURCE ||[T_i,T_j]||F²
+% SOURCE    =m||[A_i,A_j]||F²+n||[B_i,B_j]||F².                 (9)
+\begin{gather*}
+\begin{aligned}
+& \Vert [T_{i},T_{j}]\Vert _{F}^{2} \\
+& =m\Vert [A_{i},A_{j}]\Vert _{F}^{2}+n\Vert [B_{i},B_{j}]\Vert _{F}^{2}.
+\end{aligned}\tag{9}
+\end{gather*}
+
+For a partition with block sizes \(n_{a}\) and separations \(r_{ab}\),
+summing (1) gives the pairwise-relative statement
+
+% DISPLAY b.29
+% SOURCE |sum_(a<b) E_0,ab|
+% SOURCE   ≤C (R/ell³)sum_a F_a² sum_(b≠a)n_b r_ab^(-3),
+% SOURCE F_a²=sum_(i<j)||[A_i^(a),A_j^(a)]||F²,   C=150002.      (10)
+\begin{gather*}
+\begin{aligned}
+& \vert \sum _{a<b} E_{0,ab}\vert \\
+& \le C (R/\ell ^{3})\sum _{a} F_{a}^{2} \sum _{b\ne a}n_{b} r_{ab}^{-3}, \\
+& F_{a}^{2}=\sum _{i<j}\Vert [A_{i}^{(a)},A_{j}^{(a)}]\Vert _{F}^{2}, \quad  C=150002.
+\end{aligned}\tag{10}
+\end{gather*}
+
+The sum of absolute pair defects obeys the same bound. Defining the
+internal bosonic potential \(V_{a}=R F_{a}^{2}/(2\ell ^{6})\), its
+multiplier is
+
+% DISPLAY b.30
+% SOURCE 2C ell³ sum_(b≠a)n_b r_ab^(-3).                         (11)
+\begin{gather*}
+\begin{aligned}
+& 2C \ell ^{3} \sum _{b\ne a}n_{b} r_{ab}^{-3}.
+\end{aligned}\tag{11}
+\end{gather*}
+
+This tends to zero once all retained pair separations tend to
+\(\infty\). Its constants have no dependence on a ratio involving the
+smallest unrelated center gap. At fixed finite \(N, r_{ab}\ge r_{*}\)
+gives the explicit upper bound 2C \(\ell ^{3}(N-n_{a})r_{*}^{-3}\).
+
+For clarity about full-form absorption, \(V_{a}\) by itself is not
+bounded by \(H_{a}\) with coefficient one without a Yukawa remainder. If
+the elementary finite-Clifford estimate is written as
+
+% DISPLAY b.31
+% SOURCE ||Y_a(A)||≤c_(n_a) (R/ell³) alpha_a,
+% SOURCE alpha_a²=sum_i ||A_i^(a)||F²,
+\begin{gather*}
+\begin{aligned}
+& \Vert Y_{a}(A)\Vert \le c_{n_{a}} (R/\ell ^{3}) \alpha _{a}, \\
+& \alpha _{a}^{2}=\sum _{i} \Vert A_{i}^{(a)}\Vert _{F}^{2},
+\end{aligned}\notag
+\end{gather*}
+
+then \(V_{a}\le H_{a}+c_{n_{a}}(R/\ell ^{3})\alpha _{a}\), since the
+internal kinetic form is nonnegative. One explicit choice in these
+conventions is \(c_{n}=24(n^{2}-1)\), with \(c_{1}=0\). Indeed, on the
+\(16(n^{2}-1)\) real Majoranas, the internal mass is
+\(D_{\operatorname{ad}}=\sum _{i} \Gamma _{i} \otimes  \operatorname{ad} (A_{i})\),
+and \(Y_{a}=(R/(2\ell ^{3}))\theta ^{T} D_{\operatorname{ad}} \theta\).
+In a real Hermitian generator basis \(D_{\operatorname{ad}}\) is purely
+imaginary antisymmetric. Pairing its \(\pm  \lambda\) eigenvalues gives
+\(\Vert Y_{a}\Vert =(R/(4\ell ^{3}))\operatorname{Tr} \vert D_{\operatorname{ad}}\vert\),
+while
+
+% DISPLAY b.32
+% SOURCE ||D_ad||≤2sum_i||A_i||op≤6alpha_a.
+\begin{gather*}
+\begin{aligned}
+& \Vert D_{\operatorname{ad}}\Vert \le 2\sum _{i}\Vert A_{i}\Vert _{\mathrm{op}}\le 6\alpha _{a}.
+\end{aligned}\notag
+\end{gather*}
+
+This proves the stated \(c_{n}\) without an internal spectral gap. Hence
+(10) is bounded by an arbitrarily small multiple of \(\sum _{a} H_{a}\),
+after taking \(r_{*}\) large, plus
+
+% DISPLAY b.33
+% SOURCE 2C R sum_a c_(n_a)alpha_a sum_(b≠a)n_b r_ab^(-3).
+\begin{gather*}
+\begin{aligned}
+& 2C R \sum _{a} c_{n_{a}}\alpha _{a} \sum _{b\ne a}n_{b} r_{ab}^{-3}.
+\end{aligned}\notag
+\end{gather*}
+
+Under the endpoint condition \(\alpha _{a}\le  \kappa  r_{ab}\), this
+last expression is at most
+
+% DISPLAY b.34
+% SOURCE 2C R κ sum_(a<b)(c_(n_a)n_b+c_(n_b)n_a)r_ab^(-2).
+\begin{gather*}
+\begin{aligned}
+& 2C R \kappa  \sum _{a<b}(c_{n_{a}}n_{b}+c_{n_{b}}n_{a})r_{ab}^{-2}.
+\end{aligned}\notag
+\end{gather*}
+
+It is an arbitrarily small center-Hardy cost by reducing \(\kappa\)
+before choosing the final exterior radius. This is a precise way to use
+the defect; replacing \(V_{a}\) by \(H_{a}\) with no remainder would be
+incorrect.
+
+For an explicit finite-N allocation, write
+\(T_{\mathrm{cent}}=(R/2)t_{\mathrm{cent}}\) in the mass metric
+\(\sum _{a} n_{a}\vert dz_{a}\vert ^{2}\). The nine-dimensional relative
+Hardy inequality gives
+
+% DISPLAY b.35
+% SOURCE R integral r_ab^(-2)|f|²
+% SOURCE   ≤(8/49)(1/n_a+1/n_b)^(-1) T_cent[f].
+\begin{gather*}
+\begin{aligned}
+& R \int  r_{ab}^{-2}\vert f\vert ^{2} \\
+& \le (8/49)(1/n_{a}+1/n_{b})^{-1} T_{\mathrm{cent}}[f].
+\end{aligned}\notag
+\end{gather*}
+
+The preceding residual multiplier is therefore bounded by
+
+% DISPLAY b.36
+% SOURCE (16Cκ/49) sum_(a<b)
+% SOURCE   (c_(n_a)n_b+c_(n_b)n_a)(1/n_a+1/n_b)^(-1) T_cent[f]
+% SOURCE   ≤(192C/49)N^4 κ T_cent[f].
+\begin{gather*}
+\begin{aligned}
+& (16C \kappa  /49) \sum _{a<b} \\
+& (c_{n_{a}}n_{b}+c_{n_{b}}n_{a})(1/n_{a}+1/n_{b})^{-1} T_{\mathrm{cent}}[f] \\
+& \le (192C/49)N^{4} \kappa  T_{\mathrm{cent}}[f].
+\end{aligned}\notag
+\end{gather*}
+
+The last bound uses \(c_{n}=24(n^{2}-1)\) and
+\(\sum _{a<b}n_{a}^{2}n_{b}^{2}\le N^{4}/2\). Thus, for any
+\(\epsilon  >0\), the choices
+
+% DISPLAY b.37
+% SOURCE κ≤min(1/200, 49ε/(192C N^4)),
+% SOURCE r_*≥[2C ell³ N/ε]^(1/3),
+% SOURCE alpha_a≤κ r_ab for every incident pair,
+% SOURCE r_ab≥r_* for every pair,
+\begin{gather*}
+\begin{aligned}
+& \kappa  \le \min (1/200, 49 \epsilon  /(192C N^{4})), \\
+& r_{*}\ge [2C \ell ^{3} N/ \epsilon  ]^{1/3}, \\
+& \alpha _{a}\le  \kappa  r_{ab} \text{ for every incident pair }, \\
+& r_{ab}\ge r_{*} \text{ for every pair },
+\end{aligned}\notag
+\end{gather*}
+
+give the form bound
+
+% DISPLAY b.38
+% SOURCE integral sum_(a<b)|E_0,ab| |f|²
+% SOURCE   ≤ε sum_a H_a[f]+ε T_cent[f].                         (12)
+\begin{gather*}
+\begin{aligned}
+& \int  \sum _{a<b}\vert E_{0,ab}\vert  \vert f\vert ^{2} \\
+& \le  \epsilon  \sum _{a} H_{a}[f]+ \epsilon  T_{\mathrm{cent}}[f].
+\end{aligned}\tag{12}
+\end{gather*}
+
+Here the standard nonnegative internal supersymmetric forms are used on
+their common core, and the center Hardy estimate is valid also for
+Hilbert-valued coefficients and unitary connections. The multiplier of
+each \(H_{a}\) depends only on the centers, so no derivative of an
+internal-dependent weight has been omitted. Equation (12) is a bound on
+this defect multiplier, not a claim that the full Hamiltonian has
+already been compared with the slow forms on its right.

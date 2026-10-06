@@ -1,0 +1,225 @@
+{
+  "scope": "Source identity and finite regression provenance; not a mathematical proof certificate.",
+  "baseline_sources": [
+    {
+      "appendix": "A",
+      "basename": "intrinsic_multiblock_geometry.md",
+      "sha256": "c3c14ed06b69b486eaaac6c827f391e7c459fbcd7ca26c0b38c20defd5fc9c35",
+      "original_hash_match": true
+    },
+    {
+      "appendix": "B",
+      "basename": "general_fast_energy_defect.md",
+      "sha256": "f6d4c95ca1d4eb753834e7f218a0d98041be8229f0e43e225659fd7e95318b56",
+      "original_hash_match": true
+    },
+    {
+      "appendix": "C",
+      "basename": "multiblock_root_source_lemma.md",
+      "sha256": "cda4aaa0912ae815b3de93b757749549dd73bbf8ed560f6a3e6fb9c1a95a3b0f",
+      "original_hash_match": true
+    },
+    {
+      "appendix": "D",
+      "basename": "adapted_multiblock_source_inventory.md",
+      "sha256": "cb8e301e1e8ab2caa297ea6efe7a1c7d58abac0546546e9bcc7705b17c8f6d62",
+      "original_hash_match": true
+    },
+    {
+      "appendix": "E",
+      "basename": "rootwise_connection_bounds.md",
+      "sha256": "8b43b8176abaf03b33dc964d26b1d2f11d7bfff5533ae2f43c5523a3cb668c79",
+      "original_hash_match": true
+    },
+    {
+      "appendix": "F",
+      "basename": "all_rank_induction_assessment.md",
+      "sha256": "3516bd2cc7cd74cd00af92cdfd3aeb18189f88eaa74bc42df0448e8efac2f1f2",
+      "original_hash_match": true
+    },
+    {
+      "appendix": "G",
+      "basename": "differential_connection_curvature.md",
+      "sha256": "80fdf99eefa1a4e976fa41fcecdadd5dea46f2c14788209691086c85a7e83665",
+      "original_hash_match": true
+    },
+    {
+      "appendix": "H",
+      "basename": "colored_complement_reserve.md",
+      "sha256": "4c713683b77d51329ce209851c68d402c3d0ab5c8a7dabd6e5bcba2f7dcca96b",
+      "original_hash_match": true
+    },
+    {
+      "appendix": "I",
+      "basename": "local_schur_closure.md",
+      "sha256": "4d77b9315b326c4f1af883484bb77cb7f0d9b6a7f012a9efa99f805d4da06e04",
+      "original_hash_match": true
+    },
+    {
+      "appendix": "J",
+      "basename": "offcone_branch_partition.md",
+      "sha256": "d6336b2e71b64e0480b5b057067d865b756177a5cfd4cacb0c3cc69a845ff3bd",
+      "original_hash_match": true
+    }
+  ],
+  "baseline_scripts": [
+    {
+      "basename": "check_global_budget.py",
+      "sha256": "67b5290c557598f60cdc3b83ca70665f7a78318ded104aad7a9f4a61fdbce343",
+      "original_hash_match": true,
+      "exit_code": 0
+    },
+    {
+      "basename": "check_multiblock_geometry.py",
+      "sha256": "f52084ed2a1b3f6b035ca5a9a73bb86a06489c27be7d8ae3ceb6d736271b583d",
+      "original_hash_match": true,
+      "exit_code": 0
+    },
+    {
+      "basename": "check_general_fast_energy.py",
+      "sha256": "b8780090d8a31f8591e7b3a7cd81969450ae00541b7e6498b42a2b50a27d9875",
+      "original_hash_match": true,
+      "exit_code": 0
+    },
+    {
+      "basename": "check_multiblock_root_sources.py",
+      "sha256": "573bd6d21be127eb4df3e41eeba11d4f8ab7752c8bf94948871513086183015f",
+      "original_hash_match": true,
+      "exit_code": 0
+    },
+    {
+      "basename": "check_adapted_source_inventory.py",
+      "sha256": "f6dfcab2b9929f3fefa1f36f4c4f79f0340b29ca08b683b34750572431fb36be",
+      "original_hash_match": true,
+      "exit_code": 0
+    },
+    {
+      "basename": "check_colored_reserve.py",
+      "sha256": "cc6511914fd75e470213f4db9c50237284708cf9350437f991779b2a2c48b205",
+      "original_hash_match": true,
+      "exit_code": 0
+    },
+    {
+      "basename": "check_local_schur.py",
+      "sha256": "7cf2e7d84e2be965444d51bf689d602173d497a581e7a9e3b3794daa4747d845",
+      "original_hash_match": true,
+      "exit_code": 0
+    },
+    {
+      "basename": "check_regularized_tree.py",
+      "sha256": "e312bec9b58393960d2243eba0f6bc36c4e826c3f66d1e1379db97de6629b572",
+      "original_hash_match": true,
+      "exit_code": 0
+    },
+    {
+      "basename": "check_offcone_ims.py",
+      "sha256": "a031bef6df399aa272a2e098e5156acff14a087da288da7a98694603ecfe8631",
+      "original_hash_match": true,
+      "exit_code": 0
+    }
+  ],
+  "clean_notes": [
+    {
+      "appendix": "A",
+      "sha256": "7d6e8e740f5ebab1ac9b8f2c6aaca931b8c8a23d5c03e15bebbb66cbdabb37ab",
+      "matches_historical": true
+    },
+    {
+      "appendix": "B",
+      "sha256": "9da4dc24056028d836b21f804606744ad5b71fa49593512cef5362eb028f7787",
+      "matches_historical": true
+    },
+    {
+      "appendix": "C",
+      "sha256": "a1f8e116ceaefc4c2cd2ed82995d02f9a0d7f99959f0f44d763fb85c87a61ea0",
+      "matches_historical": true
+    },
+    {
+      "appendix": "D",
+      "sha256": "ee83554ebaa8a023c68a64e89fef9b76b47b4f9f9fe23fad6a5664c232864c6d",
+      "matches_historical": true
+    },
+    {
+      "appendix": "E",
+      "sha256": "2d060c40c98706079424e1a9a699443abcc8be502bd1d63e57cb5edc44ab0765",
+      "matches_historical": true
+    },
+    {
+      "appendix": "F",
+      "sha256": "d5260a49d40f430829a7005e43b384f264ffe6c21a4375416e50eb49a99264c6",
+      "matches_historical": true
+    },
+    {
+      "appendix": "G",
+      "sha256": "5f6725c6aa8e566a20fba8407147ea8faaf9b062659ad6e831f8f26c837e250f",
+      "matches_historical": true
+    },
+    {
+      "appendix": "H",
+      "sha256": "d631918271eaae3fe472fe87b8b2b44f93de733ce893ebd0e46c0d56dd28a869",
+      "matches_historical": true
+    },
+    {
+      "appendix": "I",
+      "sha256": "4a0e02ee1c7a5f3daeb9086195ffd5bb6052fbca75a446542ab98b791bfd9229",
+      "matches_historical": true
+    },
+    {
+      "appendix": "J",
+      "sha256": "de0ab2d62e5799277faf65aad5a26dadc86fa749b90a53ccbe6a2f09f64b054e",
+      "matches_historical": true
+    }
+  ],
+  "generated_appendix_tex": [
+    {
+      "appendix": "A",
+      "sha256": "1bb7515f6844711d47a7b3418de1ee0968a6d0308d4ca4f23cdd044f568cb523",
+      "source_and_note_hashes_verified": true
+    },
+    {
+      "appendix": "B",
+      "sha256": "c0dbd7086c2ace864f797a013553f5d12c91400dd0c9ee1cf0c7a799e10c4f08",
+      "source_and_note_hashes_verified": true
+    },
+    {
+      "appendix": "C",
+      "sha256": "7eef229ebf6f92ca83fa9f02a2c3b4b500af2066892de91e8335371d9c699a5f",
+      "source_and_note_hashes_verified": true
+    },
+    {
+      "appendix": "D",
+      "sha256": "1d00f63396c1a7b3d1d83d11925381fb8b02d033bb43f87f821286425bd0d961",
+      "source_and_note_hashes_verified": true
+    },
+    {
+      "appendix": "E",
+      "sha256": "b2d301cf66b7ad4faaa2e9e29fa24e622c2320bf45f81718dcc73bb88c11dc82",
+      "source_and_note_hashes_verified": true
+    },
+    {
+      "appendix": "F",
+      "sha256": "c8672bc25f18feb32255cafdfd3d9015d9ea9e22e006bcf7d96109a346fab57b",
+      "source_and_note_hashes_verified": true
+    },
+    {
+      "appendix": "G",
+      "sha256": "4b1644393fe92fecd9604c19a1ab87cf6c020ef066a5649c58d92a166e9a3852",
+      "source_and_note_hashes_verified": true
+    },
+    {
+      "appendix": "H",
+      "sha256": "98c2f187dd26832fe5c8ec86beec2bbeeae65a5f3f199f8c0d7a7a1b23c2b1ab",
+      "source_and_note_hashes_verified": true
+    },
+    {
+      "appendix": "I",
+      "sha256": "503a63c522c1248912979e8c97aa62c549e1d18abc8301deeddd69aff83f70c1",
+      "source_and_note_hashes_verified": true
+    },
+    {
+      "appendix": "J",
+      "sha256": "d31a065590f1b52b8e77b5d0b3dfd793d3ee7c54a69ca476e1a99986b47f2b2d",
+      "source_and_note_hashes_verified": true
+    }
+  ]
+}

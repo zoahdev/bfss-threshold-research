@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-06",
+  "purpose": "Bounded analytic clarification after adversarial review",
+  "inputs": [
+    {
+      "name": "BFSS_Leading_Coefficient_Audit_2026-10-06.pdf",
+      "sha256": "b907162750a607def7a4276a043665600d6deced742aeb82c5fa40ec2e0d07b6"
+    },
+    {
+      "name": "BFSS_Leading_Coefficient_Audit_Source_2026-10-06.zip",
+      "sha256": "0f6887617a7144687fbf3b06e23dddc5b7f2bde96a3cfcfd47754f4055a4d387"
+    },
+    {
+      "name": "manuscript.pdf",
+      "sha256": "daef0d76c50de0a1366c58edcac0eb86e10f628ef3122827b581cf25b007bb8c"
+    }
+  ],
+  "canonical_manuscript_modified": false,
+  "prior_audit_modified": false,
+  "publication_or_external_contact": false,
+  "analytic_assumptions": [
+    "Exact kinetic-one reduced operator and frozen pair definitions in canonical Appendices A/B/D",
+    "Fixed finite N and sufficiently small pairwise thinness",
+    "Uncut Gaussian coefficient scope"
+  ],
+  "new_computational_coverage": [
+    "Whole slow quadratic coefficient matrices for centered block pairs (1,1),(2,1),(2,2),(3,1) at r=1"
+  ],
+  "not_computationally_checked": [
+    "Nonzero A multiplier",
+    "Spatial/internal jets",
+    "All-vector reserve",
+    "Global Hardy theorem",
+    "Uniformity in N"
+  ],
+  "new_test_constructor_dependency": "Unchanged check_centered_triangle.py copied from prior audit",
+  "new_test_contraction_logic": "Separate direct fast Wick and slow coefficient calculation"
+}

@@ -1,0 +1,217 @@
+{
+  "date": "2026-10-06",
+  "meaning": "Packaging/reproducibility checks, not proof certification or independent human review",
+  "scientific_check_programs": 29,
+  "all_exit_codes_zero": true,
+  "notation_parser_unit_tests": {
+    "count": 3,
+    "passed": true
+  },
+  "main_pdf_rebuilt_byte_identically": true,
+  "pdfs": [
+    {
+      "path": "manuscript/manuscript.pdf",
+      "pages": 116,
+      "sha256": "daef0d76c50de0a1366c58edcac0eb86e10f628ef3122827b581cf25b007bb8c"
+    },
+    {
+      "path": "coefficient-audit/prior_audit/BFSS_Leading_Coefficient_Audit_2026-10-06.pdf",
+      "pages": 9,
+      "sha256": "b907162750a607def7a4276a043665600d6deced742aeb82c5fa40ec2e0d07b6"
+    },
+    {
+      "path": "coefficient-audit/addendum/BFSS_Coefficient_Audit_Clarification_2026-10-06.pdf",
+      "pages": 4,
+      "sha256": "39a9de3f024b5de9878c5fdc6b507fc12ee3bfca7a5427830da9e8f3932f1556"
+    }
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "checks": [
+    {
+      "path": "manuscript/checks/bfss_global_induction_20261005/check_global_budget.py",
+      "exit_code": 0,
+      "scope": "exact rational scalar budgets",
+      "sha256": "67b5290c557598f60cdc3b83ca70665f7a78318ded104aad7a9f4a61fdbce343"
+    },
+    {
+      "path": "manuscript/checks/bfss_multiblock_geometry_20261005/check_multiblock_geometry.py",
+      "exit_code": 0,
+      "scope": "finite ambient metric and density identities",
+      "sha256": "f52084ed2a1b3f6b035ca5a9a73bb86a06489c27be7d8ae3ceb6d736271b583d"
+    },
+    {
+      "path": "manuscript/checks/bfss_all_rank_induction_20261005/check_general_fast_energy.py",
+      "exit_code": 0,
+      "scope": "finite frozen pair energy identities",
+      "sha256": "b8780090d8a31f8591e7b3a7cd81969450ae00541b7e6498b42a2b50a27d9875"
+    },
+    {
+      "path": "manuscript/checks/bfss_all_rank_induction_20261005/check_multiblock_root_sources.py",
+      "exit_code": 0,
+      "scope": "finite source and graph bookkeeping",
+      "sha256": "573bd6d21be127eb4df3e41eeba11d4f8ab7752c8bf94948871513086183015f"
+    },
+    {
+      "path": "manuscript/checks/bfss_all_rank_induction_20261005/check_adapted_source_inventory.py",
+      "exit_code": 0,
+      "scope": "finite adapted Gauss Taylor coefficients",
+      "sha256": "f6dfcab2b9929f3fefa1f36f4c4f79f0340b29ca08b683b34750572431fb36be"
+    },
+    {
+      "path": "manuscript/checks/bfss_complementary_reserve_20261005/check_colored_reserve.py",
+      "exit_code": 0,
+      "scope": "finite square completion identities",
+      "sha256": "cc6511914fd75e470213f4db9c50237284708cf9350437f991779b2a2c48b205"
+    },
+    {
+      "path": "manuscript/checks/bfss_complementary_reserve_20261005/check_local_schur.py",
+      "exit_code": 0,
+      "scope": "finite mixed and variational identities",
+      "sha256": "7cf2e7d84e2be965444d51bf689d602173d497a581e7a9e3b3794daa4747d845"
+    },
+    {
+      "path": "manuscript/checks/bfss_offcone_partition_20261005/check_regularized_tree.py",
+      "exit_code": 0,
+      "scope": "sampled regularized cluster tree",
+      "sha256": "e312bec9b58393960d2243eba0f6bc36c4e826c3f66d1e1379db97de6629b572"
+    },
+    {
+      "path": "manuscript/checks/bfss_offcone_partition_20261005/check_offcone_ims.py",
+      "exit_code": 0,
+      "scope": "finite difference incidence IMS examples",
+      "sha256": "a031bef6df399aa272a2e098e5156acff14a087da288da7a98694603ecfe8631"
+    },
+    {
+      "path": "manuscript/checks/bfss_sharp_decay_20261005/check_sharp_singlet_budget.py",
+      "exit_code": 0,
+      "scope": "exact rotation normalization and singlet scalar budgets",
+      "sha256": "d5cc1bc4af0754a6c18caa2691d7fed485637c02b0d489050bee0b86e80c409e"
+    },
+    {
+      "path": "manuscript/checks/bfss_sharp_decay_20261005/check_angular_gate_clifford.py",
+      "exit_code": 0,
+      "scope": "exact integer Clifford rotation identities",
+      "sha256": "f580d1269cfba10d3e86614834e15a152029fe9fd814e6bd77648f75a8292434"
+    },
+    {
+      "path": "check_threshold.py",
+      "exit_code": 0,
+      "scope": "Finite algebra or numerical regression only; see script and component README",
+      "sha256": "4292af23d7410e9b4a2c7ffbf5264419c7db3c6f9ca7fae0dce8a9a482247b5e"
+    },
+    {
+      "path": "check_quadrupole.py",
+      "exit_code": 0,
+      "scope": "Finite algebra or numerical regression only; see script and component README",
+      "sha256": "37ed085740cef363050f05a54bca928c7c0801d8283471cab26b2d8d15325928"
+    },
+    {
+      "path": "check_rank_normalization.py",
+      "exit_code": 0,
+      "scope": "Finite algebra or numerical regression only; see script and component README",
+      "sha256": "20530726f9c17f7a443019c02f3a2a0787c1931efacffb60d08cbfdf0126b86d"
+    },
+    {
+      "path": "check_descendant_cluster.py",
+      "exit_code": 0,
+      "scope": "Finite algebra or numerical regression only; see script and component README",
+      "sha256": "ec2454f2b972ce7062deaeb209805b822a23670437f333d25f4da9903ac53b9c"
+    },
+    {
+      "path": "coefficient-audit/prior_audit/check_triangle_symbolic.py",
+      "exit_code": 0,
+      "scope": "Finite algebra or numerical regression only; see script and component README",
+      "sha256": "91bdae92ef7569fd43c5f2facef8a160a92b73d38ecdeb02c6fa67df5c2d61c5"
+    },
+    {
+      "path": "coefficient-audit/prior_audit/check_centered_triangle.py",
+      "exit_code": 0,
+      "scope": "Finite algebra or numerical regression only; see script and component README",
+      "sha256": "34086aa877d14c88abe02125ab3ba8fae1df9f51bfafd9088de71ff3069bbdec"
+    },
+    {
+      "path": "coefficient-audit/addendum/check_pair_clifford.py",
+      "exit_code": 0,
+      "scope": "Finite algebra or numerical regression only; see script and component README",
+      "sha256": "57135b73d7320322b921ef109985da457a643a1160182927aabdbf813d590de3"
+    },
+    {
+      "path": "notes/interacting-threshold/check_ims.py",
+      "exit_code": 0,
+      "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+      "sha256": "b6fccce7a3ee64112b83cc38451dd9305671e6963e70cc7d3e29e265da7ed386"
+    },
+    {
+      "path": "notes/interacting-threshold/check_source.py",
+      "exit_code": 0,
+      "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+      "sha256": "9eae549da316776b4b8e2dffccafdb9513da1ed8e56abc4695556323809a7374"
+    },
+    {
+      "path": "notes/quadrupole-clipping/check_capacity_route.py",
+      "exit_code": 0,
+      "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+      "sha256": "f7e4d7016cfadcc60246cd0c5eddf17230ec4622000bcd7dc4e413ae1dec3c1d"
+    },
+    {
+      "path": "notes/rank-certificate/check_rank_certificate.py",
+      "exit_code": 0,
+      "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+      "sha256": "9e434d4e34d30b841768d95b19a53f9f338e35acb3f089092c2d98280abb46e3"
+    },
+    {
+      "path": "notes/mixed-moment/check_cubic_constants.py",
+      "exit_code": 0,
+      "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+      "sha256": "66c07ee2bb9de8df1108e755c9f2fe527fb264474376a1a07bb37f52fd994cd5"
+    },
+    {
+      "path": "notes/quantum-gram/check_quantum_gram.py",
+      "exit_code": 0,
+      "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+      "sha256": "09a479256c79c3aeb165a308ff0db0809ade399917b6bcc7f414e625d6c77237"
+    },
+    {
+      "path": "notes/spin9-interference/check_spin9.py",
+      "exit_code": 0,
+      "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+      "sha256": "bd4f74b19db48a0c15ffdfef52be1a686a7bac4d78a53202d7bd23bc9239645e"
+    },
+    {
+      "path": "notes/spin9-interference/independent_verify_bianchi.py",
+      "exit_code": 0,
+      "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+      "sha256": "06524490c8adb7700435280a4c80a329a7d6d4a4c6ccff4e535a2f0ce3d86c9e"
+    },
+    {
+      "path": "notes/nicolai-concentration/check_normalizations.py",
+      "exit_code": 0,
+      "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+      "sha256": "548868c37a5af9a28f592626ca6075059a769a25207165bc1e5fe648c1eaaab7"
+    },
+    {
+      "path": "notes/bmn-mass-limit/check_bmn_formulas.py",
+      "exit_code": 0,
+      "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+      "sha256": "df1c2ff63c3a8c49985ef4e6757de7a59b45723fbe48035c4a7d87bcfe1258de"
+    },
+    {
+      "path": "notes/bmn-weighted-transfer/check_projection_transfer.py",
+      "exit_code": 0,
+      "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+      "sha256": "9e8ff7e3adce378bd055cd985e580a225ac8685388beb69e79a9d6b16e5c7544"
+    }
+  ],
+  "not_established": [
+    "Analytical assumptions and full operator bounds",
+    "Independent human specialist review",
+    "Proof-assistant certification",
+    "Rank-uniform upper bound or large-N BFSS goal"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "partition_types_checked": 2693,
+  "targets_checked": 6,
+  "output": "checks/bfss_global_induction_20261005/global_budget_checks.json"
+}

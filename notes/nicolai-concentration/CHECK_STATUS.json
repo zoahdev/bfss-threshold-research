@@ -1,0 +1,12 @@
+{
+  "publication_status": "conditional/provisional research archive",
+  "human_expert_review": "not supplied",
+  "author": "Yicheng Pan",
+  "branch_summary": "Conditional obstruction to a uniform transport method; not a no-go for actual BFSS concentration.",
+  "dependencies": [
+    "Hypothesized finite-N Gaussian transport and differentiability",
+    "Specified path-measure/boundary and mass limits",
+    "Uniform transport estimate and ground-state transfer not established"
+  ],
+  "verification_scope": "Finite algebra and consistency checks only; not certification of infinite-dimensional hypotheses or a rank-uniform theorem."
+}

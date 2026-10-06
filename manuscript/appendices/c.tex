@@ -1,0 +1,899 @@
+\clearpage
+\section{Centered sources and graph
+estimates}\label{c-centered-sources-and-graph-estimates}
+
+Technical derivation for review. Equation and subsection numbers in this
+appendix are local to the source derivation. Historical local labels are
+retained, including numbering gaps or nonsequential labels. The
+accompanying source notes retain the original expressions for
+comparison.
+
+\subsection{0. Result and scope}\label{c-result-and-scope}
+
+For any fixed partition \((n_{1},\ldots ,n_{k})\), the centered
+coefficient calculation has an exact root-graph resolution:
+
+\begin{itemize}
+\tightlist
+\item
+  Each two-block charge source occupies two quanta of one root pair and
+  has fast energy \(4r_{ab}\).
+\item
+  Each genuine three-block charge source occupies one quantum on every
+  edge of a triangle and has fast energy \(2(r_{ab}+r_{bc}+r_{ca})\).
+\item
+  On residual block-center-neutral states, the leading inverse-square
+  Schur multiplication cancels as an operator on the entire internal
+  Clifford module. Internal derivatives of the adapted vacuum are
+  included in this statement; freezing the internal coordinates is not
+  permission to discard those derivatives.
+\item
+  The associated finite dressing has pair weight \(C_{N} r_{ab}^{-3}\)
+  and triangle weight
+  \(C_{N} [r_{ab}^{-2}+r_{bc}^{-2}+r_{ca}^{-2}]/(r_{ab}+r_{bc}+r_{ca})\).
+  The latter summed denominator is essential beside a far large block
+  and a close opposite pair.
+\item
+  A graph-local multiplier lemma turns these weights into a small
+  multiple of the complete slow supersymmetric form plus a small
+  pairwise center-Hardy multiplier, without expanding an inverse around
+  an internal Hamiltonian and without applying physical internal Hardy
+  to colored vectors.
+\end{itemize}
+
+The nonzero internal coefficient continuation is supplied in Appendix
+\(D\); analyticity of the oscillator matrices alone would not supply
+that continuation.
+
+\subsection{1. Fibers, neutral sector, and the correct fast
+inverse}\label{c-fibers-neutral-sector-and-the-correct-fast-inverse}
+
+Write \(b_{ab}=z_{a}-z_{b}\), \(r_{ab}=\vert b_{ab}\vert\), and
+\(d_{ab}=n_{a} n_{b}\). Centers have mass metric
+\(\sum _{a} n_{a} \vert dz_{a}\vert ^{2}\). Internal matrices
+\(A^{(a)}\) are traceless Hermitian, with radii
+
+% DISPLAY c.1
+% SOURCE alpha_a² = sum_i ||A_i^(a)||_F².
+\begin{gather*}
+\begin{aligned}
+& \alpha _{a}^{2} = \sum _{i} \Vert A_{i}^{(a)}\Vert _{F}^{2}.
+\end{aligned}\notag
+\end{gather*}
+
+The hypotheses used in graph estimates are genuinely pairwise:
+
+% DISPLAY c.2
+% SOURCE alpha_a <= kappa r_ab  for every b != a,
+% SOURCE r_ab >= r_* > 0.
+\begin{gather*}
+\begin{aligned}
+& \alpha _{a} \le  \kappa  r_{ab} \quad  \text{ for every } b \ne  a, \\
+& r_{ab} \ge  r_{*} > 0.
+\end{aligned}\notag
+\end{gather*}
+
+No comparison of one gap with an unrelated gap is made.
+
+At \(A=0\) the fast vacuum is a product
+\(U_{0}= \otimes _{a<b} U_{ab}\). Each pair has \(16d_{ab}\) real
+transverse bosonic coordinates and \(16d_{ab}\) complex fermionic modes,
+with \(8d_{ab}\) occupied modes. The reverse block is the adjoint, not a
+second independent pair. The vacuum is invariant under the residual
+\(S(\prod  U(n_{a}))\) group and is even in boson parity and fast
+fermion parity.
+
+For any one normalized real supercharge let \(q_{0}\) be its centered
+fast part. Before imposing the block-center Gauss constraints, its
+square contains the center-weighted gauge term:
+
+% DISPLAY c.3
+% SOURCE q_0² = H_f + sum_i (Gamma_i)_(alpha alpha)
+% SOURCE                      sum_a z_a^i G_(a,center,fast),
+\begin{gather*}
+\begin{aligned}
+& q_{0}^{2} = H_{f} + \sum _{i} (\Gamma _{i})_{\alpha  \alpha} \\
+& \sum _{a} z_{a}^{i} G_{a,\mathrm{center},\mathrm{fast}},
+\end{aligned}\notag
+\end{gather*}
+
+up to the common gauge-generator normalization. The background
+\(z_{a} I_{n_{a}}\) annihilates all traceless internal generators in
+this term. Consequently
+
+% DISPLAY c.4
+% SOURCE q_0² = H_f
+\begin{gather*}
+\begin{aligned}
+& q_{0}^{2} = H_{f}
+\end{aligned}\notag
+\end{gather*}
+
+on the residual block-center-neutral fast space. This includes fast
+states carrying nontrivial internal \(SU(n_{a})\) representations. It
+does not assert the identity on arbitrary block-center-charged vectors.
+Physical total residual equivariance implies this center neutrality
+because traceless internal coordinates and internal adjoint fermions
+carry no block-center charge.
+
+Every source below is center neutral: a pair contracts opposite root
+charges, while a triangle follows an oriented root cycle. On this space
+\(P=U_{0} U_{0}^{*}\) is the kernel of \(H_{f}\) and of \(q_{0}\), and
+
+% DISPLAY c.5
+% SOURCE q_0^-1 = q_0 H_f^-1
+\begin{gather*}
+\begin{aligned}
+& q_{0}^{-1} = q_{0} H_{f}^{-1}
+\end{aligned}\notag
+\end{gather*}
+
+is a genuine inverse on \(1-P\). This is not the inverse of an
+interacting internal Hamiltonian.
+
+\subsection{2. The internal vacuum jet cannot be
+omitted}\label{c-the-internal-vacuum-jet-cannot-be-omitted}
+
+Let \(U(z,A)\) be the normalized adapted product vacuum from the gapped
+quadratic matrices in Appendix \(B\). At one pair, rotate \(n=b/r\) to
+direction \(9\) and write
+
+% DISPLAY c.6
+% SOURCE T_i = A_i^(a) tensor I - I tensor (A_i^(b))^T,
+% SOURCE F = rI + T_9,
+% SOURCE D = Gamma_9 r + sum_i Gamma_i T_i.
+\begin{gather*}
+\begin{aligned}
+& T_{i} = A_{i}^{(a)} \otimes  I - I \otimes  (A_{i}^{(b)})^{T}, \\
+& F = rI + T_{9}, \\
+& D = \Gamma _{9} r + \sum _{i} \Gamma _{i} T_{i}.
+\end{aligned}\notag
+\end{gather*}
+
+At \(A=0\), the bosonic kinetic correction \(G-I\) has no linear term
+and the bosonic frequency has first variation
+\(\delta  \Omega _{ij}=\delta _{ij} \delta  T_{9}\). The fermionic
+negative projector has first variation
+
+% DISPLAY c.7
+% SOURCE delta P_- = -(1/(2r)) sum_(i perpendicular n) Gamma_i tensor delta T_i.
+\begin{gather*}
+\begin{aligned}
+& \delta  P_{-} = -(1/(2r)) \sum _{i \perp  n} \Gamma _{i} \otimes  \delta  T_{i}.
+\end{aligned}\notag
+\end{gather*}
+
+In a local unitary frame with zero scalar Berry connection at this
+point, the vacuum derivative is orthogonal to \(U_{0}\) and obeys the
+exact norm identity
+
+% DISPLAY c.8
+% SOURCE ||delta U_ab||² = (2/r_ab²) sum_i Tr_(d_ab)(delta Q_i²),       (2.1)
+\begin{gather*}
+\begin{aligned}
+& \Vert \delta  U_{ab}\Vert ^{2} = (2/r_{ab}^{2}) \sum _{i} \operatorname{Tr} _{d_{ab}}(\delta  Q_{i}^{2}),
+\end{aligned}\tag{2.1}
+\end{gather*}
+
+where \(\delta  Q_{i}=\delta  b_{i} I+\delta  T_{i}\). The longitudinal
+contribution is the Gaussian variation; the transverse contributions are
+the occupied-determinant variation. Formula (2.1) is a norm in the fast
+fiber, leaving the entire slow Clifford module untouched.
+
+For example, summing over all canonical center and endpoint-internal
+coordinate directions gives
+
+% DISPLAY c.9
+% SOURCE sum_mu ||partial_mu U_ab||²
+% SOURCE    = 18 n_a n_b (n_a+n_b) / r_ab².                         (2.2)
+\begin{gather*}
+\begin{aligned}
+& \sum _{\mu} \Vert \partial _{\mu} U_{ab}\Vert ^{2} \\
+& = 18 n_{a} n_{b} (n_{a}+n_{b}) / r_{ab}^{2}.
+\end{aligned}\tag{2.2}
+\end{gather*}
+
+Indeed the center contribution is \(18(n_{a}+n_{b})/r^{2}\), while the
+internal contributions are
+\(18[n_{b}(n_{a}^{2}-1)+n_{a}(n_{b}^{2}-1)]/r^{2}\). Thus the adapted
+vacuum has nonzero internal derivatives even at \(A=0\).
+
+\subsubsection{2.1 Zero first jet of the frozen-charge
+defect}\label{c-zero-first-jet-of-the-frozen-charge-defect}
+
+Let \(q_{f}(z,A)\) be the frozen linear fast charge, with the exact
+frozen eliminated-Gauss kinetic coefficient. It need not annihilate the
+adapted vacuum at nonzero internal commutators. Nevertheless
+
+% DISPLAY c.10
+% SOURCE R(z,A)=q_f(z,A)U(z,A),
+% SOURCE R(z,0)=0,   partial_A R(z,0)=0.                            (2.3)
+\begin{gather*}
+\begin{aligned}
+& R(z,A)=q_{f}(z,A)U(z,A), \\
+& R(z,0)=0, \quad  \partial _{A} R(z,0)=0.
+\end{aligned}\tag{2.3}
+\end{gather*}
+
+Here is the algebra behind the first derivative. In the frozen
+superalgebra the discrepancy between \(q_{f}^{2}\) and the quadratic
+Hamiltonian consists of the residual internal gauge term and
+background-commutator terms. The latter are quadratic in \(A\). The
+derivative of the former annihilates \(U_{0}\), since \(U_{0}\) is
+internal-gauge invariant. Differentiating the adapted ground equation
+and using \(E_{0}'(0)=0\) therefore gives
+
+% DISPLAY c.11
+% SOURCE q_0 [q_f'(0)U_0 + q_0 U'(0)] = 0.
+\begin{gather*}
+\begin{aligned}
+& q_{0} [q_{f}'(0)U_{0} + q_{0} U'(0)] = 0.
+\end{aligned}\notag
+\end{gather*}
+
+The vector in brackets is center neutral and odd in boson parity: a
+linear fast charge maps an even Gaussian to an odd Gaussian-polynomial
+vector. The kernel of \(q_{0}\) is the even vacuum line, so the bracket
+is zero. This parity step is required; the differentiated square alone
+does not rule out a vacuum component.
+
+There is also a direct commuting-axis proof. Vary one canonical internal
+coordinate \(A_{i}^{(a)}=t T\), with all other internal matrices zero.
+This whole one-parameter background is commuting. A unitary
+diagonalizing the single Hermitian \(T\) splits the adapted fast system
+into scalar color-pair oscillators at shifted relative vectors. The
+kinetic-aware Gaussian is the scalar transverse vacuum written in the
+chosen oblique slice, and the filled fermion vacuum is neutral for each
+color-pair phase. The frozen charge annihilates this product exactly.
+Thus every canonical internal partial derivative of \(R\) at zero
+vanishes, and linearity gives the full first jet. This argument is only
+along commuting coordinate axes; it does not incorrectly extend
+annihilation to noncommuting internal tuples.
+
+Center derivatives of \(R\) vanish as well because \(R(z,0)=0\)
+identically in \(z\). Equation (2.3), rather than a false assertion that
+the adapted fast charge has an exact kernel for all \(A\), is what the
+centered homological calculation uses.
+
+\subsection{3. Exact centered coefficient identity, including internal
+derivatives}\label{c-exact-centered-coefficient-identity-including-internal-derivatives}
+
+Under the simultaneous coefficient dilation
+
+% DISPLAY c.12
+% SOURCE z=L zeta,  A=L a,  Y=L^(-1/2) xi,
+\begin{gather*}
+\begin{aligned}
+& z=L \zeta , \quad  A=L a, \quad  Y=L^{-1/2} \xi ,
+\end{aligned}\notag
+\end{gather*}
+
+the exact reduced charge has the formal homogeneous inventory
+
+% DISPLAY c.13
+% SOURCE q(L) = L² Q_I^V(a) + L^(1/2) q_0(zeta,a)
+% SOURCE        + L^-1 q_1 + L^(-5/2) q_2 + L^-4 q_3 + ... .      (3.1)
+\begin{gather*}
+\begin{aligned}
+& q(L) = L^{2} Q_{I}^{V}(a) + L^{1/2} q_{0}(\zeta ,a) \\
+& + L^{-1} q_{1} + L^{-5/2} q_{2} + L^{-4} q_{3} + \ldots  .
+\end{aligned}\tag{3.1}
+\end{gather*}
+
+This is a coefficient expansion near the zero section, not a claim that
+the internal interacting charge is bounded or small. In an intrinsic
+multiblock chart the inverse Gauss matrix can create further terms; one
+must not copy the finite three-term axial expansion without checking
+this. All charge coefficients are first order in slow momenta. Since
+\(Q_{I}^{V}(a)\) and its first derivative vanish at \(a=0\), its
+anticommutators with \(q_{2}\) and \(q_{3}\) vanish there. Thus the
+relevant centered Hamiltonian coefficients are exactly
+
+% DISPLAY c.14
+% SOURCE H_1 = {q_0,q_1},
+% SOURCE H_2 = q_1² + {q_0,q_2},                                  (3.2)
+\begin{gather*}
+\begin{aligned}
+& H_{1} = \{q_{0},q_{1}\}, \\
+& H_{2} = q_{1}^{2} + \{q_{0},q_{2}\},
+\end{aligned}\tag{3.2}
+\end{gather*}
+
+when evaluated at the centered internal jet. Terms from the quadratic
+density of the intrinsic Gauss determinant belong to this inventory. The
+fact that its linear-in-Y trace vanishes does not permit omitting its
+quadratic triangle terms.
+
+Put
+
+% DISPLAY c.15
+% SOURCE D_s = U* q_1 U,
+% SOURCE B = (1-P) q_1 U.
+\begin{gather*}
+\begin{aligned}
+& D_{s} = U^{*} q_{1} U, \\
+& B = (1-P) q_{1} U.
+\end{aligned}\notag
+\end{gather*}
+
+The derivative of a coefficient section \(f\) in \(q_{1}(Uf)\) lies in
+the vacuum line. Therefore \(B\) is a multiplication map, but it
+includes the internal derivatives in (2.1):
+
+% DISPLAY c.16
+% SOURCE q_1(Uf) = U D_s f + Bf.
+\begin{gather*}
+\begin{aligned}
+& q_{1}(Uf) = U D_{s} f + Bf.
+\end{aligned}\notag
+\end{gather*}
+
+Equation (2.3) gives the centered off-diagonal source and diagonal
+compression
+
+% DISPLAY c.17
+% SOURCE (1-P) H_1 U = q_0 B,
+% SOURCE U* H_2 U = D_s² + B*B.                                  (3.3)
+\begin{gather*}
+\begin{aligned}
+& (1-P) H_{1} U = q_{0} B, \\
+& U^{*} H_{2} U = D_{s}^{2} + B^{*}B.
+\end{aligned}\tag{3.3}
+\end{gather*}
+
+These are differential-operator/form identities on the common smooth
+coefficient core. There is no projection onto internal bound states or
+restriction of the spectator Clifford module.
+
+The exact neutral fast inverse then gives
+
+% DISPLAY c.18
+% SOURCE B* q_0 H_f^-1 q_0 B = B*B.                               (3.4)
+\begin{gather*}
+\begin{aligned}
+& B^{*} q_{0} H_{f}^{-1} q_{0} B = B^{*}B.
+\end{aligned}\tag{3.4}
+\end{gather*}
+
+Consequently the centered effective coefficient is \(D_{s}^{2}\), and
+the entire additional multiplication coefficient cancels. It is
+important to identify \(D_{s}\) with its first jet before replacing
+\(D_{s}^{2}\) by a free slow Laplacian.
+
+\subsubsection{3.1 Compression and its first
+jet}\label{c-compression-and-its-first-jet}
+
+The following checks supply that last identification at \(A=0\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The scalar Berry curvature is zero at \(A=0\), including pure internal
+  and mixed center/internal components. A local gauge therefore has zero
+  connection and zero first jet there.
+\item
+  The expectation of the quadratic-Y commutator charge is zero to first
+  order in \(A\). The centered covariance and its first variation are
+  spatial-diagonal, so contraction with \(\Gamma _{ij}\) vanishes.
+\item
+  The triangle orbital term and the fast-fast spin-Gauss term have an
+  odd number of fast fermions and have zero vacuum compression. The same
+  remains true after one internal derivative.
+\item
+  The \(\delta\) part of the mixed slow-fast fermion covariance cancels
+  the half-density derivative. The remaining sign-covariance term is, up
+  to the fixed charge sign and factors of \(i\), a linear combination of
+
+  % DISPLAY c.19
+  % SOURCE Gamma_n Im Tr_color[T_c F^-1 sign(D)],                 (3.5)
+  \begin{gather*}
+  \begin{aligned}
+  & \Gamma _{n} \operatorname{Im}  \operatorname{Tr} _{\mathrm{color}}[T_{c} F^{-1} \operatorname{sign} (D)],
+  \end{aligned}\tag{3.5}
+  \end{gather*}
+
+  where \(T_{c}\) is the Hermitian bifundamental action of a slow color
+  generator. The trace leaves the spin matrix untraced. At the centered
+  point it vanishes. Its first variation is a linear combination of
+
+  % DISPLAY c.20
+  % SOURCE r^-2 Im Tr(T_c delta T_n) Gamma_n,
+  % SOURCE r^-2 Im Tr(T_c delta T_i) Gamma_i.
+  \begin{gather*}
+  \begin{aligned}
+  & r^{-2} \operatorname{Im}  \operatorname{Tr} (T_{c} \delta  T_{n}) \Gamma _{n}, \\
+  & r^{-2} \operatorname{Im}  \operatorname{Tr} (T_{c} \delta  T_{i}) \Gamma _{i}.
+  \end{aligned}\notag
+  \end{gather*}
+
+  Both are zero because the trace of a product of two Hermitian matrices
+  is real. This is why the compression must be checked as a jet, not
+  only by its value at \(A=0\).
+\end{enumerate}
+
+In a realification of the complex pair space, the covariance is \(I/2\)
+plus the complex structure times the realification of
+\(\operatorname{sign} (D)\), multiplied by \(i/2\). The contracted mixed
+Gauss coefficient is the realification of \(F^{-1} T_{c}\). Its
+\(\delta\) trace gives the density derivative, and its complex-structure
+trace is exactly the imaginary color trace in (3.5). This verifies the
+color mechanism without assuming that \(F\) commutes with the internal
+generators.
+
+It follows that \(D_{s}\) has the centered free slow Dirac value and
+first jet, so the coefficient in (3.3)-(3.4) is the full free
+center-plus-internal kinetic operator. At nonzero internal coordinates,
+the complete internal potential charge must of course be retained; (3.1)
+never authorizes discarding it from an all-vector estimate.
+
+\subsection{4. Root graph grading and exact virtual
+denominators}\label{c-root-graph-grading-and-exact-virtual-denominators}
+
+Use a root edge \(e=\{a,b\}\) and a triangle \(t=\{a,b,c\}\). For a root
+oscillator let \(N_{e}\) count bosonic excitations plus fermionic
+particles and holes relative to its vacuum. At the centered point
+
+% DISPLAY c.21
+% SOURCE H_f = 2 sum_e r_e N_e.
+\begin{gather*}
+\begin{aligned}
+& H_{f} = 2 \sum _{e} r_{e} N_{e}.
+\end{aligned}\notag
+\end{gather*}
+
+The leading complementary charge map has the decomposition
+
+% DISPLAY c.22
+% SOURCE B = sum_e B_e + sum_t B_t.                               (4.1)
+\begin{gather*}
+\begin{aligned}
+& B = \sum _{e} B_{e} + \sum _{t} B_{t}.
+\end{aligned}\tag{4.1}
+\end{gather*}
+
+Every \(B_{e}\) has \(N_{e}=2\) and every other \(N_{f}=0\). Its terms
+are the Gaussian and determinant derivatives, the two-fast-variable
+commutator with slow fermion output, and the complementary mixed
+spin-Gauss contraction. Removing \(P\) removes their only possible
+zero-quantum part.
+
+Every \(B_{t}\) has one excitation on each of its three edges. Its
+possible charge monomials are exactly of these types, with color
+contractions along an oriented cycle:
+
+% DISPLAY c.23
+% SOURCE Y_e Y_f theta_g,
+% SOURCE r_g^-1 Y_e p_f theta_g,
+% SOURCE r_h^-1 theta_e theta_f theta_g.                          (4.2)
+\begin{gather*}
+\begin{aligned}
+& Y_{e} Y_{f} \theta _{g}, \\
+& r_{g}^{-1} Y_{e} p_{f} \theta _{g}, \\
+& r_{h}^{-1} \theta _{e} \theta _{f} \theta _{g}.
+\end{aligned}\tag{4.2}
+\end{gather*}
+
+Here \(e,f,g\) are the three distinct triangle edges, while \(h\) is one
+of them. A fast Majorana applied once to the filled vacuum creates one
+particle or hole. Different edges have independent Gaussian and Fock
+factors, so no within-edge vacuum contraction occurs in a triangle
+monomial.
+
+Thus
+
+% DISPLAY c.24
+% SOURCE H_f B_e = 4r_e B_e,
+% SOURCE H_f B_t = 2s_t B_t,       s_t=sum_(e in t) r_e.           (4.3)
+\begin{gather*}
+\begin{aligned}
+& H_{f} B_{e} = 4r_{e} B_{e}, \\
+& H_{f} B_{t} = 2s_{t} B_{t}, \quad  s_{t}=\sum _{e \in  t} r_{e}.
+\end{aligned}\tag{4.3}
+\end{gather*}
+
+Distinct graph summands are orthogonal as fast-space maps. Pair sources
+are nonvacuum on only their own edge. Triangle sources are odd in
+combined excitation parity on exactly their three edges. The centered
+charge preserves each combined excitation parity and annihilates vacuum
+factors, so the orthogonality survives application of \(q_{0}\) and
+\(H_{f}^{-1}\).
+
+The finite dressing has the explicit graph resolution
+
+% DISPLAY c.25
+% SOURCE Z_e = -(4r_e)^-1 q_0 B_e,
+% SOURCE Z_t = -(2s_t)^-1 q_0 B_t.                               (4.4)
+\begin{gather*}
+\begin{aligned}
+& Z_{e} = -(4r_{e})^{-1} q_{0} B_{e}, \\
+& Z_{t} = -(2s_{t})^{-1} q_{0} B_{t}.
+\end{aligned}\tag{4.4}
+\end{gather*}
+
+In particular, as positive operators on the full slow Clifford module,
+
+% DISPLAY c.26
+% SOURCE Z_e* Z_e = (4r_e)^-1 B_e*B_e,
+% SOURCE Z_t* Z_t = (2s_t)^-1 B_t*B_t.                           (4.5)
+\begin{gather*}
+\begin{aligned}
+& Z_{e}^{*} Z_{e} = (4r_{e})^{-1} B_{e}^{*}B_{e}, \\
+& Z_{t}^{*} Z_{t} = (2s_{t})^{-1} B_{t}^{*}B_{t}.
+\end{aligned}\tag{4.5}
+\end{gather*}
+
+Replacing the second denominator by one arbitrarily selected root
+frequency is incorrect. Replacing every denominator by the unrelated
+global minimum throws away exactly the information needed for large
+far-away blocks.
+
+\subsection{5. Explicit coefficient seminorms and shape-independent
+graph
+estimates}\label{c-explicit-coefficient-seminorms-and-shape-independent-graph-estimates}
+
+All constants below are finite at fixed \(N\). They can be calculated
+from the normalized Lie structure constants, \(\gamma\) matrices, and
+the displayed source monomials; no compact global gap-ratio chart occurs
+in their definition.
+
+One precise conservative convention is the following. Write each pair
+source as a sum of elementary maps after factoring \(1/r_{e}\); evaluate
+the elementary Hermite/Fock monomials on unit-frequency normalized vacua
+and include their operator norms and absolute scalar coefficients in a
+sum \(K_{e}\). Include the derivative contribution using (2.1). For a
+triangle, group the monomials (4.2) into the three types, factoring
+respectively
+
+% DISPLAY c.27
+% SOURCE (r_e r_f)^-1/2,
+% SOURCE r_g^-1 (r_f/r_e)^1/2,
+% SOURCE r_h^-1.
+\begin{gather*}
+\begin{aligned}
+& (r_{e} r_{f})^{-1/2}, \\
+& r_{g}^{-1} (r_{f}/r_{e})^{1/2}, \\
+& r_{h}^{-1}.
+\end{aligned}\notag
+\end{gather*}
+
+Let \(K_{t}\) be the sum of their unit-frequency Hermite/Fock norms
+times absolute coefficients. \(\Gamma\) matrices have norm one, a real
+Majorana has norm \(1/\sqrt{2}\), and degree-two normalized Gaussian
+monomials have norms at most \(\sqrt{3}/2\). The remaining coefficients
+are normalized color brackets and unit spatial-direction contractions.
+This is a finite, explicit coefficient seminorm, not an unspecified
+supremum over gap ratios. For example (2.2) and Cauchy-Schwarz give a
+derivative-source contribution no larger than
+
+% DISPLAY c.28
+% SOURCE K_(e,derivative)² <= 162 N² n_a n_b(n_a+n_b).
+\begin{gather*}
+\begin{aligned}
+& K_{e,\mathrm{derivative}}^{2} \le  162 N^{2} n_{a} n_{b}(n_{a}+n_{b}).
+\end{aligned}\notag
+\end{gather*}
+
+Enlarge \(K_{t}\), if necessary, by a factor two to account for the
+following weight reduction. Triangle geometry gives
+\(r_{f}\le r_{e}+r_{g}\), and hence
+
+% DISPLAY c.29
+% SOURCE r_g^-1 sqrt(r_f/r_e)
+% SOURCE    <= r_g^-1 + (r_e r_g)^-1/2
+% SOURCE    <= (3/2)r_g^-1+(1/2)r_e^-1.
+\begin{gather*}
+\begin{aligned}
+& r_{g}^{-1} \sqrt{r_{f}/r_{e}} \\
+& \le  r_{g}^{-1} + (r_{e} r_{g})^{-1/2} \\
+& \le  (3/2)r_{g}^{-1}+(1/2)r_{e}^{-1}.
+\end{aligned}\notag
+\end{gather*}
+
+Also \((r_{e} r_{f})^{-1/2} \le  (r_{e}^{-1}+r_{f}^{-1})/2\). Therefore
+
+% DISPLAY c.30
+% SOURCE ||B_e|| <= K_e/r_e,
+% SOURCE ||B_t|| <= K_t sum_(e in t) r_e^-1.                     (5.1)
+\begin{gather*}
+\begin{aligned}
+& \Vert B_{e}\Vert  \le  K_{e}/r_{e}, \\
+& \Vert B_{t}\Vert  \le  K_{t} \sum _{e \in  t} r_{e}^{-1}.
+\end{aligned}\tag{5.1}
+\end{gather*}
+
+Set \(w_{t}=\sum _{e \in  t} r_{e}^{-2}\). Equations (4.5) and (5.1)
+imply
+
+% DISPLAY c.31
+% SOURCE ||Z_e||² <= K_e²/(4r_e³),
+% SOURCE ||Z_t||² <= 3 K_t² w_t/(2s_t).                          (5.2)
+\begin{gather*}
+\begin{aligned}
+& \Vert Z_{e}\Vert ^{2} \le  K_{e}^{2}/(4r_{e}^{3}), \\
+& \Vert Z_{t}\Vert ^{2} \le  3 K_{t}^{2} w_{t}/(2s_{t}).
+\end{aligned}\tag{5.2}
+\end{gather*}
+
+The centered map by itself has only center derivatives; an internal
+derivative requires an extension. For the following internal derivative
+bounds, choose smooth gapped pairwise Gaussian/Fock transport of the
+centered graph coefficient from \(A=0\), for example transport along
+internal radial rays. This gives a concrete graph-factorized extension,
+but it is not asserted to equal the actual nonzero-internal homological
+source. The center derivative statement is unconditional. For these
+derivatives, the same graph coefficients and one differentiated vacuum
+factor give, with another computable coefficient seminorm \(K'_{g}\),
+
+% DISPLAY c.32
+% SOURCE ||nabla Z_e||² <= K'_e² r_e^-5,
+% SOURCE ||nabla Z_t||² <= K'_t² (sum_(e in t) r_e^-1)² w_t/s_t. (5.3)
+\begin{gather*}
+\begin{aligned}
+& \Vert \nabla  Z_{e}\Vert ^{2} \le  {K'_{e}}^{2} r_{e}^{-5}, \\
+& \Vert \nabla  Z_{t}\Vert ^{2} \le  {K'_{t}}^{2} (\sum _{e \in  t} r_{e}^{-1})^{2} w_{t}/s_{t}.
+\end{aligned}\tag{5.3}
+\end{gather*}
+
+In (5.3), \(\nabla\) differentiates the active graph coefficient and its
+active oscillator factors. The full map also contains a vacuum factor on
+every spectator edge. Its full derivative has the corrected bound
+
+% DISPLAY c.33
+% SOURCE ||nabla Z_g||² <= C_N[d_(g,active)+m_g W_2],
+% SOURCE W_p=sum_e r_e^-p,                                       (5.4)
+\begin{gather*}
+\begin{aligned}
+& \Vert \nabla  Z_{g}\Vert ^{2} \le  C_{N}[d_{g,\mathrm{active}}+m_{g} W_{2}], \\
+& W_{p}=\sum _{e} r_{e}^{-p},
+\end{aligned}\tag{5.4}
+\end{gather*}
+
+where \(m_{g}\) is the right side of (5.2). The extra term is necessary
+when a spectator edge is much shorter. For adapted vacua it includes
+internal derivatives of spectator factors as well as center derivatives.
+The active triangle right side in (5.3) is at most a fixed numerical
+multiple of \({K'_{t}}^{2} \sum _{e \in  t} r_{e}^{-5}\), by Holder and
+\(s_{t}\ge \max  r_{e}\). Moreover
+
+% DISPLAY c.34
+% SOURCE W_3 W_2 <= (#edges) W_5.
+\begin{gather*}
+\begin{aligned}
+& W_{3} W_{2} \le  (\#\text{edges}) W_{5}.
+\end{aligned}\notag
+\end{gather*}
+
+Thus the full derivatives still have a summed \(C_{N} W_{5}\) majorant.
+Graph-resolved weights must nevertheless be kept when an internal Yukawa
+multiplier is to be paid.
+
+\subsubsection{5.1 Perturbed finite source
+spaces}\label{c-perturbed-finite-source-spaces}
+
+The Gaussian/Fock statement also has a useful conditional continuation.
+On the adapted pairwise-relative tube, unitary/symplectic transport
+identifies the finite degree-at-most-three source spaces with their
+centered spaces. Frequencies have fixed positive bounds
+\(c r_{e} \le  \omega _{e,j} \le  C r_{e}\). A source odd in each
+triangle edge therefore has complementary excitation energy at least
+\(c s_{t}\), even when modes within one pair split or coincide.
+
+If the exact leading Hamiltonian graph source \(S_{g}(A)\) has the
+coefficient bounds
+
+% DISPLAY c.35
+% SOURCE ||S_e(A)||² <= C_N/r_e,
+% SOURCE ||S_t(A)||² <= C_N s_t w_t,
+\begin{gather*}
+\begin{aligned}
+& \Vert S_{e}(A)\Vert ^{2} \le  C_{N}/r_{e}, \\
+& \Vert S_{t}(A)\Vert ^{2} \le  C_{N} s_{t} w_{t},
+\end{aligned}\notag
+\end{gather*}
+
+then the inverse of the shifted excitation operator
+
+% DISPLAY c.36
+% SOURCE H_exc = H_fast - E_(0,total)
+\begin{gather*}
+\begin{aligned}
+& H_{\mathrm{exc}} = H_{\mathrm{fast}} - E_{0,\mathrm{total}}
+\end{aligned}\notag
+\end{gather*}
+
+on the relevant excited sector satisfies precisely the graph dressing
+bounds (5.2), with enlarged constants. The vacuum-energy defect is
+handled separately by the general frozen-energy lemma. An unshifted
+inverse of the full fast Hamiltonian need not have these denominators,
+because unrelated pair vacuum-energy defects would enter it. This is
+solely the finite-source fast excitation inverse. No internal momentum
+appears in its denominator.
+
+To deduce a small adapted inverse-square remainder from the centered
+identity, one additionally needs the exact diagonal \(H_{2}\) inventory,
+including its density, ordering, and internal-potential cross terms.
+Under coefficientwise perturbation bounds of order \(\kappa\), the
+finite resolvent identity gives a defect at most
+\(C_{N} \kappa  W_{2}\). Establishing all those hypotheses from the full
+reduced Hamiltonian is separate from the graph calculation.
+
+\subsection{6. A graph-local complete slow form
+lemma}\label{c-a-graph-local-complete-slow-form-lemma}
+
+This is an all-vector statement, not a finite-Gaussian approximation to
+an internal wavefunction.
+
+Let
+
+% DISPLAY c.37
+% SOURCE H_s = T_cent + sum_a H_a,
+% SOURCE H_a = T_a + V_a + Y_a,
+% SOURCE V_a >= 0,     ||Y_a(A)|| <= c_(n_a) alpha_a.
+\begin{gather*}
+\begin{aligned}
+& H_{s} = T_{\mathrm{cent}} + \sum _{a} H_{a}, \\
+& H_{a} = T_{a} + V_{a} + Y_{a}, \\
+& V_{a} \ge  0, \quad  \Vert Y_{a}(A)\Vert  \le  c_{n_{a}} \alpha _{a}.
+\end{aligned}\notag
+\end{gather*}
+
+The averaged sixteen-charge identity makes \(H_{a}\) nonnegative also on
+colored internal vectors. The ordinary physical lower-rank Hardy
+estimate is not being invoked. For a graph-local multiplication map
+\(Z_{g}\), suppose
+
+\begin{itemize}
+\tightlist
+\item
+  it is an active-graph coefficient, depending on internal coordinates
+  at graph vertices only, tensored with the vacua on spectator edges;
+\item
+  it acts on internal Clifford factors only at these vertices;
+\item
+  it is even in total fermion parity, as is \(q_{0}^{-1} B_{g}\);
+\item
+  \(\Vert Z_{g}\Vert ^{2} \le  m_{g}(z)\) and the full derivative obeys
+  the center-only majorant \(d_{g}\) in (5.4).
+\end{itemize}
+
+For a block \(a\) outside \(g\), its internal potential charge commutes
+exactly with the map. The complete internal charge satisfies
+
+% DISPLAY c.38
+% SOURCE Q_(a,alpha) Z_g = Z_g Q_(a,alpha)+C_(a,alpha,g),
+\begin{gather*}
+\begin{aligned}
+& Q_{a,\alpha} Z_{g} = Z_{g} Q_{a,\alpha}+C_{a,\alpha ,g},
+\end{aligned}\notag
+\end{gather*}
+
+where \(C_{a,\alpha ,g}\) is bounded multiplication coming only from
+derivatives of spectator vacua. Its squared norm is bounded by the
+corresponding derivative majorant, with the finite Clifford contraction
+factor. Averaging the exact charge squares and applying Young gives
+
+% DISPLAY c.39
+% SOURCE H_a[Z_g f] <= 2 integral m_g(z) [H_a-density of f]
+% SOURCE               + C_N integral d_(a,g)(z)|f|².            (6.1)
+\begin{gather*}
+\begin{aligned}
+& H_{a}[Z_{g} f] \le  2 \int  m_{g}(z) [H_{a}\text{-density of }f] \\
+& + C_{N} \int  d_{a,g}(z)\vert f\vert ^{2}.
+\end{aligned}\tag{6.1}
+\end{gather*}
+
+In particular no unrelated \(\alpha _{a} m_{g}\) loss appears. It would
+be incorrect to assert exact commutation while differentiating a moving
+spectator vacuum. For a graph vertex use the elementary uncompressed
+estimate, with no internal spectral assumptions,
+
+% DISPLAY c.40
+% SOURCE H_a[Z_g f]
+% SOURCE   <= 2 integral m_g(z) [H_a-density of f]
+% SOURCE      + 3c_(n_a) integral alpha_a m_g(z)|f|²
+% SOURCE      + 2 integral |partial_Aa Z_g|² |f|².               (6.2)
+\begin{gather*}
+\begin{aligned}
+& H_{a}[Z_{g} f] \\
+& \le  2 \int  m_{g}(z) [H_{a}\text{-density of }f] \\
+& + 3c_{n_{a}} \int  \alpha _{a} m_{g}(z)\vert f\vert ^{2} \\
+& + 2 \int  \vert \partial _{Aa} Z_{g}\vert ^{2} \vert f\vert ^{2}.
+\end{aligned}\tag{6.2}
+\end{gather*}
+
+The notation for a weighted internal density is harmless here because
+its weight depends only on centers; it is the nonnegative internal form
+on every fixed-center fiber. The center kinetic estimate has the same
+derivative-product bound with no Yukawa term.
+
+For pair and triangle dressings from (5.2),
+
+% DISPLAY c.41
+% SOURCE sup m_g <= C_N r_*^-3.
+\begin{gather*}
+\begin{aligned}
+& \sup  m_{g} \le  C_{N} r_{*}^{-3}.
+\end{aligned}\notag
+\end{gather*}
+
+At a pair endpoint, \(\alpha _{a}\le \kappa  r_{e}\) gives
+
+% DISPLAY c.42
+% SOURCE alpha_a m_e <= C_N kappa r_e^-2.
+\begin{gather*}
+\begin{aligned}
+& \alpha _{a} m_{e} \le  C_{N} \kappa  r_{e}^{-2}.
+\end{aligned}\notag
+\end{gather*}
+
+At any triangle vertex,
+\(\alpha _{a}\le \kappa  \min (\text{ incident } r_{e})\le \kappa  s_{t}\),
+and hence
+
+% DISPLAY c.43
+% SOURCE alpha_a m_t <= C_N kappa w_t.                           (6.3)
+\begin{gather*}
+\begin{aligned}
+& \alpha _{a} m_{t} \le  C_{N} \kappa  w_{t}.
+\end{aligned}\tag{6.3}
+\end{gather*}
+
+This remains true when the opposite edge is arbitrarily shorter than the
+two incident edges. The factor \(s_{t}\) from the virtual denominator is
+doing essential work.
+
+Combining (6.1)-(6.3), then using positivity of \(H_{s}\) to sum the
+finitely many graph maps, proves
+
+% DISPLAY c.44
+% SOURCE H_s[sum_g Z_g f]
+% SOURCE   <= C_N r_*^-3 H_s[f]
+% SOURCE      + C_N kappa integral W_2 |f|²
+% SOURCE      + C_N integral W_5 |f|².                           (6.4)
+\begin{gather*}
+\begin{aligned}
+& H_{s}[\sum _{g} Z_{g} f] \\
+& \le  C_{N} r_{*}^{-3} H_{s}[f] \\
+& + C_{N} \kappa  \int  W_{2} \vert f\vert ^{2} \\
+& + C_{N} \int  W_{5} \vert f\vert ^{2}.
+\end{aligned}\tag{6.4}
+\end{gather*}
+
+The constants can be chosen from the finite sums of \(K_{g}^{2}\),
+\({K'_{g}}^{2}\), vertex counts, and \(c_{n_{a}}\). For instance a
+direct Cauchy-Schwarz sum multiplies their sum by the number of graphs
+\(\binom{k}{2}+\binom{k}{3}\). This gives an explicit finite-N recipe,
+without a global ratio parameter.
+
+The full derivative terms in this argument include spectator factors;
+their product weight is controlled by
+\(W_{3} W_{2} \le  (\#\text{edges}) W_{5}\). The same argument applies
+to a genuinely adapted dressing if its active-graph coefficients and
+spectator factors satisfy the hypotheses. In particular, (6.4) retains
+arbitrary internal momenta. No absolute-value inverse expansion of
+\(H_{f}+H_{I}\) has been used. It also explains why the coarse estimate
+\(\Vert Z\Vert ^{2}\le C W_{3}\) should not first be multiplied by
+\(\sum  \alpha _{a}\): that would incorrectly charge a distant large
+block against an unrelated short root.
+
+\subsubsection{6.1 Direct center-Hardy
+payment}\label{c-direct-center-hardy-payment}
+
+For each pair, in the mass center metric,
+
+% DISPLAY c.45
+% SOURCE integral r_ab^-2 |f|²
+% SOURCE    <= (4/49)(1/n_a+1/n_b)^-1 T_cent[f].                 (6.5)
+\begin{gather*}
+\begin{aligned}
+& \int  r_{ab}^{-2} \vert f\vert ^{2} \\
+& \le  (4/49)(1/n_{a}+1/n_{b})^{-1} T_{\mathrm{cent}}[f].
+\end{aligned}\tag{6.5}
+\end{gather*}
+
+The inequality holds for Hilbert-valued coefficients and unitary
+connections. Also \(W_{5} \le  r_{*}^{-3} W_{2}\). Hence the last two
+terms in (6.4) are bounded by an arbitrarily small center kinetic
+fraction by first choosing \(\kappa\) small at fixed \(N\) and then
+\(r_{*}\) large. The first term is a small fraction of the entire
+interacting slow form, not a fixed internal kinetic loss.

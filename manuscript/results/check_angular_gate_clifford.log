@@ -1,0 +1,16 @@
+{
+  "arithmetic": "exact integer matrices and Fraction",
+  "gamma_anticommutators": 81,
+  "angular_generators_checked": 36,
+  "orbital_coefficient": "exact x_u p_v - x_v p_u",
+  "spin_coefficient": "exact -i Theta gamma_uv Theta / 4",
+  "interaction_traces": "all zero",
+  "fixed_generator_charge_sum_identity": "(|x_u|^2+|x_v|^2)/32 + sum_other |x_w|^2/392",
+  "fixed_generator_charge_sum_bound": "alpha^2 / 32",
+  "all_36_generators_charge_sum_identity": "9 alpha^2 / 28",
+  "charge_normalization": "{q_alpha,q_beta}=delta_alpha,beta h; sum||q g||^2=8h[g]",
+  "baseline_rescaling": "Q=sqrt(2)q; A=a/sqrt(2); fixed bound alpha^2/64; all-generator sum 9alpha^2/56",
+  "casimir_coercivity": "7 lambda / (72 R^2)",
+  "nonsinglet_coercivity": "7 / (9 R^2)",
+  "scope": "finite Clifford algebra only; analytic proof and domains in manuscript Appendix K"
+}

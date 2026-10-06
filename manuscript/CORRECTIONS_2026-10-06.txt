@@ -1,0 +1,20 @@
+BFSS review packet v2.1 — correction record
+6 October 2026
+
+Production corrections
+- Replaced the 366 source-style display formula blocks in Appendices A–J with mathematical typesetting. Inline formulas now use real subscripts, powers, Greek symbols, norms, sums, integrals, and adjoints.
+- Removed line-break opportunities inside subscripted identifiers. The original PDF split r_*, W_2, and a_I across lines, among other instances.
+- Kept the original equation labels and local section labels for comparison. Their historical gaps and nonsequential labels are now explicitly explained.
+- Improved the page placement of Lemma 9.2 and Theorem 11.1 and corrected a small word-hyphenation issue.
+- Updated the cover and running version label. The original v2 PDF and source archive remain separate files.
+
+Mathematical exposition corrections
+- Appendix A, after (22): replaced the stale instruction to spend a retained copy of the original Gauss square with the complete-charge and postcompletion argument of Appendix I §§4 and 5.2–5.4. The bound in (22) remains an incident-weighted low-leg estimate; no second Gauss reserve is claimed.
+- Appendix E §§6.1–6.2 and Appendix H §4: explicitly restricted the relevant bounded coefficient tensors to be independent of the fast variables Y. They may depend on slow variables. This states the hypothesis needed by the displayed integration-by-parts calculation.
+- Section 1: described Hasler–Hoppe's explicit rotation primitives and Spin(d)-invariance result without claiming that their cited paper corrected Sethi–Stern.
+
+Review boundary
+This remains an unreviewed candidate analytical proof. Typesetting checks, finite regression programs, and symbolic identities do not independently establish the full operator estimates. In particular, Appendix D §§4.1–5 still calls for independent reconstruction of every contraction in W(A) and its gap-ratio-uniform perturbation bound. The included finite checks test inverse-Gauss and density Taylor coefficients; they do not verify the entire operator cancellation. No false bound has been demonstrated by this audit, and no full proof certification is claimed.
+
+Traceability
+FORMULA_TRANSCRIPTION.json records the original source expressions and their LaTeX transcriptions, including explicitly retained shorthand and verbal terms whose interpretation was not changed. EDITORIAL_CORRECTIONS.json records the exact old/new prose for the mathematical exposition changes. Source formula labels and operator order are retained. The original plain-text notes are included under transcription/original_notes for comparison; technical_notes contains the corrected prose version.

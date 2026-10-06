@@ -1,0 +1,62 @@
+PASS: isotropic mass coefficient 1/36; singlet leakage 1/12; squared distance 1/6
+PASS: lowest-weight lower bounds in the three unitary branches
+PASS: all potentially singlet descendants below m/3 excluded, including both SU(4) conventions
+PASS: exact normalized projection distance and bound by twice leakage
+PASS: weighted and unweighted mass exponents; incompatible certified mass windows
+PASS: weighted Holder inequality with degree-four and degree-six squared observables
+PASS: compact-regulator model has gap 2m and Rayleigh error 2m^2 but diverging sixth moment
+
+LOW-ENERGY LABEL CHECK: [(0, 0, 1, 3, 0), (0, 1, 0, 2, 0), (1, 0, 0, 1, 0), (1, 0, 0, 1, 2), (1, 1, 0, 3, 0), (2, 0, 0, 2, 0), (3, 0, 0, 3, 0)]
+
+COUNTEREXAMPLE: [
+  {
+    "j": 2,
+    "m": 0.25,
+    "Rayleigh": 0.125,
+    "R2": 1.75,
+    "R6": 16.75,
+    "projection_norm_error": 0.5
+  },
+  {
+    "j": 4,
+    "m": 0.0625,
+    "Rayleigh": 0.0078125,
+    "R2": 1.9375,
+    "R6": 256.9375,
+    "projection_norm_error": 0.25
+  },
+  {
+    "j": 8,
+    "m": 0.015625,
+    "Rayleigh": 0.00048828125,
+    "R2": 1.984375,
+    "R6": 4096.984375,
+    "projection_norm_error": 0.125
+  },
+  {
+    "j": 16,
+    "m": 0.00390625,
+    "Rayleigh": 3.0517578125e-05,
+    "R2": 1.99609375,
+    "R6": 65536.99609375,
+    "projection_norm_error": 0.0625
+  },
+  {
+    "j": 32,
+    "m": 0.0009765625,
+    "Rayleigh": 1.9073486328125e-06,
+    "R2": 1.9990234375,
+    "R6": 1048576.9990234375,
+    "projection_norm_error": 0.03125
+  },
+  {
+    "j": 64,
+    "m": 0.000244140625,
+    "Rayleigh": 1.1920928955078125e-07,
+    "R2": 1.999755859375,
+    "R6": 16777216.99975586,
+    "projection_norm_error": 0.015625
+  }
+]
+
+ALL 7 FINITE CHECKS PASSED

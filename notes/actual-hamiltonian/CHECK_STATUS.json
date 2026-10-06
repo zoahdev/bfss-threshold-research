@@ -1,0 +1,12 @@
+{
+  "publication_status": "conditional/provisional research archive",
+  "human_expert_review": "not supplied",
+  "author": "Yicheng Pan",
+  "branch_summary": "Provisional route analysis; weighted stress sign and zero-mode concentration remain unresolved.",
+  "dependencies": [
+    "Quadrupole-clipping reduction",
+    "Justified scalar-multiplier and Ward domains",
+    "Source-specific zero-mode information"
+  ],
+  "verification_scope": "Finite algebra and consistency checks only; not certification of infinite-dimensional hypotheses or a rank-uniform theorem."
+}

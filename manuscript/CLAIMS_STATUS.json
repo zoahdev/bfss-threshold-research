@@ -1,0 +1,28 @@
+{
+  "version": "2026-10-06 v2.1 typesetting and exposition revision",
+  "publication_status": "Public conditional research archive; not submitted, peer reviewed, or formally certified",
+  "baseline_all_vector_claim": "Conditional on the complete stated realization and analytical inputs, every fixed finite N admits every exterior coefficient c<49/4 on physical vectors.",
+  "singlet_claim": "Under the same baseline dependencies and stated equivariant/domain construction, every fixed finite N admits c<121/4 on physical Spin(9)-singlet exterior form vectors.",
+  "moment_corollary": "Via the existing Hasler-Hoppe invariance theorem, every actual compatible physical L2 zero mode then has ordinary radial moments 0<=m<9.",
+  "proof_status": "Candidate analytical proof; no independent human or proof-assistant verification.",
+  "normalization": "The 8h stack has fixed-generator primitive bound alpha^2/32 and all-36-generator sum 9alpha^2/28. The baseline 16h stack requires charge multiplication by sqrt(2) and reciprocal primitive division, giving 1/64 and 9/56.",
+  "domain_order": "Apply the actual paid local ledger, zero-extend its coefficient into the reference form domain, Haar-average internally, then apply full-space model estimates.",
+  "not_established": [
+    "existence",
+    "uniqueness",
+    "m=9 endpoint",
+    "full-Hamiltonian sharpness",
+    "improved coefficient for arbitrary nonsinglets",
+    "uniform-N estimates",
+    "large-N limit",
+    "zero-energy reduced-resolvent bounds",
+    "full soft theorems",
+    "scattering completeness",
+    "priority",
+    "human expert approval",
+    "Lean or other formal verification"
+  ],
+  "regression_programs": 11,
+  "regression_all_zero_exit_codes": true,
+  "remaining_audit_priority": "Independently reconstruct Appendix D §§4.1–5: every contraction in W(A) and the gap-ratio-uniform perturbation estimate. Existing symbolic checks cover inverse-Gauss/density Taylor coefficients, not the complete operator cancellation."
+}

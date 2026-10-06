@@ -1,0 +1,12 @@
+{
+  "cases": 15,
+  "maximum_energy_ratio": 1.224451747383034,
+  "maximum_bosonic_ratio": 0.2244670405395716,
+  "maximum_fermionic_ratio": 1.0003353200018898,
+  "maximum_commuting_energy_abs": 4.263256414560601e-14,
+  "maximum_commuting_GK_error": 5.5466724532931505e-15,
+  "maximum_potential_quadratic_error": 1.7763568394002505e-15,
+  "maximum_endpoint_weight_error": 3.308722450212111e-24,
+  "maximum_D_square_error": 8.702344069354986e-15,
+  "maximum_word_bound_ratio": 0.000639599706905658
+}

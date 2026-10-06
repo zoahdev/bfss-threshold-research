@@ -1,0 +1,12 @@
+{
+  "map": "../FORMULA_TRANSCRIPTION.json",
+  "sha256": "77128079e41442044261c94740d7b62acb0b2b246cbf673a89950458690c5420",
+  "display_blocks": 366,
+  "display_rows": 715,
+  "local_equation_tags": 212,
+  "inline_expressions": 1430,
+  "flat_token_order_mismatches": [],
+  "explicit_group_mismatches": [],
+  "source_matrix_note": "a.15 source ASCII 2x2 block matrix was manually checked against the bmatrix rendering; it also passes flat token-order comparison.",
+  "scope": "Transcription of mathematical tokens, order and explicit grouping. Source truth, theorem correctness, unstated normalization and unresolved source semantics are not proved by these checks."
+}

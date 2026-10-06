@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-06",
+  "python_version": "3.12.14",
+  "status": "passed",
+  "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+  "checks": [
+    {
+      "script": "check_spin9.py",
+      "status": "passed",
+      "exit_code": 0,
+      "sha256": "bd4f74b19db48a0c15ffdfef52be1a686a7bac4d78a53202d7bd23bc9239645e",
+      "duration_seconds": 0.223,
+      "output_file": "validation_outputs/check_spin9.txt"
+    },
+    {
+      "script": "independent_verify_bianchi.py",
+      "status": "passed",
+      "exit_code": 0,
+      "sha256": "06524490c8adb7700435280a4c80a329a7d6d4a4c6ccff4e535a2f0ce3d86c9e",
+      "duration_seconds": 0.08,
+      "output_file": "validation_outputs/independent_verify_bianchi.txt"
+    }
+  ],
+  "numpy_version": "2.3.5",
+  "sympy_version": "1.14.0"
+}

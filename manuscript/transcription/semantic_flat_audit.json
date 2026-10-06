@@ -1,0 +1,5 @@
+{
+  "scope": "All 366 display blocks, independent flat mathematical-token order check; excludes proof correctness and grouping scope. Mismatches are reviewed manually.",
+  "display_count": 366,
+  "mismatches": []
+}

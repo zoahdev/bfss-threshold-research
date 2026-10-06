@@ -1,0 +1,31 @@
+{
+  "display_blocks": 366,
+  "counts": {
+    "a": 36,
+    "b": 38,
+    "c": 45,
+    "d": 33,
+    "e": 37,
+    "f": 11,
+    "g": 32,
+    "h": 26,
+    "i": 78,
+    "j": 30
+  },
+  "formula_rows": 715,
+  "local_equation_tags": 212,
+  "flagged_blocks": 11,
+  "maximum_row_width_pt": 265.03415,
+  "display_review_pages": 43,
+  "compilation_errors": 0,
+  "overfull_warnings": 0,
+  "missing_character_warnings": 0,
+  "visually_inspected_pages": [
+    1,
+    7,
+    12,
+    19,
+    29,
+    40
+  ]
+}

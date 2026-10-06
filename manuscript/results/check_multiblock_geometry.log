@@ -1,0 +1,227 @@
+{
+  "kind": "finite CPU regression, not a proof",
+  "samples": [
+    {
+      "partition": [
+        2,
+        2
+      ],
+      "separation_ratio": 1.0,
+      "max_internal_to_unrelated_rmin": 0.003,
+      "ambient_orthogonal_frame_error": 4.440892098500626e-16,
+      "constraint_K_error": 1.0842021724855044e-19,
+      "slice_tangent_constraint_error": 7.78822944020152e-17,
+      "internal_metric_error": 0.0,
+      "fp_identity_error": 6.661338147750939e-16,
+      "jacobian_log_error": 0.0,
+      "kinetic_relative_error": 2.0184495334518152e-16,
+      "linear_density_trace": 0.0,
+      "normalized_fp_symmetry_error": 2.6469779601696886e-23,
+      "normalized_fp_deviation": 0.0010887591203381452,
+      "claimed_fp_bound": 0.010016,
+      "selector_hessian_relative_error": 8.881856745003185e-17,
+      "normal_determinant_positive": true
+    },
+    {
+      "partition": [
+        2,
+        2
+      ],
+      "separation_ratio": 1.0,
+      "max_internal_to_unrelated_rmin": 0.003,
+      "ambient_orthogonal_frame_error": 4.440892098500626e-16,
+      "constraint_K_error": 8.673617379884035e-19,
+      "slice_tangent_constraint_error": 7.78822944020152e-17,
+      "internal_metric_error": 0.0,
+      "fp_identity_error": 4.440892098500626e-16,
+      "jacobian_log_error": 0.0,
+      "kinetic_relative_error": 0.0,
+      "linear_density_trace": 0.0,
+      "normalized_fp_symmetry_error": 8.470329472543003e-22,
+      "normalized_fp_deviation": 0.0020717101981650994,
+      "claimed_fp_bound": 0.024324000000000002,
+      "selector_hessian_relative_error": 2.665311394552373e-16,
+      "normal_determinant_positive": true
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1
+      ],
+      "separation_ratio": 10.198039027185569,
+      "max_internal_to_unrelated_rmin": 0.0030000000000000005,
+      "ambient_orthogonal_frame_error": 5.551115123125783e-16,
+      "constraint_K_error": 1.0842021724855044e-19,
+      "slice_tangent_constraint_error": 4.8859767247255054e-17,
+      "internal_metric_error": 0.0,
+      "fp_identity_error": 3.552713678800501e-15,
+      "jacobian_log_error": 0.0,
+      "kinetic_relative_error": 1.2606086705095132e-16,
+      "linear_density_trace": 0.0,
+      "normalized_fp_symmetry_error": 2.3505164286306834e-20,
+      "normalized_fp_deviation": 0.0008506696101361681,
+      "claimed_fp_bound": 0.010016,
+      "selector_hessian_relative_error": 2.0962299988444057e-16,
+      "normal_determinant_positive": true
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1
+      ],
+      "separation_ratio": 10.198039027185569,
+      "max_internal_to_unrelated_rmin": 0.0029999999999999996,
+      "ambient_orthogonal_frame_error": 5.551115123125783e-16,
+      "constraint_K_error": 4.336808689942018e-19,
+      "slice_tangent_constraint_error": 4.8859767247255054e-17,
+      "internal_metric_error": 0.0,
+      "fp_identity_error": 5.329070518200751e-15,
+      "jacobian_log_error": 0.0,
+      "kinetic_relative_error": 0.0,
+      "linear_density_trace": 0.0,
+      "normalized_fp_symmetry_error": 1.6263032587282567e-19,
+      "normalized_fp_deviation": 0.000511601111651082,
+      "claimed_fp_bound": 0.024324000000000002,
+      "selector_hessian_relative_error": 3.1242721169815143e-16,
+      "normal_determinant_positive": true
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1
+      ],
+      "separation_ratio": 101.43470806385751,
+      "max_internal_to_unrelated_rmin": 0.3013469760923444,
+      "ambient_orthogonal_frame_error": 1.5987211554602254e-14,
+      "constraint_K_error": 1.6263032587282567e-19,
+      "slice_tangent_constraint_error": 5.1173506345589165e-17,
+      "internal_metric_error": 0.0,
+      "fp_identity_error": 2.842170943040401e-14,
+      "jacobian_log_error": 0.0,
+      "kinetic_relative_error": 1.153023430626108e-16,
+      "linear_density_trace": 0.0,
+      "normalized_fp_symmetry_error": 3.210784265685832e-20,
+      "normalized_fp_deviation": 0.0007676655949672176,
+      "claimed_fp_bound": 0.010016,
+      "selector_hessian_relative_error": 1.4197419513622112e-16,
+      "normal_determinant_positive": true
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1
+      ],
+      "separation_ratio": 101.43470806385751,
+      "max_internal_to_unrelated_rmin": 0.3013469760923444,
+      "ambient_orthogonal_frame_error": 1.5987211554602254e-14,
+      "constraint_K_error": 3.2526065174565133e-19,
+      "slice_tangent_constraint_error": 5.1173506345589165e-17,
+      "internal_metric_error": 0.0,
+      "fp_identity_error": 4.263256414560601e-14,
+      "jacobian_log_error": 0.0,
+      "kinetic_relative_error": 1.2301808347901003e-16,
+      "linear_density_trace": 0.0,
+      "normalized_fp_symmetry_error": 1.947116987500823e-19,
+      "normalized_fp_deviation": 0.0009800612596731952,
+      "claimed_fp_bound": 0.024324000000000002,
+      "selector_hessian_relative_error": 2.9652572915493117e-16,
+      "normal_determinant_positive": true
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1
+      ],
+      "separation_ratio": 1000000.499999875,
+      "max_internal_to_unrelated_rmin": 2999.998500001125,
+      "ambient_orthogonal_frame_error": 1.5772272377034824e-11,
+      "constraint_K_error": 1.0842021724855044e-19,
+      "slice_tangent_constraint_error": 9.412175899781161e-15,
+      "internal_metric_error": 0.0,
+      "fp_identity_error": 1.4210854715202004e-14,
+      "jacobian_log_error": 0.0,
+      "kinetic_relative_error": 4.05917721091522e-13,
+      "linear_density_trace": 0.0,
+      "normalized_fp_symmetry_error": 4.347705172866818e-20,
+      "normalized_fp_deviation": 0.0006365756564043631,
+      "claimed_fp_bound": 0.010016,
+      "selector_hessian_relative_error": 1.8212303430176608e-11,
+      "normal_determinant_positive": true
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1
+      ],
+      "separation_ratio": 1000000.499999875,
+      "max_internal_to_unrelated_rmin": 2999.998500001125,
+      "ambient_orthogonal_frame_error": 1.5772272377034824e-11,
+      "constraint_K_error": 4.336808689942018e-19,
+      "slice_tangent_constraint_error": 2.3210166427700685e-14,
+      "internal_metric_error": 0.0,
+      "fp_identity_error": 3.552713678800501e-15,
+      "jacobian_log_error": 0.0,
+      "kinetic_relative_error": 2.345408596784817e-13,
+      "linear_density_trace": 0.0,
+      "normalized_fp_symmetry_error": 8.334219265543586e-20,
+      "normalized_fp_deviation": 0.00021691629781869507,
+      "claimed_fp_bound": 0.024324000000000002,
+      "selector_hessian_relative_error": 1.0494422021744267e-11,
+      "normal_determinant_positive": true
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "separation_ratio": 11.40175425099138,
+      "max_internal_to_unrelated_rmin": 0.0,
+      "ambient_orthogonal_frame_error": 5.551115123125783e-16,
+      "constraint_K_error": 1.0842021724855044e-19,
+      "slice_tangent_constraint_error": 1.304966576251624e-16,
+      "internal_metric_error": 0.0,
+      "fp_identity_error": 7.105427357601002e-15,
+      "jacobian_log_error": 7.105427357601002e-15,
+      "kinetic_relative_error": 0.0,
+      "linear_density_trace": 0.0,
+      "normalized_fp_symmetry_error": 2.710505431213761e-20,
+      "normalized_fp_deviation": 0.00020518271514815425,
+      "claimed_fp_bound": 0.010016,
+      "selector_hessian_relative_error": 4.633783864744835e-16,
+      "normal_determinant_positive": true
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "separation_ratio": 11.40175425099138,
+      "max_internal_to_unrelated_rmin": 0.0,
+      "ambient_orthogonal_frame_error": 5.551115123125783e-16,
+      "constraint_K_error": 4.336808689942018e-19,
+      "slice_tangent_constraint_error": 1.304966576251624e-16,
+      "internal_metric_error": 0.0,
+      "fp_identity_error": 3.552713678800501e-15,
+      "jacobian_log_error": 0.0,
+      "kinetic_relative_error": 0.0,
+      "linear_density_trace": 0.0,
+      "normalized_fp_symmetry_error": 1.3552527156068805e-19,
+      "normalized_fp_deviation": 0.0008974509421180204,
+      "claimed_fp_bound": 0.024324000000000002,
+      "selector_hessian_relative_error": 2.0513594575367463e-16,
+      "normal_determinant_positive": true
+    }
+  ],
+  "max_kinetic_relative_error": 4.05917721091522e-13,
+  "max_jacobian_log_error": 7.105427357601002e-15
+}

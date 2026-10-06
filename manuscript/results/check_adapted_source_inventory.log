@@ -1,0 +1,208 @@
+{
+  "scope": "Actual D0/D1/D2 and quadratic density Taylor coefficients from ambient matrices; not complementary coercivity.",
+  "cases": [
+    {
+      "partition": [
+        2,
+        2
+      ],
+      "gap_ratio": 1.0,
+      "D_halving_ratios": [
+        7.9988762241624976,
+        7.9994385063831785,
+        7.999720036595427,
+        7.999858591520557
+      ],
+      "samples": [
+        {
+          "epsilon": 0.08,
+          "D_remainder_norm": 2.597000670106839e-08,
+          "D_remainder_over_epsilon3": 5.0722669338024195e-05,
+          "log_density_remainder": 1.3759022988939326e-14,
+          "density_remainder_over_epsilon3": 2.687309177527212e-11
+        },
+        {
+          "epsilon": 0.04,
+          "D_remainder_norm": 3.2467069089805193e-09,
+          "D_remainder_over_epsilon3": 5.0729795452820605e-05,
+          "log_density_remainder": 1.052776244290745e-15,
+          "density_remainder_over_epsilon3": 1.6449628817042888e-11
+        },
+        {
+          "epsilon": 0.02,
+          "D_remainder_norm": 4.058668500782647e-10,
+          "D_remainder_over_epsilon3": 5.0733356259783085e-05,
+          "log_density_remainder": 1.521717586101706e-16,
+          "density_remainder_over_epsilon3": 1.9021469826271322e-11
+        },
+        {
+          "epsilon": 0.01,
+          "D_remainder_norm": 5.073513175731037e-11,
+          "D_remainder_over_epsilon3": 5.073513175731036e-05,
+          "log_density_remainder": 1.7468211578715176e-17,
+          "density_remainder_over_epsilon3": 1.7468211578715173e-11
+        },
+        {
+          "epsilon": 0.005,
+          "D_remainder_norm": 6.3420035712990016e-12,
+          "D_remainder_over_epsilon3": 5.073602857039201e-05,
+          "log_density_remainder": 5.114409833657903e-17,
+          "density_remainder_over_epsilon3": 4.091527866926322e-10
+        }
+      ]
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1
+      ],
+      "gap_ratio": 10.198039027185569,
+      "D_halving_ratios": [
+        8.000001698684631,
+        8.000000828634802,
+        8.000000408811031,
+        8.000000213320742
+      ],
+      "samples": [
+        {
+          "epsilon": 0.08,
+          "D_remainder_norm": 5.108175061037354e-06,
+          "D_remainder_over_epsilon3": 0.00997690441608858,
+          "log_density_remainder": 2.3685032526749673e-15,
+          "density_remainder_over_epsilon3": 4.625982915380795e-12
+        },
+        {
+          "epsilon": 0.04,
+          "D_remainder_norm": 6.385217470487845e-07,
+          "D_remainder_over_epsilon3": 0.009976902297637256,
+          "log_density_remainder": 1.480304232868867e-15,
+          "density_remainder_over_epsilon3": 2.3129753638576045e-11
+        },
+        {
+          "epsilon": 0.02,
+          "D_remainder_norm": 7.981521011389046e-08,
+          "D_remainder_over_epsilon3": 0.009976901264236306,
+          "log_density_remainder": 9.62191571332971e-16,
+          "density_remainder_over_epsilon3": 1.2027394641662136e-10
+        },
+        {
+          "epsilon": 0.01,
+          "D_remainder_norm": 9.976900754402921e-09,
+          "D_remainder_over_epsilon3": 0.00997690075440292,
+          "log_density_remainder": 2.0354131701681985e-16,
+          "density_remainder_over_epsilon3": 2.0354131701681982e-10
+        },
+        {
+          "epsilon": 0.005,
+          "D_remainder_norm": 1.247112561045993e-09,
+          "D_remainder_over_epsilon3": 0.009976900488367942,
+          "log_density_remainder": 1.3831529588043928e-15,
+          "density_remainder_over_epsilon3": 1.106522367043514e-08
+        }
+      ]
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1
+      ],
+      "gap_ratio": 101.43470806385751,
+      "D_halving_ratios": [
+        7.9999998920606465,
+        7.999999746504106,
+        7.999999818312326,
+        7.999999937744022
+      ],
+      "samples": [
+        {
+          "epsilon": 0.08,
+          "D_remainder_norm": 3.981530207509634e-06,
+          "D_remainder_over_epsilon3": 0.007776426186542253,
+          "log_density_remainder": 3.692568665150198e-17,
+          "density_remainder_over_epsilon3": 7.212048174121479e-14
+        },
+        {
+          "epsilon": 0.04,
+          "D_remainder_norm": 4.976912826537637e-07,
+          "D_remainder_over_epsilon3": 0.007776426291465056,
+          "log_density_remainder": 3.5434822571376254e-15,
+          "density_remainder_over_epsilon3": 5.536691026777539e-11
+        },
+        {
+          "epsilon": 0.02,
+          "D_remainder_norm": 6.221141230301266e-08,
+          "D_remainder_over_epsilon3": 0.00777642653787658,
+          "log_density_remainder": 8.858705642844064e-16,
+          "density_remainder_over_epsilon3": 1.1073382053555078e-10
+        },
+        {
+          "epsilon": 0.01,
+          "D_remainder_norm": 7.776426714486692e-09,
+          "D_remainder_over_epsilon3": 0.007776426714486691,
+          "log_density_remainder": 1.997824480471352e-15,
+          "density_remainder_over_epsilon3": 1.9978244804713516e-09
+        },
+        {
+          "epsilon": 0.005,
+          "D_remainder_norm": 9.72053346875353e-10,
+          "D_remainder_over_epsilon3": 0.007776426775002823,
+          "log_density_remainder": 1.3876345398179632e-15,
+          "density_remainder_over_epsilon3": 1.1101076318543704e-08
+        }
+      ]
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1
+      ],
+      "gap_ratio": 1000000.499999875,
+      "D_halving_ratios": [
+        7.999999502980283,
+        7.999999641648829,
+        7.9999997944855785,
+        7.999999884886384
+      ],
+      "samples": [
+        {
+          "epsilon": 0.08,
+          "D_remainder_norm": 8.401466351069669e-06,
+          "D_remainder_over_epsilon3": 0.016409113966932943,
+          "log_density_remainder": 5.040740476485608e-15,
+          "density_remainder_over_epsilon3": 9.845196243135951e-12
+        },
+        {
+          "epsilon": 0.04,
+          "D_remainder_norm": 1.0501833591289381e-06,
+          "D_remainder_over_epsilon3": 0.016409114986389656,
+          "log_density_remainder": 4.0688853990793494e-15,
+          "density_remainder_over_epsilon3": 6.357633436061482e-11
+        },
+        {
+          "epsilon": 0.02,
+          "D_remainder_norm": 1.312729257713431e-07,
+          "D_remainder_over_epsilon3": 0.016409115721417886,
+          "log_density_remainder": 7.591354896304131e-16,
+          "density_remainder_over_epsilon3": 9.489193620380163e-11
+        },
+        {
+          "epsilon": 0.01,
+          "D_remainder_norm": 1.6409116142956638e-08,
+          "D_remainder_over_epsilon3": 0.016409116142956634,
+          "log_density_remainder": 1.9661407118078537e-15,
+          "density_remainder_over_epsilon3": 1.9661407118078533e-09
+        },
+        {
+          "epsilon": 0.005,
+          "D_remainder_norm": 2.051139547383841e-09,
+          "D_remainder_over_epsilon3": 0.016409116379070724,
+          "log_density_remainder": 2.267892017352214e-15,
+          "density_remainder_over_epsilon3": 1.8143136138817708e-08
+        }
+      ]
+    }
+  ]
+}

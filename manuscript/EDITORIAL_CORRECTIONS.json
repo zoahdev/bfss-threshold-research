@@ -1,0 +1,42 @@
+[
+  {
+    "id": "A-reserve-use",
+    "source": "a_intrinsic_multiblock_geometry.md",
+    "class": "Proof-consistency clarification",
+    "old": "All terms in (22) can be paid against any fixed retained fraction of the exact D[v] square by ordinary Young inequality, without estimating D[v] or internal momenta by a fast gap.",
+    "new": "Estimate (22) records the incident-weighted low-leg coefficient bound. Its use in the mixed form must follow the complete-charge and postcompletion estimates of Appendix I, Sections 4 and 5.2-5.4; it does not authorize retaining or spending a second copy of the original Gauss square.",
+    "rationale": "Appendix I (5.5) uses the same weights and (5.6) spends only eta J[v]; the older sentence conflicted with the retained-reserve accounting. This reconciles exposition and is not independent verification of all later estimates."
+  },
+  {
+    "id": "E-coefficient-scope",
+    "source": "e_rootwise_connection_bounds.md",
+    "class": "Lemma hypothesis clarification",
+    "old": "Any uniformly bounded real coefficient contraction obeys",
+    "new": "Any uniformly bounded real coefficient tensor that may depend on the slow variables but is independent of the fast variables Y obeys",
+    "rationale": "The integration-by-parts identity differentiates in the fast variables without coefficient derivatives. Intended polynomial applications use fast-independent coefficient tensors."
+  },
+  {
+    "id": "E-leading-coefficient-scope",
+    "source": "e_rootwise_connection_bounds.md",
+    "class": "Application hypothesis clarification",
+    "old": "multiplied by a coefficient O(kappa).",
+    "new": "multiplied by a coefficient O(kappa) that is independent of the fast variables Y (it may depend on the slow variables).",
+    "rationale": "States the hypothesis used when the divergence term is declared zero."
+  },
+  {
+    "id": "H-coefficient-scope",
+    "source": "h_colored_complement_reserve.md",
+    "class": "Lemma hypothesis clarification",
+    "old": "For any bounded real coefficient contraction and three distinct triangle edges,",
+    "new": "For any bounded real coefficient tensor independent of the fast variables Y (but possibly dependent on the slow variables), and three distinct triangle edges,",
+    "rationale": "Same fast-variable integration-by-parts restriction as Appendix E."
+  },
+  {
+    "id": "Prior-work-attribution",
+    "source": "manuscript.tex",
+    "class": "Attribution precision",
+    "old": "Hasler and Hoppe corrected and extended the rotation-primitive argument to all $SU(N)$ in the relevant dimensions",
+    "new": "Hasler and Hoppe gave explicit rotation primitives and proved $\\operatorname{Spin}(d)$ invariance for $SU(N)$ in dimensions $d=3,5,9$",
+    "rationale": "Avoids claiming their cited paper corrects the earlier Sethi-Stern theorem or newly establishes all-rank coverage."
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "scope": "All explicit source grouping parentheses, square brackets and anticommutator braces; source script/sqrt/binomial structural delimiters excluded; 2x2 matrix a.15 manually reviewed.",
+  "display_count": 366,
+  "mismatches": []
+}

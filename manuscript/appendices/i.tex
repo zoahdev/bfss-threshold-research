@@ -1,0 +1,1492 @@
+\clearpage
+\section{Local Schur comparison on the form
+domain}\label{i-local-schur-comparison-on-the-form-domain}
+
+Technical derivation for review. Equation and subsection numbers in this
+appendix are local to the source derivation. Historical local labels are
+retained, including numbering gaps or nonsequential labels. The
+accompanying source notes retain the original expressions for
+comparison.
+
+\subsection{1. Statement and inputs}\label{i-statement-and-inputs}
+
+Fix a partition of a finite \(N\). Put
+
+% DISPLAY i.1
+% SOURCE r_* = min_e r_e,    W_p = sum_e r_e^(-p),
+% SOURCE H_s = H_I + T_C,    H_exc = sum_e(H_fast,e-E_0,e).
+\begin{gather*}
+\begin{aligned}
+& r_{*} = \min _{e} r_{e}, \quad  W_{p} = \sum _{e} r_{e}^{-p}, \\
+& H_{s} = H_{I} + T_{C}, \quad  H_{\mathrm{exc}} = \sum _{e}(H_{\mathrm{fast},e}-E_{0,e}).
+\end{aligned}\notag
+\end{gather*}
+
+The internal tube is \(\alpha _{a}+\alpha _{b} \le  \kappa  r_{ab}\).
+The fast tube has \(\vert Y\vert  < \sigma  r_{*}\). There is no bound
+on ratios of unrelated \(r_{e}\) and no internal spectral-gap
+assumption. \(H_{I}\) is the complete interacting colored internal form.
+\(T_{C}\) on the full fiber retains the intrinsic normal connection. On
+the slow bundle, \(H_{s}\) denotes the center-plus-internal model
+identified by internal radial transport with the \(A=0\) vacuum line.
+Its unperturbed internal forms are the colored ones; no lower-rank
+physical-sector Hardy theorem is used.
+
+For every \(\epsilon >0\), there are positive \(\kappa , \sigma , R\)
+and a smooth even normalized cutoff vacuum \(U_{\sigma}\) supported
+strictly inside the fast tube such that, for \(r_{*}\ge R\),
+
+% DISPLAY i.2
+% SOURCE (1-epsilon) H_s[f] - epsilon W_2[f]
+% SOURCE    <= F_sigma[f]
+% SOURCE    <= (1+epsilon) H_s[f] + epsilon W_2[f],              (1.1)
+\begin{gather*}
+\begin{aligned}
+& (1-\epsilon ) H_{s}[f] - \epsilon  W_{2}[f] \\
+& \le  F_{\sigma}[f] \\
+& \le  (1+\epsilon ) H_{s}[f] + \epsilon  W_{2}[f],
+\end{aligned}\tag{1.1}
+\end{gather*}
+
+where the actual zero-energy variational Hamiltonian Schur form is
+
+% DISPLAY i.3
+% SOURCE F_sigma[f] = inf_{v in Q(H), U_sigma^*v=0}
+% SOURCE                       H[U_sigma f+v].                 (1.2)
+\begin{gather*}
+\begin{aligned}
+& F_{\sigma}[f] = \inf _{v \in  Q(H), U_{\sigma}^{*}v=0} \\
+& H[U_{\sigma} f+v].
+\end{aligned}\tag{1.2}
+\end{gather*}
+
+Here Q(H) denotes the CLOSED QUADRATIC-FORM DOMAIN of the Hamiltonian,
+not its operator domain D(H). Orthogonality is fiberwise over the slow
+variables. For every \(f\) in \(Q(H_{s})\), the infimum is attained by a
+unique \(v_{f}\) in Q(H) with \(U_{\sigma}^{*}v_{f}=0\). The form is
+closed on the slow model\textquotesingle s form domain, interpreted with
+Dirichlet support on the selected branch. The constants depend on the
+fixed partition and \(\epsilon\), never on \(r_{\max}/r_{*}\).
+
+Inputs proved in the companion notes are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The exact intrinsic kinetic identity and normalized matrices from
+  Appendix A.
+\item
+  The rootwise all-vector connection estimates in Appendix \(E\) and
+  differential-curvature identities in Appendix \(G\).
+\item
+  The actual H1/H2 inventory, finite source graph grading, and operator
+  identity
+
+  % DISPLAY i.4
+  % SOURCE ||W-S^*H_exc^(-1)S|| <= C_N kappa W_2,              (1.3)
+  \begin{gather*}
+  \begin{aligned}
+  & \Vert W-S^{*}H_{\mathrm{exc}}^{-1}S\Vert  \le  C_{N} \kappa  W_{2},
+  \end{aligned}\tag{1.3}
+  \end{gather*}
+
+  from Appendix \(D\) . Here \(S=H1 U\) is the actual source, not a
+  transported replacement.
+\item
+  The graph-local complete-slow-form bound for
+  \(Z=-H_{\mathrm{exc}}^{-1}S\):
+
+  % DISPLAY i.5
+  % SOURCE H_s[Zf] <= C R^(-3)H_s[f]+C kappa W_2[f]+C W_5[f], (1.4)
+  \begin{gather*}
+  \begin{aligned}
+  & H_{s}[Zf] \le  C R^{-3}H_{s}[f]+C \kappa  W_{2}[f]+C W_{5}[f],
+  \end{aligned}\tag{1.4}
+  \end{gather*}
+
+  including spectator-vacuum derivatives, from Appendix \(C\) and the
+  actual-source continuation.
+\item
+  The colored complementary reserve. A fixed positive part of the actual
+  square \(J[v]=\Vert A p_{s} v\Vert ^{2}\) can be retained:
+
+  % DISPLAY i.6
+  % SOURCE H[v] >= (1-delta)(H_s[v]+H_exc[v])+c_0 J[v]         (1.5)
+  \begin{gather*}
+  \begin{aligned}
+  & H[v] \ge  (1-\delta )(H_{s}[v]+H_{\mathrm{exc}}[v])+c_{0} J[v]
+  \end{aligned}\tag{1.5}
+  \end{gather*}
+
+  on the cutoff complement, after choosing the parameters and exterior
+  radius. For example \(c_{0}=1/2\) is allowed. This is NOT another copy
+  of the original full Gauss square.
+\end{enumerate}
+
+This note supplies the mixed and diagonal-remainder estimates needed to
+assemble these inputs. It never inverts \(H_{I}\) or expands a resolvent
+in internal momenta.
+
+\subsection{2. Exact error-column factorization, including
+spin}\label{i-exact-error-column-factorization-including-spin}
+
+Use the common positive-fast/positive-slow convention
+
+% DISPLAY i.7
+% SOURCE H_kin = ||p_s u||^2+||p_F u||^2+||a u+A p_s u+s u||^2,
+% SOURCE p_s=(g_C^(-1/2)p_C,p_I),
+% SOURCE a=W^(1/2)M^(-*) (C+N_Y)^*p_F,
+% SOURCE s=-W^(1/2)M^(-*)S_f.
+\begin{gather*}
+\begin{aligned}
+& H_{\mathrm{kin}} = \Vert p_{s} u\Vert ^{2}+\Vert p_{F} u\Vert ^{2}+\Vert a u+A p_{s} u+s u\Vert ^{2}, \\
+& p_{s}=(g_{C}^{-1/2}p_{C},p_{I}), \\
+& a=W^{1/2}M^{-*} (C+N_{Y})^{*}p_{F}, \\
+& s=-W^{1/2}M^{-*}S_{f}.
+\end{aligned}\notag
+\end{gather*}
+
+The scalar density term is added separately. Set
+
+% DISPLAY i.8
+% SOURCE d_0=F^(-1)C^*p_F,  P=L-J_2,  Z_m=F^(-1)P^*,
+% SOURCE T=(I+Z_m)^(-1),  n=F^(-1)N_Y^*p_F,
+% SOURCE X=n-Z_m d_0,  s_0=-F^(-1)S_f,
+% SOURCE q=X+s_0,  X_1=n-F^(-1)L^*d_0,  X_2=F^(-1)J_2^*d_0.
+\begin{gather*}
+\begin{aligned}
+& d_{0}=F^{-1}C^{*}p_{F}, \quad  P=L-J_{2}, \quad  Z_{m}=F^{-1}P^{*}, \\
+& T=(I+Z_{m})^{-1}, \quad  n=F^{-1}N_{Y}^{*}p_{F}, \\
+& X=n-Z_{m} d_{0}, \quad  s_{0}=-F^{-1}S_{f}, \\
+& q=X+s_{0}, \quad  X_{1}=n-F^{-1}L^{*}d_{0}, \quad  X_{2}=F^{-1}J_{2}^{*}d_{0}.
+\end{aligned}\notag
+\end{gather*}
+
+The symbol \(Z_{m}\) is an inverse-matrix error, distinct from the
+dressing \(Z\). Exactly,
+
+% DISPLAY i.9
+% SOURCE a+s = W^(1/2)(d_0+Tq),
+\begin{gather*}
+\begin{aligned}
+& a+s = W^{1/2}(d_{0}+Tq),
+\end{aligned}\notag
+\end{gather*}
+
+and, as ordered first-order forms,
+
+% DISPLAY i.10
+% SOURCE ||(a+s)u||^2-||d_0u||^2
+% SOURCE   =2 Re<d_0u,(X_1+s_0)u> + 2 Re<d_0u,X_2u>
+% SOURCE    -2 Re<Z_m^*d_0u,Tq u> +||Tq u||^2
+% SOURCE    +||K^*(d_0+Tq)u||^2.                              (2.1)
+\begin{gather*}
+\begin{aligned}
+& \Vert (a+s)u\Vert ^{2}-\Vert d_{0} u\Vert ^{2} \\
+& =2 \operatorname{Re} \langle d_{0} u,(X_{1}+s_{0})u\rangle  + 2 \operatorname{Re} \langle d_{0} u,X_{2} u\rangle \\
+& -2 \operatorname{Re} \langle Z_{m}^{*}d_{0} u,Tq u\rangle  +\Vert Tq u\Vert ^{2} \\
+& +\Vert K^{*}(d_{0}+Tq)u\Vert ^{2}.
+\end{aligned}\tag{2.1}
+\end{gather*}
+
+The first line\textquotesingle s first term is exactly the
+fast-orbital/spin part of H1. No derivative has been moved through an
+inverse matrix. The remaining apparently dangerous \(d_{0}-X_{2}\)
+product factors exactly:
+
+% DISPLAY i.11
+% SOURCE <d_0u,X_2u>
+% SOURCE    =<C_Y F^(-1)d_0u,C_Y R^(-1)d_0u>.                 (2.2)
+\begin{gather*}
+\begin{aligned}
+& \langle d_{0} u,X_{2} u\rangle \\
+& =\langle C_{Y} F^{-1}d_{0} u,C_{Y} R^{-1}d_{0} u\rangle .
+\end{aligned}\tag{2.2}
+\end{gather*}
+
+Every factor on the right of (2.1)-(2.2), after removing the displayed
+H1 term, belongs to the finite error-column list
+
+% DISPLAY i.12
+% SOURCE X_1, X_2, Z_m^*d_0, K^*d_0,
+% SOURCE C_Y F^(-1)d_0, C_Y R^(-1)d_0, s_0,
+\begin{gather*}
+\begin{aligned}
+& X_{1}, X_{2}, Z_{m}^{*}d_{0}, K^{*}d_{0}, \\
+& C_{Y} F^{-1}d_{0}, C_{Y} R^{-1}d_{0}, s_{0},
+\end{aligned}\notag
+\end{gather*}
+
+followed by uniformly bounded left multiplication matrices. Their
+all-vector estimates are
+
+% DISPLAY i.13
+% SOURCE ||E u||^2 <= C[(lambda H_exc)[u]+W_2[u]],
+% SOURCE lambda=sigma^2+r_*^(-3).                              (2.3)
+\begin{gather*}
+\begin{aligned}
+& \Vert E u\Vert ^{2} \le  C[(\lambda  H_{\mathrm{exc}})[u]+W_{2}[u]], \\
+& \lambda =\sigma ^{2}+r_{*}^{-3}.
+\end{aligned}\tag{2.3}
+\end{gather*}
+
+For the spin column the stronger bound
+\(\Vert s_{0}u\Vert ^{2}\le CW_{2}[u]\) holds. On the uncut vacuum, and
+on each fixed-degree Gaussian/Fock coefficient vector normalized in its
+own roots,
+
+% DISPLAY i.14
+% SOURCE ||E U f||^2 <= C W_2[f].                              (2.4)
+\begin{gather*}
+\begin{aligned}
+& \Vert E U f\Vert ^{2} \le  C W_{2}[f].
+\end{aligned}\tag{2.4}
+\end{gather*}
+
+For (2.4), a same-edge \(Y_{e} p_{e}/r_{e}\) costs \(C/r_{e}\); a
+triangle \(Y_{f} p_{e}/r_{g}\) costs \(C \sqrt{r_{e}/r_{f}}/r_{g}\),
+whose square is bounded by \(C W_{2,t}\) by \(r_{e}\le r_{f}+r_{g}\).
+Root-preserving pair matrices have uniformly bounded normalized
+coefficients. All inverse matrices in the exact expressions remain
+bounded LEFT factors. The same proof therefore works on a fixed finite
+excited degree, with a degree-dependent constant, and does not introduce
+\(r_{\max}\).
+
+For a complementary \(v, W_{2}[v]\le C R^{-3}H_{\mathrm{exc}}[v]\).
+Polarization of each product in (2.1)-(2.2) consequently gives, for any
+\(\eta >0\),
+
+% DISPLAY i.15
+% SOURCE |R_fast[Uf,v]| <= eta H_exc[v]
+% SOURCE                      +C_eta(sigma^2+R^(-3)) W_2[f].   (2.5)
+\begin{gather*}
+\begin{aligned}
+& \vert R_{\mathrm{fast}}[Uf,v]\vert  \le  \eta  H_{\mathrm{exc}}[v] \\
+& +C_{\eta}(\sigma ^{2}+R^{-3}) W_{2}[f].
+\end{aligned}\tag{2.5}
+\end{gather*}
+
+This includes spin-fast and spin-square remainders. It is the central
+reason a finite inverse-square constant is not left unpaid: no Taylor
+remainder is ever paired directly with an unassigned \(d_{0}\) vacuum
+norm.
+
+For diagonal matching, retain the quadratic terms in (2.1), replace
+\(T\) by I, \(q\) by \(X_{1}+s_{0}, Z_{m}\) by \(F^{-1}L^{*}\), and
+retain (2.2) and \(\Vert K^{*}d_{0}\Vert ^{2}\). These are precisely the
+corresponding H2 terms. Each discarded product has one additional
+uniformly \(O(\sigma )\) factor and two low error columns. Hence
+
+% DISPLAY i.16
+% SOURCE |R_fast[Uf]-R_fast,H2[Uf]| <= C sigma W_2[f].          (2.6)
+\begin{gather*}
+\begin{aligned}
+& \vert R_{\mathrm{fast}}[Uf]-R_{\mathrm{fast},H2}[Uf]\vert  \le  C \sigma  W_{2}[f].
+\end{aligned}\tag{2.6}
+\end{gather*}
+
+One may obtain an additional inverse-radius improvement from Gaussian
+moments, but it is unnecessary. The order of the two operations matters:
+first perform the exact error-column factorization, then bound the
+inverse difference. Doing them in reverse would expose the forbidden
+remote vacuum mass.
+
+\subsection{3. Other nondifferential fast
+terms}\label{i-other-nondifferential-fast-terms}
+
+The actual \(V_{3}\) and linear-Y Yukawa are exactly the remaining H1
+terms; there is no omitted higher polynomial potential. They are
+boson-odd, so their diagonal expectation on \(U\) or an even cutoff
+\(U_{\sigma}\) is zero.
+
+The quartic potential is a sum of squares of quadratic fast-coordinate
+contractions. In addition to the distinct-root Q/P estimate already
+proved, the repeated-root estimate is
+
+% DISPLAY i.17
+% SOURCE ||chi Y_e^2 u||^2 <= C sigma^2 h_e[u]+C r_e^(-2)||u||^2. (3.1)
+\begin{gather*}
+\begin{aligned}
+& \Vert \chi  Y_{e}^{2} u\Vert ^{2} \le  C \sigma ^{2} h_{e}[u]+C r_{e}^{-2}\Vert u\Vert ^{2}.
+\end{aligned}\tag{3.1}
+\end{gather*}
+
+Split the input into \(Q_{e}\) and \(P_{e}\), bound one \(Y_{e}\) by
+\(\sigma  r_{*}\) on \(Q_{e}\), use
+\(\Vert Y_{e} Q_{e} u\Vert ^{2}\le Cr_{e}^{-2}h_{e}[u]\), and use the
+exact fourth Gaussian moment on \(P_{e}\). This gives
+
+% DISPLAY i.18
+% SOURCE 0<=V4[u]<=C sigma^2 H_exc[u]+C W_2[u],
+% SOURCE V4[Uf]<=C W_2[f].                                    (3.2)
+\begin{gather*}
+\begin{aligned}
+& 0\le V_{4}[u]\le C \sigma ^{2} H_{\mathrm{exc}}[u]+C W_{2}[u], \\
+& V_{4}[Uf]\le C W_{2}[f].
+\end{aligned}\tag{3.2}
+\end{gather*}
+
+Thus its low/complement cross obeys the same bound as (2.5). Its full
+diagonal expectation belongs to \(W\) and is retained there.
+
+The density multiplier satisfies \(\vert V_{d}\vert \le CW_{2}\). Its
+mixed term is paid by the complementary L2 gap:
+
+% DISPLAY i.19
+% SOURCE |<Uf,V_d v>|<=eta H_exc[v]+C_eta R^(-3)W_2[f].         (3.3)
+\begin{gather*}
+\begin{aligned}
+& \vert \langle Uf,V_{d} v\rangle \vert \le \eta  H_{\mathrm{exc}}[v]+C_{\eta} R^{-3}W_{2}[f].
+\end{aligned}\tag{3.3}
+\end{gather*}
+
+The leading coefficient \(V_{d,2}\) is the one specified by the exact H2
+inventory, including the slow density, fast Hessian, and orbital
+ordering terms. Differentiating the normalized matrices in the exact
+density formula and subtracting their zero-fast-coordinate jets gives
+
+% DISPLAY i.20
+% SOURCE |V_d-V_d,2|<=C sigma W_2                              (3.4)
+\begin{gather*}
+\begin{aligned}
+& \vert V_{d}-V_{d,2}\vert \le C \sigma  W_{2}
+\end{aligned}\tag{3.4}
+\end{gather*}
+
+on the tube. Each normalized inverse and its required derivatives are
+bounded in its own root scale. More explicitly, \(V_{d}\) uses two
+coefficient derivatives, and one additional fast derivative of that
+finite rational expression is bounded by \(C/r_{*}^{3}\); integrating it
+from \(Y=0\) gives \(C\vert Y\vert /r_{*}^{3}\le C \sigma  W_{2}\). The
+leading zero-fast-coordinate coefficient includes the quadratic
+determinant jet before fast differentiation. This is a
+density-coefficient estimate, not a bound on \(d_{0}^{2}\). Equations
+(3.3)-(3.4) settle both density uses.
+
+The frozen \(E_{0}\) is a separate scalar multiplier. It has zero U-v
+cross because it commutes with the vacuum projection. Its incident
+payment is
+
+% DISPLAY i.21
+% SOURCE |E_0[u]|<=C R^(-3)H_I[u]+C kappa W_2[u].              (3.5)
+\begin{gather*}
+\begin{aligned}
+& \vert E_{0}[u]\vert \le C R^{-3}H_{I}[u]+C \kappa  W_{2}[u].
+\end{aligned}\tag{3.5}
+\end{gather*}
+
+It is never included in \(H_{\mathrm{exc}}\) or in a virtual
+denominator.
+
+\subsection{\texorpdfstring{4. Scalar fast-slow orbit cross: complete
+charges instead of bare
+\(t_{I}\)}{4. Scalar fast-slow orbit cross: complete charges instead of bare t\_\{I\}}}\label{i-scalar-fast-slow-orbit-cross-complete-charges-instead-of-bare-t_i}
+
+Write \(\beta =A^{*}a\), with internal components
+\(\beta _{j}=b_{j}(Y;s) \cdot  p_{F}\). The \(b_{j}\) are real, scalar
+in internal Clifford factors, and commute with all internal
+potential-charge coefficients. Let
+
+% DISPLAY i.22
+% SOURCE d_j=div_F b_j,    beta_hat,j=beta_j-(i/2)d_j,
+% SOURCE C_alpha(beta_hat)=sum_j c_(alpha,j) beta_hat,j.
+\begin{gather*}
+\begin{aligned}
+& d_{j}=\operatorname{div} _{F} b_{j}, \quad  \widehat{\beta}_{j}=\beta _{j}-(i/2)d_{j}, \\
+& C_{\alpha}(\widehat{\beta})=\sum _{j} c_{\alpha ,j} \widehat{\beta}_{j}.
+\end{aligned}\notag
+\end{gather*}
+
+The differentiated connection lemma and its explicit rootwise
+decomposition imply
+
+% DISPLAY i.23
+% SOURCE sum_j ||beta_hat,j v||^2 <= C(lambda H_exc[v]+W_2[v]),
+% SOURCE sum_j ||beta_hat,j U f||^2 <= C(kappa^2+sigma^2)W_2[f], (4.1)
+\begin{gather*}
+\begin{aligned}
+& \sum _{j} \Vert \widehat{\beta}_{j} v\Vert ^{2} \le  C(\lambda  H_{\mathrm{exc}}[v]+W_{2}[v]), \\
+& \sum _{j} \Vert \widehat{\beta}_{j} U f\Vert ^{2} \le  C(\kappa ^{2}+\sigma ^{2})W_{2}[f],
+\end{aligned}\tag{4.1}
+\end{gather*}
+
+and
+
+% DISPLAY i.24
+% SOURCE sum_jk ||(partial_Aj beta_hat,k)U f||^2
+% SOURCE                        <= C r_*^(-2)W_2[f].          (4.2)
+\begin{gather*}
+\begin{aligned}
+& \sum _{jk} \Vert (\partial _{Aj} \widehat{\beta}_{k})U f\Vert ^{2} \\
+& \le  C r_{*}^{-2}W_{2}[f].
+\end{aligned}\tag{4.2}
+\end{gather*}
+
+The SMALL low-leg divergence estimate in (4.1) is essential. Directly,
+\(b=A^{*}B\) with
+\(A=O(\sigma ), B=O(\kappa +\sigma ), \partial _{Y} A=O(r_{*}^{-1})\)
+and \(\partial _{Y} B=O(r_{*}^{-1})\). Hence
+
+% DISPLAY i.25
+% SOURCE |div_F b|<=C(kappa+sigma)/r_*.
+\begin{gather*}
+\begin{aligned}
+& \vert \operatorname{div} _{F} b\vert \le C(\kappa +\sigma )/r_{*}.
+\end{aligned}\notag
+\end{gather*}
+
+Together with the stronger rootwise estimate for \(A^{*}d_{0}\) and the
+\(O(\sigma )\) factor multiplying \(a-d_{0}\), this proves the second
+line of (4.1). It is not inferred from a coarse \(O(1/r_{*})\)
+divergence bound.
+
+\subsubsection{4.1 Exact linear charge
+identity}\label{i-exact-linear-charge-identity}
+
+Polarize the following identity, initially on the smooth core:
+
+% DISPLAY i.26
+% SOURCE 2 Re sum_j <p_j u,beta_j u>
+% SOURCE   =2 Re (1/16)sum_alpha <Q_alpha u,C_alpha(beta_hat)u>
+% SOURCE      -R_der[u]+(1/2)sum_j <u,(partial_Aj d_j)u>.      (4.3)
+\begin{gather*}
+\begin{aligned}
+& 2 \operatorname{Re}  \sum _{j} \langle p_{j} u,\beta _{j} u\rangle \\
+& =2 \operatorname{Re}  (1/16)\sum _{\alpha} \langle Q_{\alpha} u,C_{\alpha}(\widehat{\beta})u\rangle \\
+& -R_{\mathrm{der}}[u]+(1/2)\sum _{j} \langle u,(\partial _{Aj} d_{j})u\rangle .
+\end{aligned}\tag{4.3}
+\end{gather*}
+
+Here \(R_{\mathrm{der}}\) is the fixed bounded-Clifford contraction of
+\(\partial _{j} \widehat{\beta}_{k}-\partial _{k} \widehat{\beta}_{j}\).
+To verify it, expand the exact shifted averaged-charge identity and
+subtract the beta-square. The beta-beta curvature in
+\(C_{\alpha}(\widehat{\beta})^{2}\) cancels the beta-beta curvature in
+the full shifted charge identity. Only the derivative curvature remains.
+The raw-versus-symmetric cross contributes \(+(1/2)\partial _{A} d\),
+with this sign. No anticommutator with the internal potential survives
+the spinor average.
+
+The first term in the polarized identity contains
+
+% DISPLAY i.27
+% SOURCE <Q(Uf),C(beta_hat)v>  and  <C(beta_hat)Uf,Qv>.
+\begin{gather*}
+\begin{aligned}
+& \langle Q(Uf),C(\widehat{\beta})v\rangle  \quad  \text{ and } \quad  \langle C(\widehat{\beta})Uf,Qv\rangle .
+\end{aligned}\notag
+\end{gather*}
+
+The first is bounded using (4.1), the complementary gap, and
+
+% DISPLAY i.28
+% SOURCE (1/16)sum ||Q_alpha(Uf)||^2 <= C(H_s[f]+W_2[f]).
+\begin{gather*}
+\begin{aligned}
+& (1/16)\sum  \Vert Q_{\alpha}(Uf)\Vert ^{2} \le  C(H_{s}[f]+W_{2}[f]).
+\end{aligned}\notag
+\end{gather*}
+
+The second uses the full \(H_{I}[v]\) reserve and the small low-leg
+estimate in (4.1). No constant fraction of bare \(t_{I}\) is spent.
+Since each derivative-curvature operator is symmetric, it can be moved
+onto \(U\) in a mixed pairing. Equation (4.2) and the complementary gap
+then give a \(C_{\eta} R^{-3}W_{2}\) cost. The scalar term has the same
+payment.
+
+Consequently the complete internal scalar-orbit mixed form obeys
+
+% DISPLAY i.29
+% SOURCE |R_orb,I[Uf,v]| <= eta(H_I[v]+H_exc[v])
+% SOURCE    +C_eta lambda H_s[f]
+% SOURCE    +C_eta(kappa^2+sigma^2+R^(-3))W_2[f].              (4.4)
+\begin{gather*}
+\begin{aligned}
+& \vert R_{\mathrm{orb},I}[Uf,v]\vert  \le  \eta (H_{I}[v]+H_{\mathrm{exc}}[v]) \\
+& +C_{\eta} \lambda  H_{s}[f] \\
+& +C_{\eta}(\kappa ^{2}+\sigma ^{2}+R^{-3})W_{2}[f].
+\end{aligned}\tag{4.4}
+\end{gather*}
+
+This is uniform over unrestricted internal momenta and colored internal
+states. The center component obeys the same inequality by ordinary
+center-kinetic Cauchy-Schwarz, with its actual normal connection
+retained. Normal-frame generators are not estimated by a vacuum Berry
+scalar on arbitrary \(v\).
+
+\subsubsection{4.2 Independent incident-row
+verification}\label{i-independent-incident-row-verification}
+
+There is a second direct check of the high-momentum issue. With \(U=g\)
+times its fermion vacuum and real Gaussian \(g\),
+
+% DISPLAY i.30
+% SOURCE (beta_j+beta_j^*)U
+% SOURCE     =i(2 b_j dot Omega Y-div_F b_j)U.
+\begin{gather*}
+\begin{aligned}
+& (\beta _{j}+\beta _{j}^{*})U \\
+& =i(2 b_{j} \cdot  \Omega  Y-\operatorname{div} _{F} b_{j})U.
+\end{aligned}\notag
+\end{gather*}
+
+Ground-state integration by parts therefore gives
+
+% DISPLAY i.31
+% SOURCE ||H_exc^(-1/2)(beta_j+beta_j^*)U||^2
+% SOURCE                           <=C||b_jU||^2.            (4.5)
+\begin{gather*}
+\begin{aligned}
+& \Vert H_{\mathrm{exc}}^{-1/2}(\beta _{j}+\beta _{j}^{*})U\Vert ^{2} \\
+& \le C\Vert b_{j}U\Vert ^{2}.
+\end{aligned}\tag{4.5}
+\end{gather*}
+
+For an internal row belonging to block a, factor the exact coefficient
+as
+
+% DISPLAY i.32
+% SOURCE b_a=I_Y,a F^(-1)[T^* W M^(-*)(C+N_Y)^*].
+\begin{gather*}
+\begin{aligned}
+& b_{a}=I_{Y,a} F^{-1}[T^{*} W M^{-*}(C+N_{Y})^{*}].
+\end{aligned}\notag
+\end{gather*}
+
+The bracket is uniformly \(O(\kappa +\sigma )\), while
+\(I_{Y,a} F^{-1}\) contains only \(Y_{e}/r_{e}\) on edges incident to a.
+Thus
+
+% DISPLAY i.33
+% SOURCE ||b_aU||^2<=C(kappa+sigma)^2 w_a,
+% SOURCE w_a=sum_(e incident a)r_e^(-3).                       (4.6)
+\begin{gather*}
+\begin{aligned}
+& \Vert b_{a}U\Vert ^{2}\le C(\kappa +\sigma )^{2} w_{a}, \\
+& w_{a}=\sum _{e \text{ incident } a}r_{e}^{-3}.
+\end{aligned}\tag{4.6}
+\end{gather*}
+
+This proves directly that integrating the single slow derivative in the
+orbit cross cannot create an unrelated internal-radius loss. It also
+accounts for the adjoint fast divergence, rather than dropping it.
+Either (4.3) or (4.5)-(4.6) supplies the needed first-derivative
+estimate; the proof above uses (4.3).
+
+\subsubsection{4.3 Diagonal orbit
+remainder}\label{i-diagonal-orbit-remainder}
+
+Let \(\beta _{1}\) be the first homogeneous slow-orbit coefficient: use
+the linear slow column with \(F^{-1}\), the leading \(C_{Y}^{*}+FK\)
+center term, and \(d_{0}\). Its raw diagonal compression, including
+derivatives of its coefficient at \(A=0\), is retained in \(W\).
+Together with the corresponding \(V_{d,2}\) orbital-density term, it
+equals the \(V_{\mathrm{orb}}\) in the density-shifted inventory. In
+particular the inventory term -2 \(\sum _{\mu} \rho _{0,\mu} j_{\mu}\)
+belongs to \(V_{d,2}\) in the present unshifted-kinetic convention; it
+is counted exactly once, not inserted a second time in the raw
+\(\beta _{1}\) compression. Only the SUM of these contributions is
+identified with the H2 scalar. The raw \(\beta _{1}\) contribution is
+NOT discarded on the grounds that \(\beta _{1}\) vanishes at \(A=0\).
+
+The exact identities for \(A^{*}d_{0}\) in the rootwise helper express
+\(\beta -\beta _{1}\) as a sum with one extra \(O(\sigma )\) factor
+multiplying a controlled error column. They give
+
+% DISPLAY i.34
+% SOURCE ||(beta-beta_1)U||^2+||(div(b-b_1))U||^2<=C sigma^2 W_2,
+% SOURCE ||partial_A(beta-beta_1)U||<=C sigma r_*^(-1) W_2^(1/2).
+\begin{gather*}
+\begin{aligned}
+& \Vert (\beta -\beta _{1})U\Vert ^{2}+\Vert (\operatorname{div} (b-b_{1}))U\Vert ^{2}\le C \sigma ^{2} W_{2}, \\
+& \Vert \partial _{A}(\beta -\beta _{1})U\Vert \le C \sigma  r_{*}^{-1} W_{2}^{1/2}.
+\end{aligned}\notag
+\end{gather*}
+
+Differentiate those identities, not an abstract norm bound: the extra
+fast-degree factor remains when \(F\) or \(F^{-1}C^{*}\) is
+differentiated. Applying (4.3) to this difference gives, for any
+\(\eta >0\),
+
+% DISPLAY i.35
+% SOURCE |R_orb,diag[f]|<=eta H_s[f]
+% SOURCE                          +C_eta(sigma+sigma^2)W_2[f]. (4.7)
+\begin{gather*}
+\begin{aligned}
+& \vert R_{\mathrm{orb},\mathrm{diag}}[f]\vert \le \eta  H_{s}[f] \\
+& +C_{\eta}(\sigma +\sigma ^{2})W_{2}[f].
+\end{aligned}\tag{4.7}
+\end{gather*}
+
+This retains the exact leading coefficient while paying only its true
+higher-order remainder.
+
+\subsection{5. Spin-slow, slow-orbit square, and induced center
+metric}\label{i-spin-slow-slow-orbit-square-and-induced-center-metric}
+
+\subsubsection{5.1 Spin-slow cross}\label{i-spin-slow-cross}
+
+Put \(c=A^{*}s\). Its internal row a satisfies the exact incident
+coefficient bound
+
+% DISPLAY i.36
+% SOURCE |c_a|^2<=C W_2 sum_(e incident a)|Y_e|^2/r_e^2,
+% SOURCE ||c_a U||^2<=C w_a W_2.                              (5.1)
+\begin{gather*}
+\begin{aligned}
+& \vert c_{a}\vert ^{2}\le C W_{2} \sum _{e \text{ incident } a}\vert Y_{e}\vert ^{2}/r_{e}^{2}, \\
+& \Vert c_{a} U\Vert ^{2}\le C w_{a} W_{2}.
+\end{aligned}\tag{5.1}
+\end{gather*}
+
+For the mixed form, integrate its single slow derivative onto the smooth
+coefficient cU \(f\). This is legitimate for the complete matrix \(c\),
+with no commutation claim about internal Clifford matrices. The
+coefficient of \(\partial _{Aa} f\) has norm squared bounded by
+\(C w_{a} W_{2}\). The complementary gap therefore gives the weighted
+derivative cost
+
+% DISPLAY i.37
+% SOURCE C(W_2/r_*) sum_a w_a t_a[f]
+% SOURCE    <=C R^(-3)[R^(-3)H_I[f]+kappa W_2[f]].             (5.2)
+\begin{gather*}
+\begin{aligned}
+& C(W_{2}/r_{*}) \sum _{a} w_{a} t_{a}[f] \\
+& \le C R^{-3}[R^{-3}H_{I}[f]+\kappa  W_{2}[f]].
+\end{aligned}\tag{5.2}
+\end{gather*}
+
+The exact inverse derivative formula, incident left factor
+\(I_{Y,a} F^{-1}\), and finite Gaussian derivative moments give
+
+% DISPLAY i.38
+% SOURCE sum_a ||partial_Aa(c_aU)||^2
+% SOURCE    <=C r_*^(-2)(sum_a w_a)W_2+C(sum_a w_a)W_2^2
+% SOURCE    <=C R^(-5)W_2.                                   (5.3)
+\begin{gather*}
+\begin{aligned}
+& \sum _{a} \Vert \partial _{Aa}(c_{a} U)\Vert ^{2} \\
+& \le C r_{*}^{-2}(\sum _{a} w_{a})W_{2}+C(\sum _{a} w_{a})W_{2}^{2} \\
+& \le C R^{-5}W_{2}.
+\end{aligned}\tag{5.3}
+\end{gather*}
+
+Spectator-vacuum derivatives are included in the \(W_{2}^{2}\) term.
+Center derivatives have the same or better bound and are paid by
+\(T_{C}\). After the complementary gap, (5.2)-(5.3) are smaller than the
+mixed budget in (4.4).
+
+For the DIAGONAL, (5.1) alone would leave a fixed \(W_{2}\) constant and
+is insufficient. The leading coefficient \(c_{1}\) is boson-odd: its
+internal part is \(-I_{Y} F^{-2}S_{f}\), with the corresponding linear
+center row. \(U\), its slow derivatives, and the even cutoff are
+boson-even. Its diagonal cross is exactly zero. Every term of
+\(c-c_{1}\) has an additional inverse/metric difference of size
+\(O(\sigma )\), so
+
+% DISPLAY i.39
+% SOURCE ||(c_a-c_1,a)U||^2<=C sigma^2 w_a W_2.
+\begin{gather*}
+\begin{aligned}
+& \Vert (c_{a}-c_{1,a})U\Vert ^{2}\le C \sigma ^{2} w_{a} W_{2}.
+\end{aligned}\notag
+\end{gather*}
+
+Weighted Young and \(\sum _{a} w_{a} \alpha _{a}\le C \kappa  W_{2}\)
+yield only
+
+% DISPLAY i.40
+% SOURCE eta R^(-3)H_s[f]+C_eta(kappa+sigma^2)W_2[f].          (5.4)
+\begin{gather*}
+\begin{aligned}
+& \eta  R^{-3}H_{s}[f]+C_{\eta}(\kappa +\sigma ^{2})W_{2}[f].
+\end{aligned}\tag{5.4}
+\end{gather*}
+
+This is the specific parity use that prevents an unpaid diagonal
+constant.
+
+\subsubsection{5.2 The positive square actually retained by
+completion}\label{i-the-positive-square-actually-retained-by-completion}
+
+Let \(J[u]=\Vert A p_{s} u\Vert ^{2}\). Its low-leg estimate is
+
+% DISPLAY i.41
+% SOURCE J[Uf]<=C R^(-3)H_s[f]+C kappa W_2[f]+C W_5[f].        (5.5)
+\begin{gather*}
+\begin{aligned}
+& J[Uf]\le C R^{-3}H_{s}[f]+C \kappa  W_{2}[f]+C W_{5}[f].
+\end{aligned}\tag{5.5}
+\end{gather*}
+
+For derivatives on \(f\), the exact incident factorization gives
+\(\sum _{a} w_{a} t_{a}\) and the analogous center coefficient. Convert
+only these incident weights using
+
+% DISPLAY i.42
+% SOURCE sum_a w_a t_a<=C R^(-3)H_I+C kappa W_2.
+\begin{gather*}
+\begin{aligned}
+& \sum _{a} w_{a} t_{a}\le C R^{-3}H_{I}+C \kappa  W_{2}.
+\end{aligned}\notag
+\end{gather*}
+
+Derivatives on \(U\) are finite degree-two Gaussian/Fock vectors. Their
+rootwise moments give \(W_{5}\), including spectator products
+\(W_{3}W_{2}\le C_{N}W_{5}\). The Berry connection adds its already
+proved smaller incident contribution. Thus
+
+% DISPLAY i.43
+% SOURCE |<A p_sUf,A p_sv>|
+% SOURCE    <=eta J[v]+C_eta[R^(-3)H_s[f]+kappa W_2[f]+W_5[f]]. (5.6)
+\begin{gather*}
+\begin{aligned}
+& \vert \langle A p_{s} U f,A p_{s} v\rangle \vert \\
+& \le \eta  J[v]+C_{\eta}[R^{-3}H_{s}[f]+\kappa  W_{2}[f]+W_{5}[f]].
+\end{aligned}\tag{5.6}
+\end{gather*}
+
+Equation (5.6) uses only the true postcompletion reserve \(J\). No
+original full Gauss square is used.
+
+\subsubsection{5.3 Center metric}\label{i-center-metric}
+
+The direct center coefficient differs from identity by
+
+% DISPLAY i.44
+% SOURCE g_C^(-1)-I=-K^*(I+KK^*)^(-1)K.
+\begin{gather*}
+\begin{aligned}
+& g_{C}^{-1}-I=-K^{*}(I+KK^{*})^{-1}K.
+\end{aligned}\notag
+\end{gather*}
+
+It is \(O(\sigma ^{2})\) on arbitrary tube vectors. On a Gaussian low
+leg its squared coefficient norm is \(O(R^{-6})\); derivatives on \(U\)
+have the corresponding \(W_{5}\)-or-smaller moments. Ordinary
+center-form Young controls the mixed term by
+\(\eta  T_{C}[v]+C_{\eta} R^{-6}T_{C}[f]+C_{\eta}W_{5}[f]\). Its
+diagonal has bound \(C R^{-3}T_{C}[f]+CW_{5}[f]\). No internal
+derivative is involved.
+
+\subsubsection{5.4 Direct slow kinetic
+cross}\label{i-direct-slow-kinetic-cross}
+
+The preceding orbit estimates do not replace the cross from the DIRECT
+center and internal kinetic forms. For \(v\) perpendicular to \(U\),
+differentiate \(U^{*}v=0\) and integrate the remaining slow derivative
+once. In a covariant vacuum-line frame the complementary source is
+
+% DISPLAY i.45
+% SOURCE -2 sum_j (1-P)(nabla_j U) nabla_j f
+% SOURCE       -(1-P)sum_j nabla_j^2 U f.                    (5.7)
+\begin{gather*}
+\begin{aligned}
+& -2 \sum _{j} (1-P)(\nabla _{j} U) \nabla _{j} f \\
+& -(1-P)\sum _{j} \nabla _{j}^{2} U f.
+\end{aligned}\tag{5.7}
+\end{gather*}
+
+This is a form identity and contains no second derivative of \(f\).
+Internal potential and Yukawa terms commute with the vacuum injection
+and have zero mixed compression. The same is true of \(E_{0}\).
+Normal-bundle derivatives are kept covariantly in (5.7).
+
+An internal derivative in block a differentiates only incident pair
+vacua. After removing its scalar Berry part, each term has a fixed
+excited sector on that pair, norm \(C/r_{e}\), and gap at least
+\(c r_{e}\). Its squared \(H_{\mathrm{exc}}\)-dual norm is therefore at
+most \(C w_{a}\). The center derivative satisfies the analogous sum of
+pair weights. Second derivatives have active-pair and two-pair finite
+excitation terms, of norm at most \(C/r_{e}^{2}\) or
+\(C/(r_{e} r_{f})\). Their dual squared norm is bounded by \(C W_{5}\);
+spectator products are included using \(W_{3}W_{2}\le C_{N}W_{5}\). Thus
+ordinary source/gap Young gives
+
+% DISPLAY i.46
+% SOURCE 2|H_s[Uf,v]| <= eta H_exc[v]
+% SOURCE        +C_eta[R^(-3)H_s[f]+kappa W_2[f]+W_5[f]].    (5.8)
+\begin{gather*}
+\begin{aligned}
+& 2\vert H_{s}[Uf,v]\vert  \le  \eta  H_{\mathrm{exc}}[v] \\
+& +C_{\eta}[R^{-3}H_{s}[f]+\kappa  W_{2}[f]+W_{5}[f]].
+\end{aligned}\tag{5.8}
+\end{gather*}
+
+The conversion on the right is incident:
+\(\sum _{a} w_{a} t_{a}\le C R^{-3}H_{I}+C \kappa  W_{2}\). It is
+performed before replacing \(w_{a}\) by its maximum. The cutoff version
+gains only the source-specific exponentially small errors in Section
+\(7\). This explicitly includes the direct slow derivative source in the
+mixed ledger.
+
+\subsection{6. Summary of the mixed and diagonal
+estimates}\label{i-summary-of-the-mixed-and-diagonal-estimates}
+
+Let \(B[v]=H_{s}[v]+H_{\mathrm{exc}}[v]+J[v]\). After a fixed finite
+allocation of \(\eta\) to the preceding terms, for every \(\eta >0\) the
+exact mixed form has the decomposition
+
+% DISPLAY i.47
+% SOURCE H[Uf,v]=<Sf,v>+R_mix[f,v],
+\begin{gather*}
+\begin{aligned}
+& H[Uf,v]=\langle Sf,v\rangle +R_{\mathrm{mix}}[f,v],
+\end{aligned}\notag
+\end{gather*}
+
+with
+
+% DISPLAY i.48
+% SOURCE 2|R_mix[f,v]|
+% SOURCE    <=eta B[v]+a_(eta)(kappa,sigma,R)H_s[f]
+% SOURCE                      +b_(eta)(kappa,sigma,R)W_2[f],  (6.1)
+\begin{gather*}
+\begin{aligned}
+& 2\vert R_{\mathrm{mix}}[f,v]\vert \\
+& \le \eta  B[v]+a_{\eta}(\kappa ,\sigma ,R)H_{s}[f] \\
+& +b_{\eta}(\kappa ,\sigma ,R)W_{2}[f],
+\end{aligned}\tag{6.1}
+\end{gather*}
+
+where one can choose finite constants such that
+
+% DISPLAY i.49
+% SOURCE a_(eta)<=C_eta(sigma^2+R^(-3)),
+% SOURCE b_(eta)<=C_eta(kappa+kappa^2+sigma^2+R^(-3)).          (6.2)
+\begin{gather*}
+\begin{aligned}
+& a_{\eta}\le C_{\eta}(\sigma ^{2}+R^{-3}), \\
+& b_{\eta}\le C_{\eta}(\kappa +\kappa ^{2}+\sigma ^{2}+R^{-3}).
+\end{aligned}\tag{6.2}
+\end{gather*}
+
+The exact diagonal is
+
+% DISPLAY i.50
+% SOURCE H[Uf]=H_s^B[f]+E_0[f]+W[f]+R_diag[f],                (6.3)
+\begin{gather*}
+\begin{aligned}
+& H[Uf]=H_{s}^{B}[f]+E_{0}[f]+W[f]+R_{\mathrm{diag}}[f],
+\end{aligned}\tag{6.3}
+\end{gather*}
+
+and for an independently chosen \(\theta >0\),
+
+% DISPLAY i.51
+% SOURCE |R_diag[f]|<=theta H_s[f]
+% SOURCE      +C_theta[kappa+sigma+sigma^2+R^(-3)]W_2[f]
+% SOURCE      +C R^(-3)H_s[f].                               (6.4)
+\begin{gather*}
+\begin{aligned}
+& \vert R_{\mathrm{diag}}[f]\vert \le \theta  H_{s}[f] \\
+& +C_{\theta}[\kappa +\sigma +\sigma ^{2}+R^{-3}]W_{2}[f] \\
+& +C R^{-3}H_{s}[f].
+\end{aligned}\tag{6.4}
+\end{gather*}
+
+The \(H_{s}^{B}\) comparison is the full averaged-charge Berry
+comparison from source Section \(4.2\) of Appendix \(F\):
+
+% DISPLAY i.52
+% SOURCE |H_s^B[f]-H_s[f]|
+% SOURCE    <=theta H_s[f]+C(theta^(-1)kappa^4+kappa)W_2[f].  (6.5)
+\begin{gather*}
+\begin{aligned}
+& \vert H_{s}^{B}[f]-H_{s}[f]\vert \\
+& \le \theta  H_{s}[f]+C(\theta ^{-1}\kappa ^{4}+\kappa )W_{2}[f].
+\end{aligned}\tag{6.5}
+\end{gather*}
+
+Equations (3.5), (6.3)-(6.5) keep every internal potential and Yukawa
+term. No frozen slow-momentum resolvent has appeared.
+
+\subsection{7. Cutoff vacuum, derivative tails, and source
+parity}\label{i-cutoff-vacuum-derivative-tails-and-source-parity}
+
+Fix \(\sigma >0\) before increasing \(R\). Let
+\(h=(\sum _{e} r_{e}^{-2})^{-1/2}\), and choose a smooth even radial
+\(\chi =\chi _{0}(\vert Y\vert ^{2}/(\sigma _{0}^{2}h^{2}))\), with
+\(0<\sigma _{0}<c_{N} \sigma\) fixed, equal to one on an inner tube and
+supported strictly inside the validity tube. Put
+
+% DISPLAY i.53
+% SOURCE U_sigma=chi U/n,    n=||chi U||.
+\begin{gather*}
+\begin{aligned}
+& U_{\sigma}=\chi  U/n, \quad  n=\Vert \chi  U\Vert .
+\end{aligned}\notag
+\end{gather*}
+
+This is intrinsic and residual-equivariant. Its support is
+projection-stable. The normalized Gaussian coordinates
+\(\xi _{e}=r_{e}^{1/2}Y_{e}\) have uniformly positive bounded covariance
+matrices. On the cutoff transition region,
+
+% DISPLAY i.54
+% SOURCE sum_e |xi_e|^2 >= c sigma_0^2 r_*^3.
+\begin{gather*}
+\begin{aligned}
+& \sum _{e} \vert \xi _{e}\vert ^{2} \ge  c \sigma _{0}^{2} r_{*}^{3}.
+\end{aligned}\notag
+\end{gather*}
+
+Consequently any fixed-degree root-normalized Gaussian polynomial has a
+tail bounded by
+
+% DISPLAY i.55
+% SOURCE tau_R=C_(N,sigma_0) exp(-c_N sigma_0^2 R^3),           (7.1)
+\begin{gather*}
+\begin{aligned}
+& \tau _{R}=C_{N,\sigma _{0}} \exp (-c_{N} \sigma _{0}^{2} R^{3}),
+\end{aligned}\tag{7.1}
+\end{gather*}
+
+after absorbing fixed powers of \(R\) into the exponential. These
+estimates do not contain \(r_{\max}\). They apply after the rootwise
+error-column factorization, and to finite graph source/dressing
+coefficients with their own graph weights.
+
+One must not claim that \(\Vert p_{F}(U_{\sigma}-U)\Vert\) has a
+root-independent bound: a far vacuum derivative can indeed carry an
+arbitrarily large zero-point norm. Instead use the excitation
+ground-state transform. Since
+
+% DISPLAY i.56
+% SOURCE H_exc U=0,
+% SOURCE H_exc[chi U]=integral |grad_F chi|_G^2 |U|^2,
+\begin{gather*}
+\begin{aligned}
+& H_{\mathrm{exc}} U=0, \\
+& H_{\mathrm{exc}}[\chi  U]=\int  \vert \nabla _{F} \chi \vert _{G}^{2} \vert U\vert ^{2},
+\end{aligned}\notag
+\end{gather*}
+
+no spectator vacuum energy occurs. In the operator cutoff commutator,
+\(\nabla _{e} \chi\) is a scalar multiple of \(Y_{e}/h^{2}\); its
+product with \(\Omega _{e}Y_{e}\) has a root-normalized quadratic
+coefficient of order \(h^{-2}\), because \(\Omega _{e}/r_{e}\) is
+bounded. The same observation applies to the active finite graph states
+in \(Z\) and to H1: replacing a \(p_{e}\) by \(\nabla _{e} \chi\) adds a
+factor bounded by \(C/(r_{e} h^{2})\), with a Gaussian tail. Thus the
+only cutoff errors required here satisfy, uniformly in all root ratios,
+
+% DISPLAY i.57
+% SOURCE |delta diagonal|<=tau_R(H_s[f]+W_2[f]),
+% SOURCE |delta mixed|<=eta B[v]+C_eta tau_R(H_s[f]+W_2[f]),
+% SOURCE H_exc[chi Zf/n]=H_exc[Zf]+O(tau_R W_2[f]),             (7.2)
+\begin{gather*}
+\begin{aligned}
+& \vert \delta  \text{ diagonal }\vert \le \tau _{R}(H_{s}[f]+W_{2}[f]), \\
+& \vert \delta  \text{ mixed }\vert \le \eta  B[v]+C_{\eta} \tau _{R}(H_{s}[f]+W_{2}[f]), \\
+& H_{\mathrm{exc}}[\chi  Zf/n]=H_{\mathrm{exc}}[Zf]+O(\tau _{R} W_{2}[f]),
+\end{aligned}\tag{7.2}
+\end{gather*}
+
+with the analogous graph-local \(H_{s}\) and \(J\) estimates. Slow
+cutoff derivatives use \(\vert \partial  h\vert /h\le C/r_{*}\);
+internal derivatives of \(h\) vanish. Derivatives of \(n\) are
+controlled by the same normalized tail calculation. The normal
+connection preserves \(\vert Y\vert ^{2}\), so it creates no extra
+radial-cutoff generator.
+
+\(S\) and \(Z\) are boson-odd. The cutoff is even, hence \(\chi\) Z/n is
+EXACTLY orthogonal to \(U_{\sigma}\). The leading cutoff H1 source is
+also odd and is orthogonal to the uncut \(U\), so its shifted-fast
+inverse never encounters the vacuum kernel. Replacing it by \(S\) in the
+mixed identity costs only (7.2). In the lower bound the source
+completion with the uncut \(H_{\mathrm{exc}}\) is valid for every \(v\),
+whether or not \(v\) is exactly orthogonal to \(U\): \(S\) is orthogonal
+to its kernel.
+
+Finally \(v\) perp \(U_{\sigma}\) has
+\(\Vert Pv\Vert \le \tau _{R}\Vert v\Vert\) and therefore
+
+% DISPLAY i.58
+% SOURCE H_exc[v]>=c r_*(1-tau_R^2)||v||^2.                   (7.3)
+\begin{gather*}
+\begin{aligned}
+& H_{\mathrm{exc}}[v]\ge c r_{*}(1-\tau _{R}^{2})\Vert v\Vert ^{2}.
+\end{aligned}\tag{7.3}
+\end{gather*}
+
+All estimates (6.1)-(6.4) consequently hold for \(U_{\sigma}\) and its
+genuine Dirichlet complement after adding the vanishing \(\tau _{R}\)
+terms.
+
+\subsection{8. Lower Schur comparison}\label{i-lower-schur-comparison}
+
+Choose the reserve loss \(\delta\) and the mixed allocation \(\eta\)
+small. A fixed positive fraction of \(J\) is available, so \(\eta\) can
+be chosen below \(c_{0}\). Equations (1.5) and (6.1) leave
+
+% DISPLAY i.59
+% SOURCE H[U_sigma f+v]
+% SOURCE   >=H[U_sigma f]+c_s H_s[v]+c_J J[v]
+% SOURCE        +(1-delta-eta)H_exc[v]+2Re<Sf,v>
+% SOURCE        -a_eta H_s[f]-b_eta W_2[f],                  (8.1)
+\begin{gather*}
+\begin{aligned}
+& H[U_{\sigma} f+v] \\
+& \ge H[U_{\sigma} f]+c_{s} H_{s}[v]+c_{J} J[v] \\
+& +(1-\delta -\eta )H_{\mathrm{exc}}[v]+2\operatorname{Re} \langle Sf,v\rangle \\
+& -a_{\eta} H_{s}[f]-b_{\eta} W_{2}[f],
+\end{aligned}\tag{8.1}
+\end{gather*}
+
+where \(c_{s}\) and \(c_{J}\) are positive after the finite allocation.
+Completing only the shifted fast form gives
+
+% DISPLAY i.60
+% SOURCE (1-delta-eta)H_exc[v]+2Re<Sf,v>
+% SOURCE   >=-(1-delta-eta)^(-1)<f,S^*H_exc^(-1)Sf>.          (8.2)
+\begin{gather*}
+\begin{aligned}
+& (1-\delta -\eta )H_{\mathrm{exc}}[v]+2\operatorname{Re} \langle Sf,v\rangle \\
+& \ge -(1-\delta -\eta )^{-1}\langle f,S^{*}H_{\mathrm{exc}}^{-1}Sf\rangle .
+\end{aligned}\tag{8.2}
+\end{gather*}
+
+The virtual multiplier is \(\le CW_{2}\). Therefore replacing its
+coefficient by one costs only \(C(\delta +\eta )W_{2}\). Use (1.3),
+(3.5), and (6.3)-(6.5). Their total error is made smaller than
+\(\epsilon (H_{s}+W_{2})\) in the parameter order below. Taking the
+infimum proves the lower half of (1.1). One may retain a further small
+positive fraction of \(H_{s}[v]+H_{\mathrm{exc}}[v]+J[v]\) for the
+form-domain argument, at an additional \(O(\eta  W_{2})\) cost.
+
+\subsection{9. Upper trial and the complete internal-source graph
+bound}\label{i-upper-trial-and-the-complete-internal-source-graph-bound}
+
+Use the genuine complementary trial
+
+% DISPLAY i.61
+% SOURCE v_f=chi Zf/n,   Z=-H_exc^(-1)S.
+\begin{gather*}
+\begin{aligned}
+& v_{f}=\chi  Zf/n, \quad  Z=-H_{\mathrm{exc}}^{-1}S.
+\end{aligned}\notag
+\end{gather*}
+
+The actual graph components obey
+
+% DISPLAY i.62
+% SOURCE ||Z_e||^2<=C r_e^(-3),
+% SOURCE ||Z_t||^2<=C w_t/s_t,
+% SOURCE w_t=sum_(e in t)r_e^(-2),  s_t=sum_(e in t)r_e,
+\begin{gather*}
+\begin{aligned}
+& \Vert Z_{e}\Vert ^{2}\le C r_{e}^{-3}, \\
+& \Vert Z_{t}\Vert ^{2}\le C w_{t}/s_{t}, \\
+& w_{t}=\sum _{e \in  t}r_{e}^{-2}, \quad  s_{t}=\sum _{e \in  t}r_{e},
+\end{aligned}\notag
+\end{gather*}
+
+and their full derivatives include the spectator term \(m_{g}W_{2}\).
+The complete interacting internal estimate is (1.4). At a graph vertex,
+\(\alpha _{a} m_{g}\le C \kappa  W_{2,g}\); outside the graph the
+potential charge commutes with the even graph map, and only
+differentiated spectator vacua remain. This is why no \(\alpha _{a}\)
+from an unrelated far block can multiply a nearest-root dressing norm.
+The rootwise graph proof covers arbitrary momenta of \(f\).
+
+There is also a direct incident estimate for the retained orbit square:
+
+% DISPLAY i.63
+% SOURCE J[Zf]<=C R^(-6)H_s[f]
+% SOURCE                   +C kappa R^(-3)W_2[f]+C sigma^2 W_5[f]. (9.1)
+\begin{gather*}
+\begin{aligned}
+& J[Zf]\le C R^{-6}H_{s}[f] \\
+& +C \kappa  R^{-3}W_{2}[f]+C \sigma ^{2} W_{5}[f].
+\end{aligned}\tag{9.1}
+\end{gather*}
+
+Indeed each fixed-degree graph state has the same \(Y_{e}\)
+second-moment scale \(C/r_{e}\) on active and spectator roots. The
+coefficient of \(t_{a}[f]\) is at most \(C w_{a} \sum _{g} m_{g}\).
+Convert \(w_{a} t_{a}\) BEFORE using \(\sum _{g} m_{g}\le CR^{-3}\).
+Derivatives on \(Z\) use the full active-plus-spectator derivative bound
+and the pointwise coefficient \(\Vert A\Vert \le C \sigma\), giving
+\(C \sigma ^{2} W_{5}\). This proves (9.1) without a global internal
+kinetic loss.
+
+The same absolute estimates used in the reserve proof, with the upper
+Young inequality for the complete shifted charges, give
+
+% DISPLAY i.64
+% SOURCE H[w]<= (1+delta)(H_s[w]+H_exc[w])
+% SOURCE                     +C_delta W_2[w]+C J[w]+V4[w].   (9.2)
+\begin{gather*}
+\begin{aligned}
+& H[w]\le  (1+\delta )(H_{s}[w]+H_{\mathrm{exc}}[w]) \\
+& +C_{\delta} W_{2}[w]+C J[w]+V_{4}[w].
+\end{aligned}\tag{9.2}
+\end{gather*}
+
+For the fast part this is immediate from the exact identity (2.1), whose
+leading signed terms have two-sided bounds. The internal shifted-charge
+comparison is also two-sided; density, E0 and spin estimates are
+absolute. If desired \(V_{4}\) can be absorbed using (3.2). Thus (9.2)
+uses no unproved upper control of the full original Gauss square.
+
+Apply (9.2) to \(v_{f}\). Since
+\(H_{\mathrm{exc}}[Zf]=\langle f,S^{*}H_{\mathrm{exc}}^{-1}Sf\rangle\),
+(1.4), (9.1), (3.2), and the cutoff estimates give
+
+% DISPLAY i.65
+% SOURCE H[v_f]<= (1+delta+C sigma^2)H_exc[Zf]
+% SOURCE    +C R^(-3)H_s[f]+C kappa W_2[f]
+% SOURCE    +C_delta R^(-3)W_2[f]+O(tau_R(H_s+W_2)).          (9.3)
+\begin{gather*}
+\begin{aligned}
+& H[v_{f}]\le  (1+\delta +C \sigma ^{2})H_{\mathrm{exc}}[Zf] \\
+& +C R^{-3}H_{s}[f]+C \kappa  W_{2}[f] \\
+& +C_{\delta} R^{-3}W_{2}[f]+O(\tau _{R}(H_{s}+W_{2})).
+\end{aligned}\tag{9.3}
+\end{gather*}
+
+The mixed remainder (6.1) applied to this trial is small by the same
+graph estimates. Meanwhile
+
+% DISPLAY i.66
+% SOURCE 2Re<Sf,Zf>=-2<f,S^*H_exc^(-1)Sf>.
+\begin{gather*}
+\begin{aligned}
+& 2\operatorname{Re} \langle Sf,Zf\rangle =-2\langle f,S^{*}H_{\mathrm{exc}}^{-1}Sf\rangle .
+\end{aligned}\notag
+\end{gather*}
+
+Together with the diagonal expansion, this leaves
+\(W-S^{*}H_{\mathrm{exc}}^{-1}S\) and only the displayed arbitrarily
+small errors. Equation (1.3) therefore proves the upper half of (1.1).
+The graph trial is used only for this upper bound; arbitrary
+complementary vectors remain unrestricted in the lower bound.
+
+\subsection{10. Simultaneous parameter
+order}\label{i-simultaneous-parameter-order}
+
+There is no circular order and no unattached constant \(C W_{2}\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Fix the partition and desired \(\epsilon\). Choose the finite Young
+  allocations \(\theta , \eta\) and reserve loss \(\delta\) so the
+  coefficients they alone contribute, including \(C(\delta +\eta )\)
+  from (8.2), use less than epsilon/10 each.
+\item
+  Choose \(\kappa\) small enough for the fixed pair functional-calculus
+  neighborhood, \(C_{\eta} \kappa , C \kappa\) from the source defect
+  and E0 payment, and \(C \theta ^{-1}\kappa ^{4}\) to fit their
+  assigned \(W_{2}\) budgets.
+\item
+  Choose a FIXED positive \(\sigma\) small enough for the reserve,
+  \(C_{\theta} \sigma , C_{\eta} \sigma ^{2}\) and the complete-charge
+  mixed costs to fit their budgets. Choose a fixed smaller
+  \(\sigma _{0}\) for the radial cutoff.
+\item
+  Increase \(R\) until every constant now fixed times \(R^{-3}\), all
+  complementary \(W_{2}\) absorptions, and all cutoff-tail quantities
+  fit the remaining budgets.
+\end{enumerate}
+
+Constants such as \(C_{\delta}\) or \(1/\sigma\) are finite before \(R\)
+is chosen. No estimate uses a later inverse power of a parameter to undo
+an earlier smallness requirement without allowing that earlier parameter
+to be chosen in the stated order. All estimates are uniform on nested
+smaller supports at the selected fixed widths.
+
+\subsection{11. Closed domains and variational
+meaning}\label{i-closed-domains-and-variational-meaning}
+
+First work on compact slow supports strictly inside the chosen branch
+and tube. The exact first-order coefficients and density are smooth
+there, with uniformly positive principal kinetic form and bounded local
+matrix potentials. The associated Dirichlet form is closed after a
+scalar shift, with its ordinary local H1 core. \(U_{\sigma}\) has smooth
+compact fast support; \(P_{\sigma}\) and \(Q_{\sigma}\) map this core
+into the same form domain. No assertion is made that the uncut \(P\)
+preserves Dirichlet support.
+
+The estimates above imply, after adding a bounded scalar multiple of
+\(\Vert u\Vert ^{2}\),
+
+% DISPLAY i.67
+% SOURCE H[u]+C_R||u||^2 >= c H_s[f]+c B[v],
+% SOURCE u=U_sigma f+v,
+\begin{gather*}
+\begin{aligned}
+& H[u]+C_{R}\Vert u\Vert ^{2} \ge  c H_{s}[f]+c B[v], \\
+& u=U_{\sigma} f+v,
+\end{aligned}\notag
+\end{gather*}
+
+with \(c>0\); \(W_{2}\le C R^{-2}\) is bounded. Conversely the diagonal
+upper estimate bounds \(H[U_{\sigma} f]\) by
+\(C(H_{s}[f]+\Vert f\Vert ^{2})\). Hence \(P_{\sigma}\) extends
+boundedly in the closed quadratic-form norm, equivalently the graph norm
+of the averaged supercharge stack for the stated supersymmetric
+realization. This proves \(P_{\sigma}\) Q(H) subset Q(H); preservation
+of the Hamiltonian operator domain D(H), or boundedness in its operator
+graph norm, is not asserted. Exhaustion by compact slow supports gives
+the same identification on an unbounded selected branch, using these
+UNIFORM estimates rather than local ellipticity constants that might
+depend on \(r_{\max}\).
+
+The restriction of the closed quadratic form of \(H\) to Q(H) intersect
+\(\ker (U_{\sigma}^{*})\) is closed and strictly L2-coercive by (1.5)
+and (7.3). For \(f\) in the slow form domain, the mixed functional is
+continuous in that complementary form norm by (6.1) and the exact source
+dual estimate. Riesz representation gives a unique minimizing \(v_{f}\)
+in Q(H) intersect \(\ker (U_{\sigma}^{*})\) for each \(f\) in
+\(Q(H_{s})\). This is form-domain attainment only; no operator-domain
+regularity of \(v_{f}\) is inferred. The resulting Schur form is
+continuous in the shifted \(H_{s}\) form norm, and (1.1) makes the
+shifted quadratic-form norms equivalent after a bounded scalar shift. It
+is therefore closed.
+
+These are form statements. They do not claim a bounded operator \(B\) or
+a second-slow-derivative operator identity on arbitrary \(f\), and do
+not assume an inverse for \(H_{I}\). All cutoffs, projections, graph
+dressings, and estimates intertwine under the same-branch
+residual/color/normal-frame unitaries. Different cluster branches and
+off-cone selector transport remain outside this local theorem.
+
+\subsection{13. Explicit module and differentiated-tail
+checks}\label{i-explicit-module-and-differentiated-tail-checks}
+
+The following coefficient identities make the retained-module and
+differentiated-tail steps explicit.
+
+\subsubsection{13.1 Internal potential/Yukawa commute with the actual
+injection}\label{i-internal-potentialyukawa-commute-with-the-actual-injection}
+
+At a fixed intrinsic branch, the orthogonal Lie-algebra splitting into
+off-block and retained block/center directions gives the graded tensor
+product of the fast and slow Clifford modules. The injection is
+
+% DISPLAY i.68
+% SOURCE U(A,Z)f = g_(A,Z)(Y) v_F(A,Z) tensor f,
+\begin{gather*}
+\begin{aligned}
+& U(A,Z)f = g_{A,Z}(Y) v_{F}(A,Z) \otimes  f,
+\end{aligned}\notag
+\end{gather*}
+
+with the identity map on the ENTIRE slow Clifford module. There is no
+projection onto an internal singlet or internal eigenstate. Each complex
+bifundamental fast mass has \(8 n_{a} n_{b}\) occupied negative modes,
+an even number. This remains constant under the gapped continuation, so
+the product determinant \(v_{F}\) is even. In particular its graded
+tensor injection intertwines the internal odd Clifford generators with
+the same retained representation. The internal
+Hamiltonian\textquotesingle s Yukawa term is even in any case: it is a
+sum of bilinears in retained internal fermions only.
+
+Pointwise in \((A,Z), V_{I}\) is scalar multiplication and \(Y_{I}(A)\)
+acts only on those retained Clifford factors. Therefore, as actual maps,
+
+% DISPLAY i.69
+% SOURCE V_I U=U V_I,    Y_I U=U Y_I,
+% SOURCE U^*Y_I v=Y_I U^*v.
+\begin{gather*}
+\begin{aligned}
+& V_{I} U=U V_{I}, \quad  Y_{I} U=U Y_{I}, \\
+& U^{*}Y_{I} v=Y_{I} U^{*}v.
+\end{aligned}\notag
+\end{gather*}
+
+This proves their zero mixed compression for \(U^{*}v=0\). The cutoff is
+a scalar bosonic multiplier, so the identities hold exactly for
+\(U_{\sigma}\) as well.
+
+The pair negative-projector radial transport is implemented on the fast
+Fock module by a fast-fermion even unitary; its bosonic covariance
+transport also acts only on the fast module. Both commute with the
+retained Clifford action. The line may carry a nontrivial scalar Berry
+connection, but this does not rotate the slow Clifford representation.
+Differentiation gives
+
+% DISPLAY i.70
+% SOURCE p_A(Uf)=U nabla_A^B f+(1-P)(p_A U)f.
+\begin{gather*}
+\begin{aligned}
+& p_{A}(Uf)=U \nabla _{A}^{B} f+(1-P)(p_{A} U)f.
+\end{aligned}\notag
+\end{gather*}
+
+The transverse term is retained in (5.7); the Berry term is retained in
+\(H_{s}^{B}\) and compared by the full charge estimate (6.5). Nothing in
+the radial identification sets the full derivative of \(U\) to zero.
+Residual color transformations act simultaneously on the fast
+determinant line and the retained module, and \(U\) is the corresponding
+equivariant intertwiner. These pointwise tensor identities therefore
+descend to the residual-equivariant/physical subspace without requiring
+individual block singlets.
+
+\subsubsection{13.2 Exact beta-tail decomposition before internal
+differentiation}\label{i-exact-beta-tail-decomposition-before-internal-differentiation}
+
+Use the notation of Section \(2\), and set
+
+% DISPLAY i.71
+% SOURCE B=Psi^*F^(-1),
+% SOURCE B_1=[C_Y F^(-1)+K^* ; I_Y F^(-1)],
+% SOURCE R_m=T^*WT-I.
+\begin{gather*}
+\begin{aligned}
+& B=\Psi ^{*}F^{-1}, \\
+& B_{1}=[C_{Y} F^{-1}+K^{*} ; I_{Y} F^{-1}], \\
+& R_{m}=T^{*}WT-I.
+\end{aligned}\notag
+\end{gather*}
+
+The center row of \(B\) is
+
+% DISPLAY i.72
+% SOURCE B_C=g_C^(-1/2)[C_Y+K^*(F+L)]F^(-1),
+\begin{gather*}
+\begin{aligned}
+& B_{C}=g_{C}^{-1/2}[C_{Y}+K^{*}(F+L)]F^{-1},
+\end{aligned}\notag
+\end{gather*}
+
+and the internal row is \(B_{I}=I_{Y} F^{-1}\). Direct substitution into
+\(\beta =A^{*}a\) gives the exact identities
+
+% DISPLAY i.73
+% SOURCE beta=B T^*WT(d_0+n),      beta_1=B_1d_0,
+% SOURCE 
+% SOURCE beta-beta_1=(B-B_1)d_0+B R_m d_0+B T^*WT n.           (13.1)
+\begin{gather*}
+\begin{aligned}
+& \beta =B T^{*}WT(d_{0}+n), \quad  \beta _{1}=B_{1} d_{0},
+\end{aligned}\notag \\
+\begin{aligned}
+& \beta -\beta _{1}=(B-B_{1})d_{0}+B R_{m} d_{0}+B T^{*}WT n.
+\end{aligned}\tag{13.1}
+\end{gather*}
+
+The internal part of \(B-B_{1}\) is zero, and its center part has the
+exact factorization
+
+% DISPLAY i.74
+% SOURCE (B-B_1)_C d_0
+% SOURCE   =(g_C^(-1/2)-I)(C_Y F^(-1)d_0+K^*d_0)
+% SOURCE      +g_C^(-1/2)K^* L F^(-1)d_0.                    (13.2)
+\begin{gather*}
+\begin{aligned}
+& (B-B_{1})_{C} d_{0} \\
+& =(g_{C}^{-1/2}-I)(C_{Y} F^{-1}d_{0}+K^{*}d_{0}) \\
+& +g_{C}^{-1/2}K^{*} L F^{-1}d_{0}.
+\end{aligned}\tag{13.2}
+\end{gather*}
+
+The metric difference is \(O(\sigma ^{2})\), and the last term has the
+explicit \(O(\sigma )\) left factor \(K^{*}\). The other factors in
+(13.2) are same-root or input-root-denominator triangle columns.
+
+To expand the middle term of (13.1) without exposing a bare frozen
+vacuum norm, use \(T-I=-Z_{m} T\) and the fact that \(T\) commutes with
+\(Z_{m}\). Exactly,
+
+% DISPLAY i.75
+% SOURCE R_m d_0
+% SOURCE   =-T^* Z_m^*d_0 -T^*T Z_m d_0
+% SOURCE      +T^*K(K^*d_0)-T^*KK^*T(Z_m d_0).              (13.3)
+\begin{gather*}
+\begin{aligned}
+& R_{m} d_{0} \\
+& =-T^{*} Z_{m}^{*}d_{0} -T^{*}T Z_{m} d_{0} \\
+& +T^{*}K(K^{*}d_{0})-T^{*}KK^{*}T(Z_{m} d_{0}).
+\end{aligned}\tag{13.3}
+\end{gather*}
+
+Thus it contains only uniformly bounded left factors multiplying
+\(Z_{m}^{*}d_{0}, Z_{m} d_{0}\), or \(K^{*}d_{0}\). These are the
+controlled rootwise columns. For example
+
+% DISPLAY i.76
+% SOURCE Z_m d_0=F^(-1)L^*d_0
+% SOURCE              -F^(-1)C_Y^*[C_Y R^(-1)d_0],
+% SOURCE Z_m^*d_0=L F^(-1)d_0-K[C_Y F^(-1)d_0],
+% SOURCE K^*d_0=C_Y R^(-1)d_0.
+\begin{gather*}
+\begin{aligned}
+& Z_{m} d_{0}=F^{-1}L^{*}d_{0} \\
+& -F^{-1}C_{Y}^{*}[C_{Y} R^{-1}d_{0}], \\
+& Z_{m}^{*}d_{0}=L F^{-1}d_{0}-K[C_{Y} F^{-1}d_{0}], \\
+& K^{*}d_{0}=C_{Y} R^{-1}d_{0}.
+\end{aligned}\notag
+\end{gather*}
+
+The last term of (13.1) has the same explicit \(O(\sigma )\) outer \(B\)
+multiplying the triangle column \(n\). This proves the extra small
+factor by an exact finite identity, not by a formal infinite series.
+
+For an INTERNAL derivative
+\(\partial _{j}, Y, K, L, N_{Y}, I_{Y}, C_{Y}, W\) and \(g_{C}\) are
+independent of A. Consequently
+
+% DISPLAY i.77
+% SOURCE ||partial_j B||<=C sigma/r_*,
+% SOURCE partial_j Z_m=-F^(-1)(partial_j F)Z_m,
+% SOURCE ||partial_j T||<=C sigma/r_*.
+\begin{gather*}
+\begin{aligned}
+& \Vert \partial _{j} B\Vert \le C \sigma /r_{*}, \\
+& \partial _{j} Z_{m}=-F^{-1}(\partial _{j} F)Z_{m}, \\
+& \Vert \partial _{j} T\Vert \le C \sigma /r_{*}.
+\end{aligned}\notag
+\end{gather*}
+
+Every derivative of a root-preserving coefficient \(F_{e}^{-1}\) adds
+\(1/r_{e}\). A derivative of \(F_{e}^{-1}C_{e}^{*}\) can remove its
+optional \(O(\kappa )\) factor, but replaces it by \(O(1/r_{e})\). The
+same-root or triangle column therefore still has an extra
+\(1/r_{e}\le 1/r_{*}\) in its low Gaussian norm. Crucially the outer
+\(B, K^{*}\), or \(g_{C}^{-1/2}-I\) displayed in (13.1)-(13.3) remains,
+or its derivative has the SAME \(\sigma\) gain and another \(1/r_{*}\).
+
+Applying the finite Gaussian rootwise bounds to these differentiated
+identities gives
+
+% DISPLAY i.78
+% SOURCE ||(beta-beta_1)U||<=C sigma W_2^(1/2),
+% SOURCE ||[partial_A(beta-beta_1)]U||
+% SOURCE                     <=C sigma r_*^(-1)W_2^(1/2).    (13.4)
+\begin{gather*}
+\begin{aligned}
+& \Vert (\beta -\beta _{1})U\Vert \le C \sigma  W_{2}^{1/2}, \\
+& \Vert [\partial _{A}(\beta -\beta _{1})]U\Vert \\
+& \le C \sigma  r_{*}^{-1}W_{2}^{1/2}.
+\end{aligned}\tag{13.4}
+\end{gather*}
+
+The derivative in the second line acts on the operator coefficient,
+exactly as required by the curvature term, not on \(U\). Derivatives of
+\(U\) are already present in the complete-charge cross. At
+\(A=0, \partial _{A} d_{0}\) need not vanish; (13.1)-(13.3) explicitly
+retain its contribution with the same extra fast factor. The non-small
+derivative of \(\beta _{1}\) itself is not included in the tail estimate
+and remains in the leading H2 scalar.
+
+Finally the coefficients of \(\beta -\beta _{1}\) have at least two
+fast-coordinate factors before \(p_{F}\). A fast divergence removes at
+most one. Differentiating the displayed normalized coefficients
+therefore gives
+\(\vert \operatorname{div} _{F}(b-b_{1})\vert \le C \sigma /r_{*}\); an
+additional internal derivative costs at most \(1/r_{*}\) and leaves this
+\(\sigma\) factor. This proves the divergence portions of Section
+\(4.3\) with the required gain as well.
+
+\subsubsection{13.3 Form domain
+convention}\label{i-form-domain-convention}
+
+The infimum, projection bound, and Riesz minimizer are statements about
+Q(H), the closed quadratic-form domain. They do not establish invariance
+of the Hamiltonian operator domain D(H). The minimizing complement is
+asserted only in Q(H), for \(f\) in \(Q(H_{s})\). The global lower bound
+does not require attainment.

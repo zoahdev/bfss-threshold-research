@@ -1,0 +1,6 @@
+{
+  "written": "checks/bfss_complementary_reserve_20261005/local_schur_checks.json",
+  "identity_max_relative_error": 6.2428756143798175e-15,
+  "symmetrization_error": 4.163336342344337e-17,
+  "all_checks_passed": true
+}

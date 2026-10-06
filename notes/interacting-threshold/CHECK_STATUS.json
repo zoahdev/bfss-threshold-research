@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-06",
+  "scope": "Conditional finite-rank BFSS threshold implications; not a large-N solution",
+  "checked": [
+    "Exact 44 Casimir and support-radius coefficient 7/4",
+    "Exact positive Bernstein IMS certificates for 44 and all nonsinglets",
+    "Representation-preserving cutoff and weighted-Poisson exponent arithmetic",
+    "Regulator coercivity and explicit singletness thresholds",
+    "Coordinate-quadrupole comparison-operator logarithmic endpoint obstruction"
+  ],
+  "not_established": [
+    "The manuscript candidate exterior inequalities and their full analytical dependencies",
+    "Existence or uniqueness of any BFSS zero mode",
+    "Endpoint E^(5/2) source bound for actual BFSS",
+    "Rank-uniform exterior radii or spectral constants",
+    "The requested large-N susceptibility product or zero-mode result",
+    "Positive-energy limiting absorption principle"
+  ],
+  "finite_checks": [
+    "check_ims.py",
+    "check_source.py"
+  ],
+  "publication_status": "conditional/provisional research archive",
+  "human_expert_review": "not supplied",
+  "author": "Yicheng Pan",
+  "branch_summary": "Conditional fixed-rank threshold reduction; global exterior theorem and large-rank target unproved.",
+  "dependencies": [
+    "Candidate all-vector exterior Hardy estimate",
+    "Compatible physical self-adjoint realization, normalized singlet zero mode and specified moment/domain assumptions"
+  ],
+  "verification_scope": "Finite algebra and consistency checks only; not certification of infinite-dimensional hypotheses or a rank-uniform theorem."
+}

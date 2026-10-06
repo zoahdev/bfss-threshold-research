@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "primitive_fixed_generator_charge_sum_bound": "alpha^2 / 32",
+  "fixed_rotation_generator_count": 1,
+  "charge_count": 16,
+  "primitive_all_36_generators_charge_sum_identity": "9 alpha^2 / 28",
+  "charge_normalization": "{q_alpha,q_beta}=delta_alpha,beta h; sum||q g||^2=8h[g]",
+  "baseline_rescaling": "Q=sqrt(2)q; A=a/sqrt(2); sum||Q g||^2=16h[g]",
+  "rescaled_fixed_generator_charge_sum_bound": "alpha^2 / 64",
+  "rescaled_all_36_generators_charge_sum_identity": "9 alpha^2 / 56",
+  "nonsinglet_ball_constant": "1/4",
+  "two_block_padded_width_max": "1/12",
+  "partitions_checked": 2500,
+  "smallest_angular_payment": "18",
+  "radial_hardy_9d": "49/4",
+  "singlet_slow_hardy": "121/4",
+  "center_hardy_18d": "64",
+  "margin_checks": [
+    {
+      "c": "1",
+      "a": "1/24",
+      "paid_lower": "2533/96",
+      "margin": "2437/96"
+    },
+    {
+      "c": "12",
+      "a": "1/24",
+      "paid_lower": "2533/96",
+      "margin": "1381/96"
+    },
+    {
+      "c": "25",
+      "a": "3/212",
+      "paid_lower": "463/16",
+      "margin": "63/16"
+    },
+    {
+      "c": "30",
+      "a": "1/1484",
+      "paid_lower": "483/16",
+      "margin": "3/16"
+    },
+    {
+      "c": "30249999/1000000",
+      "a": "1/371000000",
+      "paid_lower": "120999999/4000000",
+      "margin": "3/4000000"
+    }
+  ],
+  "moment_range": "0 <= m < 9",
+  "endpoint_m9": "not established",
+  "scope": "Exact scalar arithmetic only; not proof of BFSS local estimates, domains, symmetry, or gluing."
+}

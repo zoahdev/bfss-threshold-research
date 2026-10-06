@@ -1,0 +1,17 @@
+SPDX-License-Identifier: CC-BY-4.0
+
+Copyright (c) 2026 Yicheng Pan
+
+Original manuscript, technical notes, explanatory documentation and generated
+original reports in this packet are licensed under the Creative Commons
+Attribution 4.0 International License.
+
+License and legal code:
+https://creativecommons.org/licenses/by/4.0/
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution should identify Yicheng Pan, the document title and version, link
+the license, and indicate modifications. No endorsement is implied. Provenance notice: substantial AI assistance was used in preparing this work.
+
+This notice does not license third-party papers, quotations, references,
+software dependencies or trademarks. No third-party paper is redistributed.

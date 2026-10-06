@@ -1,0 +1,86 @@
+{
+  "meaning": "Programs completed with the recorded exit codes. Floating outputs are finite regressions, not a proof certificate. Read each log for its exact scope.",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "runs": [
+    {
+      "program": "checks/bfss_global_induction_20261005/check_global_budget.py",
+      "scope": "exact rational scalar budgets",
+      "exit_code": 0,
+      "seconds": 0.212,
+      "sha256": "67b5290c557598f60cdc3b83ca70665f7a78318ded104aad7a9f4a61fdbce343"
+    },
+    {
+      "program": "checks/bfss_multiblock_geometry_20261005/check_multiblock_geometry.py",
+      "scope": "finite ambient metric and density identities",
+      "exit_code": 0,
+      "seconds": 0.339,
+      "sha256": "f52084ed2a1b3f6b035ca5a9a73bb86a06489c27be7d8ae3ceb6d736271b583d"
+    },
+    {
+      "program": "checks/bfss_all_rank_induction_20261005/check_general_fast_energy.py",
+      "scope": "finite frozen pair energy identities",
+      "exit_code": 0,
+      "seconds": 0.242,
+      "sha256": "b8780090d8a31f8591e7b3a7cd81969450ae00541b7e6498b42a2b50a27d9875"
+    },
+    {
+      "program": "checks/bfss_all_rank_induction_20261005/check_multiblock_root_sources.py",
+      "scope": "finite source and graph bookkeeping",
+      "exit_code": 0,
+      "seconds": 0.11,
+      "sha256": "573bd6d21be127eb4df3e41eeba11d4f8ab7752c8bf94948871513086183015f"
+    },
+    {
+      "program": "checks/bfss_all_rank_induction_20261005/check_adapted_source_inventory.py",
+      "scope": "finite adapted Gauss Taylor coefficients",
+      "exit_code": 0,
+      "seconds": 0.286,
+      "sha256": "f6dfcab2b9929f3fefa1f36f4c4f79f0340b29ca08b683b34750572431fb36be"
+    },
+    {
+      "program": "checks/bfss_complementary_reserve_20261005/check_colored_reserve.py",
+      "scope": "finite square completion identities",
+      "exit_code": 0,
+      "seconds": 0.107,
+      "sha256": "cc6511914fd75e470213f4db9c50237284708cf9350437f991779b2a2c48b205"
+    },
+    {
+      "program": "checks/bfss_complementary_reserve_20261005/check_local_schur.py",
+      "scope": "finite mixed and variational identities",
+      "exit_code": 0,
+      "seconds": 0.087,
+      "sha256": "7cf2e7d84e2be965444d51bf689d602173d497a581e7a9e3b3794daa4747d845"
+    },
+    {
+      "program": "checks/bfss_offcone_partition_20261005/check_regularized_tree.py",
+      "scope": "sampled regularized cluster tree",
+      "exit_code": 0,
+      "seconds": 5.349,
+      "sha256": "e312bec9b58393960d2243eba0f6bc36c4e826c3f66d1e1379db97de6629b572"
+    },
+    {
+      "program": "checks/bfss_offcone_partition_20261005/check_offcone_ims.py",
+      "scope": "finite difference incidence IMS examples",
+      "exit_code": 0,
+      "seconds": 4.021,
+      "sha256": "a031bef6df399aa272a2e098e5156acff14a087da288da7a98694603ecfe8631"
+    },
+    {
+      "program": "checks/bfss_sharp_decay_20261005/check_sharp_singlet_budget.py",
+      "scope": "exact rotation normalization and singlet scalar budgets",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "sha256": "d5cc1bc4af0754a6c18caa2691d7fed485637c02b0d489050bee0b86e80c409e"
+    },
+    {
+      "program": "checks/bfss_sharp_decay_20261005/check_angular_gate_clifford.py",
+      "scope": "exact integer Clifford rotation identities",
+      "exit_code": 0,
+      "seconds": 0.201,
+      "sha256": "f580d1269cfba10d3e86614834e15a152029fe9fd814e6bd77648f75a8292434"
+    }
+  ]
+}

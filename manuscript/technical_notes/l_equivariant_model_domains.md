@@ -1,0 +1,149 @@
+# Equivariant vacuum and reference form domains {#app:model}
+
+This appendix expands the geometric identifications used in
+Section 10. It addresses the added rotation argument
+on the local structures supplied by Appendices A--J; it does not replace
+their collision-uniform estimates.
+
+## Spatial rotations preserve actual stationary flags
+
+For an ordered flag $P=(P_1,\ldots,P_k)$, the functional
+$$\Phi_X(P)=\sum_{a,i}n_a^{-1}(\operatorname{Tr}(P_aX_i))^2$$ is spatially invariant
+at the same flag. Thus $\Phi_{RX}$ and $\Phi_X$ are identical functions
+on the flag manifold, including all their flag derivatives. The map
+$(X,P)\mapsto(RX,P)$ preserves stationarity and every Hessian admission
+test. It fixes the flag along each spatial orbit; apparent permutations
+in a local numbering of sheets are only chart changes.
+
+Center gaps, internal radii, fast norms and commutator norms are spatial
+scalars. The inverse-trace regularized cluster scales use spatial
+contractions and are likewise invariant. Raw select/reject weights and
+their square-sum normalization therefore preserve singlets. No angular
+cutoff is inserted. Color frames may be chosen as functions of the flag
+alone, so their transition maps are gauge changes independent of the
+spatial rotation. Actual normal-bundle frame changes are accounted for
+by the fast unitaries of Appendix A. Density flattening is scalar and
+cannot supply an extra angular character.
+
+## Global two-block anchor including the central element
+
+At $A=0$, fix a reference center direction $n_0\in S^8$. The fast ground
+line is a one-dimensional genuine unitary representation of its
+stabilizer $\operatorname{Spin}(8)$. Every continuous character of a
+connected compact semisimple group is trivial. The statement includes
+the central element $-1$, rather than only the infinitesimal Lie
+algebra.
+
+The fast action is obtained from the physical spatial and Clifford
+actions, restricted to the fast factor. Its occupied determinant
+contains $8n_1n_2$ modes and has even parity. There is therefore no
+hidden projective character or extra fermionic sign on the line. Choose
+a unit vector $v_*$ in the line over $n_0$ and define
+$$v_0(gn_0)=U_{\rm fast}(g)v_*,\qquad g\in\operatorname{Spin}(9).$$
+Stabilizer invariance makes this independent of the representative $g$,
+smooth on the sphere, and exactly equivariant. It is a global normalized
+section, not only a local choice of phase.
+
+Its Berry one-form is group invariant. The tangent representation of
+$\operatorname{Spin}(8)$ on $S^8$ has no invariant covector, so the
+angular one-form is zero. The occupied determinant is independent of the
+radial center coordinate. The positive normalized Gaussian has zero
+scalar Berry one-form, because its norm is one and its entries are real.
+Hence the unperturbed center connection is trivial and its kinetic form
+is the ordinary $T_x$.
+
+This argument is restricted to the anchor. At nonzero internal
+coordinates the vacuum may have nonzero Berry curvature; the finite-$A$
+comparison is precisely the paid one in Appendices E--G and I. Gauge and
+Weyl identifications are retained, rather than being discarded by the
+trivialization.
+
+## Covariant Kato transport and retained fermions
+
+The path $tA$, $0\le t\le1$, remains in the local endpoint tube. Let
+$P_t(x,A)$ be the gapped negative fast spectral projector. Covariance
+gives $$P_t(Rx,RA)=U_{\rm fast}(R)P_t(x,A)U_{\rm fast}(R)^*.$$
+Differentiating in $t$ shows the same covariance for the anti-Hermitian
+Kato generator $K_t=[\dot P_t,P_t]$. The solution of $\dot W_t=K_tW_t$,
+$W_0=I$, is unique, so $W_t$ is covariant. The induced fast Fock
+transport is even and acts only on fast fermions. Gaussian covariance
+transport and the scalar normalized radial cutoff are also equivariant.
+All these maps commute with the retained Clifford action.
+
+Applying these maps to $v_0$ gives the actual injection $U_\sigma$ as an
+intertwiner. The retained relative module is exactly the
+$256$-dimensional module of sixteen Majoranas, and the slow generator on
+the smooth core is $L_x+S_{\rm rel}+J_I$. This does not make the spatial
+derivatives of $U_\sigma$ vanish. Their transverse source and scalar
+Berry contributions stay in the complete comparison already charged in
+the local ledger; there is no extra Schur dressing or a second
+completion square.
+
+## The model form and its extension map
+
+For the two physical internal Hilbert spaces, the reference model is
+10.3. The internal forms are the complete
+nonnegative supersymmetric forms, with arbitrary energy and rotation
+type. The baseline bounded projection and padded support give an actual
+coefficient $f$ in the Dirichlet form closure of the padded branch.
+Extend each approximating compactly supported smooth coefficient by
+zero; the baseline form bounds yield a Cauchy sequence in
+$\mathcal Q(T_x)\cap\mathcal Q(H_I)$. Its limit is the zero extension of $f$. This
+establishes the extension for this domain. It asserts no boundary-free
+extension for an arbitrary section or preservation of $D(h_N)$.
+
+The extended coefficient is supported in $\mathcal C_\beta$ from
+10.6. A detailed leaf need not survive
+internal-only rotations: those may alter extra direction-dependent
+tests. This is why every original local comparison and leaf-multiplier
+payment is completed before extension and averaging.
+
+Let $V_I(g)$ rotate both internal blocks, including their fermions,
+while fixing $x$ and $\mathcal F_{\rm rel}$. It preserves each $\alpha_a$,
+commutes with $H_I$ and $T_x$, and preserves the radial tube. Individual
+$V_I(g)$ need not commute with every diagonal rotation. Their Haar
+average $$P_I=\int_{\operatorname{Spin}(9)}V_I(g)\,\mathrm{d} g$$ does commute,
+by conjugation invariance of Haar measure. It is a contraction for the
+norm and the model form norm. The corresponding invariant projection
+reduces each of $T_x$ and $H_I$, giving
+$$T_x[f]=T_x[P_If]+T_x[(1-P_I)f],\qquad
+ H_I[f]=H_I[P_If]+H_I[(1-P_I)f].$$ It commutes with center radial
+weights, so the $s^{-2}$ weighted norm splits as well. Both summands of
+a diagonal singlet remain diagonal singlets.
+
+Apply these identities only to the already-paid model form. The enlarged
+support remains in $\mathcal C_\beta$, so for almost every fixed center
+$x$ the internal vector has support in the ball of radius
+$\beta_{\rm pad}\nu|x|$. The direct-integral form description gives
+internal form-domain membership almost everywhere.
+Lemma 9.2 then applies fiberwise; Fubini and nonnegativity
+integrate the inequality. Approximation first on compact center annuli,
+then in the closed form norm, removes any smoothness restriction. No
+derivative of a radius-dependent internal spectral projection occurs;
+$P_I$ is independent of $x$.
+
+## Representation types and residual constraints
+
+The relative module has highest weights $$\mathbf{44}:(2,0,0,0),\qquad
+ \mathbf{84}:(1,1,1,0),\qquad
+ \mathbf{128}:(3/2,1/2,1/2,1/2).$$ A scalar harmonic on $S^8$ of degree
+$l$ has highest weight $(l,0,0,0)$. Only $\mathbf{44}$ pairs with such a
+harmonic into a singlet, and it does so at $l=2$. Internal invariants
+contribute arbitrary multiplicity spaces. The argument does not require
+each block to be separately invariant: nontrivial block representations
+can couple to a simultaneous internal singlet.
+
+The relative $\mathbf{128}$ cannot give a singlet with a scalar harmonic
+and an internal trivial representation. It can contribute when paired
+with nontrivial spinorial internal representations; these states belong
+to $(1-P_I)\mathscr K$ and are controlled by the nonsinglet uncertainty
+bound. They are not omitted. Equal-block exchange and residual physical
+conditions only reduce the admissible ordered-cover state space and
+cannot weaken the lower bound.
+
+For three or more final blocks, radial center Hardy already gives at
+least $64$ in kinetic-one units, so none of these angular
+identifications is needed for their coercive constant. Their geometry,
+cutoff errors, colored complements and soft internal payments remain
+those of the baseline proof. The only additional two-block restriction
+is the initial padded width $\beta_{\rm pad}\le1/12$.

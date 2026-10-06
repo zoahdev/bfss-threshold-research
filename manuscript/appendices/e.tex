@@ -1,0 +1,740 @@
+\clearpage
+\section{Rootwise all vector connection
+estimates}\label{e-rootwise-all-vector-connection-estimates}
+
+Technical derivation for review. Equation and subsection numbers in this
+appendix are local to the source derivation. Historical local labels are
+retained, including numbering gaps or nonsequential labels. The
+accompanying source notes retain the original expressions for
+comparison.
+
+\subsection{1. Assumptions and the excitation
+energy}\label{e-assumptions-and-the-excitation-energy}
+
+Fix the rank and a partition. For every root/pair \(e=(a,b)\), let
+\(r_{e}=\vert z_{a}-z_{b}\vert\) and assume
+\(\alpha _{a}+\alpha _{b} \le  \kappa  r_{e}\), with \(\kappa\)
+sufficiently small. Write \(r_{*}=\min _{e} r_{e}\) and
+\(W_{2}=\sum _{e} r_{e}^{-2}\). No ratio \(r_{\max}/r_{*}\) is
+restricted.
+
+Freeze the slow variables. Let
+
+% DISPLAY e.1
+% SOURCE H_fast,e = H_B,e + H_F,e,
+% SOURCE E_0,e = E_B,e + E_F,min,e,
+% SOURCE h_e = H_fast,e - E_0,e
+% SOURCE     = (H_B,e-E_B,e) + (H_F,e-E_F,min,e).
+\begin{gather*}
+\begin{aligned}
+& H_{\mathrm{fast},e} = H_{B,e} + H_{F,e}, \\
+& E_{0,e} = E_{B,e} + E_{F,\mathrm{min},e}, \\
+& h_{e} = H_{\mathrm{fast},e} - E_{0,e} \\
+& = (H_{B,e}-E_{B,e}) + (H_{F,e}-E_{F,\mathrm{min},e}).
+\end{aligned}\notag
+\end{gather*}
+
+Here \(H_{B,e}\) is the exact kinetic-aware bosonic oscillator. The
+uniform pair-matrix bounds give
+
+% DISPLAY e.2
+% SOURCE c(p_e^2+r_e^2 Y_e^2) <= H_B,e <= C(p_e^2+r_e^2 Y_e^2),
+% SOURCE E_B,e <= C r_e,
+% SOURCE h_e >= c r_e Q_e,
+\begin{gather*}
+\begin{aligned}
+& c(p_{e}^{2}+r_{e}^{2} Y_{e}^{2}) \le  H_{B,e} \le  C(p_{e}^{2}+r_{e}^{2} Y_{e}^{2}), \\
+& E_{B,e} \le  C r_{e}, \\
+& h_{e} \ge  c r_{e} Q_{e},
+\end{aligned}\notag
+\end{gather*}
+
+where \(P_{e}\) is its full boson/fermion vacuum projection and
+\(Q_{e}=1-P_{e}\). In particular
+
+% DISPLAY e.3
+% SOURCE ||p_e Q_e v||^2 <= C h_e[v],
+% SOURCE ||Y_e v||^2 <= C r_e^-2 h_e[v] + C r_e^-1 ||v||^2,
+% SOURCE ||p_e P_e v||^2 <= C r_e ||P_e v||^2,
+% SOURCE ||Y_e p_e P_e v||^2 <= C ||P_e v||^2.                 (1)
+\begin{gather*}
+\begin{aligned}
+& \Vert p_{e} Q_{e} v\Vert ^{2} \le  C h_{e}[v], \\
+& \Vert Y_{e} v\Vert ^{2} \le  C r_{e}^{-2} h_{e}[v] + C r_{e}^{-1} \Vert v\Vert ^{2}, \\
+& \Vert p_{e} P_{e} v\Vert ^{2} \le  C r_{e} \Vert P_{e} v\Vert ^{2}, \\
+& \Vert Y_{e} p_{e} P_{e} v\Vert ^{2} \le  C \Vert P_{e} v\Vert ^{2}.
+\end{aligned}\tag{1}
+\end{gather*}
+
+The last two statements also hold with any uniformly bounded finite
+color/spatial matrices between the displayed operators. Constants depend
+only on rank and the fixed small pair-matrix neighborhood. \(h_{e}\),
+rather than \(H_{B,e}\) or a centered oscillator, is essential.
+
+Let \(\chi\) be any multiplication cutoff with
+\(\vert \chi \vert \le 1\) supported in
+\(\vert Y\vert \le \sigma  r_{*}\). Derivatives of \(\chi\) are not used
+below. Every estimate is a fast-fiber estimate for arbitrary vectors,
+with arbitrary spectator fast modes and arbitrary slow/Clifford
+coefficient vectors. It can be integrated over the slow variables. No
+internal momentum or oscillator-degree cutoff is imposed. No individual
+internal singlet condition is imposed; the estimates remain valid on the
+total residual-equivariant space.
+
+\subsection{2. Same-root and mixed-root
+lemmas}\label{e-same-root-and-mixed-root-lemmas}
+
+For any pair \(e\) and any positive denominator scale \(r_{g}\) drawn
+from the retained roots,
+
+% DISPLAY e.4
+% SOURCE ||chi Y_e p_e v/r_g||^2
+% SOURCE   <= C sigma^2 (r_*^2/r_g^2) h_e[v]
+% SOURCE        + C r_g^-2 ||v||^2.                           (2)
+\begin{gather*}
+\begin{aligned}
+& \Vert \chi  Y_{e} p_{e} v/r_{g}\Vert ^{2} \\
+& \le  C \sigma ^{2} (r_{*}^{2}/r_{g}^{2}) h_{e}[v] \\
+& + C r_{g}^{-2} \Vert v\Vert ^{2}.
+\end{aligned}\tag{2}
+\end{gather*}
+
+Proof: split the INPUT as \(P_{e} v+Q_{e} v\). On \(Q_{e}\) use
+\(\vert \chi  Y_{e}\vert \le \sigma  r_{*}\) and the first inequality in
+(1). On \(P_{e}\) use the last inequality in (1), dropping \(\chi\). The
+factor two from the split is harmless. \(P_{e} v\) need not be supported
+in the tube. No argument asserts that \(P_{e}\) preserves tube support.
+
+For distinct roots \(e\) and \(f\),
+
+% DISPLAY e.5
+% SOURCE ||chi Y_f p_e v/r_g||^2
+% SOURCE   <= C sigma^2 (r_*^2/r_g^2) h_e[v]
+% SOURCE    + C r_e/(r_g^2 r_f^2) h_f[v]
+% SOURCE    + C r_e/(r_g^2 r_f) ||v||^2.                      (3)
+\begin{gather*}
+\begin{aligned}
+& \Vert \chi  Y_{f} p_{e} v/r_{g}\Vert ^{2} \\
+& \le  C \sigma ^{2} (r_{*}^{2}/r_{g}^{2}) h_{e}[v] \\
+& + C r_{e}/(r_{g}^{2} r_{f}^{2}) h_{f}[v] \\
+& + C r_{e}/(r_{g}^{2} r_{f}) \Vert v\Vert ^{2}.
+\end{aligned}\tag{3}
+\end{gather*}
+
+Indeed the \(Q_{e}\) input is as above. On the \(P_{e}\) input, drop
+\(\chi\), commute \(Y_{f}\) with \(P_{e}\), and use
+\(\Vert p_{e} P_{e}\Vert ^{2}\le C r_{e}\) followed by the \(Y_{f}\)
+bound in (1). Equivalently split the remaining \(f\) input into
+\(P_{f}\) and \(Q_{f}\). This is the step that cannot be omitted from a
+mixed-root claim.
+
+If e,f,g are the three edges of a triangle, \(r_{e}\le r_{f}+r_{g}\), so
+
+% DISPLAY e.6
+% SOURCE r_e/(r_g^2 r_f^2) <= 2 r_*^-3,
+% SOURCE r_e/(r_g^2 r_f) <= r_g^-2+(r_g r_f)^-1 <= C W_2,t.
+\begin{gather*}
+\begin{aligned}
+& r_{e}/(r_{g}^{2} r_{f}^{2}) \le  2 r_{*}^{-3}, \\
+& r_{e}/(r_{g}^{2} r_{f}) \le  r_{g}^{-2}+(r_{g} r_{f})^{-1} \le  C W_{2,t}.
+\end{aligned}\notag
+\end{gather*}
+
+Consequently
+
+% DISPLAY e.7
+% SOURCE ||chi Y_f p_e v/r_g||^2
+% SOURCE   <= C (sigma^2+r_*^-3) (h_e[v]+h_f[v])
+% SOURCE        + C W_2,t ||v||^2.                            (4)
+\begin{gather*}
+\begin{aligned}
+& \Vert \chi  Y_{f} p_{e} v/r_{g}\Vert ^{2} \\
+& \le  C (\sigma ^{2}+r_{*}^{-3}) (h_{e}[v]+h_{f}[v]) \\
+& + C W_{2,t} \Vert v\Vert ^{2}.
+\end{aligned}\tag{4}
+\end{gather*}
+
+For the input-root denominator \(g=e\), the same conclusion follows
+directly, without any triangle hypothesis, with residual
+\((r_{e} r_{f})^{-1}\). In (2)-(4), \(Y\) and \(p\) can be contracted
+with any bounded root-preserving finite matrices. Finite sums of such
+sources obey the same bounds after enlarging the rank-dependent
+constant.
+
+A triangle hypothesis (or another restriction on \(r_{e}\) relative to
+\(r_{f},r_{g}\)) is genuinely necessary to replace (3) by (4): the
+\(P_{e} P_{f}\) input has squared size comparable to
+\(r_{e}/(r_{g}^{2} r_{f})\). An arbitrary unrelated \(r_{e}\) cannot
+disappear from this expression.
+
+\subsection{3. Exact inverse-M factorization for the fast
+column}\label{e-exact-inverse-m-factorization-for-the-fast-column}
+
+Use the notation of the intrinsic geometry and adapted source inventory:
+
+% DISPLAY e.8
+% SOURCE M=F+P,   P=L-J_2,   J_2=K C_Y=R^-1 C_Y* C_Y,
+% SOURCE W=I+K K*,   K=R^-1 C_Y*,
+% SOURCE T=(I+F^-1 P*)^-1,
+% SOURCE M^-*=T F^-1,
+% SOURCE d_0(v)=F^-1 C* p_F v.
+\begin{gather*}
+\begin{aligned}
+& M=F+P, \quad  P=L-J_{2}, \quad  J_{2}=K C_{Y}=R^{-1} C_{Y}^{*} C_{Y}, \\
+& W=I+K K^{*}, \quad  K=R^{-1} C_{Y}^{*}, \\
+& T=(I+F^{-1} P^{*})^{-1}, \\
+& M^{-*}=T F^{-1}, \\
+& d_{0}(v)=F^{-1} C^{*} p_{F} v.
+\end{aligned}\notag
+\end{gather*}
+
+\(F\) is self-adjoint pair-block diagonal;
+\(\Vert F_{e}^{-1} C_{e}^{*}\Vert \le C \kappa\). On the tube,
+
+% DISPLAY e.9
+% SOURCE ||P F^-1||+||F^-1 P*|| <= C sigma,
+% SOURCE ||T||+||W^(1/2)|| <= C,
+% SOURCE ||K|| <= C sigma.
+\begin{gather*}
+\begin{aligned}
+& \Vert P F^{-1}\Vert +\Vert F^{-1} P^{*}\Vert  \le  C \sigma , \\
+& \Vert T\Vert +\Vert W^{1/2}\Vert  \le  C, \\
+& \Vert K\Vert  \le  C \sigma .
+\end{aligned}\notag
+\end{gather*}
+
+Let \(B p_{F}=W^{1/2} M^{-*}(C^{*}+N_{Y}^{*})p_{F}\) be the exact fast
+column of the Gauss stack. Algebraically, with the indicated operator
+ordering,
+
+% DISPLAY e.10
+% SOURCE B p_F-d_0
+% SOURCE   =(W^(1/2)-I)d_0
+% SOURCE    +W^(1/2)T[
+% SOURCE       F^-1 N_Y* p_F
+% SOURCE       -F^-1 L* d_0
+% SOURCE       +F^-1 J_2* d_0].                               (5)
+\begin{gather*}
+\begin{aligned}
+& B p_{F}-d_{0} \\
+& =(W^{1/2}-I)d_{0} \\
+& +W^{1/2}T[ \\
+& F^{-1} N_{Y}^{*} p_{F} \\
+& -F^{-1} L^{*} d_{0} \\
+& +F^{-1} J_{2}^{*} d_{0}].
+\end{aligned}\tag{5}
+\end{gather*}
+
+There are no derivatives of inverse matrices in this first-order form
+identity.
+
+The first two bracketed expressions are finite triangle sources
+\(Y_{f} p_{e}/r_{g}\), with respectively bounded and \(O(\kappa )\)
+root-preserving factors. The last expression factors as
+
+% DISPLAY e.11
+% SOURCE F^-1 J_2* d_0
+% SOURCE   =F^-1 C_Y* [C_Y R^-1 d_0],                         (6)
+\begin{gather*}
+\begin{aligned}
+& F^{-1} J_{2}^{*} d_{0} \\
+& =F^{-1} C_{Y}^{*} [C_{Y} R^{-1} d_{0}],
+\end{aligned}\tag{6}
+\end{gather*}
+
+where \(\Vert F^{-1} C_{Y}^{*}\Vert \le C \sigma\) and
+\(C_{Y} R^{-1} d_{0}\) is a sum of same-root terms \(Y_{e} p_{e}/r_{e}\)
+with \(O(\kappa )\) coefficients. Also
+
+% DISPLAY e.12
+% SOURCE (W^(1/2)-I)d_0
+% SOURCE   =(W^(1/2)+I)^-1 K [K* d_0],
+% SOURCE K* d_0=C_Y R^-1 d_0.                                 (7)
+\begin{gather*}
+\begin{aligned}
+& (W^{1/2}-I)d_{0} \\
+& =(W^{1/2}+I)^{-1} K [K^{*} d_{0}], \\
+& K^{*} d_{0}=C_{Y} R^{-1} d_{0}.
+\end{aligned}\tag{7}
+\end{gather*}
+
+Thus all potentially troublesome inverse-M matrices remain bounded left
+factors. Equations (2)-(7) prove
+
+% DISPLAY e.13
+% SOURCE ||chi (B p_F-d_0)v||^2
+% SOURCE   <= C (sigma^2+r_*^-3) sum_e h_e[v]
+% SOURCE        + C W_2 ||v||^2.                              (8)
+\begin{gather*}
+\begin{aligned}
+& \Vert \chi  (B p_{F}-d_{0})v\Vert ^{2} \\
+& \le  C (\sigma ^{2}+r_{*}^{-3}) \sum _{e} h_{e}[v] \\
+& + C W_{2} \Vert v\Vert ^{2}.
+\end{aligned}\tag{8}
+\end{gather*}
+
+The estimate holds for arbitrary fast vectors. It is not an estimate
+restricted to vacuum or a finite excited coefficient space.
+
+The spin column obeys separately
+
+% DISPLAY e.14
+% SOURCE ||chi W^(1/2)M^-* S_f v||^2 <= C W_2 ||v||^2,          (9)
+\begin{gather*}
+\begin{aligned}
+& \Vert \chi  W^{1/2}M^{-*} S_{f} v\Vert ^{2} \le  C W_{2} \Vert v\Vert ^{2},
+\end{aligned}\tag{9}
+\end{gather*}
+
+because the finite fermionic Gauss matrices are bounded and \(F^{-1}\)
+retains the individual output-root denominators.
+
+\subsection{4. Exact slow-square coefficient and its Schur
+loss}\label{e-exact-slow-square-coefficient-and-its-schur-loss}
+
+Let \(G_{s}=\operatorname{diag} (g_{C}^{-1},I_{I})\), so the direct slow
+kinetic stack is \(w=G_{s}^{1/2}p_{s}\). The exact normalized slow
+column in the Gauss square is
+
+% DISPLAY e.15
+% SOURCE A=W^(1/2)M^-* Psi,
+% SOURCE Psi=[(C_Y*+(F+L)*K)g_C^-1/2, I_Y*].                  (10)
+\begin{gather*}
+\begin{aligned}
+& A=W^{1/2}M^{-*} \Psi , \\
+& \Psi =[(C_{Y}^{*}+(F+L)^{*}K)g_{C}^{-1/2}, I_{Y}^{*}].
+\end{aligned}\tag{10}
+\end{gather*}
+
+This follows directly from \(O^{*}Sg_{S}^{-1}\). In particular the
+\(F K\) term must be retained. One has
+
+% DISPLAY e.16
+% SOURCE ||Psi*F^-1|| <= C sigma,
+% SOURCE ||A|| <= C sigma.                                    (11)
+\begin{gather*}
+\begin{aligned}
+& \Vert \Psi ^{*}F^{-1}\Vert  \le  C \sigma , \\
+& \Vert A\Vert  \le  C \sigma .
+\end{aligned}\tag{11}
+\end{gather*}
+
+The adjoint coefficient acting on the frozen fast column has the exact
+expression
+
+% DISPLAY e.17
+% SOURCE A* d_0=Psi*F^-1 T*W^(1/2)d_0.                        (12)
+\begin{gather*}
+\begin{aligned}
+& A^{*} d_{0}=\Psi ^{*}F^{-1} T^{*}W^{1/2}d_{0}.
+\end{aligned}\tag{12}
+\end{gather*}
+
+Expand
+
+% DISPLAY e.18
+% SOURCE T*W^(1/2)-I=(T*-I)+T*(W^(1/2)-I),
+% SOURCE T*-I=-T* P F^-1.                                    (13)
+\begin{gather*}
+\begin{aligned}
+& T^{*}W^{1/2}-I=(T^{*}-I)+T^{*}(W^{1/2}-I), \\
+& T^{*}-I=-T^{*} P F^{-1}.
+\end{aligned}\tag{13}
+\end{gather*}
+
+The leading term \(\Psi ^{*}F^{-1} d_{0}\) is the stack of
+
+% DISPLAY e.19
+% SOURCE I_Y F^-1 d_0,
+% SOURCE g_C^-1/2[C_Y F^-1 d_0+K* d_0+K* L F^-1 d_0].         (14)
+\begin{gather*}
+\begin{aligned}
+& I_{Y} F^{-1} d_{0}, \\
+& g_{C}^{-1/2}[C_{Y} F^{-1} d_{0}+K^{*} d_{0}+K^{*} L F^{-1} d_{0}].
+\end{aligned}\tag{14}
+\end{gather*}
+
+The first three contractions are same-root \(Y_{e} p_{e}/r_{e}\).
+\(L F^{-1} d_{0}\) is a triangle source with INPUT-root denominator
+\(r_{e}\), so (3) applies even without using a frequency ratio. The
+\(J_{2}\) part of \(P F^{-1} d_{0}\) factors as
+
+% DISPLAY e.20
+% SOURCE J_2 F^-1 d_0=R^-1 C_Y* [C_Y F^-1 d_0],               (15)
+\begin{gather*}
+\begin{aligned}
+& J_{2} F^{-1} d_{0}=R^{-1} C_{Y}^{*} [C_{Y} F^{-1} d_{0}],
+\end{aligned}\tag{15}
+\end{gather*}
+
+again a bounded \(O(\sigma )\) left factor times a same-root
+contraction. Equations (7), (11), and (13)-(15) therefore prove the
+sharper estimate
+
+% DISPLAY e.21
+% SOURCE ||chi A* d_0(v)||^2
+% SOURCE   <= C kappa^2 (sigma^2+r_*^-3) sum_e h_e[v]
+% SOURCE        + C kappa^2 W_2 ||v||^2.                      (16)
+\begin{gather*}
+\begin{aligned}
+& \Vert \chi  A^{*} d_{0}(v)\Vert ^{2} \\
+& \le  C \kappa ^{2} (\sigma ^{2}+r_{*}^{-3}) \sum _{e} h_{e}[v] \\
+& + C \kappa ^{2} W_{2} \Vert v\Vert ^{2}.
+\end{aligned}\tag{16}
+\end{gather*}
+
+Combining (8), (9), and \(\Vert A\Vert \le C \sigma\) also controls
+\(A^{*}\) applied to the full fast-plus-spin stack, with a coefficient
+\(C(\kappa ^{2}+\sigma ^{2})\) multiplying the right side of (8), and a
+harmless \(C \sigma ^{2} W_{2}\) spin term.
+
+For completeness, for any vectors w,b and \(\eta >0\),
+
+% DISPLAY e.22
+% SOURCE eta||w||^2+||b-Aw||^2
+% SOURCE   =||(eta I+A*A)^(1/2)
+% SOURCE       [w-(eta I+A*A)^-1 A*b]||^2
+% SOURCE       +<b,(I+eta^-1 A A*)^-1 b>.
+\begin{gather*}
+\begin{aligned}
+& \eta \Vert w\Vert ^{2}+\Vert b-Aw\Vert ^{2} \\
+& =\Vert (\eta  I+A^{*}A)^{1/2} \\
+& [w-(\eta  I+A^{*}A)^{-1} A^{*}b]\Vert ^{2} \\
+& +\langle b,(I+\eta ^{-1} A A^{*})^{-1} b\rangle .
+\end{aligned}\notag
+\end{gather*}
+
+The difference between \(\Vert b\Vert ^{2}\) and the final term is at
+most \(\eta ^{-1}\Vert A^{*}b\Vert ^{2}\). Thus (16) controls the
+frozen-column Schur loss by exact excitation energies and \(W_{2}\),
+with no \(\delta  \sum _{e} r_{e}\) zero-point cost. This is a
+first-order form identity: variable coefficients create no omitted
+ordering terms at this stage.
+
+\subsection{5. What this lemma does and does not
+close}\label{e-what-this-lemma-does-and-does-not-close}
+
+It closes the all-vector rootwise CONNECTION-NORM sublemma, including
+mixed roots, exact inverse-M left factors, and the coefficient occurring
+after slow-square completion. It remains valid with unrestricted
+internal momenta because none of its steps estimates those momenta or
+differentiates a fast projection in a slow direction.
+
+At the connection-norm stage, two additional arguments are necessary.
+Section \(6\) below supplies the first for the fast kinetic column:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Bounding a squared connection norm is not a bound for the bilinear
+  pairing with \(d_{0}\). The direct Young estimate against
+  \(\Vert d_{0} v\Vert ^{2}\) introduces its frozen vacuum energy
+  \(C \kappa ^{2} \sum _{e} r_{e}\). The odd H1 source / normal-ordering
+  or graph-local form argument must be used instead; (8) alone does not
+  perform it.
+\item
+  Completing all slow squares leaves shifted slow derivatives. Splitting
+  off \(\eta\) times ordinary internal kinetic energy is not the same as
+  splitting \(\eta\) times the colored internal supersymmetric form: an
+  unweighted Yukawa remainder \(\eta  C \alpha _{a}\) may be large for a
+  far block. One must retain a suitable full slow-supercharge form or
+  prove an incident-weighted conversion of the shifted slow squares.
+  Equations (10)-(16) do not silently supply that conversion.
+\end{enumerate}
+
+Accordingly these results are compatible with, but do not establish, a
+near-sharp complementary lower bound in the original Hamiltonian. They
+provide the rootwise estimate that avoids a global-frequency
+substitution at the connection stage.
+
+\subsection{6. Addendum: signed fast kinetic terms without a
+vacuum-frequency
+loss}\label{e-addendum-signed-fast-kinetic-terms-without-a-vacuum-frequency-loss}
+
+The first obstruction listed in Section \(5\) can also be removed for
+the exact fast kinetic column. The following statements concern a smooth
+core vector \(v\) supported in the fast tube; an outer cutoff equal to
+one near its support may always be used in Sections 2-4. Only that
+support requirement, not a restriction on the oscillator content of
+\(v\), is imposed.
+
+\subsubsection{6.1 All-vector triangle
+multiplication}\label{e-all-vector-triangle-multiplication}
+
+For distinct triangle roots e,f,g, write \(s_{t}=r_{e}+r_{f}+r_{g}\).
+Any uniformly bounded real coefficient tensor that may depend on the
+slow variables but is independent of the fast variables \(Y\) obeys
+
+% DISPLAY e.23
+% SOURCE |<v,s_t Y_e Y_f Y_g v>|
+% SOURCE    <= C sigma sum_(j in t) h_j[v]
+% SOURCE       + C sigma^-1 W_2,t ||v||^2.                   (17)
+\begin{gather*}
+\begin{aligned}
+& \vert \langle v,s_{t} Y_{e} Y_{f} Y_{g} v\rangle \vert \\
+& \le  C \sigma  \sum _{j \in  t} h_{j}[v] \\
+& + C \sigma ^{-1} W_{2,t} \Vert v\Vert ^{2}.
+\end{aligned}\tag{17}
+\end{gather*}
+
+First, splitting inputs into \(Q_{f}, P_{f} Q_{g}\), and \(P_{f} P_{g}\)
+gives
+
+% DISPLAY e.24
+% SOURCE ||chi Y_f Y_g v||^2
+% SOURCE    <= C sigma^2 r_*^2 [r_f^-2 h_f[v]+r_g^-2 h_g[v]]
+% SOURCE       + C/(r_f r_g) ||v||^2.                        (18)
+\begin{gather*}
+\begin{aligned}
+& \Vert \chi  Y_{f} Y_{g} v\Vert ^{2} \\
+& \le  C \sigma ^{2} r_{*}^{2} [r_{f}^{-2} h_{f}[v]+r_{g}^{-2} h_{g}[v]] \\
+& + C/(r_{f} r_{g}) \Vert v\Vert ^{2}.
+\end{aligned}\tag{18}
+\end{gather*}
+
+On the first component bound \(\chi  Y_{g}\) by \(\sigma  r_{*}\) and
+use the excited \(Y_{f}\) oscillator bound; on the second use
+\(\chi  Y_{f}\) and the excited \(Y_{g}\) bound; on the last use both
+Gaussian widths. The splitting is for estimation only; the projected
+pieces need not have tube support.
+
+Choose \(e\) to be a largest triangle root. If
+\(U_{B,e}=\text{ constant } \exp (-Y_{e} \cdot  \Omega _{e} Y_{e}/2)\),
+put \(a_{e}=\partial _{e}+\Omega _{e} Y_{e}\). The exact bosonic
+excitation form controls \(\Vert a_{e} v\Vert ^{2}\). Since the other
+two factors do not depend on \(Y_{e}\), integration by parts gives,
+componentwise,
+
+% DISPLAY e.25
+% SOURCE <v,Y_e Y_f Y_g v>
+% SOURCE    =Re<a_e v,Omega_e^-1(Y_f Y_g)v>.
+\begin{gather*}
+\begin{aligned}
+& \langle v,Y_{e} Y_{f} Y_{g} v\rangle \\
+& =\operatorname{Re} \langle a_{e} v,\Omega _{e}^{-1}(Y_{f} Y_{g})v\rangle .
+\end{aligned}\notag
+\end{gather*}
+
+Using \(\Vert \Omega _{e}^{-1}\Vert \le C/r_{e}, s_{t}/r_{e}\le 3\), and
+(18) gives (17) by Young with parameter \(\sigma\). The proof is valid
+for arbitrary fermionic and slow vector coefficients.
+
+\subsubsection{6.2 Leading triangle differential
+forms}\label{e-leading-triangle-differential-forms}
+
+Let a(Y) be a real symmetric fast coefficient matrix supported only in
+the off-diagonal root blocks \((e,g)\) and \((g,e)\), with each entry a
+bounded linear contraction of \(Y_{f}\) divided by \(r_{e}\), multiplied
+by a coefficient \(O(\kappa )\) that is independent of the fast
+variables \(Y\) (it may depend on the slow variables). For the product
+bosonic Gaussian \(U_{B}\), writing \(v=U_{B} u\) gives the exact
+identity
+
+% DISPLAY e.26
+% SOURCE integral (partial v)* a (partial v)
+% SOURCE   =integral U_B^2 (partial u)* a (partial u)
+% SOURCE    +integral [div(a Omega Y)-(Omega Y)·a(Omega Y)] |v|^2.
+% SOURCE                                                                 (19)
+\begin{gather*}
+\begin{aligned}
+& \int  (\partial  v)^{*} a (\partial  v) \\
+& =\int  U_{B}^{2} (\partial  u)^{*} a (\partial  u) \\
+& +\int  [\operatorname{div} (a \Omega  Y)-(\Omega  Y) \cdot  a(\Omega  Y)] \vert v\vert ^{2}.
+\end{aligned}\tag{19}
+\end{gather*}
+
+This identity does not project onto the fermionic vacuum. The excitation
+form satisfies
+
+% DISPLAY e.27
+% SOURCE sum_e (H_B,e-E_B,e)[v]
+% SOURCE    =integral U_B^2 (partial u)*G(partial u),
+\begin{gather*}
+\begin{aligned}
+& \sum _{e} (H_{B,e}-E_{B,e})[v] \\
+& =\int  U_{B}^{2} (\partial  u)^{*}G(\partial  u),
+\end{aligned}\notag
+\end{gather*}
+
+with \(G\) uniformly positive. On tube-supported \(v\), the first term
+in (19) is bounded in absolute value by
+\(C \kappa  \sigma  \sum _{e} h_{e}[v]\). The divergence term in (19)
+vanishes: a connects distinct roots, depends on the third root, and
+\(\Omega\) is pair-block diagonal. The remaining scalar is a triangle
+cubic with coefficient \(O(\kappa  r_{g})\), hence is bounded by (17).
+Consequently
+
+% DISPLAY e.28
+% SOURCE |integral (partial v)* a (partial v)|
+% SOURCE   <= C kappa sigma sum_(j in t) h_j[v]
+% SOURCE       + C kappa sigma^-1 W_2,t ||v||^2.              (20)
+\begin{gather*}
+\begin{aligned}
+& \vert \int  (\partial  v)^{*} a (\partial  v)\vert \\
+& \le  C \kappa  \sigma  \sum _{j \in  t} h_{j}[v] \\
+& + C \kappa  \sigma ^{-1} W_{2,t} \Vert v\Vert ^{2}.
+\end{aligned}\tag{20}
+\end{gather*}
+
+The same proof applies to \(O(\kappa ^{2})\) coefficients. Equation (20)
+applies to both leading triangle forms from
+
+% DISPLAY e.29
+% SOURCE 2 Re<d_0,F^-1 N_Y* p_F-F^-1 L* d_0>.
+\begin{gather*}
+\begin{aligned}
+& 2 \operatorname{Re} \langle d_{0},F^{-1} N_{Y}^{*} p_{F}-F^{-1} L^{*} d_{0}\rangle .
+\end{aligned}\notag
+\end{gather*}
+
+No derivative cutoff is needed: (19) is applied to the original
+polynomial coefficient and \(v\) itself has tube support. If one instead
+wants a globally cut-off form on arbitrary unsupported inputs, cutoff
+derivatives must be included; an even radial cutoff generates additional
+triangle cubics, with coefficient smaller by
+\(O((\sigma ^{2} r_{*}^{3})^{-1})\).
+
+\subsubsection{6.3 Full inverse-M
+reduction}\label{e-full-inverse-m-reduction}
+
+There is a short exact reduction avoiding an infinite expansion. Set
+
+% DISPLAY e.30
+% SOURCE Z=F^-1 P*,   T=(I+Z)^-1,
+% SOURCE n=F^-1 N_Y* p_F,
+% SOURCE X=n-Z d_0.
+\begin{gather*}
+\begin{aligned}
+& Z=F^{-1} P^{*}, \quad  T=(I+Z)^{-1}, \\
+& n=F^{-1} N_{Y}^{*} p_{F}, \\
+& X=n-Z d_{0}.
+\end{aligned}\notag
+\end{gather*}
+
+Then
+
+% DISPLAY e.31
+% SOURCE B p_F=W^(1/2)(d_0+T X).
+\begin{gather*}
+\begin{aligned}
+& B p_{F}=W^{1/2}(d_{0}+T X).
+\end{aligned}\notag
+\end{gather*}
+
+Because \(W\ge I\) and \(T-I=-ZT\),
+
+% DISPLAY e.32
+% SOURCE ||B p_F v||^2
+% SOURCE   >=||d_0 v||^2+2 Re<d_0 v,Xv>
+% SOURCE       -2 |<Z* d_0 v,T Xv>|.                         (21)
+\begin{gather*}
+\begin{aligned}
+& \Vert B p_{F} v\Vert ^{2} \\
+& \ge \Vert d_{0} v\Vert ^{2}+2 \operatorname{Re} \langle d_{0} v,Xv\rangle \\
+& -2 \vert \langle Z^{*} d_{0} v,T Xv\rangle \vert .
+\end{aligned}\tag{21}
+\end{gather*}
+
+Both \(X\) and \(Z^{*} d_{0}=P F^{-1} d_{0}\) are covered by the
+rootwise connection estimates. The last pairing is therefore bounded by
+
+% DISPLAY e.33
+% SOURCE C(sigma^2+r_*^-3) sum_e h_e[v]+C W_2||v||^2.
+\begin{gather*}
+\begin{aligned}
+& C(\sigma ^{2}+r_{*}^{-3}) \sum _{e} h_{e}[v]+C W_{2}\Vert v\Vert ^{2}.
+\end{aligned}\notag
+\end{gather*}
+
+Inside \(\langle d_{0},X\rangle\), the \(J_{2}\) term factors exactly as
+
+% DISPLAY e.34
+% SOURCE <d_0,F^-1 J_2* d_0>
+% SOURCE    =<C_Y F^-1 d_0,C_Y R^-1 d_0>,                    (22)
+\begin{gather*}
+\begin{aligned}
+& \langle d_{0},F^{-1} J_{2}^{*} d_{0}\rangle \\
+& =\langle C_{Y} F^{-1} d_{0},C_{Y} R^{-1} d_{0}\rangle ,
+\end{aligned}\tag{22}
+\end{gather*}
+
+and has the same bound. Only the two linear triangle forms in Section
+\(6.2\) remain. Combining (20)-(22) gives
+
+% DISPLAY e.35
+% SOURCE ||B p_F v||^2
+% SOURCE   >=||d_0 v||^2
+% SOURCE      -C[kappa sigma+sigma^2+r_*^-3] sum_e h_e[v]
+% SOURCE      -C(1+kappa/sigma) W_2||v||^2.                  (23)
+\begin{gather*}
+\begin{aligned}
+& \Vert B p_{F} v\Vert ^{2} \\
+& \ge \Vert d_{0} v\Vert ^{2} \\
+& -C[\kappa  \sigma +\sigma ^{2}+r_{*}^{-3}] \sum _{e} h_{e}[v] \\
+& -C(1+\kappa /\sigma ) W_{2}\Vert v\Vert ^{2}.
+\end{aligned}\tag{23}
+\end{gather*}
+
+Thus direct \(p_{F}^{2}\) plus the exact Gauss FAST column, the adapted
+quadratic potential, and its fast fermion mass have a lower bound
+
+% DISPLAY e.36
+% SOURCE E_0,total ||v||^2
+% SOURCE    +(1-C[kappa sigma+sigma^2+r_*^-3]) H_exc[v]
+% SOURCE    -C(1+kappa/sigma) W_2||v||^2,                    (24)
+\begin{gather*}
+\begin{aligned}
+& E_{0,\mathrm{total}} \Vert v\Vert ^{2} \\
+& +(1-C[\kappa  \sigma +\sigma ^{2}+r_{*}^{-3}]) H_{\mathrm{exc}}[v] \\
+& -C(1+\kappa /\sigma ) W_{2}\Vert v\Vert ^{2},
+\end{aligned}\tag{24}
+\end{gather*}
+
+with the frozen \(E_{0}\) multiplier understood pointwise in the slow
+variables. This is a fast-column comparison only; the slow derivatives
+in the full Gauss square have not been dropped or independently counted.
+
+\subsubsection{6.4 Frozen spin-linear
+term}\label{e-frozen-spin-linear-term}
+
+The leading spin cross is a finite \(\sum  A_{e} p_{e}/r_{e}\), with
+Y-independent Hermitian Clifford matrices
+\(\Vert A_{e}\Vert \le C \kappa\). Since the \(\Omega _{e} Y_{e}\) part
+of \(a_{e}=\partial _{e}+\Omega _{e} Y_{e}\) contributes a real
+expectation against \(A_{e}\),
+
+% DISPLAY e.37
+% SOURCE |<v,A_e p_e v/r_e>|
+% SOURCE   <= C kappa r_e^-1 sqrt(h_B,e[v]) ||v||
+% SOURCE   <= epsilon h_e[v]+C kappa^2/(epsilon r_e^2)||v||^2. (25)
+\begin{gather*}
+\begin{aligned}
+& \vert \langle v,A_{e} p_{e} v/r_{e}\rangle \vert \\
+& \le  C \kappa  r_{e}^{-1} \sqrt{h_{B,e}[v]} \Vert v\Vert \\
+& \le  \epsilon  h_{e}[v]+C \kappa ^{2}/(\epsilon  r_{e}^{2})\Vert v\Vert ^{2}.
+\end{aligned}\tag{25}
+\end{gather*}
+
+Here \(h_{B,e}=H_{B,e}-E_{B,e}\). This also avoids any bosonic
+vacuum-frequency cost. The inverse-M corrections to this frozen spin
+cross pair rootwise connection errors with the bounded spin column (9),
+and are bounded by \(\epsilon  H_{\mathrm{exc}}+C_{\epsilon} W_{2}\).
+
+\subsection{7. Final scope after the
+addendum}\label{e-final-scope-after-the-addendum}
+
+Equations (2)-(16) prove the connection and Schur-loss norm statements
+for arbitrary fast vectors. Equations (17)-(25) additionally prove the
+signed fast-column comparison on an unrestricted oscillator core
+supported in the fast tube. These estimates remove the need for a
+\(\delta  \sum _{e} r_{e}\) loss at the fast-connection stage.
+
+They still do not convert the completed, shifted slow derivative form
+into a nonnegative colored internal supersymmetric form. One must
+control its connection curvature/full-supercharge terms or use another
+incident-weighted argument. In particular a constant loss of internal
+kinetic energy cannot simply be identified with the same loss of
+\(H_{a}\). That slow-form issue, the other physical potential/Yukawa
+terms, and the final allocation of one non-double-counted reserve belong
+to the full complementary theorem, not to this helper lemma.

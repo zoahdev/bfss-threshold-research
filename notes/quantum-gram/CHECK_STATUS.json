@@ -1,0 +1,12 @@
+{
+  "publication_status": "conditional/provisional research archive",
+  "human_expert_review": "not supplied",
+  "author": "Yicheng Pan",
+  "branch_summary": "Conditional obstruction for the specified finite dual family; no complete hierarchy no-go or BFSS bound.",
+  "dependencies": [
+    "One feasible nonzero finite-moment zero mode for restricted-algebra dilation",
+    "The explicitly stated finite raw-weight certificate class",
+    "Additional interacting Ward information remains absent"
+  ],
+  "verification_scope": "Finite algebra and consistency checks only; not certification of infinite-dimensional hypotheses or a rank-uniform theorem."
+}

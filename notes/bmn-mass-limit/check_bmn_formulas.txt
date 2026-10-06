@@ -1,0 +1,7 @@
+PASS: raw-color gradients, including weighted coefficient 5
+PASS: exact Wick enumeration K=1,2,3,5; coefficients 18,405,216,621
+PASS: general-K cumulants and saturation of finite-mass quadrupole bound
+PASS: two-block reduced mass and normalized trace
+PASS: physical rescaling and N^(-4/3) mass scale
+PASS: SO(9) positive-norm factor 1/4 and vanishing holomorphic square
+ALL EXACT CHECKS PASSED

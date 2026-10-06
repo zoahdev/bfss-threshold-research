@@ -1,40 +1,49 @@
-# BFSS threshold research: a work-in-progress snapshot
+# BFSS threshold research: conditional, unreviewed archive
 
-Snapshot date: 5 October 2026. This is an explicitly incomplete analytic investigation. It does not prove a BFSS soft-graviton theorem, rank-uniform nonperturbative spectral bound, generic scattering factorization, or eleven-dimensional Lorentz invariance.
+**Status on 6 October 2026: the large-N BFSS/quantum-gravity goal is UNSOLVED.**
+This repository is an open research archive, not a solution of quantum gravity, a certified theorem, or a claim of scientific priority.
 
-## Latest descendant and cluster gate
+**Finite-N status: CANDIDATE analytical proof.** The exterior Hardy and singlet-decay manuscript has not received independent human specialist review or proof-assistant verification. Its local and global analytical dependencies remain substantive. AI-assisted analytic reviews, symbolic simplifications and finite numerical regressions are not equivalent to either kind of validation.
 
-`infrared_descendant_and_cluster_gate.md` gives an exact conditional reduction to a linear boson–fermion descendant, a sufficient positive Euclidean correlator bound at time scaling like N^(4/3), and the leading free two-cluster source coefficient. The required uniform correlator decay, distorted-wave matching, channel sum and nonzero-longitudinal source identification remain unproved. The favorable fixed-channel powers are not a full BFSS threshold law.
+中文：大 N 目标仍未解决。有限 N 外域定理是待核查的候选证明；计算检查和 AI 审读不等于人工同行评审或形式化证明。
 
-## Results recorded here
+Author attribution: **Yicheng Pan (潘奕成)**. Substantial OpenAI AI assistance is disclosed in [AI_DISCLOSURE.md](AI_DISCLOSURE.md). No affiliation, endorsement or journal acceptance is claimed.
 
-`quadrupole_rank_gate.md` states the physical normalization, a conditional lower-radius inequality, the distinction between the raw tensor and traceless spin-2 source, and the exact additional double-trace or low-energy spectral bounds that a proof would need. Its energy-form refinement removes a full fourth-moment requirement but leaves an unproved physical rank-uniform low-energy estimate.
+## Start here
 
-- `check_threshold.py`: algebraic resolvent identities and numerical diagnostics for a nine-dimensional free-channel countermodel. This is explicitly not a BFSS Hamiltonian calculation or a BFSS counterexample
-- `check_quadrupole.py`: exact SO(9) angular constants, tail power counting and free-channel double-Laplacian algebra
-- `check_rank_normalization.py`: conditional finite-N Schur-minimum algebra and exact rank/physical-energy scale conversion
+1. [Research catalog and dependencies](CATALOG.md): all main components and eleven subsequent branches
+2. [116-page v2.1 manuscript](manuscript/manuscript.pdf), [editable TeX](manuscript/manuscript.tex), [manuscript guide](manuscript/README.md)
+3. [9-page leading-coefficient audit](coefficient-audit/prior_audit/BFSS_Leading_Coefficient_Audit_2026-10-06.pdf) **together with** the [4-page clarification](coefficient-audit/addendum/BFSS_Coefficient_Audit_Clarification_2026-10-06.pdf); [scope and reproduction](coefficient-audit/README_START_HERE.txt)
+4. [What was checked and what was not](QA_STATUS.md), [publication changes](PUBLICATION_CHANGES.md), [reproduction guide](REPRODUCING.md)
 
-Recorded JSON outputs preserve earlier calculations. The current rank-normalization script also prints energy-form checks following its JSON block, so its complete stdout is not one JSON document.
+The three PDFs preserve their original review-draft bytes. Historical wording such as “local review copy” or “not publicly published” records their preparation status; they are now publicly archived here without upgrading their mathematical status.
 
-## Reproduce
+## What the current work proposes
 
-Python 3.11+, SymPy 1.14.0 and mpmath 1.3.0:
+At each fixed finite rank, the manuscript assembles a proposed exterior form estimate with coefficient c < 49/4 for physical vectors and c < 121/4 for physical Spin(9) singlets. If the complete analytical argument and stated realization/domain hypotheses are valid, the existing Hasler–Hoppe invariance theorem gives ordinary radial moments 0 ≤ m < 9 for actual compatible physical L² zero modes.
 
-```sh
-python check_threshold.py
-python check_quadrupole.py
-python check_rank_normalization.py
-python check_descendant_cluster.py
-```
+The separate coefficient audit and clarification develop conditional leading-coefficient calculations under the manuscript's exact reduced kinetic/frozen-pair definitions. They do not certify the full complementary reserve, higher-order mixed estimates, global localization, form domains, or global theorem. The latest branches document useful reductions and obstructions, not closure of the target bound.
 
-Run normal Python, not `python -O`, because the checks use assertions. The scripts only check the documented algebra and diagnostic integrals. They do not establish domain hypotheses, construct scattering states, or control the matrix-rank limit.
+## What remains open
 
-## Principal limitations
+- Full specialist validation of the finite-N local estimates, complete source inventory, reserve bookkeeping, singular-stratum localization and form-domain arguments
+- A justified rank-uniform connected spin-2 / mixed-moment or low-energy spectral upper estimate
+- Uniform control of regulator removal, selection of the relevant BMN branch, and weighted convergence strong enough to transfer the needed observables
+- The large-N/decompactification limit and the exchange of that limit with soft or zero-energy limits
+- Zero-mode existence and uniqueness, the m = 9 endpoint, full-Hamiltonian sharpness, full BFSS soft theorems, scattering completeness and eleven-dimensional Lorentz invariance
 
-The established current identity concerns the zero longitudinal Fourier mode. Its extension to a rank-changing or nonzero-longitudinal soft source remains missing. Ground-state/Ward and form-domain hypotheses must be justified. Neither scalar radius lower bounds nor assumed planar factorization supply the required connected spin-2 or low-energy spectral upper estimate. Fixed-rank decay does not justify an exchange of soft and decompactification limits.
+Scalar radius lower bounds, formal Ward identities, assumed planar factorization, positive Gram matrices, and protected BMN/localization observables do not by themselves supply the missing unprotected rank-uniform upper bound. Fixed-rank decay does not establish a large-N theorem.
 
-## Sources
+## Earlier checkpoint
 
-The note provides section-specific references. Main sources include [Soft Theorems in Matrix Theory](https://arxiv.org/abs/2312.15111), [matrix-current relations](https://arxiv.org/abs/hep-th/9803003), [fermionic completion](https://arxiv.org/abs/hep-th/9812239), [Lin–Yin asymptotic ground states](https://arxiv.org/abs/1402.0055), [Lin's bootstrap](https://arxiv.org/abs/2302.04416), and [Lin–Zheng's BFSS bootstrap](https://arxiv.org/abs/2410.14647). The current identities and general spectral tools are prior work, not discoveries claimed here.
+The original top-level [quadrupole/rank gate](quadrupole_rank_gate.md), [descendant/cluster gate](infrared_descendant_and_cluster_gate.md), four scripts and recorded outputs are preserved. They remain useful background, but the catalog and current status above govern interpretation. The free-channel diagnostics are neither an actual BFSS computation nor a BFSS counterexample.
 
-See `AI_DISCLOSURE.md` and `LICENSE_STATUS.md`. This folder is a frozen checkpoint of ongoing research and should retain that status in any public repository description.
+## Prior work and credit
+
+The manuscript and branch notes contain section-specific primary references. Essential precedents include Sethi–Stern and Hasler–Hoppe invariance and asymptotic work, Agmon's weighted methods, Konechny's asymptotic Hamiltonian, Fröhlich–Graf–Hasler–Hoppe–Yau and Lin–Yin wavefunction analysis, and Polchinski's existing below-nine Born–Oppenheimer expectation. Matrix-current identities, BFSS bootstrap methods, BMN deformation/localization and Nicolai-map literature are credited in their relevant notes.
+
+The below-nine expectation, rotation identities, spectral tools and published results are not claimed as new. This archive makes no priority or breakthrough claim and does not redistribute third-party papers.
+
+## License
+
+Original code: [MIT](LICENSE-MIT.txt). Original documentation, manuscript sources and original result files: [CC BY 4.0](LICENSE-CC-BY-4.0.txt), as specified in [LICENSE.md](LICENSE.md). Preserve author attribution, title/version, license notices and changes. Third-party works retain their own terms.

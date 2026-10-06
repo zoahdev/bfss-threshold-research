@@ -1,0 +1,691 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.86in,headheight=16pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}[Scale=0.82]
+\newfontfamily\chinesefont{Noto Serif CJK SC}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{microtype,enumitem,booktabs,longtable,array}
+\usepackage{xcolor,fancyhdr,fvextra,needspace}
+\usepackage[unicode,colorlinks=true,linkcolor=black,urlcolor=blue!50!black,citecolor=black]{hyperref}
+\usepackage{bookmark}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small,baselinestretch=1.03,xleftmargin=0.8em,xrightmargin=0.5em,breaksymbolleft={}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setlist{topsep=4pt,itemsep=2pt,parsep=1pt,leftmargin=*}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+\hyphenation{yields domains weights}
+\makeatletter
+\renewcommand{\numberline}[1]{\hb@xt@2.2em{#1\hfil}}
+\makeatother
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{1}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Finite rank BFSS exterior estimates}
+\fancyhead[R]{\small Technical review draft v2.1}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\phys}{\mathrm{phys}}
+\newcommand{\exc}{\mathrm{exc}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\hh}{\mathfrak h}
+\newcommand{\QQ}{\mathcal Q}
+\newcommand{\FF}{\mathcal F}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\numberwithin{equation}{section}
+\begin{document}
+\begin{titlepage}
+\vspace*{0.2in}
+{\LARGE\bfseries Exterior Hardy bounds for\\[4pt]finite rank BFSS Hamiltonians\par}
+\vspace{0.25in}
+{\large Global induction and a singlet decay improvement\par}
+\vspace{0.35in}
+{\large Yicheng Pan\quad {\chinesefont 潘奕成}\par}
+{5 October 2026\quad Version 2.1\quad Local review copy\\[2pt]Typesetting revision 6 October 2026\par}
+\vspace{0.3in}
+\textbf{Technical review draft.} This document presents a proposed analytical proof for specialist checking. The global implication is stated with its exact local inputs, and twelve appendices contain the baseline derivations and the added rotation argument. Those inputs are substantive parts of the proposed BFSS proof; their inclusion is not a substitute for verifying them. No independent human review or proof-assistant verification is represented as having occurred.
+
+\textbf{AI disclosure.} OpenAI AI systems made substantial contributions to research, derivation, code, manuscript preparation, and mathematical checking of this draft. The author name identifies the person under whose direction the work was prepared; this version does not assert that the named author has personally checked every argument or approved a public submission. AI-generated checking is not independent expert peer review.
+
+\vspace{0.2in}
+\begin{abstract}
+For the trace-normalized sixteen-supercharge $SU(N)$ matrix Hamiltonian, we assemble a candidate exterior quadratic-form proof at every fixed finite rank. The baseline bound has every coefficient $c<49/4$ on arbitrary physical exterior vectors. This revision adds $c<121/4$ on physical $\operatorname{Spin}(9)$ singlets, using a bounded-radius internal nonsinglet uncertainty estimate and rotation-equivariant cluster localization. Internal continua are retained; no internal spectral gap or ground-state projection is required. Combined with the existing Hasler--Hoppe theorem that every physical $L^2$ zero mode is rotation invariant, the proposed full argument gives ordinary radial moments of every order $0\le m<9$ for each actual zero mode. These conclusions depend on the complete baseline local and global analytical inputs, whose candidate derivations remain subject to specialist review. Existence, uniqueness, the endpoint $m=9$, uniformity in $N$, and full soft or scattering theorems are not established. Polchinski already stated the below-nine expectation through a Born--Oppenheimer tail argument; the rotation identities and weighted method also have substantial prior art. No priority or independent human or formal proof verification is claimed.
+\end{abstract}
+\vfill
+Original documentation: CC BY 4.0. Original accompanying code: MIT. Third-party papers are cited and linked, not redistributed. No affiliation or external endorsement is claimed.
+\end{titlepage}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\section{Scope and prior work}
+The configuration space has nine traceless Hermitian matrices and noncompact commuting valleys. Separated-channel asymptotics are informative, but an exterior form inequality must hold for every physical test vector, including states whose internal cluster coordinates have unrestricted energy and configurations with several simultaneous or nested clusters. A local expansion with all eigenvalue gaps comparable does not by itself give that estimate.
+
+The proposed statement is deliberately finite-rank. For each fixed $N$, an exterior radius may be chosen after all rank-dependent constants: $c<49/4$ for arbitrary physical vectors, and $c<121/4$ for rotation singlets. There is no bound on how that radius grows with $N$. A conclusion valid at each finite $N$ cannot be exchanged with a large-$N$ limit without further estimates.
+
+Sethi and Stern derive weighted $L^2$ estimates from exterior supercharge coercivity and analyze the excited-oscillator correction and inverse-square cancellation in the two-particle problem \cite[manuscript pp.~20--21 and 37--39]{SS}. The present bounded-weight multiplier argument is an instance of that established Hardy--Agmon method \cite{Agmon}. Konechny computes a free leading effective Hamiltonian in an all-rank large-separation regime \cite{K}. Hasler and Hoppe establish an asymptotic factorization in a region where the selected eigenvalue gaps are all of the same large order \cite{HH}. These are essential precursors, with hypotheses different from a collision-uniform exterior form bound on arbitrary states.
+
+The $SU(2)$ wavefunction analysis of Fr\"ohlich, Graf, Hasler, Hoppe and Yau is explicitly formulated for a formal asymptotic series \cite{FGHHY}. Lin and Yin propose a recursive cluster form of the leading asymptotic wavefunction \cite{LY}. These results motivate the below-nine tail benchmark. The new singlet comparison addresses the angular part of an actual-state estimate; the baseline errors and domains must still be controlled in every channel.
+
+Polchinski already explicitly states convergence of the fourth moment and convergence for orders $L<9$, using a Hamiltonian Born--Oppenheimer argument and an $l=2$ two-block tail \cite[printed p.~12, Eqs.~(7.8)--(7.10)]{P}. The $L<9$ expectation, the $l=2$ angular mechanism, and the associated constants are therefore not claimed as new. The distinction under examination is a global all-channel theorem for actual $L^2$ zero modes. The references inspected here do not provide a priority certificate or establish the absence of a stronger theorem elsewhere.
+
+Sethi and Stern proved rotational invariance results for supersymmetric bound states \cite{SSI}. Hasler and Hoppe gave explicit rotation primitives and proved $\operatorname{Spin}(d)$ invariance for $SU(N)$ in dimensions $d=3,5,9$ \cite{HHI}. We use their kernel-invariance theorem and corrected primitive, rather than presenting them as new. The quantitative support-radius estimate and its insertion into the proposed collision-uniform ledger are the candidate addition under review.
+
+\subsection{How to read the proof status}
+Theorem~\ref{thm:global} proves the baseline all-vector implication from the realization and local inputs stated below. Theorem~\ref{thm:singlet} gives the added singlet implication, and Corollary~\ref{cor:moments} applies it to actual zero modes. Appendices A--J supply candidate derivations of the baseline inputs; Appendices~\ref{app:rotation}--\ref{app:model} detail the added rotation and model-domain argument. This is a review packet containing the proposed full argument, not a claim that its difficult local estimates have been independently certified. The finite tests check specified algebraic identities and constants; they do not verify an infinite-dimensional operator inequality.
+
+The most important review points are the actual nonzero-internal source inventory, the colored complete-form reserve, differentiated orbit remainders, the singular-stratum incidence localization, and form-domain compatibility. A reviewer can inspect them directly without relying on a private report or an acceptance label. The relevant derivations, including the corrected $\QQ(H)$ interpretation and explicit module identities, are reproduced here.
+
+\section{Operator and domain conventions}\label{sec:operator}
+Let $T_A$, $1\le A\le N^2-1$, be Hermitian generators with
+\begin{equation}
+ \Tr(T_AT_B)=\delta_{AB},\qquad [T_A,T_B]=if_{ABC}T_C,
+ \qquad X_i=X_i^AT_A\quad(1\le i\le9).
+\end{equation}
+The Euclidean metric is $\sum_i\Tr(\dd X_i^2)$, and
+\begin{equation}
+ \rho_N^2=\sum_i\Tr(X_i^2)=\sum_{i,A}(X_i^A)^2.
+\end{equation}
+Take Hermitian Majorana generators $\theta^A_\alpha$ with
+$\{\theta^A_\alpha,\theta^B_\beta\}=\delta_{AB}\delta_{\alpha\beta}$, on a complex Clifford module $\FF_N$ of dimension $2^{8(N^2-1)}$. The matrices $\Gamma_i$ are real symmetric $16\times16$ matrices satisfying $\{\Gamma_i,\Gamma_j\}=2\delta_{ij}$; set $\Gamma_{ij}=\frac12[\Gamma_i,\Gamma_j]$.
+
+For a fixed positive length $\ell$, define
+\begin{align}
+ C_{Aij}&=f_{ABC}X_i^BX_j^C,\\
+ (\ad X_i)_{AB}&=\Tr(T_A[X_i,T_B])=-if_{CAB}X_i^C,\\
+ D_{\ad}(X)&=\sum_i\Gamma_i\otimes\ad X_i.
+\end{align}
+With the displayed ordering of spin and color indices, the kinetic-one expression is
+\begin{align}
+ h_N={}&-\Delta_X+\ell^{-6}\sum_{i<j,A}C_{Aij}^2
+              +\ell^{-3}\theta^T D_{\ad}(X)\theta.\label{eq:operator}
+\end{align}
+The Yukawa term is therefore
+$-i\ell^{-3}\sum f_{CAB}X_i^C\theta^A_\alpha(\Gamma_i)_{\alpha\beta}\theta^B_\beta$.
+This convention fixes the sign by defining $\ad X$ explicitly. The matrix $D_{\ad}$ is Hermitian and purely imaginary antisymmetric in a Hermitian trace-orthonormal color basis.
+
+The corresponding normalized real charges are
+\begin{equation}
+ q_\alpha=\sqrt2\sum_{A,\beta}
+ \left(\sum_i(\Gamma_i)_{\alpha\beta}p_i^A
+   -\ell^{-3}\sum_{i<j}(\Gamma_{ij})_{\alpha\beta}C_{Aij}\right)
+ \theta^A_\beta,\qquad p_i^A=-i\partial_{X_i^A}.\label{eq:charges}
+\end{equation}
+Their spinor-averaged square gives \eqref{eq:operator} on the common smooth core. Individual squares have gauge terms off the physical sector. On physical vectors the usual gauge terms vanish; on colored internal modules only the averaged identity is used. The physical Hamiltonian and charges in units with scalar kinetic coefficient $R_{\rm BFSS}/2$ are
+\begin{equation}
+ H_N=\frac{R_{\rm BFSS}}2 h_N,
+ \qquad Q_\alpha=\sqrt{R_{\rm BFSS}/2}\,q_\alpha.
+\end{equation}
+The rest of the proof uses $\ell=1$, obtainable by a fixed dilation. Restoring $\ell$ changes the exterior radius, not the dimensionless Hardy coefficient in kinetic-one units.
+
+\begin{hypothesis}[Supersymmetric realization]\label{hyp:realization}
+Use the gauge-invariant subspace
+$\mathscr H_N=L^2(\mathbb R^{9(N^2-1)};\FF_N)^{SU(N)}$.
+On $\mathscr C_N=C_c^\infty(\mathbb R^{9(N^2-1)};\FF_N)^{SU(N)}$ take the supersymmetric form
+\begin{equation}
+ \hh_N[u]=\frac1{16}\sum_{\alpha=1}^{16}\norm{q_\alpha u}^2.
+\end{equation}
+Assume its compatible closed supercharge-stack realization and the bounded Lipschitz, gauge-invariant scalar multiplier rule. The operator $h_N$ is the nonnegative self-adjoint operator associated to this closed form. On unrestricted internal-color spaces use the corresponding closed averaged form. The differential expression and averaged identity agree on their common core.
+\end{hypothesis}
+This is the precise realization used throughout. It is not a Dirichlet realization in a fixed valley. The exterior domain $\QQ_{N,R}$ is the closure of physical compactly supported smooth vectors in $\{\rho_N>R\}$ in the norm $(\norm{u}^2+\hh_N[u])^{1/2}$.
+The notation $\QQ(h_N)$ means the quadratic-form domain; it is distinct from the operator domain $D(h_N)$. No moving projection is claimed to preserve $D(h_N)$. The standard physical realization carries the natural unitary $\operatorname{Spin}(9)$ action, which preserves its closed form and physical core. The kernel-invariance input below refers to this compatible realization, not an arbitrary self-adjoint extension.
+
+For real scalar multipliers with $\sum_j\chi_j^2=1$, the kinetic-one product rule gives the IMS identity
+\begin{equation}
+ \hh_N[u]=\sum_j\hh_N[\chi_ju]
+                -\int\sum_j|\nabla\chi_j|^2|u|^2.\label{eq:ims}
+\end{equation}
+If $\hh_N[\Psi]=0$, every closed charge annihilates $\Psi$, and for bounded real Lipschitz $w$,
+\begin{equation}
+ \hh_N[w\Psi]=\int|\nabla w|^2|\Psi|^2.\label{eq:zeroidentity}
+\end{equation}
+The Clifford normalization in \eqref{eq:charges} makes the coefficient in both identities exactly one.
+
+\section{The local inputs and their proof dependencies}\label{sec:inputs}
+Fix a proper partition $\pi=(n_1,\ldots,n_k)$ of $N$, $k\ge2$. In an intrinsic stationary-flag branch write
+\begin{equation}
+ X_i=Z_i+A_i+Y_i,\qquad Z_i=\operatorname{diag}(z_{1i}I_{n_1},\ldots,z_{ki}I_{n_k}),
+ \qquad\sum_an_az_a=0.
+\end{equation}
+The $A_i^{(a)}$ are traceless internal matrices, and $Y$ is off-block with the intrinsic normal constraint $B_Z^*Y=0$, where $B_Q\xi=(i[\xi,Q_i])_i$. Put
+\begin{equation}
+ s^2=\sum_an_a|z_a|^2,\quad
+ \alpha_a^2=\sum_i\Tr((A_i^{(a)})^2),\quad
+ r_{ab}=|z_a-z_b|,\quad r_* =\min_{a<b}r_{ab},\quad W_p=\sum_{a<b}r_{ab}^{-p}.
+\end{equation}
+A local tube has $\alpha_a+\alpha_b\le\kappa r_{ab}$ and $|Y|<\sigma r_*$. The first condition is pairwise relative; it does not bound an unrelated large block by the smallest gap elsewhere. All local constants below may depend on fixed $N$, but not on $r_{\max}/r_*$.
+
+\subsection{L1 Exact geometry and physical projection}
+The intrinsic slice has internal kinetic coefficient exactly one, exact physical density $J_{\phys}=\det M$, and exact same-branch unitary transitions. Flattening by $J_{\phys}^{1/2}$ includes its differentiated scalar term. A normalized even cutoff vacuum $U_\sigma$ defines
+\begin{equation}
+ u=U_\sigma f+v,\qquad U_\sigma^*v=0.\label{eq:decomp}
+\end{equation}
+It preserves the branch form domain with padded slow and fast supports. For every slow scalar multiplier $m\ge0$,
+\begin{equation}
+ \int m|u|^2=\int m\bigl(|f|^2+\norm{v}_{\rm fiber}^2\bigr).\label{eq:masssplit}
+\end{equation}
+At $A=0$, eight negative spin modes are occupied for each bifundamental color. The determinant character restricts trivially to each internal $SU(n_a)$; the normal-ordering offset gives zero block-center charge, and the positive Gaussian is invariant. Equivariant internal-radial transport preserves this residual identification. Thus the low coefficient is physical for every internal $SU(n_a)$ factor. The complement need only obey total residual equivariance and can be colored internally. Appendix A derives the metric, density, projector and transition identities; Appendix I treats closed forms and the retained Clifford module. Spatial equivariance, the anchor connection, and the two-block reference model used for the singlet refinement are checked separately in Section~\ref{sec:singletmodel} and Appendix~\ref{app:model}.
+
+\subsection{L2 Source and fast energy control}
+Let $H_{\exc}=\sum_e(H_{{\rm fast},e}-E_{0,e})$, with the frozen ground energy subtracted pair by pair. On the cutoff complement,
+\begin{equation}
+ H_{\exc}[v]\ge g r_*\norm{v}_{\rm fiber}^2\label{eq:gap}
+\end{equation}
+for a fixed $g>0$ beyond a sufficiently large radius. This is a fast-fiber inequality at each slow coordinate, integrated over slow coordinates when used as a full form. Set $H_s=T_C+H_I$, $H_I=\sum_ah_{n_a}$, omitting singleton internal factors. $T_C$ keeps the normal connection on full fibers. On low coefficients it uses the internal-radial identification with the $A=0$ line.
+
+The actual leading source is $S=H_1U$, and the actual diagonal multiplier $W$ obeys
+\begin{equation}
+ \norm{W-S^*H_{\exc}^{-1}S}\le C_N\kappa W_2.\label{eq:source}
+\end{equation}
+Only a shifted fast excitation inverse occurs here. It is not an inverse of $H_I$ or of the full interacting Hamiltonian. The frozen energy is paid separately:
+\begin{equation}
+ |E_0[u]|\le C_NR_*^{-3}H_I[u]+C_N\kappa W_2[u].\label{eq:e0}
+\end{equation}
+Appendix B proves a commutator-square bound for the kinetic-aware frozen frequencies. Appendix C gives the centered cancellation, its first-jet condition, graph excitation denominators, and complete slow-form estimates. Appendix D computes the actual adapted $H_1,H_2$ coefficients and their $O(\kappa W_2)$ comparison.
+
+At $A=0$, one pair source has excitation energy $4r_e$, while a triangle source has energy $2(r_e+r_f+r_g)$. The summed triangle denominator is essential when an opposite pair is much closer than a distant block. Freezing $A$ never permits discarding internal derivatives of the moving vacuum.
+
+\subsection{L3 Colored local reserve and mixed ledger}
+There is a genuine postcompletion nonnegative square $J[v]$, and
+$B[v]=H_s[v]+H_{\exc}[v]+J[v]$ is nonnegative. For any prescribed small local losses, the actual mixed ledger is
+\begin{align}
+ \hh_N[U_\sigma f+v]\ge{}&\hh_N[U_\sigma f]
+ +c_sH_s[v]+c_JJ[v]+(1-d-\eta)H_{\exc}[v]
+ +2\Rea\ip{Sf}{v}\nonumber\\
+ &-a_\eta H_s[f]-b_\eta W_2[f],\label{eq:mixed}
+\end{align}
+where $c_s,c_J>0$, and
+\begin{align}
+ a_\eta&\le C_\eta(\sigma^2+R_*^{-3}),\\
+ b_\eta&\le C_\eta(\kappa+\kappa^2+\sigma^2+R_*^{-3}).
+\end{align}
+The diagonal part is $H_s^{\rm Berry}+W+E_0$ plus errors bounded by
+\begin{equation}
+ \theta H_s+C_\theta(\kappa+\sigma+\sigma^2+R_*^{-3})W_2+C_NR_*^{-3}H_s.
+\end{equation}
+The Berry comparison costs
+\begin{equation}
+ |H_s^{\rm Berry}-H_s|\le\theta H_s+C_N(\theta^{-1}\kappa^4+\kappa)W_2.
+\end{equation}
+Normalized cutoff errors decay as a polynomial times $\exp(-c\sigma_0^2R_*^3)$ with rootwise weights. Appendices E--I give the connection estimates, nonflat Berry comparison, averaged colored-charge identity, complementary reserve, mixed errors, cutoff bounds and form-domain argument. The square $J$ is the actual retained postcompletion square, not a second copy of the original Gauss square.
+
+\subsection{L4 Finite incidence localization}
+Appendix J supplies a finite-sheet, gauge-invariant localization near the commuting cone. With fixed tree endpoint $\kappa_{\rm tree}$, logarithmic width $L$, inner ratio $\delta=\kappa_{\rm tree}e^{-L}$, and a positive resulting gap $\Delta_N$, its leaf supports satisfy
+\begin{equation}
+ \alpha_a+\alpha_b\le\beta r_{ab},\qquad
+ r_*\ge\Delta_Ns,\qquad s\le\rho_N\le D_Ns.\label{eq:shapes}
+\end{equation}
+The normalized incidence weights $w_j$ obey $\sum_jw_j^2=1$. For any desired $e>0$, a later sufficiently thin near-cone neighborhood has
+\begin{equation}
+ E:=\sum_j|\nabla_Xw_j|^2\le\sum_jw_j^2E_j+e\rho_N^{-2}.\label{eq:imsdefect}
+\end{equation}
+This is a summed inequality, not a leafwise normalized identity. The path cost has a slow-only majorant
+\begin{align}
+ E_j\le M_\pi&=\gamma\left[
+ \sum_{n_a>1}\alpha_a^{-2}\mathbf1_{\{\alpha_a\ge T(s)\}}
+ +\sum_{I}s_I^{-2}\right],\label{eq:majorant}\\
+ \gamma&=C_NL^{-2},\qquad T(s)=d_N\delta\Delta_Ns,\qquad M_\pi\le D_{\rm path}s^{-2}.
+\end{align}
+The second sum runs over proper unions of at least two final blocks; $s_I$ is their relative center radius. The constant in $\gamma$ is independent of $L,\delta$. The possibly large $D_{\rm path}$ is used only on complementary vectors and is paid at a later exterior radius.
+
+\subsection{L5 Scalar outer bounds}
+For $\mathcal B(X)=\sum_{i<j}\norm{[X_i,X_j]}_F^2$ and $t=\mathcal B/\rho_N^4$, an outer cutoff has gradient cost bounded by $C\mathcal B/\rho_N^6$. On every padded proper branch,
+\begin{equation}
+ \mathcal B\le C(V_I+s^2|Y|^2),\qquad
+ V_I\le H_I+C_N\sum_a\alpha_a,
+\end{equation}
+as weighted forms, including on colored internal modules. Positive oscillator estimates give
+\begin{equation}
+ \norm{Yg}^2\le C_N\sum_er_e^{-2}H_{\exc,e}[g]
+                       +C_N\sum_er_e^{-1}\norm{g}^2.\label{eq:osc}
+\end{equation}
+These elementary potential and oscillator bounds are used explicitly below. They require the full retained oscillator and colored internal forms, not merely their norm gaps.
+
+\section{Recovering the all vector local reserve}
+\begin{lemma}\label{lem:reserve}
+Under L1--L3, for every $\varepsilon>0$ one can choose fixed positive tube widths and an exterior threshold such that
+\begin{equation}
+ \hh_N[U_\sigma f+v]\ge(1-\varepsilon)H_s[f]-\varepsilon W_2[f]+bB[v]\label{eq:reserve}
+\end{equation}
+for some $b>0$, uniformly in unrelated gap ratios.
+\end{lemma}
+\begin{proof}
+Choose $b<c_s,c_J$ and $d+\eta+b<1/2$. Reserve $bH_{\exc}[v]$ before completing the remaining source square. Since $S$ is orthogonal to the uncut fast kernel,
+\begin{equation}
+ (1-d-\eta-b)H_{\exc}[v]+2\Rea\ip{Sf}{v}
+ \ge-\frac{\ip{f}{S^*H_{\exc}^{-1}Sf}}{1-d-\eta-b}.
+\end{equation}
+The virtual multiplier is at most $C_NW_2$, so replacing its coefficient by one costs at most $2C_N(d+\eta+b)W_2$. Combine this with \eqref{eq:source}, \eqref{eq:e0}, and the diagonal, Berry and mixed errors in L3. First assign small $\theta,d,\eta,b$, then choose $\kappa$, then fixed $\sigma$ and a smaller cutoff width $\sigma_0$, and finally enlarge $R_*$. Every loss fits $\varepsilon(H_s+W_2)$.
+
+The complement was defined using $U_\sigma$, while source completion uses the uncut kernel. This does not invalidate completion: $S$ lies in the uncut complementary range, and the nonnegative quadratic form can be completed there for any $v$. The cutoff-complement gap is obtained from the exponentially small angle between the cut and uncut vacuum lines. The result retains all of $bB[v]$.
+\end{proof}
+For fixed $N$ there are finitely many partition types, so take finite maxima of pre-parameter constants and minima of admitted widths and reserves. Their uniformity in unrelated gap ratios is required before any logarithmic hierarchy is chosen. Merely knowing a local Schur-infimum inequality would not retain the complementary mass needed globally.
+
+\section{Shape independent Hardy payments}
+Set $h_0=49/4$. In the mass metric $\sum_an_a|\dd z_a|^2$, the center dimension is $D_\pi=9(k-1)$. Radial integration by parts, valid for Hilbert-valued sections with a metric connection, yields
+\begin{equation}
+ T_C[f]\ge h_\pi\int s^{-2}|f|^2,
+ \qquad h_\pi=\frac{(D_\pi-2)^2}{4}\ge h_0.\label{eq:centerhardy}
+\end{equation}
+For compact Dirichlet sections there is no boundary term; form closure extends the inequality. One can prove the scalar constant by expanding
+$\int|\partial_rf+(D_\pi-2)f/(2r)|^2r^{D_\pi-1}\dd r\ge0$.
+Metric compatibility gives the same real cross term for a unitary connection.
+
+The linear map $Z\mapsto z_a-z_b$ has squared norm $\nu_{ab}=1/n_a+1/n_b$. Orthogonal relative-coordinate Hardy and $T_{ab}\le T_C$ give
+\begin{equation}
+ \int r_{ab}^{-2}|f|^2\le (h_0\nu_{ab})^{-1}T_C[f],
+ \qquad W_2[f]\le K_\pi T_C[f],\quad
+ K_\pi=h_0^{-1}\sum_{a<b}\nu_{ab}^{-1}.\label{eq:rootpayment}
+\end{equation}
+Thus $K_N=\max_\pi K_\pi$ is finite and contains no inverse shape gap. For any proper union $I$ of at least two blocks, the orthogonal relative-center subspace has dimension $9(|I|-1)$, whence
+\begin{equation}
+ \int s_I^{-2}|f|^2\le h_0^{-1}T_C[f].\label{eq:unionpayment}
+\end{equation}
+All other coordinates and fermionic variables remain spectators.
+
+\begin{lemma}[Internal soft Hardy]\label{lem:soft}
+Suppose a lower-rank physical form has the exterior coefficient $9$. Then there are $A_n<\infty,T_n$ such that for $T\ge T_n$,
+\begin{equation}
+ \hh_n[g]\ge a_0\int_{\alpha\ge T}\alpha^{-2}|g|^2
+                  -A_nT^{-4}\norm{g}^2,\qquad a_0=5/2.\label{eq:soft}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Start with $w_T^0(\alpha)=\alpha^2(T^4+\alpha^4)^{-1/2}$, and multiply by a fixed exterior cutoff $\beta$ that equals one beyond its annulus. Put $w_T=\beta w_T^0$ and $v_T=(1-w_T^2)^{1/2}$. Exact IMS, nonnegativity of $\hh_n[v_Tg]$, and exterior Hardy for $w_Tg$ imply
+\begin{equation}
+ \hh_n[g]\ge(9-4)\int\alpha^{-2}w_T^2|g|^2-O(T^{-4})\norm{g}^2.
+\end{equation}
+Away from the fixed annulus,
+$|\nabla w_T|^2+|\nabla v_T|^2\le4\alpha^{-2}w_T^2$;
+the annular derivatives are $O(T^{-4})$. For large $T$, $w_T^2\ge1/2$ on $\alpha\ge T$, proving the claim. It remains valid through $\alpha=0$ and does not require an internal gap.
+\end{proof}
+The cost $\gamma\alpha^{-2}\mathbf1_{\alpha\ge T}$ is therefore paid by $(\gamma/a_0)\hh_n+(\gamma A_n/a_0)T^{-4}$. Apply this only to physical low coefficients, never to a colored complement.
+
+\section{Incidence localization and exact global IMS}
+For clarity, the geometry behind L4 is recorded here; its full derivation is Appendix J. A commuting configuration has cluster scales $a_B$ and regularized separation scales
+\begin{equation}
+ d_B^{-2}=\sum_{j\notin B}(|\lambda_j-c_B|^2+a_B^2)^{-1}.
+\end{equation}
+Use select/reject angles
+$\vartheta_B=\Theta(\log(a_B/(\delta d_B))/L)$ and their cosine/sine factors. Thin selected clusters are laminar. A final partition has the symmetric leaf weight given by the product of selected final-block cosines and rejected proper-union sines. Crossing omitted nodes have their sine identically one on the nonzero leaf support. Its derivative cost is $C_NL^{-2}a_B^{-2}$ on transition regions.
+
+The decision tree orders proper subsets by decreasing cardinality and skips a subset if a previously selected block overlaps it; otherwise it splits into select and reject children. The elementary pointwise identity
+\begin{equation}
+ |\nabla(a\cos\vartheta)|^2+|\nabla(a\sin\vartheta)|^2
+ =|\nabla a|^2+a^2|\nabla\vartheta|^2
+\end{equation}
+shows recursively that the leaf square sum is one and that its total gradient cost is the leaf-weighted sum of visited angle costs. Laminarity identifies each effective visited node as either a final block or a proper union of final blocks; a crossing node has zero transition derivative on the nonzero leaf support. This proves the pathwise accounting used by the symmetric leaf formula.
+
+Off the commuting cone, keep every admitted ordered stationary flag, rather than asserting a globally unique projector. For a sheet $j$ of $k$ blocks let
+\begin{equation}
+ b_j=(k!)^{-1/2}\chi_Yq_\pi,\qquad
+ Q=\sum_jb_j^2,\qquad w_j=b_jQ^{-1/2}.
+\end{equation}
+The factor $k!$ accounts for ordering; there is no additional $N!$ factor. Padded supports, a nondegenerate flag Hessian, and a finite rank-only multiplicity bound give smooth sums even with monodromy. On the whole commuting cone the identities $Q=1$, $\dd Q=0$, and $E=\sum_jw_j^2E_j$ hold for ambient derivatives, including singular strata. Finite-sheet continuity after fixing the hierarchy yields \eqref{eq:imsdefect} in a sufficiently thin neighborhood.
+
+One quantitative support choice is
+\begin{equation}
+ \beta=\frac{2\kappa_{\rm tree}}{\sqrt{1-2\kappa_{\rm tree}^2}},\quad
+ M_N=\frac{N\sqrt{1+\beta^2}+1}{1-\beta},\quad
+ \Delta_N=\frac{(\delta/M_N)^{N-2}}{\sqrt{N(1+\beta^2)}}.
+\end{equation}
+Padding decreases this positive gap if necessary. Since
+$\rho_N^2=s^2+\sum_a\alpha_a^2+|Y|^2$ and $r_{ab}\le\sqrt2s$, one can use $D_N^2=1+2N\beta^2+2\sigma^2$ before the harmless enlargement for padded supports.
+
+Choose $0<t_0<t_1$ so that the near-cone cutoff lies inside that neighborhood and all contributing fast support cutoffs equal one. Write
+\begin{equation}
+ \chi=\cos\vartheta_{\rm out}(t),\quad
+ \chi_O=\sin\vartheta_{\rm out}(t),\quad
+ u_j=\chi w_ju,\quad u_O=\chi_Ou,\quad
+ E_{\rm out}=|\nabla\vartheta_{\rm out}(t)|^2.
+\end{equation}
+The exact scalar IMS identity and L4 give
+\begin{align}
+ \hh_N[u]\ge{}&\sum_j\left\{\hh_N[u_j]
+ -\int(E_{\rm out}+E_j+e\rho_N^{-2})|u_j|^2\right\}\nonumber\\
+ &+\hh_N[u_O]-\int E_{\rm out}|u_O|^2.\label{eq:globalims}
+\end{align}
+Every error is assigned on both sides of each split. No agreement between projections on different sheets is required.
+
+After flattening, project each $u_j$ as in \eqref{eq:decomp}. The normalized weights and $\chi$ can depend on $Y$. The projected coefficient has only the leaf's slow support; $U_\sigma f$ may leave the original near-cone set, but stays in its padded branch. This is why all majorants and local estimates are required on the entire padded fast fiber. Slow support has strict margins, so zero extension to canonical center variables is legitimate for the Hardy inequalities. The projection bound is in the form norm only.
+
+\section{Paying the path and outer errors}
+Assume the theorem at all lower ranks. Fix a small $a>0$. Equations \eqref{eq:soft} and \eqref{eq:unionpayment} applied to \eqref{eq:majorant} give, after choosing $L$ large enough,
+\begin{equation}
+ M_\pi[f]\le aH_I[f]+aT_C[f]+C_{\rm soft}\int s^{-4}|f|^2.\label{eq:pathlow}
+\end{equation}
+For example $\gamma\le aa_0$ and $\gamma2^N/h_0\le a$ suffice. The soft constant contains the now fixed inverse powers of $d_N\delta\Delta_N$ and lower-rank constants; its large size affects only a later radius. Enforce $T(s)\ge\max_{n<N}T_n$ at that radius.
+
+For $v$, use the other part of L4:
+\begin{equation}
+ M_\pi[v]\le D_{\rm path}\int s^{-2}\norm{v}_{\rm fiber}^2.
+\end{equation}
+This is absorbed by any assigned fraction of $H_{\exc}[v]$ once $s$ is large, since $r_*\ge\Delta_Ns$. For both low and complementary pieces,
+$e\rho_N^{-2}\le es^{-2}$; the latter is a slow multiplier, so \eqref{eq:masssplit} applies exactly.
+
+Differentiating the quartic polynomial gives
+\begin{equation}
+ |\nabla\mathcal B|\le C_N\rho_N\sqrt{\mathcal B},\qquad
+ |\nabla t|\le C_N\sqrt{\mathcal B}/\rho_N^3,\qquad
+ E_{\rm out}\le C_{\rm out}\mathcal B/\rho_N^6.
+\end{equation}
+On each branch, L5 bounds this by
+$C_{\rm out}'(s^{-6}V_I+s^{-4}|Y|^2)$ on the full padded support. Because the $s^{-6}$ weight commutes with internal differentiation and $\sum\alpha_a\le C_Ns$, the internal contribution costs
+\begin{equation}
+ C_{\rm out}'s^{-6}H_I+C_{\rm out}''s^{-5}
+\end{equation}
+as fiberwise integrated forms, for low or colored complementary inputs. The oscillator estimate \eqref{eq:osc} yields
+\begin{align}
+ \int s^{-4}|Yv|^2&\le C_D\int s^{-6}H_{\exc}[v\text{ at fixed slow variables}]
+                         +C_D\int s^{-5}\norm{v}_{\rm fiber}^2,\\
+ \int s^{-4}|YU_\sigma f|^2&\le C_D\int s^{-5}|f|^2.
+\end{align}
+The $V_I$ multiplier has zero low/complement cross term. The positive $|Y|^2$ cross is bounded by the two diagonal pieces, with a factor two. At sufficiently large radius these estimates imply
+\begin{equation}
+ \int E_{\rm out}|u_j|^2\le aH_I[f]
+     +C_{\rm outer}\int s^{-5}|f|^2+\frac b4B[v].\label{eq:outerpay}
+\end{equation}
+A norm gap alone would not control the unbounded $|Y|^2$ multiplier; the retained full excitation form is indispensable.
+
+On the outside branch $t\ge t_0$, the bosonic potential is at least $v_Nt_0\rho_N^4$, whereas the fermionic norm is at most $F_N\rho_N$. The outer gradient cost is lower order. Hence, beyond a larger radius,
+\begin{equation}
+ \hh_N[u_O]-\int E_{\rm out}|u_O|^2
+       \ge c\int\rho_N^{-2}|u_O|^2.\label{eq:outside}
+\end{equation}
+There is no branch-weight cost on $u_O$ in \eqref{eq:globalims}.
+
+\section{Baseline all vector theorem and rank induction}
+\begin{theorem}[Baseline all-vector global implication]\label{thm:global}
+Assume Hypothesis~\ref{hyp:realization} and L1--L5 for every proper partition at each fixed finite rank, with the parameter uniformities specified above. Then for every integer $N\ge2$ and every $0<c<49/4$, some finite $R_{N,c}$ satisfies
+\begin{equation}
+ \hh_N[u]\ge c\int\rho_N^{-2}|u|^2,\qquad u\in\QQ_{N,R_{N,c}}.\label{eq:main}
+\end{equation}
+In physical units the right side is multiplied by $R_{\rm BFSS}/2$.
+\end{theorem}
+\begin{proof}
+Fix $N,c$ and take
+\begin{equation}
+ 0<a<\min\left\{\frac1{12},\frac{h_0-c}{8(h_0+1)}\right\},
+ \qquad\varepsilon(1+K_N)\le a.
+\end{equation}
+Lemma~\ref{lem:reserve} and \eqref{eq:rootpayment} give
+\begin{equation}
+ \hh_N[u_j]\ge(1-a)(H_I[f]+T_C[f])+bB[v].
+\end{equation}
+Choose $e\le a$ and $L$ for \eqref{eq:pathlow}. Enlarge the final radius until
+$C_{\rm soft}s^{-4}+C_{\rm outer}s^{-5}\le as^{-2}$,
+the complementary path and defect costs each use at most $(b/8)H_{\exc}[v]$, and \eqref{eq:outerpay} holds. Subtracting all assigned errors in \eqref{eq:globalims} gives the single ledger
+\begin{align}
+ \hh_N[u_j]&-\int(E_{\rm out}+E_j+e\rho_N^{-2})|u_j|^2\nonumber\\
+ &\ge(1-3a)H_I[f]+(1-2a)T_C[f]
+          -2a\int s^{-2}|f|^2+\frac b2B[v].\label{eq:ledger}
+\end{align}
+The complementary payments are exactly $b/4+b/8+b/8=b/2$. There is no second Gauss reserve. Positivity of $H_I$ and \eqref{eq:centerhardy} give low coefficient
+$[(1-2a)h_0-2a]>c$.
+Increase the radius so that $(b/2)g\Delta_Ns\ge cs^{-2}$. Then the last term controls $c\int s^{-2}\norm{v}_{\rm fiber}^2$. Thus the whole right side of \eqref{eq:ledger} is at least
+\begin{equation}
+ c\int s^{-2}(|f|^2+\norm{v}_{\rm fiber}^2)
+ =c\int s^{-2}|u_j|^2\ge c\int\rho_N^{-2}|u_j|^2.
+\end{equation}
+This exact slow-multiplier orthogonality prevents replacing full localized mass by low mass. Sum over leaves and use \eqref{eq:outside}, \eqref{eq:globalims}, and the square-sum identity. Gauge averaging, compact exhaustion and exterior form closure extend the result from the physical core to the stated domain.
+
+At $N=2$ the only partition is $1+1$; there are no internal forms or selected-block costs. The same proof is a base case with center dimension nine and no inductive input. If all ranks below $N$ are proved, each nontrivial block of a proper partition has smaller rank, giving exactly Lemma~\ref{lem:soft}. This is ordinary finite-rank induction.
+\end{proof}
+The fully split leaf has center Hardy coefficient $[9(N-1)-2]^2/4$, but the common bound is limited by possible two-block channels. No sharpness theorem is inferred from this bottleneck. Simultaneous $2+2$, $2+1+1$, and $2+2+1$ clusters are covered by the symmetric leaf construction; no relative ordering of disjoint internal sizes is imposed.
+
+\subsection{Acyclic parameter order}
+The proof requires the following order, rather than mutually dependent smallness choices.
+\begin{enumerate}
+\item Fix $N,c,a$, lower-rank soft constants, and the rank-only $K_N$.
+\item Fix $\varepsilon\le a/(1+K_N)$ and the local Young allocations, completion loss, and retained $b$.
+\item Choose the local endpoint $\kappa$, a smaller tree endpoint, then fixed fast width $\sigma$ and vacuum cutoff width $\sigma_0$.
+\item Choose $L$ for the $L^{-2}$ payment, then $\delta$, the positive $\Delta_N$, padded supports and their finite continuity constants.
+\item Choose the near-cone thickness for the summed defect, then $t_1,t_0$ and the finite outer-cutoff constant.
+\item Finally enlarge the physical exterior radius to meet every gap, lower-rank threshold, Gaussian tail, $s^{-4}$, $s^{-5}$ and complementary absorption requirement.
+\end{enumerate}
+Inverse powers of the small hierarchy gaps occur only in constants already fixed before the final radius. The local $\varepsilon W_2$ cost was paid by center Hardy before the hierarchy was chosen, avoiding a circular $\varepsilon\Delta_N^{-2}$ requirement.
+
+\section{Rotation invariance and internal uncertainty}\label{sec:rotation}
+The extra input for the singlet improvement is rotational representation theory on complete physical internal forms. It does not replace them by internal ground states. We first record an older theorem and then a quantitative consequence of its rotation identity.
+
+\begin{theorem}[Kernel invariance of Hasler and Hoppe]\label{thm:invariance}
+For the standard physical realization in Hypothesis~\ref{hyp:realization}, every existing $L^2$ zero mode of $h_N$ is invariant under $\operatorname{Spin}(9)$, at every fixed finite $N$.
+\end{theorem}
+This is \cite[Theorem 1(a), Section 2]{HHI}, building on \cite{SSI}; it is not a new assertion of this draft. Its realization and domain are important. Appendix~\ref{app:rotation} recalls the cutoff argument: linear growth of the rotation primitive cancels the inverse-radius cutoff derivative, and $L^2$ shell tails suffice. No positive moment, uniqueness, or internal bound state is assumed.
+
+For an arbitrary finite collection of physical internal blocks, write
+$H_I=\sum_a\hh_{n_a}$ and $\alpha^2=\sum_a\alpha_a^2$.
+Let $P_I$ be Haar averaging for their simultaneous internal $\operatorname{Spin}(9)$ action; it fixes all external spectators.
+\Needspace{12\baselineskip}
+\Needspace{13\baselineskip}
+\begin{lemma}[Internal nonsinglet uncertainty on a ball]\label{lem:ball}
+For physical form vectors supported in $\alpha\le R$,
+\begin{equation}
+ H_I[g]\ge\frac1{4R^2}\norm{(1-P_I)g}^2.\label{eq:ball}
+\end{equation}
+The estimate also holds for Hilbert-valued spectators and in the Dirichlet form closure of the internal ball. It is a radius-of-support estimate, not a positive spectral gap on the full internal space and not the operator inequality $H_I\ge\frac14\alpha^{-2}(1-P_I)$.
+\end{lemma}
+\begin{proof}
+Use charges $\widetilde q_\alpha=q_\alpha/\sqrt2$, where $q_\alpha$ are the coefficient-$16$ charges of Section~\ref{sec:operator}. On physical vectors,
+$\sum_\alpha\norm{\widetilde q_\alpha g}^2=8\hh[g]$.
+For one fixed generator $j=(u,v)$, the corrected Hasler--Hoppe primitive is
+\begin{align}
+ \widetilde a_{j,\alpha}&=\frac{5b_{j,\alpha}+2c_{j,\alpha}}7,
+ &J_j&=\sum_\alpha\{\widetilde q_\alpha,\widetilde a_{j,\alpha}\},\label{eq:rotationidentity}\\
+ b_{j,\alpha}&=\frac1{16}(X_u\Gamma_v-X_v\Gamma_u)_{\alpha\epsilon}\theta_\epsilon,
+ &c_{j,\alpha}&=\frac1{16}X_w(\Gamma_w\Gamma_{uv})_{\alpha\epsilon}\theta_\epsilon.
+\end{align}
+Color contractions and the sum over $w$ are understood. The bare $b$ alone has the wrong orbital-to-spin ratio in nine dimensions. The CAR and Clifford identities give, for this one $j$,
+\begin{equation}
+ \sum_\alpha\widetilde a_{j,\alpha}^2
+ =\left(\frac{|X_u|^2+|X_v|^2}{32}
+       +\frac{\sum_{w\notin\{u,v\}}|X_w|^2}{392}\right)I
+ \le\frac{\alpha^2}{32}I.\label{eq:fixedprimitive}
+\end{equation}
+The expression summed over all $36$ generators instead equals $(9/28)\alpha^2I$. These are different summation scopes in the same convention. In the baseline convention the primitive must also be rescaled: $a_{j,\alpha}=\widetilde a_{j,\alpha}/\sqrt2$. Then $J_j=\sum_\alpha\{q_\alpha,a_{j,\alpha}\}$; the fixed-generator bound is $\alpha^2/64$ and the all-generator identity is $9\alpha^2/56$. Appendix~\ref{app:rotation} gives both computations and a stronger Casimir variant.
+
+Sum the blockwise fixed-$j$ identities. On the physical compact core, Cauchy--Schwarz gives
+\begin{equation}
+ |\ip{g}{J_j^Ig}|\le
+ 2\sqrt{8H_I[g]}\sqrt{R^2\norm{g}^2/32}
+ =R\sqrt{H_I[g]}\norm{g}.\label{eq:uncertainty}
+\end{equation}
+The coefficient is unchanged in the baseline convention because $2\sqrt{16/64}=1$. Only a fixed-generator norm has been used.
+
+The ball and the closed form are rotation invariant. Decompose into compact-group isotypes. On each irreducible representation factor the invariant form is the identity tensored with a multiplicity-space form. Every nontrivial $\operatorname{Spin}(9)$ irrep has a highest-weight vector with $J_{12}$ eigenvalue $m\ge1/2$. Apply \eqref{eq:uncertainty} to that vector tensored with any multiplicity-space form vector; it gives $H_I\ge m^2/R^2\ge1/(4R^2)$. Invariance then gives the same inequality on the full isotype. Sum the nontrivial isotypes and use nonnegativity on the invariant part. Compact-group smoothing, finite isotypic truncation, and form closure justify the passage from the core; no unbounded rotation generator is applied to an uncontrolled form vector. Singleton blocks add no internal variables.
+\end{proof}
+
+\section{The singlet slow model and its domain}\label{sec:singletmodel}
+For a two-block partition $n_1+n_2=N$, let $\mathscr H_a$ be its physical internal Hilbert space, with $\mathscr H_a=\mathbb C$ for a singleton. In the mass-normalized center variable $x\in\mathbb R^9$ put
+\begin{equation}
+ s=|x|,\qquad r_{12}=\nu s,\qquad
+ \nu^2=\frac1{n_1}+\frac1{n_2}\le2.
+\end{equation}
+The reference slow space and closed form are
+\begin{align}
+ \mathscr K&=L^2(\mathbb R_x^9;
+ \FF_{\rm rel}\otimes\mathscr H_1\otimes\mathscr H_2),\\
+ q_s&=T_x+H_I,\qquad
+ \QQ(q_s)=\QQ(T_x)\cap\QQ(H_I).\label{eq:modeldomain}
+\end{align}
+Here $T_x$ is the ordinary Hilbert-valued center Dirichlet form. The internal spaces contain their complete bosonic and fermionic variables. Residual gauge and equal-block exchange constraints restrict the admissible subspace and do not add angular states.
+
+\subsection{Why the model has the ordinary diagonal action}
+The stationary-flag functional obeys
+\begin{equation}
+ \Phi_{RX}(P)=\sum_{a,i}n_a^{-1}\bigl(\Tr(P_a(RX)_i)\bigr)^2
+ =\Phi_X(P)
+\end{equation}
+for the same ordered flag $P$. This equality holds as a function on the entire flag manifold; its flag gradient and Hessian are equal as well. Hence spatial rotations preserve stationary flags, Hessian admission and incidence sheets. All scalar weights in L4 are rotation invariant. Color frames can be chosen from the flag alone and are constant along spatial rotation orbits; gauge transitions commute with spatial rotations. A global singlet therefore localizes to invariant sections without an angular partition.
+
+At $A=0$ the two-block fast ground line has stabilizer $\operatorname{Spin}(8)$. Its genuine one-dimensional unitary representation is trivial because that group is connected and semisimple. This includes its central element $-1$; the filled determinant has $8n_1n_2$ occupied modes, an even number. The resulting global equivariant normalized anchor has zero angular Berry one-form, since $S^8=\operatorname{Spin}(9)/\operatorname{Spin}(8)$ has no invariant tangent covector. Its radial Berry form also vanishes. This gives the ordinary $T_x$ in \eqref{eq:modeldomain}.
+
+The negative fast spectral projector along $A\mapsto tA$ is covariant. Its Kato generator $[\dot P_t,P_t]$ is covariant, so uniqueness of the transport equation makes the radial transport equivariant. The positive Gaussian and normalized scalar cutoff have the same property. The transported injection $U_\sigma$ thus intertwines the actual action with
+\begin{equation}
+ J_{\rm slow}=L_x+S_{\rm rel}+J_I.\label{eq:slowaction}
+\end{equation}
+Finite-$A$ Berry curvature is not asserted to vanish. Its comparison and the differentiated vacuum sources remain exactly the terms already paid in L2--L3. Appendix~\ref{app:model} supplies the global anchor and transition details.
+
+\subsection{Zero extension precedes internal averaging}
+The bounded projection in L1 places the actual coefficient $f$ in the slow Dirichlet form closure of its padded branch. Its zero extension consequently belongs to \eqref{eq:modeldomain}; this is the same extension needed for the baseline Hardy payments. Arbitrary distributional sections are not being extended across a boundary. The extended $f$ is supported in the larger radial tube
+\begin{equation}
+ \mathcal C_{\beta}=\{(x,A):\alpha_1+\alpha_2\le\beta_{\rm pad}\nu|x|\}.
+ \label{eq:radialtube}
+\end{equation}
+The detailed leaf may have additional direction-dependent tests and need not be invariant under internal-only rotations.
+
+Haar averaging $P_I$ acts only on the simultaneous internal variables and fermions. It commutes with $T_x$, the complete $H_I$, center radial weights, and the diagonal action after averaging. It is a contraction in the model form norm and preserves \eqref{eq:radialtube}. Thus it gives orthogonality separately in $T_x$, $H_I$, and the $s^{-2}$ norm.
+
+The order of application is essential:
+\begin{enumerate}
+\item Apply the paid local ledger \eqref{eq:ledger} to the actual localized vector and its actual coefficient $f$.
+\item Regard that same $f$ as its zero extension in $\mathscr K$.
+\item Split $f=P_If+(1-P_I)f$ in this reference space.
+\item Estimate the full-space model form $q_s$ on these summands.
+\end{enumerate}
+Averaging may leave the detailed leaf but cannot leave the larger radial tube. No local Hamiltonian comparison, detailed-leaf multiplier bound, or projection theorem is reapplied to an averaged component outside its original leaf. Both components remain diagonal singlets when $f$ is one. Fubini, compact slow exhaustion, and closed-form approximation justify the fiberwise estimates below.
+
+\begin{proposition}[Two-block singlet comparator]\label{prop:singletslow}
+Choose the padded endpoint width initially so that $\beta_{\rm pad}\le1/12$. A diagonal singlet $f$ in \eqref{eq:modeldomain} supported in \eqref{eq:radialtube} satisfies
+\begin{equation}
+ (T_x+H_I)[f]\ge h_*\norm{s^{-1}f}^2,
+ \qquad h_*:=\frac{121}{4}.\label{eq:singletslow}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Set $f_0=P_If$ and $f_1=(1-P_I)f$. The relative sixteen-Majorana module is
+$\FF_{\rm rel}=\mathbf{44}\oplus\mathbf{84}\oplus\mathbf{128}$, as recalled in \cite[Section 2.4]{LY}. Scalar harmonics on $S^8$ have highest weight $(l,0,0,0)$. Among those three summands only $\mathbf{44}$ matches a harmonic, at $l=2$. Thus the internal-invariant diagonal singlet $f_0$ has angular eigenvalue $2(2+7)=18$. This applies to its arbitrary internal invariant multiplicity space, not only an internal ground state. Radial Hardy gives
+\begin{equation}
+ T_x[f_0]\ge(49/4+18)\norm{s^{-1}f_0}^2.\label{eq:angularzero}
+\end{equation}
+For each fixed $x$, $f_1$ has internal support $\alpha\le\beta_{\rm pad}\nu s$. Lemma~\ref{lem:ball}, followed by Fubini and form closure, gives
+\begin{equation}
+ H_I[f_1]\ge\frac1{4\beta_{\rm pad}^2\nu^2}\norm{s^{-1}f_1}^2
+ \ge18\norm{s^{-1}f_1}^2.\label{eq:angularnonzero}
+\end{equation}
+Ordinary center Hardy supplies $49/4$ on $f_1$ as well. Orthogonal additivity proves \eqref{eq:singletslow}. Half-integral internal representations, gapless continua, and entanglement between blocks are included in Lemma~\ref{lem:ball}. Equal-block exchange constraints only restrict this space. At $N=2$ both internal factors are scalar and $f_1=0$.
+\end{proof}
+For $k\ge3$, the center dimension is at least $18$, and \eqref{eq:centerhardy} alone gives $h_\pi\ge64>h_*$. No angular classification or internal averaging is needed on those leaves.
+
+\section{Singlet exterior estimate}\label{sec:sharptheorem}
+\Needspace{11\baselineskip}
+\begin{theorem}[Singlet global implication]\label{thm:singlet}
+Assume the same realization and local analytical inputs as in Theorem~\ref{thm:global}, with the equivariant constructions and Dirichlet model identification detailed in Sections~\ref{sec:rotation}--\ref{sec:singletmodel} and Appendices~\ref{app:rotation}--\ref{app:model}. For every fixed $N\ge2$ and every $0<c<121/4$, there is a finite $R^{\rm sing}_{N,c}$ such that
+\begin{equation}
+ \hh_N[u]\ge c\norm{\rho_N^{-1}u}^2,
+ \qquad u\in\QQ_{N,R^{\rm sing}_{N,c}}^{\operatorname{Spin}(9)}.
+ \label{eq:singletmain}
+\end{equation}
+The superscript restricts the physical exterior form domain to rotation singlets. No coefficient above $49/4$ is asserted for arbitrary nonsinglet vectors.
+\end{theorem}
+\begin{proof}
+Keep the lower-rank all-vector Theorem~\ref{thm:global} for all internal soft-Hardy payments. There is no induction using the stronger conclusion. Given $c<h_*$, choose
+\begin{equation}
+ 0<a<\min\left\{\frac1{12},\frac{h_*-c}{2(3h_*+2)}\right\}.
+\end{equation}
+At the initial local-width selection, also require $\beta_{\rm pad}\le1/12$ for two-block leaves. Choose the tree endpoint small enough to retain this padded restriction. This precedes $L,\delta,\Delta_N$ and introduces no new inverse-gap dependency; follow the acyclic parameter order of the baseline thereafter.
+
+Apply \eqref{eq:ledger} before internal averaging. Its low part has the smaller internal coefficient $1-3a$. Discarding only the nonnegative extra $aT_C$ gives
+\begin{align}
+ (1-3a)H_I[f]+(1-2a)T_C[f]-2a\norm{s^{-1}f}^2
+ &\ge\bigl[(1-3a)h_*-2a\bigr]\norm{s^{-1}f}^2\nonumber\\
+ &>c\norm{s^{-1}f}^2.\label{eq:sharpledger}
+\end{align}
+For two blocks this uses the model comparator after zero extension. For three or more blocks it uses $h_\pi\ge64$ and $H_I\ge0$. Replacing $h_0$ mechanically while keeping the coefficient $1-2a$ would be incorrect, since $H_I$ now contributes to coercivity.
+
+The colored complement receives no rotational improvement. Increase the final radius until its retained $(b/2)H_{\exc}$ controls $c\norm{s^{-1}v}^2$, exactly as before. The slow mass identity, $\rho_N\ge s$, outside-cone estimate, and incidence square sum then prove \eqref{eq:singletmain}. Gauge averaging, rotation averaging, compact exhaustion and exterior form closure preserve the stated domain. Every IMS, Berry and Schur loss remains charged once, and no internal spectral gap or bound-state projection was introduced.
+\end{proof}
+This theorem inherits all substantive analytical dependencies of Appendices A--J. The rotation argument closes an additional implication if those baseline inputs hold; it does not independently certify them. The number $121/4$ is the threshold supplied by this comparator, not a proved sharpness result for the full Hamiltonian.
+
+\section{Moments of actual zero modes}
+\begin{corollary}\label{cor:moments}
+Under Theorem~\ref{thm:singlet}, every $\Psi\in\mathscr H_N$ with $\hh_N[\Psi]=0$ satisfies
+\begin{equation}
+ \int\rho_N^m|\Psi|^2<\infty\qquad(0\le m<9).
+\end{equation}
+No existence of such a $\Psi$ is asserted.
+\end{corollary}
+\begin{proof}
+By Theorem~\ref{thm:invariance}, $\Psi$ is a rotation singlet. Bounded radial multipliers preserve that property. Choose a fixed smooth radial inner cutoff $\eta$ supported in the exterior of \eqref{eq:singletmain}, equal to one farther out. For $a_p\ge1$, use bounded truncated powers $g_M(\rho)=\min(\rho^{a_p},M^{a_p})$, or smooth Lipschitz approximants, so that $|\nabla g_M|\le a_pg_M/\rho$. Apply \eqref{eq:singletmain} and \eqref{eq:zeroidentity} to $\eta g_M\Psi$. For any $\zeta>0$, Young's inequality gives
+\begin{equation}
+ \bigl[c-(1+\zeta)a_p^2\bigr]\norm{\rho_N^{-1}\eta g_M\Psi}^2
+ \le C_{\eta,\zeta,a_p}\norm{\Psi}^2,
+\end{equation}
+with the right side independent of large $M$: all derivatives of $\eta$ lie in one fixed annulus. Choose $a_p^2<c<h_*$ and $\zeta$ small, then let $M\to\infty$ by monotone convergence. This proves exterior integrability with exponent $m=2a_p-2$. The bounded interior is harmless since $m\ge0$ and $\Psi\in L^2$. Every $0\le m<9$ is obtained by taking $a_p=(m+2)/2<11/2$ and choosing $c$ between $a_p^2$ and $121/4$.
+\end{proof}
+The endpoint $m=9$ is not obtained because this coercive margin vanishes there. No pointwise asymptotic expansion or nonzero leading tail is proved. Polchinski's expected free $l=2$ two-cluster behavior $r^{-9}$, with radial density $r^8\dd r$, already predicts the same below-nine threshold \cite{P}. The candidate contribution is the actual-state implication through the stated all-channel form estimates, not that asymptotic prediction.
+
+At fixed rank the corollary includes the eighth ordinary radial moment. Every coordinate polynomial of degree at most four, with bounded fermion-matrix coefficients, times $\Psi$ belongs to $L^2$; polynomial expectations through degree eight are absolutely finite. A gauge-invariant such observable therefore has a well-defined centered physical $L^2$ source $(O-\langle O\rangle)\Psi$. This gives no rank-uniform source norm, reduced-resolvent estimate at zero energy, or inverse spectral moment. Momentum insertions, all Ward identities, all bootstrap levels, numerical radius bounds, large-$N$ tightness, scattering completeness and full soft theorems require additional arguments.
+
+\section{Reproducibility and review boundaries}
+The accompanying bundle contains this editable \LaTeX\ source, twelve mathematical source notes, eleven executable regression programs, a runner, dependency versions, finite-check outputs, a separate Chinese summary, and SHA-256 manifests. It excludes private coordination and review transcripts, unrelated research, email, and downloaded third-party papers. The source notes retain the mathematical equations and local scope boundaries; procedural review labels and superseded status commentary are removed. Provenance records the exact input hashes and included sections.
+
+The regression suite covers finite-matrix geometry, adapted Gauss Taylor coefficients, frozen-energy identities, source excitation bookkeeping, square completion, regularized tree/IMS examples, and the scalar global budget. The global budget uses exact rational arithmetic over 2,693 proper integer partition types through $N=20$, six target coefficients including $49/4-10^{-6}$, the retained complementary fraction, and moment arithmetic. Floating-point checks include hierarchical gap stress cases. Two added programs check exact Clifford coefficients for all 36 rotation generators, the reciprocal normalization conversion, the two-block width payment, and the revised singlet ledger and moment arithmetic. Successful execution is evidence for those finite calculations only.
+
+A specialist review should check, in order:
+\begin{enumerate}
+\item the trace/CAR normalization and realization assumptions in Section~\ref{sec:operator};
+\item exact geometry and density, Appendix A; the frozen energy bound, Appendix B;
+\item centered first jets and actual adapted source cancellation, Appendices C--D;
+\item rootwise differential estimates, full colored-charge comparison, and the non-double-counted reserve, Appendices E--I;
+\item normalized incidence localization at singular commuting strata and its padded domains, Appendix J;
+\item the common ledger and all-vector induction;
+\item the corrected rotation primitive, bounded-radius isotypic argument, equivariant vacuum line and zero-extension order, Appendices~\ref{app:rotation}--\ref{app:model};
+\item the smaller retained internal coefficient in the singlet ledger and the bounded-weight passage.
+\end{enumerate}
+The most recent domain correction is implemented consistently: the Schur infimum and any minimizing complement belong to $\QQ(h_N)$, and projection boundedness is in the form norm, equivalently the graph norm of the closed charge stack. Operator-domain preservation is not inferred. The global lower bound does not depend on minimizer attainment.
+
+This draft is ready to be examined, not certified as correct or submission-ready by the existence of the bundle. A future public version should reflect the named author's own review and a specialist check of the full analytical dependencies. No priority, affiliation, human endorsement, formal verification, or journal outcome is asserted.
+
+\begingroup
+\small
+\begin{thebibliography}{9}
+\bibitem{SS} S. Sethi and M. Stern, \emph{D-Brane Bound States Redux}, Commun. Math. Phys. 194 (1998), 675--705. \href{https://arxiv.org/abs/hep-th/9705046}{arXiv:hep-th/9705046}.
+\bibitem{SSI} S. Sethi and M. Stern, \emph{Invariance Theorems for Supersymmetric Yang--Mills Theories}, Adv. Theor. Math. Phys. 4 (2000), 487--501. \href{https://arxiv.org/abs/hep-th/0001189}{arXiv:hep-th/0001189}.
+\bibitem{HHI} D. Hasler and J. Hoppe, \emph{Zero Energy States of Reduced Super Yang--Mills Theories in $d+1=4,6$ and $10$ Dimensions Are Necessarily $\operatorname{Spin}(d)$ Invariant}. \href{https://arxiv.org/abs/hep-th/0211226}{arXiv:hep-th/0211226} (2002).
+\bibitem{Agmon} S. Agmon, \emph{Lectures on Exponential Decay of Solutions of Second-Order Elliptic Equations}, Princeton University Press, Princeton, 1982.
+\bibitem{K} A. Konechny, \emph{On Asymptotic Hamiltonian for $SU(N)$ Matrix Theory}, JHEP 10 (1998), 018. \href{https://arxiv.org/abs/hep-th/9805046}{arXiv:hep-th/9805046}.
+\bibitem{HH} D. Hasler and J. Hoppe, \emph{Asymptotic Factorisation of the Ground-State for $SU(N)$-invariant Supersymmetric Matrix-Models}. \href{https://arxiv.org/abs/hep-th/0206043}{arXiv:hep-th/0206043} (2002).
+\bibitem{FGHHY} J. Fr\"ohlich, G. M. Graf, D. Hasler, J. Hoppe and S.-T. Yau, \emph{Asymptotic Form of Zero Energy Wave Functions in Supersymmetric Matrix Models}. \href{https://arxiv.org/abs/hep-th/9904182}{arXiv:hep-th/9904182} (1999).
+\bibitem{LY} Y.-H. Lin and X. Yin, \emph{On the Ground State Wave Function of Matrix Theory}. \href{https://arxiv.org/abs/1402.0055}{arXiv:1402.0055} (2014).
+\bibitem{P} J. Polchinski, \emph{M-Theory and the Light Cone}, Prog. Theor. Phys. Suppl. 134 (1999), 158--170. \href{https://arxiv.org/abs/hep-th/9903165}{arXiv:hep-th/9903165}.
+\end{thebibliography}
+\endgroup
+
+\clearpage
+\appendix
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\fancyhead[L]{\small Local technical derivations}
+\begin{center}\Large\bfseries Technical appendices\end{center}
+The first ten appendices reproduce the substantive mathematical derivations on which the BFSS specialization depends. Their subsection and displayed equation numbers are local to each source note. Historical source labels are retained for traceability, including gaps and nonsequential labels; these do not indicate omitted PDF pages. These are included for direct review, not as external certified lemmas. Their local scope boundaries should be read together with the dependency map in Section~\ref{sec:inputs}; no single appendix purports to prove the global theorem by itself. The last two appendices add the corrected rotation algebra and equivariant reference-domain construction for the singlet refinement.
+
+The main text and appendices use typeset mathematics. The longer derivations in Appendices A--J have been transcribed from the source-level formulas, with their coefficient inventory, operator order, and local labels retained. The original editable source notes and an expression-by-expression transcription record accompany this edition for comparison. This production revision does not provide an additional mathematical certification.
+\input{appendices/a.tex}
+\input{appendices/b.tex}
+\input{appendices/c.tex}
+\input{appendices/d.tex}
+\input{appendices/e.tex}
+\input{appendices/f.tex}
+\input{appendices/g.tex}
+\input{appendices/h.tex}
+\input{appendices/i.tex}
+\input{appendices/j.tex}
+\input{appendices/k.tex}
+\input{appendices/l.tex}
+\end{document}

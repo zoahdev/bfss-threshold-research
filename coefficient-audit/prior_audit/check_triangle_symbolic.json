@@ -1,0 +1,8 @@
+{
+  "scope": "Exact rational symbolic reduction of displayed triangle contractions",
+  "T_norm_squared": "-(a - b - c)*(a - b + c)*(a + b - c)*(a + b + c)*(a**4 + 30*a**2*b**2 + 30*a**2*c**2 + b**4 + 30*b**2*c**2 + c**4)/(16*a**2*b**2*c**2)",
+  "W_triangle": "-(a + b + c)*(a**3 - a**2*b - a**2*c - a*b**2 - 14*a*b*c - a*c**2 + b**3 - b**2*c - b*c**2 + c**3)*(a**3 - a**2*b - a**2*c - a*b**2 + 18*a*b*c - a*c**2 + b**3 - b**2*c - b*c**2 + c**3)/(8*a**3*b**3*c**3)",
+  "Yukawa_norm_squared": "8*(a + b + c)*(a**5*b**2 + a**5*c**2 - a**4*b**3 - a**4*b**2*c - a**4*b*c**2 - a**4*c**3 - a**3*b**4 + 2*a**3*b**3*c + 7*a**3*b**2*c**2 + 2*a**3*b*c**3 - a**3*c**4 + a**2*b**5 - a**2*b**4*c + 7*a**2*b**3*c**2 + 7*a**2*b**2*c**3 - a**2*b*c**4 + a**2*c**5 - a*b**4*c**2 + 2*a*b**3*c**3 - a*b**2*c**4 + b**5*c**2 - b**4*c**3 - b**3*c**4 + b**2*c**5)/(a**3*b**3*c**3)",
+  "Cubic_norm_squared": "-(a - b - c)*(a - b + c)*(a + b - c)*(a + b + c)*(a**4 + 30*a**2*b**2 + 30*a**2*c**2 + b**4 + 30*b**2*c**2 + c**4)/(4*a**3*b**3*c**3)",
+  "residual": "0"
+}

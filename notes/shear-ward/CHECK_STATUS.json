@@ -1,0 +1,12 @@
+{
+  "publication_status": "conditional/provisional research archive",
+  "human_expert_review": "not supplied",
+  "author": "Yicheng Pan",
+  "branch_summary": "Provisional identities and trial-state obstruction; no zero-mode concentration upper bound.",
+  "dependencies": [
+    "Compatible physical supercharge and cutoff domains",
+    "Finite moments for unbounded identities",
+    "Uniqueness and finite second moment only where regulator selection is invoked"
+  ],
+  "verification_scope": "Finite algebra and consistency checks only; not certification of infinite-dimensional hypotheses or a rank-uniform theorem."
+}

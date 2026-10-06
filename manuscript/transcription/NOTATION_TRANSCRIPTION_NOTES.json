@@ -1,0 +1,83 @@
+{
+  "purpose": "Notation-only conversion of the supplied technical appendices. These checks do not establish correctness of the underlying arguments.",
+  "preserved": "Original source expressions, operator order, explicit grouping, local equation tags and unresolved source wording are retained in the transcription map.",
+  "api": "convert_expr(source: str, appendix: str | None = None) -> str returns a LaTeX math body. Use appendix=\"d\" for Appendix D prose to resolve its local D0 alias. convert_display(source, block_id) uses the appendix from block_id.",
+  "aliases": [
+    {
+      "source": "D0 in Appendix D prose",
+      "typeset": "D_0",
+      "basis": "D lines 61–64 define D_0=-F^{-1}C^*p_F; D167,196,201 use D0 for this same local coefficient."
+    },
+    {
+      "source": "D0 in Appendix H",
+      "typeset": "\\mathrm{D0}",
+      "basis": "H28 explicitly defines D0=+F^{-1}C^*p_F. It is NOT identified with Appendix D D_0, which has the opposite sign."
+    },
+    {
+      "source": "D1, D2 in Appendix D prose",
+      "typeset": "D_1, D_2",
+      "basis": "D63–72 give the local coefficients; D119,179,195–201 refer to them without underscores."
+    },
+    {
+      "source": "phi2, rho0",
+      "typeset": "\\phi_2, \\rho_0",
+      "basis": "D46–51 define phi_2 and rho_0; D183–201 use these compact prose aliases."
+    },
+    {
+      "source": "J2",
+      "typeset": "J_2",
+      "basis": "H10 defines J2=KC_Y, agreeing with D18 and E J_2=K C_Y."
+    },
+    {
+      "source": "W2",
+      "typeset": "W_2",
+      "basis": "The linked G/I definitions W_2=sum_e r_e^{-2}, and H72,198 identify the same inverse-square weight."
+    },
+    {
+      "source": "V3, V4",
+      "typeset": "V_3, V_4",
+      "basis": "D92–98 explicitly define the cubic and quartic fast potentials; H74 and I114–123 use compact aliases."
+    },
+    {
+      "source": "s0",
+      "typeset": "s_0",
+      "basis": "H140 defines s0=-F^{-1}S_f; I63 gives the same s_0 definition."
+    },
+    {
+      "source": "E0,total",
+      "typeset": "E_{0,\\mathrm{total}}",
+      "basis": "H190 identifies the frozen total ground-energy term already written E_0,total in D84–86."
+    },
+    {
+      "source": "sigma0 / σ0, chi0 / χ0, Usigma / Uσ",
+      "typeset": "\\sigma_0, \\chi_0, U_\\sigma",
+      "basis": "H200 defines a positive cutoff width, a cutoff equal to one on a smaller tube, and its normalized vacuum. These are named cutoff quantities, not multiplication by zero or by sigma."
+    }
+  ],
+  "contextual_names_not_globally_renamed": [
+    "H1 and H2: often homogeneous Hamiltonian coefficients, but I455 uses the phrase ordinary local H1 core for the form-domain regularity. No global subscript conversion is made.",
+    "The source bare differential shorthand ∂A and ∂Y is retained without inferring an unprinted subscript.",
+    "Appendix C H_a-density of f remains a verbal density label; Appendix F average_alpha and the finite Clifford contraction retain their source wording and no unprovided formula or normalization is invented.",
+    "Appendix I bracketed semicolon-separated block expression retains its semicolon; Appendix J verbal product range retains its wording."
+  ],
+  "source_locations": "Line numbers refer to the unchanged Markdown files in technical_notes, using appendix letters a–j.",
+  "semantic_audit": {
+    "display_scope": "All 366 display blocks / 715 source rows / 212 original local equation tags",
+    "checks": [
+      "Independent flat mathematical-token and operator-order comparison: zero mismatches",
+      "Independent explicit grouping (parentheses, brackets, anticommutator braces) comparison: zero mismatches; structural script/radical/binomial delimiters treated as such",
+      "Reviewed all compound-comma subscript spellings against the source; only explicit source-label whitelist is grouped",
+      "Reviewed denominator and exponent risks; bare +/-1/2 powers are preserved, while N^4/2 remains N^4 divided by 2",
+      "Reviewed adjoint stars, normal versus Frobenius norm suffixes, compact products, block-label superscripts, and primes with squared powers",
+      "Inline scope: all 1430 candidates in the reviewed combined map screened for token order and explicit groups; compact scripts and slash-containing expressions received targeted review"
+    ],
+    "material_repairs": [
+      "Opening norms beginning with F no longer misread as Frobenius suffixes",
+      "Inner-product commas after d_0 in E29/E34 and inline <d_0,X> are preserved as operand separators",
+      "The inequality list 0<kappa<1/20, L>1 is not changed to an inner product",
+      "R_BFSS retains its complete explicit subscript",
+      "Digit-letter and indexed-label scripts such as z_1i, delta_i9, rho_F2 and A_i^(a) retain their scope"
+    ],
+    "boundary": "This is a faithful-transcription audit, not a proof of the analytic estimates or resolution of source-level mathematical ambiguities."
+  }
+}

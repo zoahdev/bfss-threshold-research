@@ -1,0 +1,72 @@
+{
+  "scope": "Four active unordered branches near a simultaneous 2+2 commuting transition; omitted partitions have constant zero weights locally. Finite difference and root errors prevent interpreting tiny defects as exact.",
+  "parameters": {
+    "N": 4,
+    "spatial_dimensions": 3,
+    "kappa": 0.05,
+    "L": 3.0,
+    "finite_difference_step": 2e-07
+  },
+  "cases": [
+    {
+      "Q": 0.9999999999999998,
+      "E": 12644.846218352362,
+      "R": 12644.84621916842,
+      "scaled_defect": -3.2643449285533287e-06,
+      "t": 0.0,
+      "max_stationarity_residual": 7.940933880509143e-23,
+      "weights": [
+        0.9424301168027156,
+        0.23292829743493057,
+        0.23292829743493057,
+        0.05756988319728446
+      ],
+      "perturbation_norm": 0.0
+    },
+    {
+      "Q": 0.9999999414603384,
+      "E": 12645.297319842099,
+      "R": 12645.297395344513,
+      "scaled_defect": -0.0003020209486896022,
+      "t": 4.0733120133726033e-11,
+      "max_stationarity_residual": 3.3919970861970874e-21,
+      "weights": [
+        0.9424124892239883,
+        0.23295627280937872,
+        0.2329672803696981,
+        0.0575875107167771
+      ],
+      "perturbation_norm": 2e-05
+    },
+    {
+      "Q": 0.9999999853568553,
+      "E": 12645.07070537477,
+      "R": 12645.070725055579,
+      "scaled_defect": -7.872612363941925e-05,
+      "t": 1.0183278551162085e-11,
+      "max_stationarity_residual": 1.1359337839828244e-21,
+      "weights": [
+        0.9424213388810618,
+        0.23294226669895632,
+        0.23294767264811497,
+        0.05757866110466328
+      ],
+      "perturbation_norm": 1e-05
+    },
+    {
+      "Q": 0.9999999963381841,
+      "E": 12644.958195953786,
+      "R": 12644.958201503327,
+      "scaled_defect": -2.2198967742666696e-05,
+      "t": 2.545819452430227e-12,
+      "max_stationarity_residual": 5.492896198976779e-22,
+      "weights": [
+        0.942425736806411,
+        0.23293527746001272,
+        0.2329379559832174,
+        0.0575742631900863
+      ],
+      "perturbation_norm": 5e-06
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "canonical_ordering": {
+    "checked_terms": 16,
+    "max_correction_weight": 5,
+    "first_raw_weight_for_sextic_correction": 9
+  },
+  "cubic_clifford_contraction": {
+    "spinor_components": 16,
+    "coefficient": "-7",
+    "all_components_pass": true
+  },
+  "commuting_orbit_witness": {
+    "R": "1",
+    "M_angular_average": "2/99",
+    "pointwise_M_for_h_diag_pm_over_sqrt2_n_e1": "1/2"
+  },
+  "finite_N_fermionic_centering": {
+    "N_tested": [
+      2,
+      19
+    ],
+    "centered_trace": "N(N\u00b2\u22121)/4"
+  },
+  "restricted_quantum_dilation": {
+    "charge": "K + lambda^(-3) V",
+    "M_power": 6,
+    "fixed_BFSS_coupling": false
+  },
+  "scope": {
+    "actual_ground_state_bound_proved": false,
+    "SDP_solved": false,
+    "large_N_numerics": false,
+    "dual_obstruction_only": true
+  }
+}

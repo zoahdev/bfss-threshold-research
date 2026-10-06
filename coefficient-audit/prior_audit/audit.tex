@@ -1,0 +1,375 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=.75in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,booktabs,longtable,hyperref}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}[Scale=0.85]
+\usepackage{microtype}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}\setlength{\emergencystretch}{2em}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\newcommand{\calA}{\mathcal A}
+\newcommand{\calO}{\mathcal O}
+\newcommand{\calR}{\mathcal R}
+\newcommand{\calB}{\mathcal B}
+\newcommand{\calC}{\mathcal C}
+\newcommand{\Id}{\mathrm I}
+\title{BFSS leading coefficient cancellation audit}
+\author{Technical verification note}
+\date{6 October 2026}
+\begin{document}
+\maketitle
+\textbf{Conclusion.} The centered identity used in Appendix D \S5 can be verified by explicit Gaussian and fermionic contractions for every fixed block partition. The result is an identity on the full slow Clifford module. The nonzero-internal-coordinate continuation in D(4.2) and D(5.1)--(5.2) follows from the complete coefficient inventory below, with constants independent of ratios of unrelated gaps. This closes this particular \emph{leading-coefficient} check under the exact reduced kinetic and frozen-oscillator definitions in Appendices A, B, and D. It does not prove the complementary all-vector reserve, higher-order mixed-form estimates, localization, domain assertions, or the global Hardy theorem.
+
+This is an AI-assisted mathematical audit, not independent human peer review or formal proof-assistant certification. Exact symbolic reductions and finite floating-point checks have different roles and are identified separately.
+
+\section{Source and precise scope}
+The audited source is \emph{Exterior Hardy bounds for finite rank BFSS Hamiltonians}, local review v2.1, 6 October 2026. The PDF has 116 pages and SHA-256
+\begin{quote}\small\ttfamily
+\detokenize{daef0d76c50de0a1366c58edcac0eb86e10f628ef3122827b581cf25b007bb8c}
+\end{quote}
+The relevant locations are:
+\begin{itemize}
+\item Appendix D \S4 and formulas (4.1), (4.3), (4.4): printed pp.~52--53, PDF pages 53--54
+\item Appendix D \S4.1 and (4.2): printed pp.~53--54, PDF pages 54--55
+\item Appendix D \S5 and (5.1)--(5.3): printed pp.~54--55, PDF pages 55--56
+\item Appendix C \S3 and \S3.1, the alternative charge argument: printed pp.~40--42, PDF pages 41--43
+\end{itemize}
+In the source bundle these are \texttt{appendices/d.tex}, lines 370--648, and \texttt{appendices/c.tex}, lines 258--427. D(2.2)--(2.7), lines 138--239, fix the operator ordering used below.
+
+Fix the block sizes $n_1,\ldots,n_k$ and $N=\sum n_a$. Write $e=\{a,b\}$, $r_e=|z_a-z_b|$, $r_*=\min_e r_e>0$, and
+\[
+ \alpha_a+\alpha_b\le\kappa r_{ab},\qquad W_2=\sum_e r_e^{-2}.
+\]
+Only sufficiently small fixed $\kappa$ is required. No assumption $r_{\max}\le C r_*$ is made. This note concerns the uncut Gaussian coefficient calculation. Cutoff tails and arbitrary complementary vectors are separate questions.
+
+\section{An explicit contraction formula for the full multiplier}
+Use exactly the real coefficient maps of D \S1:
+\[
+ F=E^*B_{Z+A},\ C=P_NB_A,\ L=E^*B_Y,\ N_Y=P_NB_Y,
+ \quad I_Y=P_IB_Y,\quad C_Y=P_CB_Y,
+\]
+\[
+ K=R^{-1}C_Y^*,\qquad J_2=KC_Y,\qquad R=\bigoplus_e r_e\Id.
+\]
+Here $F=F^*>0$ is pair diagonal. Stars on these bosonic maps are ordinary real adjoints. Set
+\begin{align}
+ \calA&=F^{-1}C^*,\\
+ \calO(Y)&=F^{-1}N_Y^*-F^{-1}L^*\calA,\\
+ \calR(Y)&=F^{-1}L^*\calO(Y)-F^{-1}J_2^*\calA
+                  -\tfrac12 KK^*\calA. \label{eq:R}
+\end{align}
+Thus $\calA$ is constant in $Y$, $\calO$ is linear, and $\calR$ is quadratic. Let
+\[
+ U(Y;s)=g(Y;s)v(s),\qquad
+ g=(\det\Omega/\pi^M)^{1/4}e^{-Y^T\Omega Y/2},\qquad
+ \Sigma=\E(YY^T)=\tfrac12\Omega^{-1}.
+\]
+$M$ is the real fast bosonic dimension. $\Omega$ is the real positive Gaussian precision, not merely the square root of the potential matrix: for fast kinetic matrix $G$ and potential matrix $V$, it is
+$G^{-1/2}(G^{1/2}VG^{1/2})^{1/2}G^{-1/2}$. All center derivatives below include the normal connection.
+
+Define
+\begin{align}
+ \rho&=d_s\log\sqrt{\det F},\\
+ \phi_2&=-\tfrac12\tr(F^{-1}J_2)-\tfrac14\tr(F^{-1}LF^{-1}L),
+ \qquad \Phi=\operatorname{Hess}_Y\phi_2,\\
+ \calB_\mu(Y)&=\operatorname{component}_\mu
+       \{F^{-1}[I_Y^*,C_Y^*+FK]\},\qquad a(Y)=-\calA\Omega Y.
+\end{align}
+The entire multiplier of D \S4 is
+\begin{align}
+ W(A)={}&V_{\rm BH}+|\rho|^2+\operatorname{div}\rho+\E V_4
+       +\tr[(\Id+\calA^*\calA)\Phi] \nonumber\\
+ &+\E_f(S_f^*F^{-2}S_f)
+       +\E_Y|\calO\Omega Y|^2
+       -2\E_Y[(\calA\Omega Y)\cdot(\calR\Omega Y)]
+       +V_{\rm orb}, \label{eq:W}\\
+ V_{\rm orb}={}&-\sum_\mu\E_Y\partial_\mu(a\cdot\calB_\mu)
+              -2\sum_\mu\rho_\mu\E_Y(a\cdot\calB_\mu). \label{eq:orb}
+\end{align}
+The fast-fermion expectation $\E_f$ leaves all slow Clifford generators untraced. The Born--Huang contribution is
+\begin{equation}
+ V_{\rm BH}=\sum_\mu\left\{
+ \tfrac18\tr(\Omega^{-1}\nabla_\mu\Omega\,
+                  \Omega^{-1}\nabla_\mu\Omega)
+ +\tfrac12\tr[(\partial_\mu P_-)^2]\right\}, \label{eq:BH}
+\end{equation}
+where the second trace uses the occupied complex one-particle fermion projector. Scalar Berry connections have been removed into the retained slow covariant kinetic form.
+
+\subsection{Why no term is absent from this formula}
+D(2.2)--(2.4) give $D_0=-\calA p_F$, $D_1=F^{-1}S_f-\calO p_F$, and, after removing the displayed slow-orbital and fast-density parts,
+\[
+ D_{2,\rm rem}=-F^{-1}L^*F^{-1}S_f+\calR p_F.
+\]
+Since $p_FU=i\Omega YU$, these yield the three last non-orbital terms in \eqref{eq:W}. Each component of $S_f$ is Hermitian. Consequently every mixed spin--orbital pairing in $\|D_1U\|^2$, and the $D_0$--$D_{2,\rm rem}$ spin pairing, is purely imaginary before taking its real part. This proves their vanishing without assuming a spin trace or deleting an ordering term.
+
+The consistent convention is
+\[
+ (S_f)_A=-\frac{i}{2}\sum_{B,C,\beta}f_{ABC}\theta^B_\beta\theta^C_\beta,
+ \qquad\{\theta^B_\beta,\theta^C_\gamma\}=\delta_{BC}\delta_{\beta\gamma}.
+\]
+Changing all spin-equivariance signs consistently does not change the Hermiticity statement. Formula \eqref{eq:orb} follows from one slow integration by parts: derivatives of $g^2$ cancel the two derivatives of $g$, and the normalized Fock factor has $\operatorname{Re}\ip v{\partial_\mu v}=0$. In particular one must differentiate $a$ before setting $A=0$. Although $a(0)=0$, its internal derivative usually is nonzero.
+
+All remaining bosonic contractions are quadratic or quartic. They are fixed by
+\[
+ \E(Y_iY_j)=\Sigma_{ij},\qquad
+ \E(Y_iY_jY_lY_m)=\Sigma_{ij}\Sigma_{lm}
+                +\Sigma_{il}\Sigma_{jm}+\Sigma_{im}\Sigma_{jl}.
+\]
+For example, if $T=T^T$, then
+\[
+ \E(Y^TTY)^2=(\tr T\Sigma)^2+2\tr(T\Sigma T\Sigma).
+\]
+For fast Majoranas, let $\calC_{ij}=\E_f(\xi_i\xi_j)$; in the present convention
+$\calC=(\Id+\operatorname{sign}D_{\rm fast})/2$. Here $D_{\rm fast}$ is the Hermitian, purely imaginary antisymmetric matrix of the fast mass in the real Majorana basis; it is not the complex bifundamental matrix used to define $P_-$. Then
+\[
+ \E_f(\xi_i\xi_j\xi_l\xi_m)=
+ \calC_{ij}\calC_{lm}-\calC_{il}\calC_{jm}+\calC_{im}\calC_{jl}.
+\]
+Slow generators must first be moved past fast generators with the appropriate Clifford signs. No expectation over the slow module is allowed.
+
+\section{Centered one-edge identity for arbitrary block sizes}
+Set $A=0$, and consider one edge joining blocks of sizes $n,m$. Put $d=nm$ and $M_0=n+m$. Every entry in the following list is the coefficient of $r^{-2}\Id$ on the slow Clifford module:
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Term & Coefficient\\\midrule
+Born--Huang, including internal derivatives & $18dM_0$\\
+Slow density $|\rho|^2+\operatorname{div}\rho$ & $8M_0$\\
+Pure quartic potential & $14dM_0$\\
+Mixed slow--fast spin--Gauss square & $8dM_0$\\
+$J_2$ fast-density Hessian & $-16M_0$\\
+Internal derivative in $V_{\rm orb}$ & $-8(d-1)M_0$\\\midrule
+Total & $32dM_0$\\\bottomrule
+\end{tabular}
+\end{center}
+
+Here are the trace identities underlying the numbers. With the trace-orthonormal endpoint generators acting on the bifundamental, write $T_c$ for that action, including the normalized relative-center generator. Then
+\[
+ \sum_{c\,\rm slow}\tr(T_c^2)=dM_0,
+ \qquad \sum_{c\,\rm internal}\tr(T_c^2)=(d-1)M_0.
+\]
+For a pair vacuum,
+\[
+ \|\delta U\|^2=\frac2{r^2}\sum_{i=1}^9\tr(\delta Q_i^2).
+\]
+This gives $18dM_0/r^2$, rather than a center-only Born--Huang term. The pair part of $|\rho|^2$ is $dM_0/r^2$, the center divergence is $7M_0/r^2$, and the internal divergence is $-(d-1)M_0/r^2$. Their sum is $8M_0/r^2$.
+
+For the quartic term, each of the $\binom82=28$ transverse spatial pairs has expectation $dM_0/(2r^2)$. The spin--Gauss term uses
+$\sum_{e,c,h}f_{ech}^2=2dM_0$, with off-block indices $e,h$ and slow index $c$. Its polarization contribution vanishes because $\operatorname{Im}\tr(T_cT_{c'})=0$. Thus it gives $8dM_0/r^2$ as an operator, not only after tracing the slow fermions.
+
+For the last two terms, the relative-center metric gives
+$\phi_{2,J}=-(1/n+1/m)|Y|^2/(2r^2)$, hence its fast Laplacian is $-16M_0/r^2$. At zero internal coordinates,
+\[
+ \partial_\mu a=-R^{-1}(\partial_\mu C)^*\Omega Y,
+ \qquad I_Y^*\delta A=-(\delta C)^*Y.
+\]
+The $8$ transverse internal directions give
+$\sum_\mu\tr[(\partial_\mu C)(\partial_\mu C)^*]=16(d-1)M_0$, proving the orbital contribution $-8(d-1)M_0/r^2$. It is essential unless $nm=1$.
+
+At $A=0$ the one-edge source is the mixed slow--fast Yukawa term. Direct Gaussian and Majorana contraction gives
+\[
+ S_e(0)^*S_e(0)=\frac{128dM_0}{r}\Id.
+\]
+It has one bosonic and one fermionic excitation, each with energy $2r$. Therefore
+\[
+ S_e(0)^*H_f(0)^{-1}S_e(0)=\frac{32dM_0}{r^2}\Id=W_e(0).
+\]
+For $n=m=1$ this is $64/r^2$. This elementary check catches a missing internal jet in larger blocks even when the singleton check passes.
+
+\section{Centered triangle identity}
+Orient a triangle as $e=ab$, $f=bc$, $g=ca$, so $b_e+b_f+b_g=0$. Define
+\[
+ a=|b_e|,\ b=|b_f|,\ c=|b_g|,\quad s=a+b+c,\quad p=abc,
+ \quad d_t=n_an_bn_c,
+\]
+\[
+ n_e=b_e/a,\quad P_e=\Id-n_en_e^T,\quad c_{ef}=n_e\cdot n_f,
+ \quad K_\triangle^2=|b_e\wedge b_f|^2=4\Delta^2.
+\]
+$\Delta$ is the Euclidean triangle area, including the collinear value zero. All triangle terms are scalar on the slow Clifford module; each closed color cycle supplies exactly the multiplicity $d_t$.
+
+\subsection{The five diagonal contractions}
+Write $R_\triangle=4K_\triangle^2/p^2$. In units of $d_t$, the complete triangle contribution to $W(0)$ is the sum of
+\begin{align}
+ V_{\rho,t}&=R_\triangle,\\
+ V_{{\rm density},t}&=-\tfrac32R_\triangle,\\
+ V_{4,t}&=\tfrac12\sum_{\{u,v\}\subset\{e,f,g\}}
+              \frac{57-c_{uv}^2}{r_ur_v},\\
+ V_{{\rm orbital},t}&=\tfrac12\sum_{\rm cyc}
+       \frac{(r_f-r_g)^2(7+c_{fg}^2)}{r_e^2r_fr_g},\\
+ V_{{\rm spin},t}&=8\sum_{\rm cyc}\frac{1+c_{fg}}{r_e^2}. \label{eq:trianglepieces}
+\end{align}
+There is no triangle Born--Huang term or centered $D_0$ contribution. The slow-orbital internal derivative already belongs to the one-edge list.
+
+The spatial traces are $\tr P_e=8$ and $\tr(P_eP_f)=7+c_{ef}^2$. Wick contraction of two incident roots in $V_4$ therefore gives
+$[64-(7+c_{ef}^2)]/(2r_er_f)$. The slow-density cross products give $4K_\triangle^2/p^2$.
+
+For the fast-density loop, the unordered $e,f$ loop in $\phi_2$ has real Laplacian
+\[
+ \frac{2n_e\cdot P_gn_f}{r_er_f}=-\frac{2K_\triangle^2}{p^2}.
+\]
+There are three such loops, proving the $-3R_\triangle/2$ contribution. This is the quadratic triangle term of the Faddeev--Popov determinant; it cannot be omitted.
+
+For the orbital square, $B_Y^*\Omega Y=i[Y,\Omega Y]$. Its $e$ component is proportional to $i(r_f-r_g)\overline{y_f\cdot y_g}$ in complex root coordinates. The real root-plane norm is twice the squared complex norm, and
+\[
+ \E|y_f\cdot y_g|^2=\frac{7+c_{fg}^2}{4r_fr_g}.
+\]
+This proves the fourth expression. For the spin square, the creation/annihilation contraction gives
+\[
+ \tr(P_{f,+}P_{g,+})+\tr(P_{f,-}P_{g,-})=8(1+c_{fg}),
+\]
+which proves the fifth.
+
+Using $2ab\,c_{ef}=c^2-a^2-b^2$ and its cyclic versions, the sum reduces to
+\begin{equation}
+ \boxed{\quad W_t(0)=d_t\left(\frac{32s}{p}
+          -\frac{2(K_\triangle^2)^2}{s p^3}\right)\Id.\quad} \label{eq:Wt}
+\end{equation}
+
+\subsection{The independent source contraction}
+At the centered point $H_1=V_3+Y_Y$. Their triangle source components are orthogonal: the cubic term has only bosonic excitations, and the triangle Yukawa term has two fermionic excitations. Put $w=a^{-2}+b^{-2}+c^{-2}$. Direct contraction gives
+\begin{align}
+ \|S_{Y,t}\|^2/d_t
+ &=32\sum_{\rm cyc}\frac{4-3c_{fg}-c_{ef}c_{eg}}{r_e}
+   =\frac{32}{p}(2s^2-K_\triangle^2w), \label{eq:yuktri}\\
+ \|S_{V,t}\|^2/d_t
+ &=\frac{4K_\triangle^2}{p}
+           \left(8w-\frac{K_\triangle^2}{p^2}\right). \label{eq:cubictri}
+\end{align}
+The Yukawa formula follows from the two-point occupied-projector contraction and the Clifford traces
+$\tr(\Gamma_u\Gamma_v)=16u\cdot v$ and
+$\tr(\Gamma_u\Gamma_v\Gamma_w\Gamma_x)=16[(u\cdot v)(w\cdot x)-(u\cdot w)(v\cdot x)+(u\cdot x)(v\cdot w)]$.
+
+For completeness the cubic coefficient can be checked without any charge argument. Up to an irrelevant overall sign,
+\[
+ V_{3,t}=8\operatorname{Re}(T_{ijk}y_{e,i}y_{f,j}y_{g,k}),\quad
+ T_{ijk}=(b_f)_i\delta_{jk}+(b_g)_j\delta_{ik}+(b_e)_k\delta_{ij}.
+\]
+Thus $\|S_{V,t}\|^2=4d_t\|(P_e\otimes P_f\otimes P_g)T\|_F^2/p$.
+Decompose space into the triangle plane and its common seven-dimensional perpendicular space. The contributions with two perpendicular indices give $7K_\triangle^2w$; the all-planar contribution gives $K_\triangle^2(a^2+b^2+c^2)^2/(4p^2)$. Their sum is
+\[
+ \|(P_e\otimes P_f\otimes P_g)T\|_F^2
+   =K_\triangle^2\left(8w-\frac{K_\triangle^2}{p^2}\right).
+\]
+This proves \eqref{eq:cubictri}. The continuous collinear limit is harmless.
+
+Adding \eqref{eq:yuktri} and \eqref{eq:cubictri} yields
+\[
+ S_t(0)^*S_t(0)
+ =d_t\left(\frac{64s^2}{p}-\frac{4(K_\triangle^2)^2}{p^3}\right)\Id
+ =2s\,W_t(0).
+\]
+Every source state has one excitation on each triangle edge. The exact denominator is $2s$, not $r_*$ or a common frequency. Distinct pair/triangle excitation patterns are orthogonal and invariant under $H_f$. Consequently, for every partition,
+\begin{equation}
+ \boxed{W(0)=S(0)^*H_f(0)^{-1}S(0)}. \label{eq:centered}
+\end{equation}
+This explicit proof does not need to assume the unexpanded compressed-supercharge first-jet assertion in Appendix C.
+
+The formulas also give a centered bound with an explicit rank factor:
+\[
+ 0\le W(0)\le 32N\sum_{a<b}\frac{n_an_b}{r_{ab}^2}\Id.
+\]
+Indeed $W_t(0)\le32d_tw_t$, and the third-block sizes summed over triangles containing $ab$ equal $N-n_a-n_b$. This controls only the centered coefficient, not the other constants needed for a uniform-rank theorem.
+
+\section{Complete support inventory away from the center}
+Formula \eqref{eq:W} is also a useful way to make the nonzero-$A$ inventory finite and checkable. Pair covariances remain block diagonal; internal color/spatial indices may mix within a pair. Wick contractions match root pairs, not individual internal eigenmodes.
+
+\begin{enumerate}
+\item The Berry-subtracted vacuum derivative is a sum of mutually orthogonal one-pair derivatives. Each Born--Huang summand has weight $r_e^{-2}$.
+\item $\rho=\sum_e\rho_e$ is endpoint supported. Its divergence has weight $r_e^{-2}$; cross products vanish for disjoint endpoints and otherwise have weight $(r_er_f)^{-1}$.
+\item Quartic-potential Wick contractions repeat one edge or involve two incident edges. The weights are $r_e^{-2}$ and $(r_er_f)^{-1}$. A four-distinct-edge cycle has zero Gaussian expectation.
+\item The $J_2$ density term is quadratic in $Y_e$ with coefficient $O(r_e^{-2})$. The two-$L$ density term has a closed path $e\to f\to e$, using $Y_g^2/(r_er_f)$ on their triangle. The fast Hessian removes its Gaussian scale. The extra multiplier $\calA^*\calA$ is pair diagonal and $O(\kappa^2)$.
+\item $\E_f(S_f^*F^{-2}S_f)$ is a sum over one gauge-output edge. Its nonzero fast contractions have one-edge or triangle support. Its weights are $r_e^{-2}$.
+\item $\calO\Omega Y$ has two bosonic factors on the other edges of the gauge-output triangle. Its squared norm has weights $r_g/(r_e^2r_f)$ and the swapped version, including their Cauchy--Schwarz cross term. Different triangles with the same output edge are orthogonal.
+\item For the $F^{-1}L^*\calO$ part of \eqref{eq:R}, write the two triangles as $(e,f,h)$ and $(f,j,l)$. The four fast factors are on $e,h,l,j$. Since $e\ne h$, the only Wick closures are $(l,j)=(e,h)$ and $(l,j)=(h,e)$. Their weights are $\kappa/(r_er_f)$ and $\kappa/(r_fr_h)$. The extra $L\calA$ piece of $\calO$ contributes another factor $\kappa$.
+\item The $J_2$ and $KK^*$ pieces connect only edges sharing an endpoint. Pairing with $D_0$ gives $\kappa^2/(r_er_f)$, including the repeated edge.
+\item $\E(a\cdot\calB_\mu)$ is endpoint supported on one edge with size $O(\kappa/r_e)$. Its differentiated contribution in \eqref{eq:orb} has size $O(r_e^{-2})$, and its variation from $A=0$ has size $O(\kappa r_e^{-2})$. Multiplication by $\rho_f$ has weight $\kappa/(r_er_f)$ on incident edges. Differentiating the coefficient, rather than bounding its value alone, retains the nonzero centered internal jet.
+\end{enumerate}
+There is no additional spin--orbital cross term; its exact vanishing was proved after \eqref{eq:W}. This accounts for every term of D(2.7), including both inverse-Gauss quadratic terms, the center metric correction entering $D_2$, and the density Hessian.
+
+The only potentially ratio-growing square in this list obeys
+\[
+ \frac{r_g}{r_e^2r_f}\le\frac1{r_er_f}+\frac1{r_e^2}
+ \le\frac{3}{2r_e^2}+\frac1{2r_f^2},\qquad r_g\le r_e+r_f.
+\]
+Also $(r_er_f)^{-1}\le(r_e^{-2}+r_f^{-2})/2$. These are true geometric triangle inequalities, not a comparison of unrelated frequencies.
+
+\section{Uniform analytic perturbation and its actual remainder}
+For each edge use $\tau_e=T_e/r_e$. The thinness assumption places all normalized pair matrices in a fixed finite-dimensional ball. The frozen kinetic and potential matrices and the positive/negative fermion projectors have a uniform external gap there. Positive square roots, their inverses, and occupied projectors are smooth matrix functions with bounded derivatives of every fixed order on that ball. Resolvent contours or the positive square-root integral give these bounds without dividing by an internal eigenvalue difference.
+
+In particular, after the natural fast dilation on each edge,
+\[
+ \Omega_e/r_e,\quad r_e\Sigma_e,\quad r_eF_e^{-1},\quad
+ P_{e,-},\quad \calA_e
+\]
+have uniformly bounded coefficient derivatives; $\calA_e=O(\kappa)$. Every internal or covariant center derivative carries its own incident $r_e^{-1}$. This includes the first two derivatives needed in the density and orbital terms. Directions $n_e\in S^8$ are compact; an orthogonal normal-frame change preserves the estimates. No global compact set of triangle shapes or gap ratios is invoked.
+
+To make the remainder precise, fix the centers and use the path $A(t)=tA$, $0\le t\le1$. Along this path each normalized coefficient has derivative bounded by $C_N\kappa$, including the normalized spatial/internal jets occurring above. Apply the product rule to the finite Wick contractions, extract their listed gap weights, and use the preceding two elementary inequalities. The fundamental theorem of calculus then gives the actual operator-norm remainder
+\begin{equation}
+ \|W(A)\|\le C_NW_2,\qquad
+ \|W(A)-W(0)\|\le C_N\kappa W_2. \label{eq:Wpert}
+\end{equation}
+The constant includes the finite slow-Clifford matrix norm and finite number of root paths. It depends on $N$ and the chosen upper thinness threshold, not on $r_{\max}/r_*$. This proves D(4.2), rather than inferring it merely from analyticity.
+
+\subsection{Sources and excitation resolvents}
+The actual $H_1U$ consists only of pair sectors with two total quanta and triangle sectors with one quantum on each edge. Each monomial in D(2.6) has exactly this support: $Y\theta\theta$, $Y_eY_fY_g$, $p_e\theta\theta$, or $p_eY_fp_g$ with distinct triangle edges. Differentiating the linear orbital coefficients does not create a lower sector, because the differentiated root and the coefficient root are distinct.
+
+Choose pairwise Gaussian and Fock transports using positive matrix functional calculus and occupied-subspace transport. They preserve the finite excitation sectors without diagonalizing degenerate internal eigenvalues. With $s_t=\sum_{e\in t}r_e$ and $w_t=\sum_{e\in t}r_e^{-2}$, the actual source bounds are
+\begin{align}
+ \|S_e(A)\|&\le C_Nr_e^{-1/2},&
+ \|S_e(A)-S_e(0)\|&\le C_N\kappa r_e^{-1/2},\\
+ \|S_t(A)\|&\le C_N\sqrt{s_tw_t},&
+ \|S_t(A)-S_t(0)\|&\le C_N\kappa\sqrt{s_tw_t}. \label{eq:sourcepert}
+\end{align}
+For the cubic monomial, its coefficient is at most $C_Ns_t$ and its Gaussian norm costs $(r_er_fr_g)^{-1/2}$. The identity
+\[
+ \frac{s_t}{r_er_fr_g}
+ =\frac1{r_er_f}+\frac1{r_fr_g}+\frac1{r_gr_e}\le w_t
+\]
+proves the stated bound. A Gauss term costs at most
+$C_N\kappa\sqrt{r_g/(r_er_f)}\le C_N\kappa\sqrt{s_tw_t}$; each additional $\calA$ factor is small. The same normalized coefficient path proves the difference bounds.
+
+Let $H_{e,A}$ and $H_{t,A}$ be the restrictions of the shifted fast Hamiltonian $H_{\rm exc}(A)$ to these transported spaces. Uniform pair gaps imply
+\begin{align}
+ H_{e,A}&\ge c r_e,&\|H_{e,A}-H_{e,0}\|&\le C_N\kappa r_e,\\
+ H_{t,A}&\ge c s_t,&\|H_{t,A}-H_{t,0}\|&\le C_N\kappa s_t.
+\end{align}
+For example, the conservative fermion gap from Appendix B is $2(0.91)r_e$ per fermionic quantum. The proof only needs some $c>0$; it does not require equal frequencies.
+
+The finite-sector resolvent identity gives
+\[
+ \|H_{t,A}^{-1}-H_{t,0}^{-1}\|
+ \le\|H_{t,A}^{-1}\|\,\|H_{t,A}-H_{t,0}\|\,
+      \|H_{t,0}^{-1}\|
+ \le C_N\kappa/s_t,
+\]
+with the pair version $C_N\kappa/r_e$. Combining this with \eqref{eq:sourcepert} yields, explicitly,
+\begin{align*}
+ &\|S_A^*H_A^{-1}S_A-S_0^*H_0^{-1}S_0\|\\
+ &\quad\le\|S_A-S_0\|\,\|H_A^{-1}\|(\|S_A\|+\|S_0\|)
+       +\|S_0\|^2\|H_A^{-1}-H_0^{-1}\|.
+\end{align*}
+The result is $C_N\kappa r_e^{-2}$ on an edge and $C_N\kappa w_t$ on a triangle, proving D(5.1). Distinct graph sectors are orthogonal and invariant. Since each edge belongs to $k-2$ triangles,
+$\sum_tw_t=(k-2)W_2$. Combining with \eqref{eq:centered} and \eqref{eq:Wpert} proves
+\begin{equation}
+ \boxed{\|W(A)-S(A)^*H_{\rm exc}(A)^{-1}S(A)\|
+            \le C_N\kappa W_2.} \label{eq:final}
+\end{equation}
+This is the desired gap-ratio-uniform leading operator estimate on the full slow Clifford fiber. The frozen vacuum energy is excluded from every excitation denominator, as required in D \S2.
+
+\section{Reproducible checks and limits}
+Two new checks accompany this note.
+\begin{enumerate}
+\item \texttt{check\_triangle\_symbolic.py} performs exact rational simplification of the five diagonal contractions, the projected cubic tensor norm, and the Yukawa contraction after the cosine-law substitutions. Its final residual $2sW_t-\|S_{Y,t}\|^2-\|S_{V,t}\|^2$ is identically zero. This validates the finite algebraic reduction; the derivations above supply its mathematical meaning.
+\item \texttt{check\_centered\_triangle.py} independently constructs trace-orthonormal $\mathfrak{su}(3)$ generators, the real Spin(9) Clifford matrices, normal projectors, the actual orbital maps, and the occupied Majorana covariance. It evaluates all Gaussian and Fock Wick contractions directly. It uses floating-point matrix algebra, not random Gaussian sampling. It is a regression check, not a proof over all parameters.
+\end{enumerate}
+The tested singleton-triangle shapes include a collinear configuration, a noncollinear configuration, and gap ratios about $100$ and $10{,}000$. The maximum absolute cancellation residual was $4.3\times10^{-14}$. The symbolic identity, rather than those samples, covers arbitrary positive side lengths satisfying triangle geometry. The analytical color-cycle argument supplies general block multiplicity.
+
+The pre-existing script \texttt{check\_adapted\_source\_inventory.py} checks the Taylor coefficients $D_0,D_1,D_2$ and $\phi_2$. It does not compute the complete $W$, prove the centered cancellation, or prove an infinite-dimensional lower bound. The new work supplements that missing check; it does not retroactively enlarge the old script's scope.
+
+\textbf{Remaining proof boundary.} Equation \eqref{eq:final} is a coefficient statement. It does not by itself bound all higher homogeneous terms on arbitrary fast vectors, extract a non-double-counted complementary reserve, control unrestricted slow momenta in the complete mixed form, or establish form-domain compatibility. Those are the separate tasks acknowledged at the end of Appendix D and addressed by later candidate arguments. No conclusion about uniformity in $N$, existence or uniqueness of zero modes, or quantum gravity follows from this audit.
+\end{document}

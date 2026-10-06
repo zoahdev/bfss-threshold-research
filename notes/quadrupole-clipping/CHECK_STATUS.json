@@ -1,0 +1,12 @@
+{
+  "publication_status": "conditional/provisional research archive",
+  "human_expert_review": "not supplied",
+  "author": "Yicheng Pan",
+  "branch_summary": "Provisional conditional reduction; required concentration estimate remains unproved.",
+  "dependencies": [
+    "Physical singlet zero mode and finite second radial moment",
+    "Compatible supercharge realization",
+    "Unproved gradient-weighted quadrupole-tail concentration"
+  ],
+  "verification_scope": "Finite algebra and consistency checks only; not certification of infinite-dimensional hypotheses or a rank-uniform theorem."
+}

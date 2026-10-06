@@ -1,0 +1,53 @@
+{
+  "checked_on": "2026-10-06",
+  "references": [
+    {
+      "arxiv_id": "1011.4791v2",
+      "title": "Spectral properties in supersymmetric matrix models",
+      "url": "https://arxiv.org/html/1011.4791",
+      "scope": "Section 3: finite-N compact resolvent and rank-dependent constants"
+    },
+    {
+      "arxiv_id": "2404.18442v2",
+      "title": "Witten index of BMN matrix quantum mechanics",
+      "url": "https://arxiv.org/html/2404.18442v2",
+      "scope": "July 2026 revision; Eq.2.4 superalgebra, protected vacuum count, singular zero-mass limit"
+    },
+    {
+      "arxiv_id": "2401.16471v1",
+      "title": "Gravity from quantum mechanics of finite matrices",
+      "url": "https://arxiv.org/html/2401.16471v1",
+      "scope": "Fixed-N strong-coupling effective oscillator theory and collision/cluster qualifications"
+    },
+    {
+      "arxiv_id": "1211.0364v2",
+      "title": "Exact results for perturbative partition functions of theories with SU(2|4) symmetry",
+      "url": "https://arxiv.org/html/1211.0364v2",
+      "scope": "Localization with explicit instanton omission"
+    },
+    {
+      "arxiv_id": "1401.5079v2",
+      "title": "Emergent bubbling geometries in the plane wave matrix model",
+      "url": "https://arxiv.org/html/1401.5079v2",
+      "scope": "Protected complex operator and localized matrix measure"
+    },
+    {
+      "arxiv_id": "1711.07681v2",
+      "title": "Spherical transverse M5-branes from the plane wave matrix model",
+      "url": "https://arxiv.org/html/1711.07681",
+      "scope": "Low-energy moduli versus full positive scalar extent; instanton qualifications"
+    },
+    {
+      "arxiv_id": "2211.13716v3",
+      "title": "On the existence of the NS5-brane limit of the plane wave matrix model",
+      "url": "https://academic.oup.com/ptep/article/2023/4/043B01/7085765",
+      "scope": "Planar quarter-BPS NS5 limit, distinct from finite-N BFSS state limit"
+    },
+    {
+      "arxiv_id": "2606.05314v1",
+      "title": "Mass-Flow Invariance of Q-Cohomology in BMN Matrix Quantum Mechanics",
+      "url": "https://arxiv.org/html/2606.05314v1",
+      "scope": "Unbounded nonunitary similarity, Gaussian-domain condition excluding zero mass"
+    }
+  ]
+}

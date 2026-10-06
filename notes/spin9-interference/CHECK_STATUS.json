@@ -1,0 +1,12 @@
+{
+  "publication_status": "conditional/provisional research archive",
+  "human_expert_review": "not supplied",
+  "author": "Yicheng Pan",
+  "branch_summary": "Exact finite algebra with conditional operator interpretation; polarization averaging does not identically remove interference.",
+  "dependencies": [
+    "Physical supercharge normalization and stated operator domains",
+    "Quantum-Gram descendant framework",
+    "No actual zero-mode expectation supplied by configuration checks"
+  ],
+  "verification_scope": "Finite algebra and consistency checks only; not certification of infinite-dimensional hypotheses or a rank-uniform theorem."
+}

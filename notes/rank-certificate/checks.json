@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": [
+    "exponents",
+    "Holder powers",
+    "shear coefficient",
+    "uniform I3 constant for N=2..10000",
+    "10000 random pair/triangle algebra checks",
+    "growing inverse-moment recurrence coefficient for N=2..10000",
+    "inner-radius variance split constants"
+  ],
+  "max_sampled_J_N": 1.0049188688341244,
+  "max_sampled_rank": 2,
+  "max_sampled_recurrence_coefficient": 1.1944178555285594,
+  "final_positive_certificate_lower_bound": 0.0017302395375590834,
+  "scope": "Algebraic checks only; analytic hypotheses are stated in the note."
+}

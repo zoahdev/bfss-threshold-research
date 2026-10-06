@@ -1,0 +1,273 @@
+% Ready-to-integrate supplement to the 2026-10-06 leading-coefficient audit.
+% No changes to the canonical BFSS v2.1 manuscript are made by this file.
+% Requires amsmath and amssymb. All labels have the auditadd: prefix.
+
+\section{Explicit slow Clifford contraction and finite sector transport}
+\label{auditadd:section}
+This supplement expands two compressed steps in Sections 3 and 6.1 of
+\emph{BFSS leading coefficient cancellation audit}, 6 October 2026.
+It concerns the uncut leading coefficients at fixed finite $N$, using the
+kinetic-one, reduced-kinetic, and frozen-pair definitions of Appendices
+A, B, and D of the supplied v2.1 manuscript. The identities below do not
+establish an all-vector reserve, form-domain compatibility, the global
+Hardy theorem, or constants uniform in $N$.
+
+\subsection{The pair contraction before any slow Clifford trace}
+Fix an oriented edge with block sizes $n,m$, put $d=nm$, and choose its
+spatial frame so that the center difference is $r e_9$, $r>0$.
+Let $t_c$ be a trace-orthonormal real basis of the block-diagonal slow
+color space, including the normalized relative center. Its Hermitian
+action on $\operatorname{Hom}(\mathbb C^m,\mathbb C^n)$ is
+\[
+ T_c q=(t_c)_{aa}q-q(t_c)_{bb},\qquad
+ K_{cc'}=\operatorname{tr}_{\mathbb C^d}(T_cT_{c'}).
+\]
+Other blocks can be included in an ambient orthonormal slow basis: their
+restriction merely adds zero actions and an orthogonal change of the
+center basis. In particular the following calculation applies to every
+partition. Since $T_c$ and $T_{c'}$ are Hermitian, $K$ is real symmetric.
+
+Let $a,h,k$ label the $2d$ real off-block color generators. With
+$[t_A,t_B]=i f_{ABC}t_C$, set
+\[
+ (F_c)_{ah}=f_{ahc}.
+\]
+The symbol $F_c$ in this subsection denotes a color-action matrix, not
+the inverse-Gauss coefficient $F$ in Appendix D. On the underlying real
+space of $\mathbb C^d$, $F_c$ is the realification of $iT_c$. Let $J$ be
+multiplication by $i$ on that real space. Then
+\begin{align}
+ \sum_{a,h}(F_c)_{ah}(F_{c'})_{ah}&=2K_{cc'},
+       \tag{A0a}\label{auditadd:color-real}\\
+ \sum_{a,h,k}(F_c)_{ah}(F_{c'})_{ak}J_{hk}&=0.
+       \tag{A0b}\label{auditadd:color-polarization}
+\end{align}
+Indeed the first expression is $\operatorname{tr}_{\mathbb R}(F_c^T F_{c'})$.
+For the second, $F_c^T F_{c'}$ is the realification of $T_cT_{c'}$;
+contracting with $J$ gives, up to the immaterial orientation sign,
+$2\operatorname{Im}\operatorname{tr}_{\mathbb C}(T_cT_{c'})=0$.
+This vanishes for each $c,c'$, not just after summing $c=c'$.
+
+Write $\xi_{h\alpha}$ for fast and $\eta_{c\beta}$ for slow Majoranas,
+with $\{\xi_i,\xi_j\}=\delta_{ij}$,
+$\{\eta_i,\eta_j\}=\delta_{ij}$, and $\{\xi_i,\eta_j\}=0$.
+The real symmetric Spin(9) matrices satisfy
+$\{\Gamma_i,\Gamma_j\}=2\delta_{ij}I_{16}$.
+In the stated orientation the centered covariance is
+\[
+ \langle\xi_{h\alpha}\xi_{k\gamma}\rangle_f
+ =\frac12\bigl(\delta_{hk}\delta_{\alpha\gamma}
+              -iJ_{hk}(\Gamma_9)_{\alpha\gamma}\bigr).
+ \tag{A1}\label{auditadd:covariance}
+\]
+Changing the orientation changes both occurrences of the complex
+structure consistently and does not affect the results.
+
+The mixed slow--fast part of the off-block Gauss spin is
+\[
+ G_a=-i\sum_{h,c,\beta}(F_c)_{ah}\xi_{h\beta}\eta_{c\beta}.
+\]
+Move every slow generator past the second fast generator before taking
+the fast expectation. The minus sign from this move cancels
+$(-i)^2$. Equations \eqref{auditadd:color-real}--\eqref{auditadd:covariance}
+give the following equality in the \emph{untraced} slow Clifford algebra:
+\begin{align}
+ \sum_a\langle G_a^2\rangle_f
+ &=\sum_{c,c',\beta,\gamma}
+       Q^G_{c\beta,c'\gamma}\eta_{c\beta}\eta_{c'\gamma},
+ &Q^G_{c\beta,c'\gamma}&=K_{cc'}\delta_{\beta\gamma}.
+ \tag{A2}\label{auditadd:gauss-coefficient}
+\end{align}
+There is no residual polarized bilinear: its color coefficient is
+exactly \eqref{auditadd:color-polarization}. Applying CAR to the real
+symmetric coefficient in (A2) gives
+\[
+ \sum_a\langle G_a^2\rangle_f
+ =8\sum_cK_{cc}I=8d(n+m)I.
+ \tag{A3}\label{auditadd:gauss-scalar}
+\]
+The last equality follows from the trace-normalized endpoint Casimirs:
+\[
+ \sum_{c\,\mathrm{internal}}K_{cc}=(d-1)(n+m),\qquad
+ K_{\mathrm{relative\ center},\mathrm{relative\ center}}=n+m.
+\]
+The centered inverse-Gauss square multiplies (A3) by $r^{-2}$.
+
+For the source, let $y_{ia}$, $1\le i\le8$, be the real transverse
+oscillator coordinates; their covariance is
+$\langle y_{ia}y_{jb}\rangle=\delta_{ij}\delta_{ab}/(2r)$.
+In the conventions of the audit the mixed Yukawa source is
+\[
+ S_e(0)=\left[-2i\sum_{i=1}^8\sum_{a,h,c,\alpha,\beta}
+ y_{ia}(\Gamma_i)_{\alpha\beta}(F_c)_{ah}
+ \xi_{h\alpha}\eta_{c\beta}\right]U_e(0).
+ \tag{A4}\label{auditadd:source}
+\]
+Here $U_e(0)$ is the normalized bosonic/Fock vacuum embedding; (A4)
+is a map from the slow module, so $S_e(0)^*S_e(0)$ leaves that module
+untraced. Moving slow past fast generators as above and contracting
+$y,\xi$ gives
+\begin{align}
+ S_e(0)^*S_e(0)
+ &=\sum_{c,c',\beta,\gamma}
+    Q^Y_{c\beta,c'\gamma}\eta_{c\beta}\eta_{c'\gamma},
+ & Q^Y_{c\beta,c'\gamma}
+ &=\frac{16}{r}K_{cc'}\delta_{\beta\gamma}.
+ \tag{A5}\label{auditadd:yukawa-coefficient}
+\end{align}
+For clarity, the unpolarized coefficient is
+$4(2r)^{-1}\cdot\tfrac12\cdot2K_{cc'}$
+times $\sum_{i=1}^8\Gamma_i^T\Gamma_i=8I$.
+The polarized coefficient contains
+$\sum_{i=1}^8\Gamma_i^T\Gamma_9\Gamma_i=-8\Gamma_9$
+but vanishes by \eqref{auditadd:color-polarization}.
+Consequently CAR yields the exact operator identity
+\[
+ S_e(0)^*S_e(0)=\frac{128d(n+m)}r I.
+ \tag{A6}\label{auditadd:source-scalar}
+\]
+The source has one bosonic and one fermionic excitation on this edge,
+each of energy $2r$. Thus its centered resolvent contraction equals
+$32d(n+m)r^{-2}I$, as claimed in Section 3 of the audit. This calculation
+establishes the slow-Clifford reduction directly; a trace over the slow
+module would not suffice to establish it.
+
+\subsection{Transport preserving actual excitation sectors}
+Fix the centers and use $A(t)=tA$, $0\le t\le1$. On each edge, let the
+real positive kinetic and potential matrices be $G_e(t)$ and $V_e(t)$.
+Set
+\[
+ \Omega_e=G_e^{-1/2}(G_e^{1/2}V_eG_e^{1/2})^{1/2}G_e^{-1/2},
+ \qquad \Omega_eG_e\Omega_e=V_e.
+\]
+All these expressions concern finite coefficient matrices. Define the
+unitary map from the fixed dimensionless oscillator space to the actual
+bosonic fiber by
+\[
+ (\mathcal U_e\psi)(Y_e)
+   =(\det\Omega_e)^{1/4}\psi(\Omega_e^{1/2}Y_e).
+\]
+Writing $x_e=\Omega_e^{1/2}Y_e$ and
+$M_e=\Omega_e^{1/2}G_e\Omega_e^{1/2}$ gives exactly
+\begin{align}
+ \mathcal U_e^*H_{B,e}\mathcal U_e
+ &=p_{x_e}^TM_ep_{x_e}+x_e^TM_ex_e,\nonumber\\
+ \mathcal U_e^*(H_{B,e}-E_{B,e})\mathcal U_e
+ &=2\sum_{j,k}a_j^*(M_e)_{jk}a_k,
+ &E_{B,e}&=\operatorname{tr}_{\mathbb R}M_e,
+ \tag{A7}\label{auditadd:boson-transport}
+\end{align}
+where $a_j=(x_j+\partial_{x_j})/\sqrt2$. Thus total bosonic excitation
+number is invariant even when $G_e,V_e$ do not commute. There is no
+choice of eigenvectors or division by differences of internal
+frequencies. At $t=0$, $M_e=r_eI$.
+
+For fermions let $D_e(t)$ be the Hermitian complex bifundamental mass
+and put
+\[P_e(t)=1_{(-\infty,0)}(D_e(t)).\]
+With the external gap retained,
+solve the finite-dimensional unitary transport equation
+\[
+ \dot V_e^{\mathrm F}=[\dot P_e,P_e]V_e^{\mathrm F},\qquad
+ V_e^{\mathrm F}(0)=I.
+ \tag{A8}\label{auditadd:kato}
+\]
+Then $P_e(t)=V_e^{\mathrm F}(t)P_e(0)V_e^{\mathrm F}(t)^*$ and
+$\widetilde D_e=V_e^{\mathrm F*}D_eV_e^{\mathrm F}$ commutes with
+$P_e(0)$. Second quantization transports the occupied determinant to
+the fixed reference determinant. Relative to particles in
+$1-P_e(0)$ and holes in $P_e(0)$, the positive excitation matrix in the
+kinetic-one normalization is
+\[
+ B_e^{\mathrm F}=2\left(
+ \widetilde D_e\big|_{1-P_e(0)}\ \oplus\
+ [-\widetilde D_e\big|_{P_e(0)}]^T\right).
+ \tag{A9}\label{auditadd:fermion-transport}
+\]
+The transpose acts on the dual hole space. The shifted fermionic
+Hamiltonian is its fermionic second quantization and preserves total
+particle-plus-hole excitation number. Its centered value is $2r_eI$
+on the one-excitation space.
+
+Uniform pair functional calculus on the normalized thinness ball gives
+\[
+ \|M_e-r_eI\|\le C_N\kappa r_e,\quad M_e\ge c r_eI,
+ \qquad
+ \|B_e^{\mathrm F}-2r_eI\|\le C_N\kappa r_e,\quad
+ B_e^{\mathrm F}\ge c r_eI.
+ \tag{A10}\label{auditadd:pair-matrices}
+\]
+These bounds use the external positive/negative gap of $D_e$ and the
+positive bosonic gap; no internal eigenvalue gap is assumed. The
+transport is pairwise. In particular its bound never involves an
+unrelated $r_f/r_e$.
+
+On the fixed tensor product, let $N_e$ be total bosonic plus fermionic
+excitation number on edge $e$. The actual shifted fast Hamiltonian is
+the sum of the transported pair excitation Hamiltonians. Each
+spectator edge has zero energy on its transported vacuum because its
+own ground energy has been subtracted. Hence the spaces
+\[
+ \mathcal E_e=\{N_e=2,\ N_h=0\ (h\ne e)\},\qquad
+ \mathcal E_t=\{N_e=N_f=N_g=1,\ N_h=0\ (h\notin t)\}
+\]
+are finite-dimensional, mutually orthogonal, and invariant. The pair
+source lies in the smaller one-boson/one-fermion subspace of
+$\mathcal E_e$. The monomial inventory in Appendix D(2.6) places each
+triangle source in $\mathcal E_t$. Different such monomials can mix
+\emph{within} a sector; the argument neither discards that mixing nor
+requires individual internal eigenmodes to remain fixed.
+
+Since at most two quanta occur on an edge sector and one on each edge
+of a triangle, (A10) proves
+\begin{align}
+ H_{e,A}&\ge c r_eI,&
+ \|H_{e,A}-H_{e,0}\|&\le C_N\kappa r_e,\nonumber\\
+ H_{t,A}&\ge c s_tI,&
+ \|H_{t,A}-H_{t,0}\|&\le C_N\kappa s_t,
+ &s_t&=\sum_{h\in t}r_h.
+ \tag{A11}\label{auditadd:sector-bounds}
+\end{align}
+Here all differences are taken after the specified pair transports.
+The resolvent identity now gives $C_N\kappa/r_e$ and
+$C_N\kappa/s_t$, respectively, for the inverse differences. Combining
+these with the actual transported source difference bounds in Section
+6.1 of the audit proves its displayed Schur-complement difference
+estimate. In particular the sources have not been defined by
+transporting their centered values: one first forms $H_1(A)U(A)$ and
+then uses the transports to compare it with the centered source.
+
+\subsection{Derivative scope and reproducibility}
+The additional derivatives used for the multiplier in Section 6 of the
+audit are derivatives of the finite coefficient matrices and their
+spatial/internal jets. An internal derivative brings its incident
+$r_e^{-1}$. A covariant center derivative differentiates $r_e$, the
+unit direction, and the normalized internal matrix, again with an
+incident inverse gap. Along $tA$, each normalized jet changes by
+$O(C_N\kappa)$, using one further bounded derivative of the same matrix
+functions. This explains why coincident internal eigenvalues cause no
+singularity. The finite root-path inventory and its triangle
+inequalities remain necessary; smoothness by itself would not control
+unrelated gap ratios.
+
+The supplementary \texttt{check\_pair\_clifford.py} constructs the
+untraced slow quadratic coefficient matrices in (A2) and (A5) for
+$(n,m)=(1,1),(2,1),(2,2),(3,1)$ at $r=1$. It compares every coefficient
+with the displayed Gram-matrix formulas and tests the vanishing
+antisymmetric coefficients, not just the resulting scalar trace.
+It uses floating-point arithmetic and reuses the original test's
+Spin(9) and color-basis constructors, with separate contraction code.
+These finitely many tests are regression evidence; the arbitrary-block
+result is the preceding algebraic calculation.
+
+The original symbolic script establishes exact rational reductions of
+its supplied triangle formulas. The original floating script tests four
+centered singleton-triangle geometries, reconstructing their triangle
+Gaussian/Fock contractions while supplying the singleton pair
+Born--Huang and spin terms as known constants. Neither original script
+computes the nonzero-$A$ operator, verifies the arbitrary-block
+slow-Clifford calculation, or tests the required slow derivatives.
+No numerical nonzero-$A$ test is supplied by this supplement either;
+(A7)--(A11) are analytic statements under the explicitly stated
+frozen-pair hypotheses. Nothing in these checks certifies the
+all-vector or global-theorem steps excluded at the start.

@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-06",
+  "python_version": "3.12.14",
+  "status": "passed",
+  "scope": "Original finite algebra/consistency scripts rerun locally. This is not a BFSS simulation, independent human review, proof-assistant certificate, or validation of all analytic hypotheses.",
+  "checks": [
+    {
+      "script": "check_bmn_formulas.py",
+      "status": "passed",
+      "exit_code": 0,
+      "sha256": "df1c2ff63c3a8c49985ef4e6757de7a59b45723fbe48035c4a7d87bcfe1258de",
+      "duration_seconds": 0.748,
+      "output_file": "validation_outputs/check_bmn_formulas.txt"
+    }
+  ],
+  "numpy_version": "2.3.5",
+  "sympy_version": "1.14.0"
+}
